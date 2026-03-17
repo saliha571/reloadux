@@ -1,0 +1,28 @@
+{
+  "hero": {
+    "title": "Connect with us",
+    "subtitle": "Let's talk about your product.",
+    "ctaText": "Submit",
+    "ctaHref": "#contact-form"
+  },
+  "faqs": [
+    { "question": "What is your typical project timeline?", "answer": "Most projects run 4-12 weeks depending on scope. We'll share a detailed timeline during discovery." },
+    { "question": "Do you work with startups?", "answer": "Yes! We've helped startups raise over $450M through better product experiences." },
+    { "question": "What's your pricing model?", "answer": "We offer both project-based and retainer pricing. Let's discuss what works best for your needs." },
+    { "question": "Can you work with our existing development team?", "answer": "Absolutely. We integrate seamlessly with engineering teams and provide developer-ready handoffs." }
+  ],
+  "nextSteps": [
+    { "number": "01", "text": "We'll respond within 24 hours." },
+    { "number": "02", "text": "Our UX Expert will collect project details and create a brief." },
+    { "number": "03", "text": "We'll prepare estimates and share a project proposal." }
+  ],
+  "contactInfo": {
+    "phone": "(202) 978 3410",
+    "email": "info@reloadux.com",
+    "team": [
+      { "name": "Sahar", "role": "Key Account Manager", "linkedin": "https://www.linkedin.com/in/sahar-asif-284a9955/" },
+      { "name": "Lara Kazan", "role": "Business Development Executive", "linkedin": "https://www.linkedin.com/in/lara-kazan-82a24113b/" }
+    ]
+  },
+  "testimonials": []
+}

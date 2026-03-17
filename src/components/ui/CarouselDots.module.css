@@ -1,0 +1,27 @@
+.dots {
+  display: inline-flex;
+  gap: 6px;
+}
+
+.vertical {
+  flex-direction: column;
+}
+
+.horizontal {
+  flex-direction: row;
+}
+
+.dot {
+  width: 11px;
+  height: 11px;
+  border-radius: 50%;
+  border: none;
+  background: rgba(0, 0, 0, 0.15);
+  cursor: pointer;
+  padding: 0;
+  transition: background 0.3s ease;
+}
+
+.active {
+  background: #000;
+}

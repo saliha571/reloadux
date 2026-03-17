@@ -1,0 +1,855 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Reloadux Design System — Unified Library v1.2</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@400;500;600;700&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --night: #090909; --black: #000000; --white: #FFFFFF; --smoke: #D9D9D9;
+      --grey-50: #5F6D7E; --grey-05: #F8F8F8; --grey-200: #D1D1D1; --grey-300: #C3C3C3;
+      --grey-400: #A5A9AC; --grey-500: #808080; --grey-600: #565656; --grey-700: #333333;
+      --purple: #7B61FF; --blue: #4A90D9; --green: #1ABC9C; --red: #F04438;
+      --orange: #F79009; --pink: #EE46BC;
+    }
+    body { font-family: 'Manrope', sans-serif; background: var(--night); color: var(--white); line-height: 1.6; }
+
+    .masthead { padding: 80px; border-bottom: 1px solid rgba(255,255,255,0.06); text-align: center; }
+    .masthead h1 { font-size: 56px; font-weight: 500; line-height: 1.2; margin-bottom: 12px; }
+    .masthead h1 em { font-family: 'Libre Baskerville', serif; font-style: italic; }
+    .masthead p { color: var(--grey-400); font-size: 18px; max-width: 700px; margin: 0 auto; }
+    .masthead .meta { margin-top: 16px; display: flex; justify-content: center; gap: 32px; font-size: 13px; color: var(--grey-600); }
+    .masthead .meta span { background: rgba(255,255,255,0.04); padding: 4px 12px; border-radius: 20px; border: 1px solid rgba(255,255,255,0.06); }
+
+    nav.ds-nav {
+      position: sticky; top: 0; z-index: 999;
+      display: flex; gap: 8px; padding: 12px 80px; flex-wrap: wrap;
+      background: rgba(9,9,9,0.95); backdrop-filter: blur(16px);
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+    }
+    nav.ds-nav a {
+      color: var(--grey-400); text-decoration: none; font-size: 12px; font-weight: 600;
+      padding: 6px 14px; border-radius: 20px; border: 1px solid rgba(255,255,255,0.06);
+      transition: all 0.2s; white-space: nowrap; text-transform: uppercase; letter-spacing: 0.5px;
+    }
+    nav.ds-nav a:hover { color: var(--white); border-color: rgba(255,255,255,0.2); background: rgba(255,255,255,0.04); }
+
+    section { padding: 80px; border-bottom: 1px solid rgba(255,255,255,0.06); }
+    section h2 { font-size: 36px; font-weight: 600; margin-bottom: 12px; display: flex; align-items: center; gap: 16px; }
+    section h2::after { content: ''; flex: 1; height: 1px; background: rgba(255,255,255,0.08); }
+    section .sub { color: var(--grey-400); font-size: 16px; margin-bottom: 48px; }
+    h3 { font-size: 18px; font-weight: 600; margin: 40px 0 20px; color: var(--grey-400); text-transform: uppercase; letter-spacing: 0.5px; font-size: 13px; }
+    .page-tag { display: inline-block; font-size: 9px; font-weight: 700; padding: 2px 8px; border-radius: 4px; margin-left: 6px; vertical-align: middle; text-transform: uppercase; }
+    .tag-home { background: var(--purple); color: #fff; }
+    .tag-work { background: var(--blue); color: #fff; }
+    .tag-contact { background: var(--green); color: #fff; }
+    .tag-about { background: var(--orange); color: #fff; }
+    .tag-all { background: var(--grey-700); color: #fff; }
+    .tag-new { background: #F04438; color: #fff; }
+    .tag-content { background: var(--pink); color: #fff; }
+
+    .grid { display: grid; gap: 16px; }
+    .grid-2 { grid-template-columns: repeat(2, 1fr); }
+    .grid-3 { grid-template-columns: repeat(3, 1fr); }
+    .grid-4 { grid-template-columns: repeat(4, 1fr); }
+    .grid-5 { grid-template-columns: repeat(5, 1fr); }
+    .grid-auto { grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); }
+    .grid-auto-sm { grid-template-columns: repeat(auto-fill, minmax(120px, 1fr)); }
+    .grid-auto-lg { grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); }
+
+    .swatch { border-radius: 12px; overflow: hidden; background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.06); }
+    .swatch .color { height: 72px; }
+    .swatch .info { padding: 10px 12px; }
+    .swatch .name { font-size: 12px; font-weight: 600; }
+    .swatch .val { font-size: 11px; color: var(--grey-400); font-family: 'SF Mono', 'Fira Code', monospace; }
+
+    .type-row { display: flex; align-items: baseline; gap: 24px; padding: 14px 0; border-bottom: 1px solid rgba(255,255,255,0.05); }
+    .type-label { min-width: 220px; flex-shrink: 0; font-size: 11px; color: var(--grey-400); font-family: 'SF Mono', monospace; line-height: 1.5; }
+
+    .icon-cell {
+      display: flex; flex-direction: column; align-items: center; gap: 8px;
+      padding: 16px 8px; border-radius: 12px;
+      background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.06);
+    }
+    .icon-cell img { width: 36px; height: 36px; object-fit: contain; }
+    .icon-cell span { font-size: 9px; color: var(--grey-400); text-align: center; word-break: break-all; line-height: 1.3; }
+
+    .card {
+      border-radius: 12px; overflow: hidden;
+      background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.06);
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .card:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(0,0,0,0.3); }
+    .card img { width: 100%; height: 140px; object-fit: contain; display: block; padding: 12px; }
+    .card .lbl { padding: 8px 12px; font-size: 11px; color: var(--grey-400); border-top: 1px solid rgba(255,255,255,0.06); line-height: 1.4; }
+    .card--avatar img { height: 100px; width: 100px; object-fit: cover; border-radius: 50%; margin: 16px auto; padding: 0; display: block; }
+    .card--logo img { height: 50px; padding: 16px; }
+    .card--photo img { height: 180px; object-fit: cover; padding: 0; }
+    .card--bg img { height: 200px; object-fit: cover; padding: 0; }
+
+    table.tok { width: 100%; border-collapse: collapse; font-size: 13px; }
+    table.tok th, table.tok td { text-align: left; padding: 8px 12px; border-bottom: 1px solid rgba(255,255,255,0.05); }
+    table.tok th { font-weight: 600; color: var(--grey-400); font-size: 10px; text-transform: uppercase; letter-spacing: 0.5px; }
+    table.tok td:nth-child(2) { font-family: 'SF Mono', monospace; font-size: 12px; color: var(--grey-400); }
+
+    .comp-box { background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.06); border-radius: 16px; padding: 32px; margin-bottom: 24px; }
+    .comp-box h4 { font-size: 12px; color: var(--grey-400); margin-bottom: 20px; text-transform: uppercase; letter-spacing: 1px; }
+    .dark-demo { background: var(--night); color: var(--white); padding: 32px; border-radius: 12px; }
+    .light-demo { background: var(--smoke); color: var(--black); padding: 32px; border-radius: 12px; }
+
+    .step-cards { display: grid; grid-template-columns: repeat(3, 1fr); }
+    .step-cards .step { padding: 42px 32px; border-right: 1px solid var(--grey-700); border-top: 1px solid var(--grey-700); }
+    .step-cards .step:last-child { border-right: none; }
+    .step-cards .num { font-family: 'Lexend', sans-serif; font-size: 16px; color: var(--grey-400); opacity: 0.8; }
+    .step-cards .title { font-family: 'Libre Baskerville', serif; font-size: 32px; line-height: 53px; margin: 8px 0 24px; }
+    .step-cards .desc { font-size: 18px; color: var(--grey-300); padding-left: 32px; }
+
+    .stats-row { display: flex; gap: 60px; flex-wrap: wrap; }
+    .stat { text-align: center; }
+    .stat .val { font-size: 64px; font-weight: 400; }
+    .stat .lbl { font-size: 14px; color: var(--grey-400); }
+
+    footer { padding: 40px 80px; text-align: center; color: var(--grey-600); font-size: 13px; }
+
+    @media (max-width: 1024px) {
+      section { padding: 48px 24px; }
+      nav.ds-nav { padding: 12px 24px; }
+      .grid-3, .grid-4, .grid-5, .step-cards { grid-template-columns: 1fr; }
+      .type-row { flex-direction: column; gap: 8px; }
+      .type-label { min-width: auto; }
+    }
+  </style>
+</head>
+<body>
+
+<header class="masthead">
+  <h1>Reloadux <em>Design System</em></h1>
+  <p>Unified library — all tokens, styles, components, and assets from every page merged into one reference</p>
+  <div class="meta">
+    <span>v1.3.0</span>
+    <span>5 Pages Extracted</span>
+    <span>220+ Assets</span>
+    <span>33+ Components</span>
+    <span>350+ Tokens</span>
+  </div>
+</header>
+
+<nav class="ds-nav">
+  <a href="#colors">Colors</a>
+  <a href="#typography">Typography</a>
+  <a href="#spacing">Spacing</a>
+  <a href="#radius">Radius</a>
+  <a href="#shadows">Shadows</a>
+  <a href="#motion">Motion</a>
+  <a href="#semantic">Semantic Tokens</a>
+  <a href="#components">Components</a>
+  <a href="#icons">Icons</a>
+  <a href="#logos">Logos</a>
+  <a href="#avatars">Avatars</a>
+  <a href="#team">Team Photos</a>
+  <a href="#portfolio">Portfolio</a>
+  <a href="#backgrounds">Backgrounds</a>
+  <a href="#awards">Awards</a>
+  <a href="#content">Content/Blog</a>
+  <a href="#pages">Page Index</a>
+</nav>
+
+<!-- ══════════════════════ COLORS ══════════════════════ -->
+<section id="colors">
+  <h2>Colors</h2>
+  <p class="sub">Complete color palette across all pages — primitive tokens</p>
+
+  <h3>Base Colors</h3>
+  <div class="grid grid-auto">
+    <div class="swatch"><div class="color" style="background:#090909"></div><div class="info"><div class="name">Night</div><div class="val">#090909</div></div></div>
+    <div class="swatch"><div class="color" style="background:#000000"></div><div class="info"><div class="name">Black</div><div class="val">#000000</div></div></div>
+    <div class="swatch"><div class="color" style="background:#FFFFFF"></div><div class="info"><div class="name">White</div><div class="val">#FFFFFF</div></div></div>
+    <div class="swatch"><div class="color" style="background:#D9D9D9"></div><div class="info"><div class="name">Smoke</div><div class="val">#D9D9D9</div></div></div>
+    <div class="swatch"><div class="color" style="background:#1A1A1F"></div><div class="info"><div class="name">Dark BG</div><div class="val">#1A1A1F</div></div></div>
+    <div class="swatch"><div class="color" style="background:#F8F8F8"></div><div class="info"><div class="name">Light</div><div class="val">#F8F8F8</div></div></div>
+  </div>
+
+  <h3>Grey Scale</h3>
+  <div class="grid grid-auto">
+    <div class="swatch"><div class="color" style="background:#F8F8F8"></div><div class="info"><div class="name">Grey 05</div><div class="val">#F8F8F8</div></div></div>
+    <div class="swatch"><div class="color" style="background:#D1D1D1"></div><div class="info"><div class="name">Grey 200</div><div class="val">#D1D1D1</div></div></div>
+    <div class="swatch"><div class="color" style="background:#C3C3C3"></div><div class="info"><div class="name">Grey 300</div><div class="val">#C3C3C3</div></div></div>
+    <div class="swatch"><div class="color" style="background:#A5A9AC"></div><div class="info"><div class="name">Grey 400</div><div class="val">#A5A9AC</div></div></div>
+    <div class="swatch"><div class="color" style="background:#808080"></div><div class="info"><div class="name">Grey 500</div><div class="val">#808080</div></div></div>
+    <div class="swatch"><div class="color" style="background:#565656"></div><div class="info"><div class="name">Grey 600</div><div class="val">#565656</div></div></div>
+    <div class="swatch"><div class="color" style="background:#333333"></div><div class="info"><div class="name">Grey 700</div><div class="val">#333333</div></div></div>
+    <div class="swatch"><div class="color" style="background:#5F6D7E"></div><div class="info"><div class="name">Grey 50</div><div class="val">#5F6D7E</div></div></div>
+  </div>
+
+  <h3>Neutral Scale (Work Page)</h3>
+  <div class="grid grid-auto">
+    <div class="swatch"><div class="color" style="background:#FCFCFD"></div><div class="info"><div class="name">Neutral 25</div><div class="val">#FCFCFD</div></div></div>
+    <div class="swatch"><div class="color" style="background:#F9FAFB"></div><div class="info"><div class="name">Neutral 50</div><div class="val">#F9FAFB</div></div></div>
+    <div class="swatch"><div class="color" style="background:#F2F4F7"></div><div class="info"><div class="name">Neutral 100</div><div class="val">#F2F4F7</div></div></div>
+    <div class="swatch"><div class="color" style="background:#EAECF0"></div><div class="info"><div class="name">Neutral 200</div><div class="val">#EAECF0</div></div></div>
+    <div class="swatch"><div class="color" style="background:#D0D5DD"></div><div class="info"><div class="name">Neutral 300</div><div class="val">#D0D5DD</div></div></div>
+    <div class="swatch"><div class="color" style="background:#667085"></div><div class="info"><div class="name">Neutral 500</div><div class="val">#667085</div></div></div>
+    <div class="swatch"><div class="color" style="background:#475467"></div><div class="info"><div class="name">Neutral 600</div><div class="val">#475467</div></div></div>
+    <div class="swatch"><div class="color" style="background:#344054"></div><div class="info"><div class="name">Neutral 700</div><div class="val">#344054</div></div></div>
+    <div class="swatch"><div class="color" style="background:#1D2939"></div><div class="info"><div class="name">Neutral 800</div><div class="val">#1D2939</div></div></div>
+    <div class="swatch"><div class="color" style="background:#101828"></div><div class="info"><div class="name">Neutral 900</div><div class="val">#101828</div></div></div>
+  </div>
+
+  <h3>Accent & Brand</h3>
+  <div class="grid grid-auto">
+    <div class="swatch"><div class="color" style="background:#7B61FF"></div><div class="info"><div class="name">Purple</div><div class="val">#7B61FF</div></div></div>
+    <div class="swatch"><div class="color" style="background:#4A90D9"></div><div class="info"><div class="name">Blue</div><div class="val">#4A90D9</div></div></div>
+    <div class="swatch"><div class="color" style="background:#1ABC9C"></div><div class="info"><div class="name">Green</div><div class="val">#1ABC9C</div></div></div>
+    <div class="swatch"><div class="color" style="background:#00A651"></div><div class="info"><div class="name">Dark Green</div><div class="val">#00A651</div></div></div>
+    <div class="swatch"><div class="color" style="background:#F04438"></div><div class="info"><div class="name">Red</div><div class="val">#F04438</div></div></div>
+    <div class="swatch"><div class="color" style="background:#F79009"></div><div class="info"><div class="name">Orange</div><div class="val">#F79009</div></div></div>
+    <div class="swatch"><div class="color" style="background:#EE46BC"></div><div class="info"><div class="name">Pink</div><div class="val">#EE46BC</div></div></div>
+  </div>
+
+  <h3>Brand Secondary</h3>
+  <div class="grid grid-auto">
+    <div class="swatch"><div class="color" style="background:#6DB9C4"></div><div class="info"><div class="name">Moonstone</div><div class="val">#6DB9C4</div></div></div>
+    <div class="swatch"><div class="color" style="background:#E8A87C"></div><div class="info"><div class="name">Sunset</div><div class="val">#E8A87C</div></div></div>
+    <div class="swatch"><div class="color" style="background:#A3A8F0"></div><div class="info"><div class="name">Periwinkle</div><div class="val">#A3A8F0</div></div></div>
+    <div class="swatch"><div class="color" style="background:#4A4A4A"></div><div class="info"><div class="name">Dark Grey</div><div class="val">#4A4A4A</div></div></div>
+    <div class="swatch"><div class="color" style="background:#E0DDD5"></div><div class="info"><div class="name">Sandstone</div><div class="val">#E0DDD5</div></div></div>
+    <div class="swatch"><div class="color" style="background:#0A2463"></div><div class="info"><div class="name">Oxford</div><div class="val">#0A2463</div></div></div>
+  </div>
+</section>
+
+<!-- ══════════════════════ TYPOGRAPHY ══════════════════════ -->
+<section id="typography">
+  <h2>Typography</h2>
+  <p class="sub">4 font families — Manrope (primary), Libre Baskerville (serif), Lexend (accent), Graphik (system)</p>
+
+  <div class="type-row"><div class="type-label">Display — 80px / 800<br>Manrope ExtraBold</div><div style="font-size:56px;font-weight:800;">Design That Delivers</div></div>
+  <div class="type-row"><div class="type-label">Hero — 64px / 600<br>Manrope SemiBold</div><div style="font-size:48px;font-weight:600;">Expert-Led UX Design Agency</div></div>
+  <div class="type-row"><div class="type-label">Heading XL — 50px / 400 / 68lh <span class="page-tag tag-about">ABOUT</span></div><div style="font-size:42px;font-weight:400;line-height:68px;">We craft custom design solutions</div></div>
+  <div class="type-row"><div class="type-label">Heading LG — 48px / 500<br>Manrope Medium</div><div style="font-size:40px;font-weight:500;">What you can expect next?</div></div>
+  <div class="type-row"><div class="type-label">Heading MD — 40px / 400</div><div style="font-size:36px;">Let's talk about your product.</div></div>
+  <div class="type-row"><div class="type-label">Heading SM — 28px / 600</div><div style="font-size:28px;font-weight:600;">Build from scratch</div></div>
+  <div class="type-row"><div class="type-label">Step Title — 32px / Serif <span class="page-tag tag-contact">CONTACT</span></div><div style="font-family:'Libre Baskerville',serif;font-size:32px;line-height:53px;">Follow-up Call</div></div>
+  <div class="type-row"><div class="type-label">Paragraph XL — 30px / 400 / 48lh <span class="page-tag tag-about">ABOUT</span></div><div style="font-size:26px;line-height:48px;">We design digital solutions that empower leading brands</div></div>
+  <div class="type-row"><div class="type-label">Paragraph LG — 28px / 400 / 48lh</div><div style="font-size:24px;line-height:48px;">"reloadux team took the time to put together the right user flows..."</div></div>
+  <div class="type-row"><div class="type-label">Paragraph MD — 22px / 400 / 40lh</div><div style="font-size:22px;line-height:40px;">Do you work with freelancers or have an in-house team?</div></div>
+  <div class="type-row"><div class="type-label">Paragraph MD / SemiBold — 22px / 600 / 40lh <span class="page-tag tag-content">CONTENT</span></div><div style="font-size:22px;font-weight:600;line-height:40px;">Transforming your challenges into seamless experiences</div></div>
+  <div class="type-row"><div class="type-label">Paragraph SM — 18px / 400</div><div style="font-size:18px;">After receiving your query, we will reach out to you</div></div>
+  <div class="type-row"><div class="type-label">Body / XS — 16px / 400 / 26lh</div><div style="font-size:16px;line-height:26px;">work &nbsp; process &nbsp; services &nbsp; resources &nbsp; about us &nbsp; blog</div></div>
+  <div class="type-row"><div class="type-label">Tag — Libre Baskerville 18px<br>uppercase / 0.36px tracking</div><div style="font-family:'Libre Baskerville',serif;font-size:18px;letter-spacing:0.36px;text-transform:uppercase;">[ Contact ] &nbsp; [ Our Process ] &nbsp; [ FAQs ]</div></div>
+  <div class="type-row"><div class="type-label">Step Number — Lexend 16px / 0.8 opacity <span class="page-tag tag-new">NEW</span></div><div style="font-family:'Lexend',sans-serif;font-size:16px;color:var(--grey-400);opacity:0.8;">01 &nbsp; 02 &nbsp; 03</div></div>
+  <div class="type-row"><div class="type-label">Testimonial Name — Serif Bold 16px<br>uppercase / 0.32px</div><div style="font-family:'Libre Baskerville',serif;font-size:16px;font-weight:700;text-transform:uppercase;letter-spacing:0.32px;">Iman Oubou &nbsp;&nbsp; Robert K. Burger</div></div>
+  <div class="type-row"><div class="type-label">Button XL — 20px / 500 / 28lh <span class="page-tag tag-about">ABOUT</span></div><div style="display:inline-flex;align-items:center;gap:8px;background:#fff;color:#000;padding:14px 28px;border-radius:30px;font-size:20px;font-weight:500;">Schedule a Call &rarr;</div></div>
+  <div class="type-row"><div class="type-label">Button LG — 16px / 400</div>
+    <div style="display:inline-flex;align-items:center;gap:8px;background:#fff;color:#000;padding:12px 24px;border-radius:30px;font-size:16px;">Let's Talk.</div>
+    &nbsp;
+    <div style="display:inline-flex;align-items:center;gap:8px;background:var(--night);color:#fff;padding:16px 28px;border-radius:30px;font-size:16px;border:1px solid var(--grey-700);">Submit &rarr;</div>
+  </div>
+</section>
+
+<!-- ══════════════════════ SPACING ══════════════════════ -->
+<section id="spacing">
+  <h2>Spacing Scale</h2>
+  <p class="sub">Consistent spacing tokens from 0 to 160px</p>
+  <div style="display:flex;flex-wrap:wrap;gap:12px;align-items:flex-end">
+    <div style="text-align:center" title="0"><div style="width:4px;height:4px;background:var(--purple);border-radius:2px"></div><span style="font-size:10px;color:var(--grey-400)">0</span></div>
+    <div style="text-align:center" title="2"><div style="width:2px;height:2px;background:var(--purple);border-radius:1px"></div><span style="font-size:10px;color:var(--grey-400)">2</span></div>
+    <div style="text-align:center" title="4"><div style="width:4px;height:4px;background:var(--purple);border-radius:2px"></div><span style="font-size:10px;color:var(--grey-400)">4</span></div>
+    <div style="text-align:center" title="6"><div style="width:6px;height:6px;background:var(--purple);border-radius:3px"></div><span style="font-size:10px;color:var(--grey-400)">6</span></div>
+    <div style="text-align:center" title="8"><div style="width:8px;height:8px;background:var(--purple);border-radius:4px"></div><span style="font-size:10px;color:var(--grey-400)">8</span></div>
+    <div style="text-align:center" title="12"><div style="width:12px;height:12px;background:var(--purple);border-radius:4px"></div><span style="font-size:10px;color:var(--grey-400)">12</span></div>
+    <div style="text-align:center" title="16"><div style="width:16px;height:16px;background:var(--purple);border-radius:4px"></div><span style="font-size:10px;color:var(--grey-400)">16</span></div>
+    <div style="text-align:center" title="20"><div style="width:20px;height:20px;background:var(--purple);border-radius:4px"></div><span style="font-size:10px;color:var(--grey-400)">20</span></div>
+    <div style="text-align:center" title="24"><div style="width:24px;height:24px;background:var(--purple);border-radius:4px"></div><span style="font-size:10px;color:var(--grey-400)">24</span></div>
+    <div style="text-align:center" title="28"><div style="width:28px;height:28px;background:var(--purple);border-radius:4px"></div><span style="font-size:10px;color:var(--grey-400)">28</span></div>
+    <div style="text-align:center" title="32"><div style="width:32px;height:32px;background:var(--purple);border-radius:4px"></div><span style="font-size:10px;color:var(--grey-400)">32</span></div>
+    <div style="text-align:center" title="40"><div style="width:40px;height:40px;background:var(--purple);border-radius:4px"></div><span style="font-size:10px;color:var(--grey-400)">40</span></div>
+    <div style="text-align:center" title="48"><div style="width:48px;height:48px;background:var(--purple);border-radius:4px"></div><span style="font-size:10px;color:var(--grey-400)">48</span></div>
+    <div style="text-align:center" title="52"><div style="width:52px;height:52px;background:var(--purple);border-radius:4px"></div><span style="font-size:10px;color:var(--grey-400)">52</span></div>
+    <div style="text-align:center" title="60"><div style="width:60px;height:60px;background:var(--purple);border-radius:4px"></div><span style="font-size:10px;color:var(--grey-400)">60</span></div>
+    <div style="text-align:center" title="80"><div style="width:80px;height:80px;background:var(--purple);border-radius:4px"></div><span style="font-size:10px;color:var(--grey-400)">80</span></div>
+    <div style="text-align:center" title="100"><div style="width:100px;height:40px;background:var(--purple);border-radius:4px"></div><span style="font-size:10px;color:var(--grey-400)">100</span></div>
+    <div style="text-align:center" title="120"><div style="width:120px;height:40px;background:var(--purple);border-radius:4px"></div><span style="font-size:10px;color:var(--grey-400)">120</span></div>
+    <div style="text-align:center" title="160"><div style="width:160px;height:40px;background:var(--purple);border-radius:4px"></div><span style="font-size:10px;color:var(--grey-400)">160</span></div>
+  </div>
+</section>
+
+<!-- ══════════════════════ RADIUS ══════════════════════ -->
+<section id="radius">
+  <h2>Border Radius</h2>
+  <div style="display:flex;gap:24px;flex-wrap:wrap;align-items:center">
+    <div style="text-align:center"><div style="width:60px;height:60px;border:2px solid var(--purple);border-radius:0"></div><span style="font-size:11px;color:var(--grey-400)">0</span></div>
+    <div style="text-align:center"><div style="width:60px;height:60px;border:2px solid var(--purple);border-radius:4px"></div><span style="font-size:11px;color:var(--grey-400)">4px</span></div>
+    <div style="text-align:center"><div style="width:60px;height:60px;border:2px solid var(--purple);border-radius:8px"></div><span style="font-size:11px;color:var(--grey-400)">8px</span></div>
+    <div style="text-align:center"><div style="width:60px;height:60px;border:2px solid var(--purple);border-radius:12px"></div><span style="font-size:11px;color:var(--grey-400)">12px</span></div>
+    <div style="text-align:center"><div style="width:60px;height:60px;border:2px solid var(--purple);border-radius:16px"></div><span style="font-size:11px;color:var(--grey-400)">16px</span></div>
+    <div style="text-align:center"><div style="width:60px;height:60px;border:2px solid var(--purple);border-radius:24px"></div><span style="font-size:11px;color:var(--grey-400)">24px</span></div>
+    <div style="text-align:center"><div style="width:100px;height:48px;border:2px solid var(--purple);border-radius:30px"></div><span style="font-size:11px;color:var(--grey-400)">30px (pill)</span></div>
+    <div style="text-align:center"><div style="width:60px;height:60px;border:2px solid var(--purple);border-radius:50%"></div><span style="font-size:11px;color:var(--grey-400)">Full (circle)</span></div>
+  </div>
+</section>
+
+<!-- ══════════════════════ SHADOWS ══════════════════════ -->
+<section id="shadows">
+  <h2>Shadows</h2>
+  <div style="display:flex;gap:32px;flex-wrap:wrap">
+    <div style="width:160px;height:100px;background:var(--white);border-radius:16px;box-shadow:0 2px 20px rgba(123,97,255,0.22);display:flex;align-items:center;justify-content:center"><span style="color:#000;font-size:12px">Button Glow</span></div>
+    <div style="width:160px;height:100px;background:var(--white);border-radius:16px;box-shadow:0 4px 16px rgba(0,0,0,0.08);display:flex;align-items:center;justify-content:center"><span style="color:#000;font-size:12px">Natural</span></div>
+    <div style="width:160px;height:100px;background:var(--white);border-radius:16px;box-shadow:0 8px 32px rgba(0,0,0,0.12);display:flex;align-items:center;justify-content:center"><span style="color:#000;font-size:12px">Deep</span></div>
+    <div style="width:160px;height:100px;background:var(--white);border-radius:16px;box-shadow:0 1px 3px rgba(16,24,40,0.1),0 1px 2px rgba(16,24,40,0.06);display:flex;align-items:center;justify-content:center"><span style="color:#000;font-size:12px">Card</span></div>
+  </div>
+</section>
+
+<!-- ══════════════════════ MOTION ══════════════════════ -->
+<section id="motion">
+  <h2>Motion</h2>
+  <table class="tok">
+    <thead><tr><th>Token</th><th>Value</th><th>Usage</th></tr></thead>
+    <tbody>
+      <tr><td>transition</td><td>all 0.3s ease</td><td>Default transition</td></tr>
+      <tr><td>duration.instant</td><td>100ms</td><td>Micro interactions</td></tr>
+      <tr><td>duration.fast</td><td>200ms</td><td>Hover effects</td></tr>
+      <tr><td>duration.normal</td><td>300ms</td><td>Standard animations</td></tr>
+      <tr><td>duration.slow</td><td>500ms</td><td>Complex transitions</td></tr>
+      <tr><td>duration.entrance</td><td>800ms</td><td>Scroll reveals</td></tr>
+      <tr><td>easing.default</td><td>ease</td><td>General</td></tr>
+      <tr><td>easing.in</td><td>ease-in</td><td>Exit animations</td></tr>
+      <tr><td>easing.out</td><td>ease-out</td><td>Entry animations</td></tr>
+      <tr><td>easing.spring</td><td>cubic-bezier(0.175,0.885,0.32,1.275)</td><td>Bouncy elements</td></tr>
+    </tbody>
+  </table>
+</section>
+
+<!-- ══════════════════════ SEMANTIC TOKENS ══════════════════════ -->
+<section id="semantic">
+  <h2>Semantic Tokens</h2>
+  <p class="sub">Purpose-driven aliases — text, background, border, interactive</p>
+
+  <h3>Text Colors</h3>
+  <div class="grid grid-auto">
+    <div class="swatch"><div class="color" style="background:#FFFFFF"></div><div class="info"><div class="name">text.primary</div><div class="val">{white}</div></div></div>
+    <div class="swatch"><div class="color" style="background:#A5A9AC"></div><div class="info"><div class="name">text.secondary</div><div class="val">{grey.400}</div></div></div>
+    <div class="swatch"><div class="color" style="background:#C3C3C3"></div><div class="info"><div class="name">text.tertiary</div><div class="val">{grey.300}</div></div></div>
+    <div class="swatch"><div class="color" style="background:#000000"></div><div class="info"><div class="name">text.inverse</div><div class="val">{black}</div></div></div>
+    <div class="swatch"><div class="color" style="background:#FFFFFF"></div><div class="info"><div class="name">text.on-dark</div><div class="val">{white}</div></div></div>
+    <div class="swatch"><div class="color" style="background:#565656"></div><div class="info"><div class="name">text.muted</div><div class="val">{grey.600}</div></div></div>
+    <div class="swatch"><div class="color" style="background:#A5A9AC"></div><div class="info"><div class="name">text.tag</div><div class="val">{grey.400}</div></div></div>
+  </div>
+
+  <h3>Background Colors</h3>
+  <div class="grid grid-auto">
+    <div class="swatch"><div class="color" style="background:#FFFFFF"></div><div class="info"><div class="name">bg.page</div><div class="val">{white}</div></div></div>
+    <div class="swatch"><div class="color" style="background:#D9D9D9"></div><div class="info"><div class="name">bg.surface</div><div class="val">{smoke}</div></div></div>
+    <div class="swatch"><div class="color" style="background:#F8F8F8"></div><div class="info"><div class="name">bg.elevated</div><div class="val">{light}</div></div></div>
+    <div class="swatch"><div class="color" style="background:#090909"></div><div class="info"><div class="name">bg.dark</div><div class="val">{night}</div></div></div>
+    <div class="swatch"><div class="color" style="background:#000000"></div><div class="info"><div class="name">bg.darker</div><div class="val">{black}</div></div></div>
+    <div class="swatch"><div class="color" style="background:#090909"></div><div class="info"><div class="name">bg.cta</div><div class="val">{night}</div></div></div>
+    <div class="swatch"><div class="color" style="background:#1A1A1F"></div><div class="info"><div class="name">bg.card-dark</div><div class="val">{dark-bg}</div></div></div>
+  </div>
+
+  <h3>Interactive</h3>
+  <div class="grid grid-auto">
+    <div class="swatch"><div class="color" style="background:#FFFFFF"></div><div class="info"><div class="name">interactive.primary</div><div class="val">{white}</div></div></div>
+    <div class="swatch"><div class="color" style="background:#000000"></div><div class="info"><div class="name">interactive.primary-fg</div><div class="val">{black}</div></div></div>
+    <div class="swatch"><div class="color" style="background:#7B61FF"></div><div class="info"><div class="name">interactive.accent</div><div class="val">{purple}</div></div></div>
+  </div>
+</section>
+
+<!-- ══════════════════════ COMPONENTS ══════════════════════ -->
+<section id="components">
+  <h2>Component Patterns</h2>
+  <p class="sub">25+ component tokens across all 4 pages</p>
+
+  <h3>Stat Row <span class="page-tag tag-about">ABOUT</span> <span class="page-tag tag-home">HOME</span></h3>
+  <div class="comp-box">
+    <h4>stat-row — 80px values, 16px labels, stacked avatars</h4>
+    <div class="dark-demo">
+      <div class="stats-row">
+        <div class="stat"><div class="val">80%</div><div class="lbl">Retention Rate</div></div>
+        <div class="stat"><div class="val">50+</div><div class="lbl">Customers</div></div>
+        <div class="stat"><div class="val">1b+</div><div class="lbl">Revenue Generated</div></div>
+        <div class="stat"><div class="val">12+</div><div class="lbl">Years of UX Expertise</div></div>
+        <div class="stat"><div class="val">1k+</div><div class="lbl">Screens Designed</div></div>
+      </div>
+    </div>
+  </div>
+
+  <h3>Next Steps Cards <span class="page-tag tag-contact">CONTACT</span></h3>
+  <div class="comp-box">
+    <h4>next-steps-card — 3-column, Lexend numbers, Libre Baskerville titles, border-top+right</h4>
+    <div class="dark-demo">
+      <div class="step-cards">
+        <div class="step"><div class="num">01</div><div class="title">Follow-up Call</div><div class="desc">After receiving your query, we will reach out to you...</div></div>
+        <div class="step"><div class="num">02</div><div class="title">Ballpark Estimates</div><div class="desc">Listening to your requirements we will discuss all possibilities...</div></div>
+        <div class="step"><div class="num">03</div><div class="title">Project Kick-off</div><div class="desc">Once done with finalizing the scope of work...</div></div>
+      </div>
+    </div>
+  </div>
+
+  <h3>Contact Form <span class="page-tag tag-contact">CONTACT</span></h3>
+  <div class="comp-box">
+    <h4>contact-form — #D9D9D9 bg, underline fields, pill submit button</h4>
+    <div class="light-demo" style="max-width:660px">
+      <div style="display:flex;gap:24px;margin-bottom:48px"><div style="flex:1"><div style="font-size:16px;margin-bottom:8px">Your Name*</div><div style="height:1px;background:#000"></div></div><div style="flex:1"><div style="font-size:16px;margin-bottom:8px">Work Email*</div><div style="height:1px;background:#000"></div></div></div>
+      <div style="display:flex;gap:24px;margin-bottom:48px"><div style="flex:1"><div style="font-size:16px;margin-bottom:8px">Company Name</div><div style="height:1px;background:#000"></div></div><div style="flex:1"><div style="font-size:16px;margin-bottom:8px">Contact No.</div><div style="height:1px;background:#000"></div></div></div>
+      <div style="margin-bottom:32px"><div style="font-size:16px;margin-bottom:8px">About Project*</div><div style="height:1px;background:#000"></div></div>
+      <div style="background:#090909;color:#fff;display:inline-flex;padding:16px 28px;border-radius:30px;font-size:16px;gap:8px;align-items:center">Submit &rarr;</div>
+    </div>
+  </div>
+
+  <h3>FAQ Accordion <span class="page-tag tag-contact">CONTACT</span> <span class="page-tag tag-about">ABOUT</span></h3>
+  <div class="comp-box">
+    <h4>faq-accordion — #D9D9D9 bg, 22px/500 questions, black dividers</h4>
+    <div class="light-demo" style="max-width:730px">
+      <div style="border-top:1px solid #000;padding:24px 0;display:flex;justify-content:space-between;align-items:center"><span style="font-size:22px;font-weight:500">Do you work with freelancers?</span><span style="font-size:24px">&times;</span></div>
+      <div style="font-size:18px;color:var(--grey-700);margin-bottom:24px">We don't work with freelancers. All our designers are hired in-house</div>
+      <div style="border-top:1px solid #000;padding:24px 0;display:flex;justify-content:space-between;align-items:center"><span style="font-size:22px;font-weight:500">How do you hire designers?</span><span style="font-size:24px">+</span></div>
+      <div style="border-top:1px solid #000;padding:24px 0;display:flex;justify-content:space-between;align-items:center"><span style="font-size:22px;font-weight:500">How do you manage timezone differences?</span><span style="font-size:24px">+</span></div>
+      <div style="border-bottom:1px solid #000;padding:24px 0;display:flex;justify-content:space-between;align-items:center"><span style="font-size:22px;font-weight:500">Do I pay extra for more people?</span><span style="font-size:24px">+</span></div>
+    </div>
+  </div>
+
+  <h3>Testimonial Slider <span class="page-tag tag-contact">CONTACT</span> <span class="page-tag tag-about">ABOUT</span></h3>
+  <div class="comp-box">
+    <h4>testimonial-section — #D9D9D9 bg, numbered slides, 28px quotes, serif bold names</h4>
+    <div class="light-demo" style="max-width:740px">
+      <div style="font-size:22px;margin-bottom:24px">/01</div>
+      <div style="font-size:24px;line-height:48px;margin-bottom:32px">"reloadux team took the time to put together the right user flows and walk us through them..."</div>
+      <div style="display:flex;gap:18px;align-items:center"><img src="assets/contact-page/images/testimonial-avatar-01.png" style="width:68px;height:68px;border-radius:50%;object-fit:cover" alt=""><div><div style="font-family:'Libre Baskerville',serif;font-size:16px;font-weight:700;text-transform:uppercase;letter-spacing:0.32px">Iman Oubou</div><div style="font-size:18px;font-weight:500;color:var(--grey-700);margin-top:8px">CEO at Swaay</div></div></div>
+    </div>
+  </div>
+
+  <h3>Values Section <span class="page-tag tag-about">ABOUT</span></h3>
+  <div class="comp-box">
+    <h4>values-section — #D9D9D9 bg, 48px keywords, image + text layout</h4>
+    <div class="light-demo">
+      <div style="display:flex;gap:40px;align-items:center">
+        <div><div style="font-size:40px;font-weight:500;margin-bottom:24px">Transparency<br>People<br>Awareness</div><div style="font-size:18px;color:var(--grey-700)">Of course, we're not perfect. No one is. The answer is how we handle it.</div></div>
+        <div style="width:300px;height:200px;background:var(--grey-400);border-radius:12px;flex-shrink:0"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════ ICONS ══════════════════════ -->
+<section id="icons">
+  <h2>Icons & Shapes</h2>
+  <p class="sub">All SVG icons across every page — UI, social, decorative, navigation</p>
+
+  <h3>UI Icons <span class="page-tag tag-all">ALL PAGES</span></h3>
+  <div class="grid grid-auto-sm">
+    <div class="icon-cell"><img src="assets/contact-page/icons/linkedin.svg" alt=""><span>linkedin</span></div>
+    <div class="icon-cell"><img src="assets/contact-page/icons/email.svg" alt=""><span>email</span></div>
+    <div class="icon-cell"><img src="assets/contact-page/icons/phone.svg" alt=""><span>phone</span></div>
+    <div class="icon-cell"><img src="assets/contact-page/icons/check-step.svg" alt=""><span>check-step</span></div>
+    <div class="icon-cell"><img src="assets/contact-page/icons/arrow-submit.svg" alt=""><span>arrow-submit</span></div>
+    <div class="icon-cell"><img src="assets/contact-page/icons/faq-expand.svg" alt=""><span>faq-expand</span></div>
+    <div class="icon-cell"><img src="assets/contact-page/icons/faq-collapse.svg" alt=""><span>faq-collapse</span></div>
+    <div class="icon-cell"><img src="assets/contact-page/icons/testimonial-nav.svg" alt=""><span>testimonial-nav</span></div>
+    <div class="icon-cell"><img src="assets/icons/arrow-right.svg" alt=""><span>arrow-right</span></div>
+    <div class="icon-cell"><img src="assets/icons/arrow-diagonal.svg" alt=""><span>arrow-diagonal</span></div>
+    <div class="icon-cell"><img src="assets/icons/arrow-diagonal-alt.svg" alt=""><span>arrow-diag-alt</span></div>
+    <div class="icon-cell"><img src="assets/icons/plus.svg" alt=""><span>plus</span></div>
+    <div class="icon-cell"><img src="assets/icons/circle-outline.svg" alt=""><span>circle-outline</span></div>
+    <div class="icon-cell"><img src="assets/icons/est-badge.svg" alt=""><span>est-badge</span></div>
+    <div class="icon-cell"><img src="assets/about-page/icons/arrow-right-alt.svg" alt=""><span>arrow-right-alt</span></div>
+    <div class="icon-cell"><img src="assets/about-page/icons/submit-icon-about.svg" alt=""><span>submit-icon</span></div>
+  </div>
+
+  <h3>Social Icons</h3>
+  <div class="grid grid-auto-sm">
+    <div class="icon-cell"><img src="assets/contact-page/icons/social-x.svg" alt=""><span>social-x</span></div>
+    <div class="icon-cell"><img src="assets/contact-page/icons/social-facebook.svg" alt=""><span>social-fb</span></div>
+    <div class="icon-cell"><img src="assets/contact-page/icons/social-instagram.svg" alt=""><span>social-ig</span></div>
+  </div>
+
+  <h3>Navigation Icons</h3>
+  <div class="grid grid-auto-sm">
+    <div class="icon-cell"><img src="assets/icons/nav-icon-01.svg" alt=""><span>nav-icon-01</span></div>
+    <div class="icon-cell"><img src="assets/icons/nav-icon-02.svg" alt=""><span>nav-icon-02</span></div>
+    <div class="icon-cell"><img src="assets/icons/nav-icon-03.svg" alt=""><span>nav-icon-03</span></div>
+    <div class="icon-cell"><img src="assets/icons/nav-icon-04.svg" alt=""><span>nav-icon-04</span></div>
+    <div class="icon-cell"><img src="assets/icons/nav-icon-05.svg" alt=""><span>nav-icon-05</span></div>
+  </div>
+
+  <h3>Decorative / Stat Icons <span class="page-tag tag-about">ABOUT</span></h3>
+  <div class="grid grid-auto-sm">
+    <div class="icon-cell"><img src="assets/about-page/icons/twister-decorative.svg" alt=""><span>twister</span></div>
+    <div class="icon-cell"><img src="assets/about-page/icons/world-map.svg" alt=""><span>world-map</span></div>
+    <div class="icon-cell"><img src="assets/about-page/icons/flag-uae.svg" alt=""><span>flag-uae</span></div>
+    <div class="icon-cell"><img src="assets/about-page/icons/flag-canada.svg" alt=""><span>flag-canada</span></div>
+    <div class="icon-cell"><img src="assets/about-page/icons/stat-icon-globe.svg" alt=""><span>stat-globe</span></div>
+    <div class="icon-cell"><img src="assets/about-page/icons/stat-icon-team.svg" alt=""><span>stat-team</span></div>
+    <div class="icon-cell"><img src="assets/about-page/icons/stat-icon-projects.svg" alt=""><span>stat-projects</span></div>
+    <div class="icon-cell"><img src="assets/about-page/icons/ellipse-marker.svg" alt=""><span>ellipse-marker</span></div>
+  </div>
+
+  <h3>Decorative Elements</h3>
+  <div class="grid grid-auto-sm">
+    <div class="icon-cell"><img src="assets/icons/decorative-element.svg" alt=""><span>decorative-01</span></div>
+    <div class="icon-cell"><img src="assets/icons/decorative-dd2.svg" alt=""><span>decorative-dd2</span></div>
+    <div class="icon-cell"><img src="assets/icons/group-element.svg" alt=""><span>group-element</span></div>
+    <div class="icon-cell"><img src="assets/icons/group-element-alt.svg" alt=""><span>group-alt</span></div>
+    <div class="icon-cell"><img src="assets/icons/teal-dot-01.svg" alt=""><span>teal-dot-01</span></div>
+    <div class="icon-cell"><img src="assets/icons/teal-dot-02.svg" alt=""><span>teal-dot-02</span></div>
+    <div class="icon-cell"><img src="assets/icons/teal-dot-03.svg" alt=""><span>teal-dot-03</span></div>
+    <div class="icon-cell"><img src="assets/icons/teal-dot-04.svg" alt=""><span>teal-dot-04</span></div>
+  </div>
+
+  <h3>Lines & Separators</h3>
+  <div class="grid grid-auto-sm">
+    <div class="icon-cell"><img src="assets/icons/line-separator.svg" alt=""><span>line-separator</span></div>
+    <div class="icon-cell"><img src="assets/icons/line-separator-thin.svg" alt=""><span>line-thin</span></div>
+    <div class="icon-cell"><img src="assets/icons/line-separator-alt.svg" alt=""><span>line-alt</span></div>
+    <div class="icon-cell"><img src="assets/icons/line-37.svg" alt=""><span>line-37</span></div>
+    <div class="icon-cell"><img src="assets/icons/line-1441.svg" alt=""><span>line-1441</span></div>
+    <div class="icon-cell"><img src="assets/icons/line-1446.svg" alt=""><span>line-1446</span></div>
+    <div class="icon-cell"><img src="assets/contact-page/icons/line-separator-1433.svg" alt=""><span>line-1433</span></div>
+    <div class="icon-cell"><img src="assets/contact-page/icons/line-separator-1483.svg" alt=""><span>line-1483</span></div>
+    <div class="icon-cell"><img src="assets/contact-page/icons/divider-horizontal.svg" alt=""><span>divider-h</span></div>
+    <div class="icon-cell"><img src="assets/contact-page/icons/divider-vertical.svg" alt=""><span>divider-v</span></div>
+    <div class="icon-cell"><img src="assets/contact-page/icons/form-underline.svg" alt=""><span>form-underline</span></div>
+    <div class="icon-cell"><img src="assets/about-page/icons/line-1462.svg" alt=""><span>line-1462</span></div>
+    <div class="icon-cell"><img src="assets/about-page/icons/line-1454.svg" alt=""><span>line-1454</span></div>
+  </div>
+</section>
+
+<!-- ══════════════════════ LOGOS ══════════════════════ -->
+<section id="logos">
+  <h2>Logos</h2>
+  <p class="sub">Brand marks + client logos from logo strip, testimonials, and work page</p>
+
+  <h3>Reloadux Brand</h3>
+  <div class="grid grid-auto-lg">
+    <div class="card card--logo"><img src="assets/contact-page/logos/reloadux-header-logo.svg" alt=""><div class="lbl">Header Logo (SVG)</div></div>
+    <div class="card card--logo"><img src="assets/contact-page/logos/reloadux-footer-logo.svg" alt=""><div class="lbl">Footer Logo (SVG)</div></div>
+    <div class="card card--logo"><img src="assets/logos/reloadux-logo-part1.svg" alt=""><div class="lbl">Logo Part 1</div></div>
+    <div class="card card--logo"><img src="assets/logos/reloadux-logo-part2.svg" alt=""><div class="lbl">Logo Part 2</div></div>
+  </div>
+
+  <h3>Client Logos (SVG — Logo Strip)</h3>
+  <div class="grid grid-auto-lg">
+    <div class="card card--logo"><img src="assets/contact-page/logos/logo-client-barclays.svg" alt=""><div class="lbl">Barclays</div></div>
+    <div class="card card--logo"><img src="assets/contact-page/logos/logo-client-nbc.svg" alt=""><div class="lbl">NBC Universal</div></div>
+    <div class="card card--logo"><img src="assets/contact-page/logos/logo-client-peopledotai.svg" alt=""><div class="lbl">People.ai</div></div>
+    <div class="card card--logo"><img src="assets/contact-page/logos/logo-client-stereo.svg" alt=""><div class="lbl">Stereo Reseller</div></div>
+    <div class="card card--logo"><img src="assets/contact-page/logos/logo-client-path5.svg" alt=""><div class="lbl">Path 5</div></div>
+    <div class="card card--logo"><img src="assets/contact-page/logos/logo-client-knowles.svg" alt=""><div class="lbl">Knowles</div></div>
+    <div class="card card--logo"><img src="assets/contact-page/logos/logo-client-replenium.svg" alt=""><div class="lbl">Replenium</div></div>
+    <div class="card card--logo"><img src="assets/contact-page/logos/logo-client-s40.svg" alt=""><div class="lbl">Client S40</div></div>
+  </div>
+
+  <h3>Client Logos (SVG — Design System)</h3>
+  <div class="grid grid-auto-lg">
+    <div class="card card--logo"><img src="assets/logos/client-logo-01.svg" alt=""><div class="lbl">client-logo-01</div></div>
+    <div class="card card--logo"><img src="assets/logos/client-logo-02.svg" alt=""><div class="lbl">client-logo-02</div></div>
+    <div class="card card--logo"><img src="assets/logos/client-logo-03.svg" alt=""><div class="lbl">client-logo-03</div></div>
+    <div class="card card--logo"><img src="assets/logos/client-logo-04.svg" alt=""><div class="lbl">client-logo-04</div></div>
+    <div class="card card--logo"><img src="assets/logos/client-logo-05.svg" alt=""><div class="lbl">client-logo-05</div></div>
+    <div class="card card--logo"><img src="assets/logos/client-logo-06.svg" alt=""><div class="lbl">client-logo-06</div></div>
+    <div class="card card--logo"><img src="assets/logos/client-logo-07.svg" alt=""><div class="lbl">client-logo-07</div></div>
+    <div class="card card--logo"><img src="assets/logos/client-logo-08.svg" alt=""><div class="lbl">client-logo-08</div></div>
+    <div class="card card--logo"><img src="assets/logos/moment-ai-logo-01.svg" alt=""><div class="lbl">Moment.ai Logo 01</div></div>
+    <div class="card card--logo"><img src="assets/logos/moment-ai-logo-02.svg" alt=""><div class="lbl">Moment.ai Logo 02</div></div>
+  </div>
+
+  <h3>Testimonial Company Logos</h3>
+  <div class="grid grid-auto-lg">
+    <div class="card card--logo"><img src="assets/contact-page/logos/testimonial-company-01.png" alt=""><div class="lbl">Swaay (Iman Oubou)</div></div>
+    <div class="card card--logo"><img src="assets/contact-page/logos/testimonial-company-02.png" alt=""><div class="lbl">Co. (Robert K.)</div></div>
+    <div class="card card--logo"><img src="assets/contact-page/logos/testimonial-company-03.png" alt=""><div class="lbl">Co. (Mison R.)</div></div>
+  </div>
+</section>
+
+<!-- ══════════════════════ AVATARS ══════════════════════ -->
+<section id="avatars">
+  <h2>Avatars</h2>
+  <p class="sub">All people avatars — team members, testimonials, portfolio clients</p>
+
+  <h3>Contact Team (70px) <span class="page-tag tag-contact">CONTACT</span></h3>
+  <div class="grid grid-auto-sm">
+    <div class="card card--avatar"><img src="assets/contact-page/images/andrew-wood-avatar.png" alt=""><div class="lbl">Andrew Wood<br>BDO</div></div>
+    <div class="card card--avatar"><img src="assets/contact-page/images/lisa-cook-avatar.png" alt=""><div class="lbl">Lisa Cook<br>BD</div></div>
+  </div>
+
+  <h3>Testimonial Avatars (68px) <span class="page-tag tag-contact">CONTACT</span></h3>
+  <div class="grid grid-auto-sm">
+    <div class="card card--avatar"><img src="assets/contact-page/images/testimonial-avatar-01.png" alt=""><div class="lbl">Iman Oubou</div></div>
+    <div class="card card--avatar"><img src="assets/contact-page/images/testimonial-avatar-02.png" alt=""><div class="lbl">Robert K. Burger</div></div>
+    <div class="card card--avatar"><img src="assets/contact-page/images/testimonial-avatar-03.png" alt=""><div class="lbl">Mison Riginst</div></div>
+  </div>
+
+  <h3>About Us Avatars <span class="page-tag tag-about">ABOUT</span></h3>
+  <div class="grid grid-auto-sm">
+    <div class="card card--avatar"><img src="assets/about-page/team/avatar-about-01.png" alt=""><div class="lbl">About Avatar 01</div></div>
+    <div class="card card--avatar"><img src="assets/about-page/team/avatar-about-02.png" alt=""><div class="lbl">About Avatar 02</div></div>
+    <div class="card card--avatar"><img src="assets/about-page/team/avatar-about-03.png" alt=""><div class="lbl">About Avatar 03</div></div>
+    <div class="card card--avatar"><img src="assets/about-page/team/avatar-testimonial-about-01.png" alt=""><div class="lbl">Testimonial About</div></div>
+  </div>
+
+  <h3>Portfolio Avatars (Work Page) <span class="page-tag tag-work">WORK</span></h3>
+  <div class="grid grid-auto-sm">
+    <div class="card card--avatar"><img src="assets/avatars/avatar-01.png" alt=""><div class="lbl">avatar-01</div></div>
+    <div class="card card--avatar"><img src="assets/avatars/avatar-02.png" alt=""><div class="lbl">avatar-02</div></div>
+    <div class="card card--avatar"><img src="assets/avatars/avatar-03.png" alt=""><div class="lbl">avatar-03</div></div>
+    <div class="card card--avatar"><img src="assets/avatars/avatar-04.png" alt=""><div class="lbl">avatar-04</div></div>
+    <div class="card card--avatar"><img src="assets/avatars/avatar-05.png" alt=""><div class="lbl">avatar-05</div></div>
+    <div class="card card--avatar"><img src="assets/avatars/avatar-06.png" alt=""><div class="lbl">avatar-06</div></div>
+    <div class="card card--avatar"><img src="assets/avatars/avatar-07.png" alt=""><div class="lbl">avatar-07</div></div>
+    <div class="card card--avatar"><img src="assets/avatars/avatar-08.png" alt=""><div class="lbl">avatar-08</div></div>
+    <div class="card card--avatar"><img src="assets/avatars/avatar-09.png" alt=""><div class="lbl">avatar-09</div></div>
+    <div class="card card--avatar"><img src="assets/avatars/avatar-10.png" alt=""><div class="lbl">avatar-10</div></div>
+  </div>
+</section>
+
+<!-- ══════════════════════ TEAM PHOTOS ══════════════════════ -->
+<section id="team">
+  <h2>Team Photos</h2>
+  <p class="sub">Team member grid and event photos from the About Us page</p>
+
+  <h3>Team Grid (8 members) <span class="page-tag tag-about">ABOUT</span></h3>
+  <div class="grid grid-4">
+    <div class="card card--photo"><img src="assets/about-page/team/team-grid-01.png" alt=""><div class="lbl">Team Member 01</div></div>
+    <div class="card card--photo"><img src="assets/about-page/team/team-grid-02.png" alt=""><div class="lbl">Team Member 02</div></div>
+    <div class="card card--photo"><img src="assets/about-page/team/team-grid-03.png" alt=""><div class="lbl">Team Member 03</div></div>
+    <div class="card card--photo"><img src="assets/about-page/team/team-grid-04.png" alt=""><div class="lbl">Team Member 04</div></div>
+    <div class="card card--photo"><img src="assets/about-page/team/team-grid-05.png" alt=""><div class="lbl">Team Member 05</div></div>
+    <div class="card card--photo"><img src="assets/about-page/team/team-grid-06.png" alt=""><div class="lbl">Team Member 06</div></div>
+    <div class="card card--photo"><img src="assets/about-page/team/team-grid-07.png" alt=""><div class="lbl">Team Member 07</div></div>
+    <div class="card card--photo"><img src="assets/about-page/team/team-grid-08.png" alt=""><div class="lbl">Team Member 08</div></div>
+  </div>
+
+  <h3>Event / Culture Photos <span class="page-tag tag-about">ABOUT</span></h3>
+  <div class="grid grid-3">
+    <div class="card card--photo"><img src="assets/about-page/images/event-loud.png" alt=""><div class="lbl">Team Event</div></div>
+    <div class="card card--photo"><img src="assets/about-page/images/client-about.png" alt=""><div class="lbl">Client Meeting</div></div>
+    <div class="card card--photo"><img src="assets/about-page/images/team-event-2024.png" alt=""><div class="lbl">Team Event 2024</div></div>
+    <div class="card card--photo"><img src="assets/about-page/images/dsc-00273.png" alt=""><div class="lbl">Office Photo</div></div>
+    <div class="card card--photo"><img src="assets/about-page/images/team-collage.png" alt=""><div class="lbl">Team Collage</div></div>
+    <div class="card card--photo"><img src="assets/about-page/images/stat-photo-419.png" alt=""><div class="lbl">Stat Section Photo</div></div>
+  </div>
+</section>
+
+<!-- ══════════════════════ PORTFOLIO ══════════════════════ -->
+<section id="portfolio">
+  <h2>Portfolio Assets</h2>
+  <p class="sub">Case study frames, device mockups, and screenshots from the Work page</p>
+
+  <h3>Case Study Frames <span class="page-tag tag-work">WORK</span></h3>
+  <div class="grid grid-4">
+    <div class="card card--photo"><img src="assets/portfolio/case-frame-01.png" alt=""><div class="lbl">case-frame-01</div></div>
+    <div class="card card--photo"><img src="assets/portfolio/case-frame-02.png" alt=""><div class="lbl">case-frame-02</div></div>
+    <div class="card card--photo"><img src="assets/portfolio/case-frame-03.png" alt=""><div class="lbl">case-frame-03</div></div>
+    <div class="card card--photo"><img src="assets/portfolio/case-frame-04.png" alt=""><div class="lbl">case-frame-04</div></div>
+    <div class="card card--photo"><img src="assets/portfolio/case-frame-05.png" alt=""><div class="lbl">case-frame-05</div></div>
+    <div class="card card--photo"><img src="assets/portfolio/case-frame-06.png" alt=""><div class="lbl">case-frame-06</div></div>
+    <div class="card card--photo"><img src="assets/portfolio/case-frame-07.png" alt=""><div class="lbl">case-frame-07</div></div>
+    <div class="card card--photo"><img src="assets/portfolio/case-frame-08.png" alt=""><div class="lbl">case-frame-08</div></div>
+  </div>
+
+  <h3>Device Mockups <span class="page-tag tag-work">WORK</span></h3>
+  <div class="grid grid-3">
+    <div class="card card--photo"><img src="assets/portfolio/iphone-mockup-01.png" alt=""><div class="lbl">iPhone Mockup 01</div></div>
+    <div class="card card--photo"><img src="assets/portfolio/iphone-mockup-02.png" alt=""><div class="lbl">iPhone Mockup 02</div></div>
+    <div class="card card--photo"><img src="assets/portfolio/iphone-mockup-03.png" alt=""><div class="lbl">iPhone Mockup 03</div></div>
+    <div class="card card--photo"><img src="assets/portfolio/bridge-mockup.png" alt=""><div class="lbl">Bridge Mockup</div></div>
+    <div class="card card--photo"><img src="assets/portfolio/lumatax-mockup.png" alt=""><div class="lbl">Lumatax Mockup</div></div>
+    <div class="card card--photo"><img src="assets/portfolio/moment-ai-mockup.png" alt=""><div class="lbl">Moment.ai Mockup</div></div>
+  </div>
+</section>
+
+<!-- ══════════════════════ BACKGROUNDS ══════════════════════ -->
+<section id="backgrounds">
+  <h2>Backgrounds & Textures</h2>
+
+  <h3>Holographic / Abstract</h3>
+  <div class="grid grid-3">
+    <div class="card card--bg"><img src="assets/images/holo-abstract-bg.png" alt=""><div class="lbl">holo-abstract-bg.png<br>Main holographic texture</div></div>
+    <div class="card card--bg"><img src="assets/contact-page/images/holographic-bg-rotated.png" alt=""><div class="lbl">holographic-bg-rotated.png<br>"What to expect" section</div></div>
+    <div class="card card--bg"><img src="assets/contact-page/images/holographic-bg-testimonials.png" alt=""><div class="lbl">holographic-bg-testimonials.png<br>Testimonials backdrop</div></div>
+    <div class="card card--bg"><img src="assets/about-page/images/bg-about-hero.png" alt=""><div class="lbl">bg-about-hero.png<br>About Us hero background</div></div>
+    <div class="card card--bg"><img src="assets/about-page/images/bg-about-gradient.png" alt=""><div class="lbl">bg-about-gradient.png<br>About Us gradient overlay</div></div>
+  </div>
+</section>
+
+<!-- ══════════════════════ AWARDS ══════════════════════ -->
+<section id="awards">
+  <h2>Awards & Certifications</h2>
+  <div class="grid grid-auto-lg">
+    <div class="card"><img src="assets/awards/vega-logo.png" alt=""><div class="lbl">Vega Award</div></div>
+    <div class="card"><img src="assets/awards/vega-status-silver.png" alt=""><div class="lbl">Vega Silver</div></div>
+    <div class="card"><img src="assets/awards/certificate-shortlist.png" alt=""><div class="lbl">Certificate Shortlist</div></div>
+    <div class="card"><img src="assets/awards/logo-2023.png" alt=""><div class="lbl">Logo 2023</div></div>
+    <div class="card card--avatar"><img src="assets/awards/andrew-wood.png" alt=""><div class="lbl">Andrew Wood Award</div></div>
+  </div>
+</section>
+
+<!-- ══════════════════════ CONTENT / BLOG ══════════════════════ -->
+<section id="content">
+  <h2>Content / Blog Page <span class="page-tag tag-content">CONTENT</span></h2>
+  <p class="sub">Components, assets, and patterns from the Pragmatically Content Page Template</p>
+
+  <h3>Blog Article Card</h3>
+  <div class="comp-box">
+    <h4>blog-article-card — image + title + description + tag pill, dark or light bg</h4>
+    <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:16px">
+      <div class="card card--photo"><img src="assets/content-page/images/content-card-01.png" alt=""><div class="lbl">Article Card 01</div></div>
+      <div class="card card--photo"><img src="assets/content-page/images/content-card-02.png" alt=""><div class="lbl">Article Card 02</div></div>
+      <div class="card card--photo"><img src="assets/content-page/images/content-card-03.png" alt=""><div class="lbl">Article Card 03</div></div>
+      <div class="card card--photo"><img src="assets/content-page/images/content-card-04.png" alt=""><div class="lbl">Article Card 04</div></div>
+    </div>
+  </div>
+
+  <h3>Pricing Cards</h3>
+  <div class="comp-box">
+    <h4>pricing-card — #D9D9D9 bg, large price, feature list, CTA button</h4>
+    <div class="light-demo" style="display:flex;gap:24px;max-width:800px">
+      <div style="flex:1;background:#fff;border:1px solid #eee;border-radius:16px;padding:32px">
+        <div style="font-size:14px;color:var(--grey-600);margin-bottom:8px">Starting from</div>
+        <div style="font-size:42px;font-weight:500;margin-bottom:16px">$2500</div>
+        <div style="font-size:16px;color:var(--grey-600);line-height:28px;margin-bottom:24px">Perfect for startups and small businesses looking to establish their digital presence</div>
+        <div style="background:#090909;color:#fff;display:inline-flex;padding:14px 24px;border-radius:30px;font-size:16px">Get Started &rarr;</div>
+      </div>
+      <div style="flex:1;background:#fff;border:1px solid #eee;border-radius:16px;padding:32px">
+        <div style="font-size:14px;color:var(--grey-600);margin-bottom:8px">Starting from</div>
+        <div style="font-size:42px;font-weight:500;margin-bottom:16px">$4000</div>
+        <div style="font-size:16px;color:var(--grey-600);line-height:28px;margin-bottom:24px">For enterprises and scaling companies that need comprehensive UX solutions</div>
+        <div style="background:#090909;color:#fff;display:inline-flex;padding:14px 24px;border-radius:30px;font-size:16px">Schedule a Call &rarr;</div>
+      </div>
+    </div>
+  </div>
+
+  <h3>Blog Share Bar</h3>
+  <div class="comp-box">
+    <h4>blog-share-bar — social share icons (FB, Twitter/X, LinkedIn, Copy)</h4>
+    <div style="display:flex;gap:20px;align-items:center;padding:16px">
+      <img src="assets/content-page/icons/blog-share-fb.svg" style="width:24px;height:24px" alt="Facebook">
+      <img src="assets/content-page/icons/blog-share-twitter.svg" style="width:24px;height:24px" alt="Twitter">
+      <img src="assets/content-page/icons/blog-share-linkedin.svg" style="width:24px;height:24px" alt="LinkedIn">
+      <img src="assets/content-page/icons/blog-share-copy.svg" style="width:24px;height:24px" alt="Copy">
+    </div>
+  </div>
+
+  <h3>Content Layout (Article + Sidebar TOC)</h3>
+  <div class="comp-box">
+    <h4>content-section — 730px article column + 350px TOC sidebar, 80px gap</h4>
+    <div class="dark-demo" style="display:flex;gap:60px">
+      <div style="flex:2">
+        <div style="font-size:24px;font-weight:600;margin-bottom:16px">Transforming user challenges into seamless experiences</div>
+        <div style="font-size:16px;color:var(--grey-300);line-height:28px">Content flows in a single-column article layout with headings, paragraphs, images, and code blocks. The main content area is 730px wide.</div>
+      </div>
+      <div style="flex:1;background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.06);border-radius:12px;padding:24px">
+        <div style="font-size:16px;font-weight:600;margin-bottom:16px">Table of Contents</div>
+        <div style="font-size:14px;color:var(--grey-400);line-height:32px">1. Introduction<br>2. Key Challenges<br>3. Our Approach<br>4. Results<br>5. Conclusion</div>
+      </div>
+    </div>
+  </div>
+
+  <h3>Partner Badge Strip</h3>
+  <div class="comp-box">
+    <h4>partner-badge-strip — Clutch, GoodFirms, Pendulum logos at 0.6 opacity</h4>
+    <div class="dark-demo" style="display:flex;gap:40px;align-items:center;opacity:0.6">
+      <img src="assets/content-page/logos/pendulum-logo.svg" style="height:36px" alt="Pendulum">
+      <img src="assets/content-page/logos/clutch-badge.svg" style="height:36px" alt="Clutch">
+      <img src="assets/content-page/logos/goodfirms-badge.svg" style="height:36px" alt="GoodFirms">
+      <img src="assets/content-page/logos/partner-logo-01.svg" style="height:36px" alt="Partner 1">
+      <img src="assets/content-page/logos/partner-logo-02.svg" style="height:36px" alt="Partner 2">
+    </div>
+  </div>
+
+  <h3>Content Page Icons</h3>
+  <div class="grid grid-auto-sm">
+    <div class="icon-cell"><img src="assets/content-page/icons/blog-share-fb.svg" alt=""><span>share-fb</span></div>
+    <div class="icon-cell"><img src="assets/content-page/icons/blog-share-fb-fill.svg" alt=""><span>share-fb-fill</span></div>
+    <div class="icon-cell"><img src="assets/content-page/icons/blog-share-twitter.svg" alt=""><span>share-twitter</span></div>
+    <div class="icon-cell"><img src="assets/content-page/icons/blog-share-linkedin.svg" alt=""><span>share-linkedin</span></div>
+    <div class="icon-cell"><img src="assets/content-page/icons/blog-share-copy.svg" alt=""><span>share-copy</span></div>
+    <div class="icon-cell"><img src="assets/content-page/icons/content-arrow-icon.svg" alt=""><span>content-arrow</span></div>
+    <div class="icon-cell"><img src="assets/content-page/icons/toc-marker.svg" alt=""><span>toc-marker</span></div>
+    <div class="icon-cell"><img src="assets/content-page/icons/pricing-card-frame.svg" alt=""><span>pricing-frame</span></div>
+    <div class="icon-cell"><img src="assets/content-page/icons/content-decorative-01.svg" alt=""><span>decorative-01</span></div>
+    <div class="icon-cell"><img src="assets/content-page/icons/blog-icon-group-01.svg" alt=""><span>blog-icon-01</span></div>
+    <div class="icon-cell"><img src="assets/content-page/icons/blog-icon-group-02.svg" alt=""><span>blog-icon-02</span></div>
+    <div class="icon-cell"><img src="assets/content-page/icons/blog-icon-group-03.svg" alt=""><span>blog-icon-03</span></div>
+    <div class="icon-cell"><img src="assets/content-page/icons/content-nav-group.svg" alt=""><span>nav-group</span></div>
+    <div class="icon-cell"><img src="assets/content-page/icons/article-timeline.svg" alt=""><span>article-timeline</span></div>
+    <div class="icon-cell"><img src="assets/content-page/icons/content-cluster.svg" alt=""><span>content-cluster</span></div>
+    <div class="icon-cell"><img src="assets/content-page/icons/content-diagram-01.svg" alt=""><span>diagram-01</span></div>
+    <div class="icon-cell"><img src="assets/content-page/icons/content-diagram-02.svg" alt=""><span>diagram-02</span></div>
+  </div>
+
+  <h3>Content Page Logos</h3>
+  <div class="grid grid-auto-lg">
+    <div class="card card--logo"><img src="assets/content-page/logos/pendulum-logo.svg" alt=""><div class="lbl">Pendulum</div></div>
+    <div class="card card--logo"><img src="assets/content-page/logos/clutch-badge.svg" alt=""><div class="lbl">Clutch Badge</div></div>
+    <div class="card card--logo"><img src="assets/content-page/logos/goodfirms-badge.svg" alt=""><div class="lbl">GoodFirms Badge</div></div>
+    <div class="card card--logo"><img src="assets/content-page/logos/brand-logo-main.svg" alt=""><div class="lbl">Brand Logo Main</div></div>
+    <div class="card card--logo"><img src="assets/content-page/logos/partner-logo-01.svg" alt=""><div class="lbl">Partner 01</div></div>
+    <div class="card card--logo"><img src="assets/content-page/logos/partner-logo-02.svg" alt=""><div class="lbl">Partner 02</div></div>
+    <div class="card card--logo"><img src="assets/content-page/logos/partner-logo-03.svg" alt=""><div class="lbl">Partner 03</div></div>
+    <div class="card card--logo"><img src="assets/content-page/logos/partner-frame-01.svg" alt=""><div class="lbl">Partner Frame 01</div></div>
+    <div class="card card--logo"><img src="assets/content-page/logos/partner-frame-02.svg" alt=""><div class="lbl">Partner Frame 02</div></div>
+  </div>
+
+  <h3>Content Page Images</h3>
+  <div class="grid grid-3">
+    <div class="card card--photo"><img src="assets/content-page/images/blog-featured-image.png" alt=""><div class="lbl">Blog Featured Image</div></div>
+    <div class="card card--photo"><img src="assets/content-page/images/blog-screenshot-01.png" alt=""><div class="lbl">Blog Screenshot 01</div></div>
+    <div class="card card--photo"><img src="assets/content-page/images/blog-screenshot-02.png" alt=""><div class="lbl">Blog Screenshot 02</div></div>
+    <div class="card card--photo"><img src="assets/content-page/images/blog-screenshot-03.png" alt=""><div class="lbl">Blog Screenshot 03</div></div>
+    <div class="card card--photo"><img src="assets/content-page/images/blog-screenshot-04.png" alt=""><div class="lbl">Blog Screenshot 04</div></div>
+  </div>
+
+  <h3>Content Page Backgrounds</h3>
+  <div class="grid grid-3">
+    <div class="card card--bg"><img src="assets/content-page/images/hero-bg-content.svg" alt=""><div class="lbl">hero-bg-content.svg<br>Blog hero background shape</div></div>
+    <div class="card card--bg"><img src="assets/content-page/images/bg-overlay-border.png" alt=""><div class="lbl">bg-overlay-border.png<br>Section overlay border</div></div>
+    <div class="card card--bg"><img src="assets/content-page/images/bg-content-gradient.png" alt=""><div class="lbl">bg-content-gradient.png<br>Content gradient backdrop</div></div>
+    <div class="card card--bg"><img src="assets/content-page/images/bg-content-section.png" alt=""><div class="lbl">bg-content-section.png<br>Section background</div></div>
+    <div class="card card--bg"><img src="assets/content-page/images/hero-mask-shape.png" alt=""><div class="lbl">hero-mask-shape.png<br>Abstract hero mask</div></div>
+  </div>
+
+  <h3>Author Avatar</h3>
+  <div class="grid grid-auto-sm" style="max-width:200px">
+    <div class="card card--avatar"><img src="assets/content-page/images/author-avatar.png" alt=""><div class="lbl">Blog Author Avatar</div></div>
+  </div>
+</section>
+
+<!-- ══════════════════════ PAGE INDEX ══════════════════════ -->
+<section id="pages">
+  <h2>Page Extraction Index</h2>
+  <p class="sub">Source pages and what was extracted from each</p>
+
+  <table class="tok" style="max-width:900px">
+    <thead><tr><th>Page</th><th>Figma Node</th><th>Sections Extracted</th><th>New Components</th></tr></thead>
+    <tbody>
+      <tr><td><span class="page-tag tag-home">HOME</span> Services</td><td>—</td><td>Hero, Services Grid, Process, CTA, Footer</td><td>service-card, stat-card, diversity-card, cta-glow</td></tr>
+      <tr><td><span class="page-tag tag-work">WORK</span> Portfolio</td><td>—</td><td>Filter Tabs, Portfolio Grid, Client Logos, Testimonials, Awards</td><td>portfolio-card, filter-tab, testimonial-card, client-logo-grid, award-strip</td></tr>
+      <tr><td><span class="page-tag tag-contact">CONTACT</span> Contact Us</td><td>4934:73461</td><td>Hero + Form, Logo Strip, Next Steps, Testimonials, FAQs, Awards, Footer</td><td>contact-form, faq-accordion, next-steps-card, contact-hero, testimonial-section</td></tr>
+      <tr><td><span class="page-tag tag-about">ABOUT</span> About Us</td><td>4922:88605</td><td>Hero, Stats, Values, Reloadux at a Glance, Team Grid, Testimonials, CTA, Contact, Footer</td><td>about-hero, stat-row, values-section, glance-section, team-grid, about-cta</td></tr>
+      <tr><td><span class="page-tag tag-content">CONTENT</span> Blog/Content</td><td>8499:92273</td><td>Blog Hero, Article Cards, Pricing Cards, Share Bar, TOC Sidebar, Partner Badges, Contact, Footer</td><td>blog-hero, blog-article-card, blog-share-bar, blog-toc, pricing-card, content-section, partner-badge-strip</td></tr>
+    </tbody>
+  </table>
+
+  <h3 style="margin-top:48px">Token Files</h3>
+  <table class="tok" style="max-width:600px">
+    <thead><tr><th>File</th><th>Version</th><th>Description</th></tr></thead>
+    <tbody>
+      <tr><td>tokens/primitive.json</td><td>v1.0.0</td><td>304+ raw design values</td></tr>
+      <tr><td>tokens/semantic.json</td><td>v1.1.0</td><td>235+ purpose-driven aliases</td></tr>
+      <tr><td>tokens/component.json</td><td>v1.3.0</td><td>33+ component patterns (all 5 pages)</td></tr>
+      <tr><td>css/variables.css</td><td>—</td><td>244 lines of CSS custom properties</td></tr>
+      <tr><td>css/utilities.css</td><td>—</td><td>288 lines of utility classes</td></tr>
+    </tbody>
+  </table>
+</section>
+
+<footer>
+  <p>Reloadux Design System — Unified Library v1.3.0 &middot; Extracted from Figma &middot; 5 Pages &middot; 220+ Assets &middot; 33+ Components</p>
+</footer>
+
+</body>
+</html>

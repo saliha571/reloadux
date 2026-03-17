@@ -1,0 +1,54 @@
+# dependencies
+/node_modules
+/.pnp
+.pnp.*
+.yarn/*
+!.yarn/patches
+!.yarn/plugins
+!.yarn/releases
+!.yarn/versions
+
+# next.js
+/.next/
+/out/
+
+# production
+/build
+
+# misc
+.DS_Store
+*.pem
+
+# debug
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.pnpm-debug.log*
+
+# env files
+.env*.local
+
+# vercel
+.vercel
+
+# typescript
+*.tsbuildinfo
+next-env.d.ts
+
+# Strapi CMS backend (separate deploy)
+/reloadux-cms/
+
+# WordPress reference files (dev-only)
+/oldreload/
+/src-wordpress-ref/
+
+# Large design-system source assets (Figma exports, not needed for production)
+/design-system/assets/client-logos/
+/design-system/assets/social/
+/design-system/assets/blog/
+/design-system/assets/testimonials/
+/design-system/assets/portfolio/
+/design-system/assets/cta/
+/design-system/assets/covers/
+/design-system/assets/diversity/
+/design-system/assets/icons/

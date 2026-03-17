@@ -1,0 +1,287 @@
+/* ==========================================================================
+   Reloadux Design System — Utility Classes
+   Common patterns mapped to CSS custom properties from variables.css
+   ========================================================================== */
+
+/* ── Text Colors ─────────────────────────────────────────────────────────── */
+.text-primary    { color: var(--text-primary); }
+.text-secondary  { color: var(--text-secondary); }
+.text-tertiary   { color: var(--text-tertiary); }
+.text-inverse    { color: var(--text-inverse); }
+.text-on-dark    { color: var(--text-on-dark); }
+.text-muted      { color: var(--text-muted); }
+.text-tag        { color: var(--text-tag); }
+.text-success    { color: var(--text-success); }
+.text-error      { color: var(--text-error); }
+.text-warning    { color: var(--text-warning); }
+.text-info       { color: var(--text-info); }
+.text-grey       { color: var(--text-grey); }
+.text-nav        { color: var(--text-nav); }
+.text-slate      { color: var(--text-slate); }
+
+/* ── Background Colors ───────────────────────────────────────────────────── */
+.bg-page      { background-color: var(--bg-page); }
+.bg-surface   { background-color: var(--bg-surface); }
+.bg-elevated  { background-color: var(--bg-elevated); }
+.bg-dark      { background-color: var(--bg-dark); }
+.bg-darker    { background-color: var(--bg-darker); }
+.bg-cta       { background-color: var(--bg-cta); }
+.bg-success   { background-color: var(--bg-success); }
+.bg-error     { background-color: var(--bg-error); }
+.bg-info      { background-color: var(--bg-info); }
+.bg-card-dark { background-color: var(--bg-card-dark); }
+.bg-alt-dark  { background-color: var(--bg-alt-dark); }
+.bg-light-surface { background-color: var(--bg-light-surface); }
+
+/* ── Typography: Font Families ───────────────────────────────────────────── */
+.font-primary { font-family: var(--font-primary); }
+.font-serif   { font-family: var(--font-serif); }
+
+/* ── Typography: Composite Styles ────────────────────────────────────────── */
+.type-display {
+  font-family: var(--font-primary);
+  font-size: var(--text-80);
+  font-weight: var(--weight-extrabold);
+  line-height: var(--leading-90);
+}
+
+.type-hero {
+  font-family: var(--font-primary);
+  font-size: var(--text-70);
+  font-weight: var(--weight-medium);
+  line-height: var(--leading-88);
+}
+
+.type-heading-xl {
+  font-family: var(--font-primary);
+  font-size: var(--text-50);
+  font-weight: var(--weight-regular);
+  line-height: var(--leading-68);
+}
+
+.type-heading-lg {
+  font-family: var(--font-primary);
+  font-size: var(--text-48);
+  font-weight: var(--weight-medium);
+  line-height: var(--leading-auto);
+}
+
+.type-heading-md {
+  font-family: var(--font-serif);
+  font-size: var(--text-40);
+  font-weight: var(--weight-regular);
+  line-height: var(--leading-53);
+}
+
+.type-heading-sm {
+  font-family: var(--font-primary);
+  font-size: var(--text-30);
+  font-weight: var(--weight-medium);
+  line-height: var(--leading-48);
+}
+
+.type-paragraph-xl {
+  font-family: var(--font-primary);
+  font-size: var(--text-28);
+  font-weight: var(--weight-regular);
+  line-height: var(--leading-48);
+}
+
+.type-paragraph-lg {
+  font-family: var(--font-primary);
+  font-size: var(--text-22);
+  font-weight: var(--weight-regular);
+  line-height: var(--leading-40);
+}
+
+.type-paragraph-md {
+  font-family: var(--font-primary);
+  font-size: var(--text-20);
+  font-weight: var(--weight-regular);
+  line-height: var(--leading-28);
+}
+
+.type-body {
+  font-family: var(--font-primary);
+  font-size: var(--text-18);
+  font-weight: var(--weight-regular);
+  line-height: var(--leading-auto);
+}
+
+.type-body-semibold {
+  font-family: var(--font-primary);
+  font-size: var(--text-18);
+  font-weight: var(--weight-semibold);
+  line-height: var(--leading-auto);
+}
+
+.type-body-sm-semibold {
+  font-family: var(--font-primary);
+  font-size: var(--text-16);
+  font-weight: var(--weight-semibold);
+  line-height: var(--leading-26);
+}
+
+.type-body-sm {
+  font-family: var(--font-primary);
+  font-size: var(--text-16);
+  font-weight: var(--weight-regular);
+  line-height: var(--leading-26);
+}
+
+.type-tag {
+  font-family: var(--font-serif);
+  font-size: var(--text-18);
+  font-weight: var(--weight-regular);
+  line-height: var(--leading-60);
+  letter-spacing: var(--tracking-wider);
+  text-transform: uppercase;
+}
+
+.type-tag-sm {
+  font-family: var(--font-serif);
+  font-size: var(--text-16);
+  font-weight: var(--weight-regular);
+  line-height: var(--leading-60);
+  letter-spacing: var(--tracking-tight);
+  text-transform: uppercase;
+}
+
+.type-label {
+  font-family: var(--font-primary);
+  font-size: var(--text-14);
+  font-weight: var(--weight-regular);
+  line-height: var(--leading-22);
+}
+
+.type-button {
+  font-family: var(--font-primary);
+  font-size: var(--text-16);
+  font-weight: var(--weight-medium);
+  line-height: var(--leading-auto);
+}
+
+.type-button-xl {
+  font-family: var(--font-primary);
+  font-size: var(--text-20);
+  font-weight: var(--weight-medium);
+  line-height: var(--leading-28);
+}
+
+.italic-accent {
+  font-family: var(--font-serif);
+  font-style: italic;
+  letter-spacing: var(--tracking-wide);
+}
+
+/* ── Font Weights ────────────────────────────────────────────────────────── */
+.weight-regular   { font-weight: var(--weight-regular); }
+.weight-medium    { font-weight: var(--weight-medium); }
+.weight-semibold  { font-weight: var(--weight-semibold); }
+.weight-bold      { font-weight: var(--weight-bold); }
+.weight-extrabold { font-weight: var(--weight-extrabold); }
+
+/* ── Border Radius ───────────────────────────────────────────────────────── */
+.rounded-0    { border-radius: var(--radius-0); }
+.rounded-4    { border-radius: var(--radius-4); }
+.rounded-8    { border-radius: var(--radius-8); }
+.rounded-12   { border-radius: var(--radius-12); }
+.rounded-16   { border-radius: var(--radius-16); }
+.rounded-24   { border-radius: var(--radius-24); }
+.rounded-30   { border-radius: var(--radius-30); }
+.rounded-full { border-radius: var(--radius-full); }
+
+/* ── Shadows ─────────────────────────────────────────────────────────────── */
+.shadow-card        { box-shadow: var(--shadow-card); }
+.shadow-natural     { box-shadow: var(--shadow-natural); }
+.shadow-deep        { box-shadow: var(--shadow-deep); }
+.shadow-button-glow { box-shadow: var(--shadow-button-glow); }
+
+/* ── Layout ──────────────────────────────────────────────────────────────── */
+.container {
+  width: 100%;
+  max-width: var(--content-width);
+  margin-inline: auto;
+  padding-inline: var(--page-padding);
+}
+
+.container--narrow {
+  max-width: var(--inner-width);
+}
+
+.section {
+  position: relative;
+  padding-block: var(--section-padding);
+  overflow: hidden;
+}
+
+.section--dark {
+  background-color: var(--bg-dark);
+  color: var(--text-on-dark);
+}
+
+.section--light {
+  background-color: var(--bg-page);
+  color: var(--text-inverse);
+}
+
+.section--surface {
+  background-color: var(--bg-surface);
+  color: var(--text-inverse);
+}
+
+/* ── CTA Glow Effect ─────────────────────────────────────────────────────── */
+.cta-glow {
+  background-color: var(--bg-cta);
+  position: relative;
+  overflow: hidden;
+}
+
+.cta-glow::before,
+.cta-glow::after {
+  content: '';
+  position: absolute;
+  border-radius: var(--radius-400);
+  background: var(--gradient-purple-glow);
+  filter: blur(var(--blur-glow));
+  opacity: var(--opacity-glow);
+  pointer-events: none;
+}
+
+.cta-glow::before {
+  width: 855px;
+  height: 855px;
+  top: 44px;
+  right: -260px;
+}
+
+.cta-glow::after {
+  width: 812px;
+  height: 812px;
+  top: -461px;
+  left: -343px;
+}
+
+/* ── Scroll Reveal ───────────────────────────────────────────────────────── */
+.reveal {
+  opacity: 0;
+  transform: translateY(20px);
+  transition:
+    opacity var(--duration-entrance) var(--ease-out),
+    transform var(--duration-entrance) var(--ease-out);
+  will-change: opacity, transform;
+}
+
+.reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ── Reduced Motion ──────────────────────────────────────────────────────── */
+@media (prefers-reduced-motion: reduce) {
+  .reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}

@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Reloadux Design System — Contact Us Page Assets</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@400;500;600;700&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --night: #090909;
+      --black: #000000;
+      --white: #FFFFFF;
+      --smoke: #D9D9D9;
+      --grey-200: #D1D1D1;
+      --grey-300: #C3C3C3;
+      --grey-400: #A5A9AC;
+      --grey-600: #565656;
+      --grey-700: #333333;
+    }
+
+    body {
+      font-family: 'Manrope', sans-serif;
+      background: var(--night);
+      color: var(--white);
+      line-height: 1.6;
+    }
+
+    .ds-header {
+      padding: 60px 80px 40px;
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+    }
+    .ds-header h1 { font-size: 48px; font-weight: 500; line-height: 1.2; }
+    .ds-header h1 em { font-family: 'Libre Baskerville', serif; font-style: italic; font-weight: 400; }
+    .ds-header p { color: var(--grey-400); font-size: 18px; margin-top: 8px; }
+
+    .ds-nav {
+      position: sticky; top: 0; z-index: 100;
+      display: flex; gap: 24px; padding: 16px 80px;
+      background: rgba(9,9,9,0.92); backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(255,255,255,0.06); overflow-x: auto;
+    }
+    .ds-nav a { color: var(--grey-400); text-decoration: none; font-size: 14px; font-weight: 500; white-space: nowrap; transition: color 0.2s; }
+    .ds-nav a:hover { color: var(--white); }
+
+    .ds-section {
+      padding: 80px;
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+    }
+    .ds-section h2 {
+      font-size: 36px; font-weight: 600; margin-bottom: 48px;
+      display: flex; align-items: center; gap: 16px;
+    }
+    .ds-section h2::after { content: ''; flex: 1; height: 1px; background: rgba(255,255,255,0.1); }
+    .ds-section h3 { font-size: 20px; font-weight: 500; margin: 40px 0 20px; color: var(--grey-400); }
+
+    .color-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); gap: 16px; }
+    .swatch { border-radius: 12px; overflow: hidden; background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.06); }
+    .swatch-color { height: 80px; width: 100%; }
+    .swatch-info { padding: 12px; }
+    .swatch-name { font-size: 13px; font-weight: 600; margin-bottom: 4px; }
+    .swatch-value { font-size: 12px; color: var(--grey-400); font-family: 'SF Mono', 'Fira Code', monospace; }
+
+    .type-row { display: flex; align-items: baseline; gap: 24px; padding: 16px 0; border-bottom: 1px solid rgba(255,255,255,0.06); }
+    .type-label { min-width: 200px; font-size: 12px; color: var(--grey-400); font-family: 'SF Mono', monospace; }
+
+    .icon-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(120px, 1fr)); gap: 16px; }
+    .icon-cell {
+      display: flex; flex-direction: column; align-items: center; gap: 8px;
+      padding: 20px 12px; border-radius: 12px;
+      background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.06);
+    }
+    .icon-cell img { width: 40px; height: 40px; object-fit: contain; }
+    .icon-cell span { font-size: 10px; color: var(--grey-400); text-align: center; word-break: break-all; }
+
+    .asset-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 24px; }
+    .asset-grid--sm { grid-template-columns: repeat(auto-fill, minmax(140px, 1fr)); }
+    .asset-card {
+      border-radius: 12px; overflow: hidden;
+      background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.06);
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .asset-card:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(0,0,0,0.3); }
+    .asset-card img { width: 100%; height: 140px; object-fit: contain; display: block; padding: 16px; }
+    .asset-card--avatar img { height: 120px; object-fit: cover; border-radius: 50%; width: 100px; margin: 16px auto; padding: 0; }
+    .asset-card--logo img { height: 60px; padding: 20px; }
+    .asset-card--bg img { height: 200px; object-fit: cover; padding: 0; }
+    .asset-label { padding: 10px 16px; font-size: 12px; color: var(--grey-400); border-top: 1px solid rgba(255,255,255,0.06); }
+
+    .component-preview {
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.06);
+      border-radius: 16px; padding: 40px; margin-bottom: 32px;
+    }
+    .component-preview h4 { font-size: 14px; color: var(--grey-400); margin-bottom: 24px; text-transform: uppercase; letter-spacing: 1px; }
+
+    .token-table { width: 100%; border-collapse: collapse; }
+    .token-table th, .token-table td { text-align: left; padding: 10px 16px; border-bottom: 1px solid rgba(255,255,255,0.06); font-size: 14px; }
+    .token-table th { font-weight: 600; color: var(--grey-400); font-size: 11px; text-transform: uppercase; letter-spacing: 0.5px; }
+    .token-table td:nth-child(2) { font-family: 'SF Mono', monospace; font-size: 13px; color: var(--grey-400); }
+    .token-table td:nth-child(3) { font-size: 13px; color: var(--grey-300); }
+
+    .spacing-table td .bar { height: 8px; background: #9662FF; border-radius: 4px; }
+
+    .step-card-demo {
+      display: grid; grid-template-columns: repeat(3, 1fr); gap: 0;
+      border: 1px solid var(--grey-700); border-radius: 0;
+    }
+    .step-card-demo .step {
+      padding: 42px 32px; border-right: 1px solid var(--grey-700);
+      border-top: 1px solid var(--grey-700);
+    }
+    .step-card-demo .step:last-child { border-right: none; }
+    .step-card-demo .step-num { font-family: 'Lexend', sans-serif; font-size: 16px; color: var(--grey-400); opacity: 0.8; }
+    .step-card-demo .step-title { font-family: 'Libre Baskerville', serif; font-size: 32px; line-height: 53px; margin: 8px 0 24px; }
+    .step-card-demo .step-desc { font-size: 18px; color: var(--grey-300); padding-left: 32px; }
+
+    .form-demo {
+      background: var(--smoke); color: var(--black); border-radius: 0; padding: 56px 32px 42px;
+      max-width: 660px;
+    }
+    .form-demo .field-row { display: flex; gap: 24px; margin-bottom: 61px; }
+    .form-demo .field { flex: 1; }
+    .form-demo .field-label { font-size: 16px; margin-bottom: 8px; }
+    .form-demo .field-line { height: 1px; background: var(--black); }
+    .form-demo .submit-btn {
+      background: var(--night); color: var(--white); border: none;
+      padding: 16px 28px; border-radius: 30px; font-family: 'Manrope', sans-serif;
+      font-size: 16px; cursor: pointer; display: inline-flex; align-items: center; gap: 8px;
+    }
+
+    .faq-demo {
+      background: var(--smoke); color: var(--black); padding: 48px; max-width: 730px;
+    }
+    .faq-demo .faq-item { border-top: 1px solid var(--black); padding: 40px 0; }
+    .faq-demo .faq-q {
+      display: flex; justify-content: space-between; align-items: center;
+      font-size: 22px; font-weight: 500; line-height: 40px;
+    }
+    .faq-demo .faq-q .icon { width: 33px; height: 33px; flex-shrink: 0; }
+    .faq-demo .faq-a { font-size: 18px; color: var(--grey-700); margin-top: 30px; }
+    .faq-demo .faq-item:last-child { border-bottom: 1px solid var(--black); }
+
+    .testimonial-demo {
+      background: var(--smoke); color: var(--black); padding: 40px; max-width: 740px;
+    }
+    .testimonial-demo .t-num { font-size: 22px; line-height: 40px; margin-bottom: 40px; }
+    .testimonial-demo .t-quote { font-size: 28px; line-height: 48px; margin-bottom: 40px; }
+    .testimonial-demo .t-author { display: flex; gap: 18px; align-items: center; }
+    .testimonial-demo .t-avatar { width: 68px; height: 68px; border-radius: 50%; object-fit: cover; }
+    .testimonial-demo .t-name { font-family: 'Libre Baskerville', serif; font-size: 16px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.32px; }
+    .testimonial-demo .t-role { font-size: 18px; font-weight: 500; color: var(--grey-700); margin-top: 12px; }
+
+    footer { padding: 40px 80px; text-align: center; color: var(--grey-400); font-size: 14px; }
+  </style>
+</head>
+<body>
+
+<header class="ds-header">
+  <h1>Contact Us <em>Page</em></h1>
+  <p>Design system extraction — styles, tokens, components, and assets from the Figma Contact Us page</p>
+</header>
+
+<nav class="ds-nav">
+  <a href="#colors">Colors Used</a>
+  <a href="#typography">Typography</a>
+  <a href="#spacing">Spacing & Layout</a>
+  <a href="#components">Component Patterns</a>
+  <a href="#icons">Icons</a>
+  <a href="#avatars">Avatars</a>
+  <a href="#logos">Logos</a>
+  <a href="#backgrounds">Backgrounds</a>
+  <a href="#tokens">New Tokens</a>
+</nav>
+
+<!-- ═══ COLORS ═══ -->
+<section class="ds-section" id="colors">
+  <h2>Colors Used</h2>
+  <p style="color:var(--grey-400); margin-bottom:32px">All colors active on the Contact Us page — confirmed via Figma variables</p>
+
+  <h3>Dark Surfaces</h3>
+  <div class="color-grid">
+    <div class="swatch"><div class="swatch-color" style="background:#090909"></div><div class="swatch-info"><div class="swatch-name">Night</div><div class="swatch-value">#090909</div></div></div>
+    <div class="swatch"><div class="swatch-color" style="background:#000000"></div><div class="swatch-info"><div class="swatch-name">Black</div><div class="swatch-value">#000000</div></div></div>
+  </div>
+
+  <h3>Light Surfaces</h3>
+  <div class="color-grid">
+    <div class="swatch"><div class="swatch-color" style="background:#FFFFFF"></div><div class="swatch-info"><div class="swatch-name">White</div><div class="swatch-value">#FFFFFF</div></div></div>
+    <div class="swatch"><div class="swatch-color" style="background:#D9D9D9"></div><div class="swatch-info"><div class="swatch-name">Smoke</div><div class="swatch-value">#D9D9D9</div></div></div>
+  </div>
+
+  <h3>Grey Scale (Text & Borders)</h3>
+  <div class="color-grid">
+    <div class="swatch"><div class="swatch-color" style="background:#D1D1D1"></div><div class="swatch-info"><div class="swatch-name">Grey 200</div><div class="swatch-value">#D1D1D1</div></div></div>
+    <div class="swatch"><div class="swatch-color" style="background:#C3C3C3"></div><div class="swatch-info"><div class="swatch-name">Grey 300</div><div class="swatch-value">#C3C3C3</div></div></div>
+    <div class="swatch"><div class="swatch-color" style="background:#A5A9AC"></div><div class="swatch-info"><div class="swatch-name">Grey 400</div><div class="swatch-value">#A5A9AC</div></div></div>
+    <div class="swatch"><div class="swatch-color" style="background:#565656"></div><div class="swatch-info"><div class="swatch-name">Grey 600</div><div class="swatch-value">#565656</div></div></div>
+    <div class="swatch"><div class="swatch-color" style="background:#333333"></div><div class="swatch-info"><div class="swatch-name">Grey 700</div><div class="swatch-value">#333333</div></div></div>
+  </div>
+</section>
+
+<!-- ═══ TYPOGRAPHY ═══ -->
+<section class="ds-section" id="typography">
+  <h2>Typography</h2>
+  <p style="color:var(--grey-400); margin-bottom:32px">4 font families active on this page — Manrope, Libre Baskerville, Lexend (new), Graphik (new)</p>
+
+  <div class="type-row">
+    <div class="type-label">Heading lg/Medium<br>Manrope 48px / 500</div>
+    <div style="font-size:40px;font-weight:500;">What you can expect next from us?</div>
+  </div>
+  <div class="type-row">
+    <div class="type-label">Page Title<br>Manrope 40px / 400</div>
+    <div style="font-size:36px;font-weight:400;">Let's talk about your product.</div>
+  </div>
+  <div class="type-row">
+    <div class="type-label">Heading md / Serif<br>Manrope 48px / 500 (FAQ)</div>
+    <div style="font-family:'Manrope';font-size:36px;font-weight:500;">Stuck in design doubt? FAQs help you figure it out.</div>
+  </div>
+  <div class="type-row">
+    <div class="type-label">Step Title<br>Libre Baskerville 32px / 53lh<br><span style="background:#9662FF;color:#fff;padding:1px 6px;border-radius:3px;font-size:9px">NEW</span></div>
+    <div style="font-family:'Libre Baskerville',serif;font-size:32px;line-height:53px;">Follow-up Call</div>
+  </div>
+  <div class="type-row">
+    <div class="type-label">Paragraph lg<br>Manrope 28px / 48lh</div>
+    <div style="font-size:24px;line-height:48px;">"reloadux team took the time to put together the right user flows..."</div>
+  </div>
+  <div class="type-row">
+    <div class="type-label">FAQ Question<br>Manrope 22px / 500 / 40lh</div>
+    <div style="font-size:22px;font-weight:500;line-height:40px;">Do you work with freelancers or have an in-house team?</div>
+  </div>
+  <div class="type-row">
+    <div class="type-label">Tag / Section Label<br>Libre Baskerville 18px / 0.36px<br>uppercase</div>
+    <div style="font-family:'Libre Baskerville',serif;font-size:18px;letter-spacing:0.36px;text-transform:uppercase;line-height:60px;">[ Contact ]</div>
+  </div>
+  <div class="type-row">
+    <div class="type-label">Person Name<br>Manrope 18px / 600</div>
+    <div style="font-size:18px;font-weight:600;color:var(--grey-200);">Andrew Wood</div>
+  </div>
+  <div class="type-row">
+    <div class="type-label">Person Role<br>Libre Baskerville 14px / 400</div>
+    <div style="font-family:'Libre Baskerville',serif;font-size:14px;color:var(--grey-400);">Business Development Officer</div>
+  </div>
+  <div class="type-row">
+    <div class="type-label">Step Number<br>Lexend 16px / 400 / 0.8 opacity<br><span style="background:#9662FF;color:#fff;padding:1px 6px;border-radius:3px;font-size:9px">NEW FONT</span></div>
+    <div style="font-family:'Lexend',sans-serif;font-size:16px;color:var(--grey-400);opacity:0.8;">01</div>
+  </div>
+  <div class="type-row">
+    <div class="type-label">Testimonial Name<br>Libre Baskerville 16px / Bold<br>uppercase / 0.32px tracking</div>
+    <div style="font-family:'Libre Baskerville',serif;font-size:16px;font-weight:700;text-transform:uppercase;letter-spacing:0.32px;">Iman Oubou</div>
+  </div>
+  <div class="type-row">
+    <div class="type-label">Body / Navigation<br>Manrope 16px / 400 / 26lh</div>
+    <div style="font-size:16px;line-height:26px;">work &nbsp; process &nbsp; services &nbsp; resources &nbsp; about us &nbsp; blog</div>
+  </div>
+  <div class="type-row">
+    <div class="type-label">Button<br>Manrope 16px / 400</div>
+    <div style="display:inline-flex;align-items:center;gap:8px;background:#fff;color:#000;padding:12px 24px;border-radius:30px;font-size:16px;">Let's Talk.</div>
+    &nbsp;&nbsp;
+    <div style="display:inline-flex;align-items:center;gap:8px;background:var(--night);color:#fff;padding:16px 28px;border-radius:30px;font-size:16px;">Submit &rarr;</div>
+  </div>
+</section>
+
+<!-- ═══ SPACING ═══ -->
+<section class="ds-section" id="spacing">
+  <h2>Spacing & Layout</h2>
+
+  <table class="token-table spacing-table">
+    <thead><tr><th>Token</th><th>Value</th><th>Usage</th></tr></thead>
+    <tbody>
+      <tr><td>Page padding</td><td>80px</td><td>Horizontal gutters</td></tr>
+      <tr><td>Section padding</td><td>120px</td><td>Vertical section padding</td></tr>
+      <tr><td>Hero padding-top</td><td>80px</td><td>Hero vertical top</td></tr>
+      <tr><td>Hero padding-bottom</td><td>40px</td><td>Hero vertical bottom</td></tr>
+      <tr><td>Content gap</td><td>48px</td><td>Hero left/right column gap</td></tr>
+      <tr><td>Form field gap</td><td>61px</td><td>Vertical gap between form rows</td></tr>
+      <tr><td>Form column gap</td><td>24px</td><td>Between form fields in a row</td></tr>
+      <tr><td>FAQ item gap</td><td>40px</td><td>Between FAQ questions</td></tr>
+      <tr><td>Testimonial gap</td><td>100px</td><td>Between testimonial slides</td></tr>
+      <tr><td>Next steps card padding</td><td>42px 32px</td><td>Internal card padding</td></tr>
+      <tr><td>Avatar size (team)</td><td>70px</td><td>Contact team member avatars</td></tr>
+      <tr><td>Avatar size (testimonial)</td><td>68px</td><td>Testimonial author avatars</td></tr>
+      <tr><td>Logo strip height</td><td>51px</td><td>Client logo animation bar</td></tr>
+      <tr><td>Next steps card width</td><td>426px</td><td>1/3 of 1280px content</td></tr>
+    </tbody>
+  </table>
+</section>
+
+<!-- ═══ COMPONENT PATTERNS ═══ -->
+<section class="ds-section" id="components">
+  <h2>Component Patterns</h2>
+
+  <h3>Contact Form</h3>
+  <div class="component-preview">
+    <h4>contact-form — bg: #D9D9D9, fields with underline borders</h4>
+    <div class="form-demo">
+      <div class="field-row">
+        <div class="field"><div class="field-label">Your Name*</div><div class="field-line"></div></div>
+        <div class="field"><div class="field-label">Work Email*</div><div class="field-line"></div></div>
+      </div>
+      <div class="field-row">
+        <div class="field"><div class="field-label">Company Name</div><div class="field-line"></div></div>
+        <div class="field"><div class="field-label">Contact No.</div><div class="field-line"></div></div>
+      </div>
+      <div style="margin-bottom:42px">
+        <div class="field-label">About Project*</div>
+        <div class="field-line"></div>
+      </div>
+      <button class="submit-btn">Submit &rarr;</button>
+      <div style="margin-top:42px;color:var(--grey-600);font-size:16px;font-weight:500;">Hate forms? Direct Contacts</div>
+      <div style="margin-top:8px;font-size:16px;display:flex;gap:24px">
+        <span>contact@reloadux.com</span>
+        <span>+1 571 549 8430</span>
+      </div>
+    </div>
+  </div>
+
+  <h3>Next Steps Cards (3-column)</h3>
+  <div class="component-preview">
+    <h4>next-steps-card — border-top + border-right, Lexend numbers, Libre Baskerville titles</h4>
+    <div class="step-card-demo">
+      <div class="step">
+        <div class="step-num">01</div>
+        <div class="step-title">Follow-up Call</div>
+        <div class="step-desc">After receiving your query, we will reach out to you for setting up a session...</div>
+      </div>
+      <div class="step">
+        <div class="step-num">02</div>
+        <div class="step-title">Ballpark Estimates</div>
+        <div class="step-desc">Listening to your requirements we will discuss all the possibilities...</div>
+      </div>
+      <div class="step">
+        <div class="step-num">03</div>
+        <div class="step-title">Project Kick-off</div>
+        <div class="step-desc">Once done with finalizing the scope of work, project proposal and completing...</div>
+      </div>
+    </div>
+  </div>
+
+  <h3>FAQ Accordion</h3>
+  <div class="component-preview">
+    <h4>faq-accordion — bg: #D9D9D9, 22px/500 questions, expand/collapse icons</h4>
+    <div class="faq-demo">
+      <div class="faq-item">
+        <div class="faq-q">Do you work with freelancers or have an in-house team?<span class="icon">&times;</span></div>
+        <div class="faq-a">We don't work with freelancers. All our designers are hired in-house</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">How do you hire designers?<span class="icon">+</span></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">How do you manage timezone differences?<span class="icon">+</span></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">Do I pay extra for more people?<span class="icon">+</span></div>
+      </div>
+    </div>
+  </div>
+
+  <h3>Testimonial Slider</h3>
+  <div class="component-preview">
+    <h4>testimonial-section — bg: #D9D9D9, numbered slides, 28px quotes, serif author names</h4>
+    <div class="testimonial-demo">
+      <div class="t-num">/01</div>
+      <div class="t-quote">"reloadux team took the time to put together the right user flows and walk us through them to understand the entire process of the user journey."</div>
+      <div class="t-author">
+        <img class="t-avatar" src="assets/contact-page/images/testimonial-avatar-01.png" alt="Iman Oubou">
+        <div>
+          <div class="t-name">Iman Oubou</div>
+          <div class="t-role">CEO at Swaay</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ ICONS ═══ -->
+<section class="ds-section" id="icons">
+  <h2>Icons & Shapes</h2>
+  <p style="color:var(--grey-400); margin-bottom:32px">SVG icons extracted from the Contact Us page</p>
+
+  <h3>UI Icons</h3>
+  <div class="icon-grid">
+    <div class="icon-cell"><img src="assets/contact-page/icons/linkedin.svg" alt="LinkedIn"><span>linkedin</span></div>
+    <div class="icon-cell"><img src="assets/contact-page/icons/email.svg" alt="Email"><span>email</span></div>
+    <div class="icon-cell"><img src="assets/contact-page/icons/phone.svg" alt="Phone"><span>phone</span></div>
+    <div class="icon-cell"><img src="assets/contact-page/icons/check-step.svg" alt="Check Step"><span>check-step</span></div>
+    <div class="icon-cell"><img src="assets/contact-page/icons/arrow-submit.svg" alt="Arrow Submit"><span>arrow-submit</span></div>
+    <div class="icon-cell"><img src="assets/contact-page/icons/faq-expand.svg" alt="FAQ Expand"><span>faq-expand (+)</span></div>
+    <div class="icon-cell"><img src="assets/contact-page/icons/faq-collapse.svg" alt="FAQ Collapse"><span>faq-collapse (×)</span></div>
+    <div class="icon-cell"><img src="assets/contact-page/icons/testimonial-nav.svg" alt="Testimonial Nav"><span>testimonial-nav</span></div>
+  </div>
+
+  <h3>Social Icons</h3>
+  <div class="icon-grid">
+    <div class="icon-cell"><img src="assets/contact-page/icons/social-x.svg" alt="X"><span>social-x</span></div>
+    <div class="icon-cell"><img src="assets/contact-page/icons/social-facebook.svg" alt="Facebook"><span>social-facebook</span></div>
+    <div class="icon-cell"><img src="assets/contact-page/icons/social-instagram.svg" alt="Instagram"><span>social-instagram</span></div>
+  </div>
+
+  <h3>Decorative Lines & Shapes</h3>
+  <div class="icon-grid">
+    <div class="icon-cell"><img src="assets/contact-page/icons/form-underline.svg" alt="Form Underline"><span>form-underline</span></div>
+    <div class="icon-cell"><img src="assets/contact-page/icons/form-underline-full.svg" alt="Full Underline"><span>form-underline-full</span></div>
+    <div class="icon-cell"><img src="assets/contact-page/icons/divider-horizontal.svg" alt="Divider H"><span>divider-horizontal</span></div>
+    <div class="icon-cell"><img src="assets/contact-page/icons/divider-vertical.svg" alt="Divider V"><span>divider-vertical</span></div>
+    <div class="icon-cell"><img src="assets/contact-page/icons/line-separator-1483.svg" alt="Line 1483"><span>line-separator-1483</span></div>
+    <div class="icon-cell"><img src="assets/contact-page/icons/line-separator-1433.svg" alt="Line 1433"><span>line-separator-1433</span></div>
+    <div class="icon-cell"><img src="assets/contact-page/icons/powered-by.svg" alt="Powered By"><span>powered-by (tkxel)</span></div>
+  </div>
+</section>
+
+<!-- ═══ AVATARS ═══ -->
+<section class="ds-section" id="avatars">
+  <h2>Avatars</h2>
+
+  <h3>Team Members (70px rounded)</h3>
+  <div class="asset-grid asset-grid--sm">
+    <div class="asset-card asset-card--avatar"><img src="assets/contact-page/images/andrew-wood-avatar.png" alt="Andrew Wood"><div class="asset-label">Andrew Wood<br>Business Development Officer</div></div>
+    <div class="asset-card asset-card--avatar"><img src="assets/contact-page/images/lisa-cook-avatar.png" alt="Lisa Cook"><div class="asset-label">Lisa Cook<br>Business Developer</div></div>
+  </div>
+
+  <h3>Testimonial Avatars (68px rounded)</h3>
+  <div class="asset-grid asset-grid--sm">
+    <div class="asset-card asset-card--avatar"><img src="assets/contact-page/images/testimonial-avatar-01.png" alt="Iman Oubou"><div class="asset-label">Iman Oubou — CEO at Swaay</div></div>
+    <div class="asset-card asset-card--avatar"><img src="assets/contact-page/images/testimonial-avatar-02.png" alt="Robert K. Burger"><div class="asset-label">Robert K. Burger — Co-founder</div></div>
+    <div class="asset-card asset-card--avatar"><img src="assets/contact-page/images/testimonial-avatar-03.png" alt="Mison Riginst"><div class="asset-label">Mison Riginst — Tech-Writer</div></div>
+  </div>
+</section>
+
+<!-- ═══ LOGOS ═══ -->
+<section class="ds-section" id="logos">
+  <h2>Logos</h2>
+
+  <h3>Brand Logos</h3>
+  <div class="asset-grid">
+    <div class="asset-card asset-card--logo"><img src="assets/contact-page/logos/reloadux-header-logo.svg" alt="Reloadux Header"><div class="asset-label">reloadux-header-logo.svg</div></div>
+    <div class="asset-card asset-card--logo"><img src="assets/contact-page/logos/reloadux-footer-logo.svg" alt="Reloadux Footer"><div class="asset-label">reloadux-footer-logo.svg</div></div>
+  </div>
+
+  <h3>Client Logos (Logo Strip)</h3>
+  <div class="asset-grid">
+    <div class="asset-card asset-card--logo"><img src="assets/contact-page/logos/logo-client-barclays.svg" alt="Barclays"><div class="asset-label">barclays</div></div>
+    <div class="asset-card asset-card--logo"><img src="assets/contact-page/logos/logo-client-nbc.svg" alt="NBC Universal"><div class="asset-label">nbc-universal</div></div>
+    <div class="asset-card asset-card--logo"><img src="assets/contact-page/logos/logo-client-peopledotai.svg" alt="People.ai"><div class="asset-label">people.ai</div></div>
+    <div class="asset-card asset-card--logo"><img src="assets/contact-page/logos/logo-client-stereo.svg" alt="Stereo"><div class="asset-label">stereo-reseller</div></div>
+    <div class="asset-card asset-card--logo"><img src="assets/contact-page/logos/logo-client-path5.svg" alt="Path 5"><div class="asset-label">path5</div></div>
+    <div class="asset-card asset-card--logo"><img src="assets/contact-page/logos/logo-client-knowles.svg" alt="Knowles"><div class="asset-label">knowles</div></div>
+    <div class="asset-card asset-card--logo"><img src="assets/contact-page/logos/logo-client-replenium.svg" alt="Replenium"><div class="asset-label">replenium</div></div>
+    <div class="asset-card asset-card--logo"><img src="assets/contact-page/logos/logo-client-s40.svg" alt="Client S40"><div class="asset-label">client-s40</div></div>
+  </div>
+
+  <h3>Testimonial Company Logos</h3>
+  <div class="asset-grid asset-grid--sm">
+    <div class="asset-card asset-card--logo"><img src="assets/contact-page/logos/testimonial-company-01.png" alt="Company 01"><div class="asset-label">swaay (Iman Oubou)</div></div>
+    <div class="asset-card asset-card--logo"><img src="assets/contact-page/logos/testimonial-company-02.png" alt="Company 02"><div class="asset-label">company (Robert K.)</div></div>
+    <div class="asset-card asset-card--logo"><img src="assets/contact-page/logos/testimonial-company-03.png" alt="Company 03"><div class="asset-label">company (Mison R.)</div></div>
+  </div>
+</section>
+
+<!-- ═══ BACKGROUNDS ═══ -->
+<section class="ds-section" id="backgrounds">
+  <h2>Backgrounds & Textures</h2>
+
+  <div class="asset-grid">
+    <div class="asset-card asset-card--bg"><img src="assets/contact-page/images/holographic-bg-rotated.png" alt="Holographic BG Rotated"><div class="asset-label">holographic-bg-rotated.png<br>Used in "What to expect" section (rotated ~56°, opacity 0.1)</div></div>
+    <div class="asset-card asset-card--bg"><img src="assets/contact-page/images/holographic-bg-testimonials.png" alt="Holographic BG Testimonials"><div class="asset-label">holographic-bg-testimonials.png<br>Used behind testimonials section (rotated ~-164°, opacity 0.59)</div></div>
+  </div>
+</section>
+
+<!-- ═══ NEW TOKENS ═══ -->
+<section class="ds-section" id="tokens">
+  <h2>New Tokens Added</h2>
+  <p style="color:var(--grey-400); margin-bottom:32px">Tokens added to the design system from this page extraction</p>
+
+  <h3>New Font Families</h3>
+  <table class="token-table">
+    <thead><tr><th>Token</th><th>Value</th><th>Usage</th></tr></thead>
+    <tbody>
+      <tr><td>font-family.accent</td><td>'Lexend', sans-serif</td><td>Step numbers (01, 02, 03) in next-steps cards</td></tr>
+      <tr><td>font-family.system</td><td>'Graphik', sans-serif</td><td>Footer copyright text</td></tr>
+    </tbody>
+  </table>
+
+  <h3>New Font Size</h3>
+  <table class="token-table">
+    <thead><tr><th>Token</th><th>Value</th><th>Usage</th></tr></thead>
+    <tbody>
+      <tr><td>font-size.32</td><td>32px</td><td>Step card titles (Libre Baskerville)</td></tr>
+    </tbody>
+  </table>
+
+  <h3>New Component Tokens</h3>
+  <table class="token-table">
+    <thead><tr><th>Component</th><th>Key Properties</th><th>Description</th></tr></thead>
+    <tbody>
+      <tr><td>contact-form</td><td>bg: #D9D9D9, fields with underline borders, submit button dark</td><td>Contact form panel with 2-col layout</td></tr>
+      <tr><td>faq-accordion</td><td>bg: #D9D9D9, 22px/500 questions, expand/collapse icons, dividers</td><td>Expandable FAQ with black dividers</td></tr>
+      <tr><td>next-steps-card</td><td>426px wide, border-top + border-right, Lexend numbers, Libre Bask. titles</td><td>3-column numbered process cards</td></tr>
+      <tr><td>testimonial-section</td><td>bg: #D9D9D9, 68px avatars, 28px quotes, serif bold author names</td><td>Vertical scrolling testimonial slider</td></tr>
+      <tr><td>contact-hero</td><td>bg: #090909, 70px team avatars, LinkedIn links, step list with icons</td><td>Hero section with team contacts + next steps</td></tr>
+    </tbody>
+  </table>
+</section>
+
+<footer>
+  <p>Reloadux Design System — Contact Us Page &middot; Extracted from Figma &middot; v1.2.0</p>
+</footer>
+
+</body>
+</html>

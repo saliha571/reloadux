@@ -1,0 +1,124 @@
+{
+  "hero": {
+    "title": "UX design agency for",
+    "titleAccent": "AI-native experiences",
+    "subtitle": "We help B2B and SaaS companies design products that are intelligent, usable, and built for adoption.",
+    "ctaText": "Let's talk",
+    "ctaHref": "/contact-us/"
+  },
+  "clientLogos": [
+    "NBCUniversal",
+    "BARCLAYS",
+    "GROUPON",
+    "7-ELEVEN",
+    "peopleguru",
+    "EasyWorkforce",
+    "Sterne Kessler"
+  ],
+  "portfolio": [
+    { "title": "AI Writing Assistant", "slug": "vocable", "backgroundText": "vocable.", "image": "/images/portfolio/cover-vocable.png", "href": "/case-study/vocable/" },
+    { "title": "Empowering remodelers to sell faster through seamless estimating, measuring, and closing", "slug": "occ", "backgroundText": "occ.", "image": "/images/portfolio/V1.1.webp", "href": "/case-study/occ/" },
+    { "title": "Wellness and Learning Platform", "slug": "wellness", "backgroundText": "wellness.", "image": "/images/portfolio/home-slide-wellness.webp", "href": "/case-study/elia-wellness/", "comingSoon": false },
+    { "title": "Event Organizer", "slug": "events", "backgroundText": "events.", "image": "/images/portfolio/slide-event-organizer.webp", "comingSoon": true },
+    { "title": "Artworks Marketplace", "slug": "artworks", "backgroundText": "artworks.", "image": "/images/portfolio/slide-artworks.webp", "comingSoon": true }
+  ],
+  "ourServices": [
+    { "title": "Design from Scratch - MVP", "href": "/service/design-from-scratch-mvp/" },
+    { "title": "UX Redesign", "href": "/service/ux-redesign/" },
+    { "title": "AI-native Design Team", "href": "/service/team-extension/" }
+  ],
+  "serviceCategories": [
+    {
+      "label": "RESEARCH",
+      "items": [
+        { "title": "UX Audit & AI Readiness", "href": "/service/ux-audit-ai-readiness/" },
+        { "title": "Usability Testing", "href": "/service/usability-testing/" },
+        { "title": "Design Discovery", "href": "/service/design-discovery/" }
+      ]
+    },
+    {
+      "label": "DESIGN",
+      "items": [
+        { "title": "AI Opportunity Mapping", "href": "/service/ai-opportunity-mapping/" },
+        { "title": "UI/UX Design", "href": "/service/ui-ux-design/" },
+        { "title": "Conversational UX", "href": "/service/conversational-ux/" },
+        { "title": "AI Feature Experience Design", "href": "/service/ai-feature-experience-design/" },
+        { "title": "Marketing & Creatives", "href": "/marketing-and-creatives/" },
+        { "title": "Website Design", "href": "/service/web-design/" },
+        { "title": "Design System", "href": "/service/design-systems/" }
+      ]
+    },
+    {
+      "label": "DELIVER",
+      "items": [
+        { "title": "Web Development", "href": "#" },
+        { "title": "Framer", "href": "#" },
+        { "title": "WebFlow", "href": "#" }
+      ]
+    }
+  ],
+  "aboutStats": {
+    "tag": "ABOUT US",
+    "heading": "Our work delivers results you can measure. The numbers below say it all.",
+    "stats": [
+      { "value": "2.4x", "label": "engagement with\nAI-personalized screens" },
+      { "value": "+32%", "label": "raise in activation by\nrevamping user on boarding" },
+      { "value": "+25%", "label": "increase trial-to-paid\nafter launch" },
+      { "value": "40+", "label": "AI-native engagements\ndelivered" }
+    ]
+  },
+  "expertise": [
+    {
+      "title": "AI",
+      "tags": ["Assistants & Chatbots", "Content AI", "Marketing AI", "Search & RAG", "Support AI"],
+      "href": "/expertise/ai/"
+    },
+    {
+      "title": "SaaS",
+      "tags": ["Analytics", "Automation", "Dev Tools", "ERP", "HR Tech"],
+      "href": "/expertise/saas/"
+    },
+    {
+      "title": "Fintech",
+      "tags": ["Banking", "Payments", "Taxation", "Trading & Investing", "Wealth Management"],
+      "href": "/expertise/fintech/"
+    },
+    {
+      "title": "Healthcare",
+      "tags": ["Care Management", "Mental Health", "Patient Portals", "Telehealth", "Wellness & Fitness"],
+      "href": "/expertise/healthcare/"
+    }
+  ],
+  "caseStudies": [
+    { "slug": "vocable", "client": "vocable", "title": "Vocable", "description": "Designed Vocable from zero to launch. An AI-native platform helping marketers create, plan, and scale content in the age of AI.", "image": "/images/case-studies/vocable.webp", "video": "/images/portfolio/vocable-video.mov", "bgColor": "#AFB5E5", "href": "/case-study/vocable/" },
+    { "slug": "occ", "client": "OCC", "title": "OCC", "description": "Empowering remodelers to sell faster through seamless estimating, measuring, and closing", "image": "/images/case-studies/occ.webp", "href": "/case-study/occ/" },
+    { "slug": "tradezella", "client": "tradezella", "title": "Tradezella", "description": "Revamped a trading journal experience helping traders make data-driven decisions.", "image": "/images/case-studies/tradezella.webp", "href": "/case-study/tradezella/" },
+    { "slug": "global-parents", "client": "Global parents", "title": "Global Parents", "description": "Designed an engaging social platform for building a strong parenting community.", "image": "/images/case-studies/global-parents.webp", "href": "/case-study/global-parents/" },
+    { "slug": "mass-media-co", "client": "Mass Media Co.", "title": "Mass Media Co.", "description": "An all-in-one B2B marketing platform for taking data orders, and running campaigns.", "image": "/images/case-studies/mass-media.webp", "href": "/case-study/mass-media-co/" }
+  ],
+  "testimonials": [
+    { "index": "/01", "quote": "\u201cWe started with reloadux with an AI product and a lot of assumptions. They challenged most of them, in a good way. By the time we launched, we had an AI marketing tool marketers actually wanted. I loved the fact that they always spent time thinking through what they are building\u201d", "name": "Iman Oubou", "role": "CEO at", "company": "Vocable", "avatar": "/images/testimonials/iman.webp", "companyLogo": "/images/testimonials/vocable-logo.webp", "videoUrl": "https://www.youtube.com/embed/hUyQpSovdA8?si=7tbMS5YqndijNSmp" },
+    { "index": "/02", "quote": "\u201cWe had the AI product knowledge. What we didn\u2019t have was a way to present it that didn\u2019t overwhelm users, reloadux team took the time to understand the product and created end to end interactive flows that became the foundation of the product.\u201d", "name": "Matthew Tarascio", "role": "Tech Entrepreneur at", "company": "MomentAI", "avatar": "/images/testimonials/matthew.jpeg", "companyLogo": "/images/testimonials/momentai-logo.jpeg" },
+    { "index": "/03", "quote": "\u201cThe collaboration was smooth from start to finish. They asked the right questions, pushed back when we were off track, and helped us identify where AI actually made sense, then delivered ahead of schedule.\u201d", "name": "Yuriy Shikhanovich", "role": "Manager at", "company": "Via People", "avatar": "/images/testimonials/yuriy.webp", "companyLogo": "/images/testimonials/via-people-logo.webp" },
+    { "index": "/04", "quote": "\u201cOperations managers are skeptical people. reloadux team got that immediately. Everything they designed had a clear explanation behind it. That\u2019s why it actually got used.\u201d", "name": "Viktor Misyutin", "role": "Manager at", "company": "Encore", "avatar": "/images/testimonials/viktor.webp", "companyLogo": "/images/testimonials/encore-logo.webp" },
+    { "index": "/05", "quote": "\u201creloadux clear updates kept us informed every step of the way. Their straightforward approach made our partnership efficient and productive\u201d", "name": "Mahir Iskender", "role": "CEO at", "company": "Digno", "avatar": "/images/testimonials/mahir.webp", "companyLogo": "/images/testimonials/digno-logo.webp" }
+  ],
+  "latestPosts": [
+    { "slug": "how-ai-is-changing-customer-expectations-from-digital-products", "title": "AI's Impact on Customer Expectations — SaaS Founder's Guide to Keeping Up", "category": "Artificial Intelligence", "date": "Mar 12, 2026", "readTime": "10 min read", "image": "/images/blog/ai-customer-expectations.webp" },
+    { "slug": "saas-onboarding-ux", "title": "Most SaaS Founders Think Their Onboarding Is Fine. That Is Exactly the Problem.", "category": "Artificial Intelligence", "date": "Mar 10, 2026", "readTime": "10 min read", "image": "/images/blog/saas-onboarding-ux.webp" },
+    { "slug": "ai-first-product-redesign", "title": "AI-Ready product Redesign: A step by step Guide to redesign your product", "category": "Artificial Intelligence", "date": "Mar 4, 2026", "readTime": "10 min read", "image": "/images/blog/ai-first-redesign.webp" },
+    { "slug": "case-studies-of-ai-native-experience", "title": "How 5 products Increased Adoption with AI-Native Experience", "category": "Artificial Intelligence", "date": "Feb 28, 2026", "readTime": "10 min read", "image": "/images/blog/ai-native-experience.webp" },
+    { "slug": "top-ui-ux-agencies-for-digital-products", "title": "Top UI/UX Agencies for 2026 – Trusted Partners for Digital Products", "category": "Artificial Intelligence", "date": "Feb 24, 2026", "readTime": "10 min read", "image": "/images/blog/top-agencies.png" },
+    { "slug": "ai-microcopy-ux-clarity", "title": "AI Microcopy for UX: The Essential Guide", "category": "Artificial Intelligence", "date": "Feb 10, 2026", "readTime": "10 min read", "image": "/images/blog/ai-microcopy.png" },
+    { "slug": "how-reloadux-uses-ai-internally-in-sprints", "title": "How ReloadUX Uses AI Internally in Sprints", "category": "Artificial Intelligence", "date": "Jan 29, 2026", "readTime": "10 min read", "image": "/images/blog/ai-sprints.webp" },
+    { "slug": "predictive-ux-that-anticipates-problems", "title": "Predictive UX That Anticipates Problems", "category": "Artificial Intelligence", "date": "Jan 23, 2026", "readTime": "10 min read", "image": "/images/blog/predictive-ux.webp" },
+    { "slug": "from-no-code-mvp-to-investor-ready-prototype", "title": "From No-Code MVP to Investor-Ready Prototype", "category": "Artificial Intelligence", "date": "Jan 9, 2026", "readTime": "10 min read", "image": "/images/blog/no-code-mvp.webp" },
+    { "slug": "how-ai-powered-jtbd-mapping-transformed-our-ux-strategy", "title": "How AI-Powered JTBD Mapping Transformed Our UX Strategy", "category": "Artificial Intelligence", "date": "Dec 30, 2025", "readTime": "10 min read", "image": "/images/blog/jtbd-mapping.webp" }
+  ],
+  "cta": {
+    "title": "Ready to make your product experience AI-native?",
+    "ctaText": "Contact Us",
+    "ctaHref": "/contact-us/",
+    "subtitle": "Join our list of clients."
+  }
+}

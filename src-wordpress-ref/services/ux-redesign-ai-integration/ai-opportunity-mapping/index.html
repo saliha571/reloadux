@@ -1,0 +1,660 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI Opportunity Mapping | Find Where AI Creates Real Value | reloadux</title>
+  <meta name="description" content="Stop guessing where to add AI. Our 2-week AI Opportunity Mapping identifies the 2-3 highest-impact AI use cases in your SaaS product—backed by user research and workflow analysis. From $5K.">
+  <link rel="canonical" href="/services/ux-redesign-ai-integration/ai-opportunity-mapping">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Manrope:wght@400;500;600;700;800&family=Lexend:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="../../../styles.css">
+  <link rel="stylesheet" href="./ai-opportunity-mapping.css">
+
+  <script src="https://cdn.unicorn.studio/v2/unicornStudio.umd.js" defer></script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "name": "AI Opportunity Mapping",
+    "description": "A 2-week engagement that identifies the highest-impact AI opportunities in your existing SaaS product through user research, workflow analysis, and prioritized recommendations.",
+    "provider": {
+      "@type": "Organization",
+      "name": "reloadux"
+    },
+    "serviceType": "AI Strategy",
+    "offers": {
+      "@type": "Offer",
+      "price": "5000",
+      "priceCurrency": "USD",
+      "priceSpecification": {
+        "@type": "PriceSpecification",
+        "minPrice": "5000",
+        "maxPrice": "8000",
+        "priceCurrency": "USD"
+      }
+    },
+    "termsOfService": "2-week engagement with 50% upfront, 50% on delivery"
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What if we already have ideas about where to add AI?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Good. Bring them. We'll validate, challenge, or refine them. Most teams have 1-2 good instincts buried under 10 distractions. We help you find which is which."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Do you need access to our codebase or data?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No. We work from product access, stakeholder interviews, and existing documentation. If you have usage analytics or user research, that helps—but it's not required."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What if we're not sure AI is even right for our product?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "That's a valid outcome. If we don't find strong opportunities, we'll tell you. You'll pay for honesty, not a forced recommendation."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How is this different from hiring a consultant?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Consultants give you frameworks. We give you decisions. Our output isn't 'consider these options'—it's 'build this first, here's why, here's what it takes.'"
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can this be done remotely?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. 100% of our engagements are remote. Interviews via Zoom. Async collaboration via Notion or your preferred tools."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What if our timeline is urgent?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "We can compress to 7 business days for an additional 25% fee. Quality stays the same; we just prioritize your project."
+        }
+      }
+    ]
+  }
+  </script>
+</head>
+
+<body>
+
+  <!-- ====================================================================
+       HERO
+       ==================================================================== -->
+  <section class="section section--dark aom-hero" aria-label="AI Opportunity Mapping hero">
+    <div class="aom-glow-orb aom-glow-orb--top-right" aria-hidden="true"></div>
+    <div class="aom-glow-orb aom-glow-orb--bottom-left" aria-hidden="true"></div>
+    <div class="aom-bg-texture" aria-hidden="true"></div>
+    <img src="./assets/vector-shape.svg" class="aom-vector-shape aom-vector-shape--hero" alt="" aria-hidden="true">
+    <div class="unicorn-backdrop" data-us-project="YOUR_HERO_PROJECT_ID" data-us-scale="1" data-us-dpi="1.5" data-us-lazyload="true" aria-hidden="true"></div>
+
+    <div class="container aom-hero__inner">
+      <nav class="aom-breadcrumb reveal" aria-label="Breadcrumb">
+        <a href="/">reloadux</a>
+        <span aria-hidden="true">/</span>
+        <a href="/services/ux-redesign-ai-integration">UX Redesign for AI Integration</a>
+        <span aria-hidden="true">/</span>
+        <span aria-current="page">AI Opportunity Mapping</span>
+      </nav>
+
+      <div class="aom-hero__text-content reveal">
+        <p class="aom-hero__subtitle">You know AI should be in your product. You don't know where it'll actually matter.</p>
+
+        <h1 class="aom-hero__title">
+          AI Opportunity<br>
+          <em>Mapping</em>.
+        </h1>
+      </div>
+
+      <div class="aom-hero__cta reveal">
+        <a class="btn btn--primary" href="#book-call">
+          Book Discovery Call
+          <img src="./assets/arrow-right.svg" alt="" aria-hidden="true" width="20" height="20" class="aom-hero__arrow">
+        </a>
+        <a class="btn btn--outline" href="#whats-included">See What's Included</a>
+      </div>
+    </div>
+
+    <!-- Logo animation bar (from Figma hero) -->
+    <div class="aom-logo-bar" aria-label="Trusted by" role="marquee">
+      <div class="aom-logo-bar__fade aom-logo-bar__fade--left" aria-hidden="true"></div>
+      <div class="aom-logo-bar__track">
+        <div class="aom-logo-bar__logos">
+          <img src="./assets/logo-5.svg" alt="Client" loading="lazy" class="aom-logo">
+          <img src="./assets/logo-6.svg" alt="Client" loading="lazy" class="aom-logo">
+          <img src="./assets/logo-7.svg" alt="Client" loading="lazy" class="aom-logo">
+          <img src="./assets/logo-8.svg" alt="Client" loading="lazy" class="aom-logo">
+          <img src="./assets/logo-9.svg" alt="Client" loading="lazy" class="aom-logo">
+          <img src="./assets/logo-10.svg" alt="Client" loading="lazy" class="aom-logo">
+          <img src="./assets/logo-11.svg" alt="Client" loading="lazy" class="aom-logo">
+          <img src="./assets/logo-12.svg" alt="Client" loading="lazy" class="aom-logo">
+          <img src="./assets/logo-13.svg" alt="Client" loading="lazy" class="aom-logo">
+          <img src="./assets/logo-5.svg" alt="Client" loading="lazy" class="aom-logo" aria-hidden="true">
+          <img src="./assets/logo-6.svg" alt="Client" loading="lazy" class="aom-logo" aria-hidden="true">
+          <img src="./assets/logo-7.svg" alt="Client" loading="lazy" class="aom-logo" aria-hidden="true">
+          <img src="./assets/logo-8.svg" alt="Client" loading="lazy" class="aom-logo" aria-hidden="true">
+          <img src="./assets/logo-9.svg" alt="Client" loading="lazy" class="aom-logo" aria-hidden="true">
+          <img src="./assets/logo-10.svg" alt="Client" loading="lazy" class="aom-logo" aria-hidden="true">
+          <img src="./assets/logo-11.svg" alt="Client" loading="lazy" class="aom-logo" aria-hidden="true">
+          <img src="./assets/logo-12.svg" alt="Client" loading="lazy" class="aom-logo" aria-hidden="true">
+          <img src="./assets/logo-13.svg" alt="Client" loading="lazy" class="aom-logo" aria-hidden="true">
+        </div>
+      </div>
+      <div class="aom-logo-bar__fade aom-logo-bar__fade--right" aria-hidden="true"></div>
+    </div>
+  </section>
+
+
+  <main id="main-content">
+
+    <!-- ====================================================================
+         THE PROBLEM (mapped from Figma — dark, 3-col numbered cards)
+         ==================================================================== -->
+    <section class="section section--dark aom-problem" id="problem" aria-labelledby="problem-heading">
+      <div class="aom-bg-texture aom-bg-texture--subtle" aria-hidden="true"></div>
+      <div class="container">
+        <h2 class="aom-problem__heading reveal" id="problem-heading">Why most AI features fail</h2>
+
+        <div class="aom-step-row reveal">
+          <article class="aom-step-card">
+            <div class="aom-step-card__header">
+              <span class="aom-step-card__number">01</span>
+              <h3 class="aom-step-card__title">The Wrong Question</h3>
+            </div>
+            <p class="aom-step-card__desc">Teams ask &ldquo;Where can we add AI?&rdquo; instead of asking where it actually moves metrics. Technology-first thinking leads nowhere.</p>
+          </article>
+
+          <span class="aom-step-divider" aria-hidden="true"></span>
+
+          <article class="aom-step-card">
+            <div class="aom-step-card__header">
+              <span class="aom-step-card__number">02</span>
+              <h3 class="aom-step-card__title">The Consequences</h3>
+            </div>
+            <p class="aom-step-card__desc">AI chatbots nobody uses. &ldquo;Smart&rdquo; features that feel gimmicky. Six months of engineering time that doesn&rsquo;t move retention or NPS.</p>
+          </article>
+
+          <span class="aom-step-divider" aria-hidden="true"></span>
+
+          <article class="aom-step-card">
+            <div class="aom-step-card__header">
+              <span class="aom-step-card__number">03</span>
+              <h3 class="aom-step-card__title">The Right Question</h3>
+            </div>
+            <p class="aom-step-card__desc">&ldquo;Where would AI make our users <em>measurably better</em> at their jobs?&rdquo; That question leads to features users rely on daily.</p>
+          </article>
+        </div>
+
+        <p class="aom-problem__coda reveal">AI Opportunity Mapping answers the second question.</p>
+      </div>
+    </section>
+
+
+    <!-- ====================================================================
+         WHAT THIS IS
+         ==================================================================== -->
+    <section class="section section--dark" id="what-this-is" aria-labelledby="what-heading">
+      <div class="aom-glow-orb aom-glow-orb--center-right" aria-hidden="true"></div>
+      <img src="./assets/vector-shape.svg" class="aom-vector-shape aom-vector-shape--section" alt="" aria-hidden="true">
+      <div class="container">
+        <header class="section-header reveal">
+          <p class="aom-section-tag">[ What This Is ]</p>
+          <h2 class="section-header__title" id="what-heading">A focused engagement to de-risk your AI roadmap</h2>
+          <p class="section-header__text">Not a strategy deck filled with buzzwords. A two-week deep dive into your product, your users, and your workflows&mdash;designed to surface the specific AI opportunities worth building.</p>
+        </header>
+
+        <div class="aom-split">
+          <article class="aom-glass-card reveal" data-stagger>
+            <h3 class="aom-glass-card__title">What we do</h3>
+            <ul class="aom-check-list">
+              <li>Interview your team (product, engineering, support, sales)</li>
+              <li>Audit your product's workflows, data, and pain points</li>
+              <li>Analyze where users waste time, make errors, or need decisions made for them</li>
+              <li>Map AI opportunities against real user needs</li>
+              <li>Prioritize by impact, feasibility, and risk</li>
+              <li>Deliver a clear recommendation: build this first, ignore that</li>
+            </ul>
+          </article>
+
+          <article class="aom-glass-card aom-glass-card--highlight reveal" data-stagger>
+            <h3 class="aom-glass-card__title">What you get</h3>
+            <p class="aom-glass-card__lead">A decision-ready output.</p>
+            <p>Not a 60-slide deck you'll never open. A focused deliverable that tells you <strong>what to build</strong>, <strong>why it matters</strong>, and <strong>what it'll take</strong>.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ====================================================================
+         WHO THIS IS FOR / NOT FOR
+         ==================================================================== -->
+    <section class="section section--light" id="fit" aria-labelledby="fit-heading">
+      <div class="container">
+        <header class="section-header reveal">
+          <p class="aom-section-tag">[ Fit Check ]</p>
+          <h2 class="section-header__title" id="fit-heading">Is this right for you?</h2>
+        </header>
+
+        <div class="aom-split">
+          <article class="aom-fit-card aom-fit-card--yes reveal" data-stagger>
+            <h3>This is for you if&hellip;</h3>
+            <ul>
+              <li><strong>You're under pressure to &ldquo;add AI&rdquo;</strong> but lack a clear starting point. Your board, investors, or competitors are pushing. You need a rational path forward.</li>
+              <li><strong>You have ideas but no way to validate them.</strong> Your team has opinions. Sales has requests. Support has complaints. You need an objective framework.</li>
+              <li><strong>You want to move fast without wasting engineering cycles.</strong> Building the wrong AI feature costs 4-6 months and $200K+. You'd rather spend two weeks and $5K.</li>
+              <li><strong>You're a Founder, CTO, Head of Product, or Product Owner.</strong> You're accountable for what gets built. You need clarity, not more opinions.</li>
+            </ul>
+          </article>
+
+          <article class="aom-fit-card aom-fit-card--no reveal" data-stagger>
+            <h3>We're not the right fit if&hellip;</h3>
+            <ul>
+              <li>You've already decided what to build and just need execution</li>
+              <li>You're looking for a proof-of-concept or prototype</li>
+              <li>Your product doesn't have active users yet (you need PMF first)</li>
+              <li>You want a generic &ldquo;AI strategy&rdquo; without product-specific analysis</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ====================================================================
+         WHAT'S INCLUDED — DELIVERABLES
+         ==================================================================== -->
+    <section class="section section--surface" id="whats-included" aria-labelledby="included-heading">
+      <div class="container">
+        <header class="section-header reveal">
+          <p class="aom-section-tag">[ Deliverables ]</p>
+          <h2 class="section-header__title" id="included-heading">What's Included</h2>
+        </header>
+
+        <div class="aom-deliverables" role="list">
+          <article class="aom-deliverable reveal" data-stagger role="listitem">
+            <span class="aom-deliverable__number" aria-hidden="true">01</span>
+            <h3 class="aom-deliverable__title">AI Opportunity Map</h3>
+            <p>Visual framework showing every potential AI use case in your product&mdash;categorized by workflow, user type, and value driver.</p>
+          </article>
+
+          <article class="aom-deliverable reveal" data-stagger role="listitem">
+            <span class="aom-deliverable__number" aria-hidden="true">02</span>
+            <h3 class="aom-deliverable__title">Priority Matrix</h3>
+            <p>Each opportunity scored on user impact, technical feasibility, business value, and risk.</p>
+          </article>
+
+          <article class="aom-deliverable reveal" data-stagger role="listitem">
+            <span class="aom-deliverable__number" aria-hidden="true">03</span>
+            <h3 class="aom-deliverable__title">Top 3 Recommendations</h3>
+            <p>Detailed briefs: what it is, why it matters, what success looks like, requirements, timeline, risks and mitigations.</p>
+          </article>
+
+          <article class="aom-deliverable reveal" data-stagger role="listitem">
+            <span class="aom-deliverable__number" aria-hidden="true">04</span>
+            <h3 class="aom-deliverable__title">&ldquo;Don't Build&rdquo; List</h3>
+            <p>Ideas that sound good but won't deliver. With clear reasoning so you can push back on stakeholder requests.</p>
+          </article>
+
+          <article class="aom-deliverable reveal" data-stagger role="listitem">
+            <span class="aom-deliverable__number" aria-hidden="true">05</span>
+            <h3 class="aom-deliverable__title">Executive Summary</h3>
+            <p>One-pager for your board, leadership team, or investors. Clear, defensible, ready to present.</p>
+          </article>
+
+          <article class="aom-deliverable reveal" data-stagger role="listitem">
+            <span class="aom-deliverable__number" aria-hidden="true">06</span>
+            <h3 class="aom-deliverable__title">60-Minute Readout</h3>
+            <p>Live walkthrough of findings. Q&amp;A with your team. Alignment before you move forward.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ====================================================================
+         HOW IT WORKS — TIMELINE
+         ==================================================================== -->
+    <section class="section section--light" id="process" aria-labelledby="process-heading">
+      <div class="container">
+        <header class="section-header reveal">
+          <p class="aom-section-tag">[ The Process ]</p>
+          <h2 class="section-header__title" id="process-heading">How It Works</h2>
+          <p class="section-header__text">Total timeline: <strong>10 business days</strong>. Your time commitment: <strong>~4 hours</strong>.</p>
+        </header>
+
+        <div class="aom-timeline">
+          <div class="aom-timeline__week reveal">
+            <h3 class="aom-timeline__label">Week 1 <span>Discovery</span></h3>
+            <ol class="aom-timeline__steps">
+              <li class="aom-timeline__step" data-day="1">
+                <span class="aom-timeline__day">Day 1</span>
+                <p>Kickoff call: goals, constraints, hypotheses</p>
+              </li>
+              <li class="aom-timeline__step" data-day="2-3">
+                <span class="aom-timeline__day">Day 2-3</span>
+                <p>Stakeholder interviews (product, eng, support, sales)</p>
+              </li>
+              <li class="aom-timeline__step" data-day="4">
+                <span class="aom-timeline__day">Day 4</span>
+                <p>Product audit: workflows, data, friction points</p>
+              </li>
+              <li class="aom-timeline__step" data-day="5">
+                <span class="aom-timeline__day">Day 5</span>
+                <p>User insight synthesis (research, tickets, recordings)</p>
+              </li>
+            </ol>
+          </div>
+
+          <div class="aom-timeline__week reveal">
+            <h3 class="aom-timeline__label">Week 2 <span>Analysis &amp; Prioritization</span></h3>
+            <ol class="aom-timeline__steps" start="5">
+              <li class="aom-timeline__step" data-day="6-7">
+                <span class="aom-timeline__day">Day 6-7</span>
+                <p>Opportunity mapping: identify all potential AI use cases</p>
+              </li>
+              <li class="aom-timeline__step" data-day="8">
+                <span class="aom-timeline__day">Day 8</span>
+                <p>Prioritization: score each on impact, feasibility, risk</p>
+              </li>
+              <li class="aom-timeline__step" data-day="9">
+                <span class="aom-timeline__day">Day 9</span>
+                <p>Deliverable creation: map, matrix, recommendations</p>
+              </li>
+              <li class="aom-timeline__step" data-day="10">
+                <span class="aom-timeline__day">Day 10</span>
+                <p>Readout session + Q&amp;A with your team</p>
+              </li>
+            </ol>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ====================================================================
+         WHAT HAPPENS AFTER
+         ==================================================================== -->
+    <section class="section section--surface" id="after" aria-labelledby="after-heading">
+      <div class="container">
+        <header class="section-header reveal">
+          <p class="aom-section-tag">[ Next Steps ]</p>
+          <h2 class="section-header__title" id="after-heading">Three paths forward</h2>
+        </header>
+
+        <div class="aom-paths" role="list">
+          <article class="aom-path reveal" data-stagger role="listitem">
+            <span class="aom-path__number" aria-hidden="true">1</span>
+            <h3>You build it yourself</h3>
+            <p>Take the deliverables to your team. You have everything you need to brief engineering and start building.</p>
+          </article>
+
+          <article class="aom-path reveal" data-stagger role="listitem">
+            <span class="aom-path__number" aria-hidden="true">2</span>
+            <h3>We design it</h3>
+            <p>Move into <a href="/services/ux-redesign-ai-integration/ai-feature-design">AI Feature Design</a>. We create the UX&mdash;interaction patterns, edge cases, error states&mdash;production-ready for your engineers.</p>
+          </article>
+
+          <article class="aom-path reveal" data-stagger role="listitem">
+            <span class="aom-path__number" aria-hidden="true">3</span>
+            <h3>You wait</h3>
+            <p>Maybe now isn't the right time. The deliverables stay valid for 6-12 months. When you're ready, you won't be starting from zero.</p>
+          </article>
+        </div>
+
+        <p class="aom-aside reveal">No pressure to continue with us. The output stands alone.</p>
+      </div>
+    </section>
+
+
+    <!-- ====================================================================
+         PRICING
+         ==================================================================== -->
+    <section class="section section--dark" id="pricing" aria-labelledby="pricing-heading">
+      <div class="aom-glow-orb aom-glow-orb--top-left" aria-hidden="true"></div>
+      <div class="aom-glow-orb aom-glow-orb--bottom-right" aria-hidden="true"></div>
+      <div class="aom-bg-texture aom-bg-texture--subtle" aria-hidden="true"></div>
+      <div class="container aom-narrow">
+        <header class="section-header reveal">
+          <p class="aom-section-tag">[ Investment ]</p>
+          <h2 class="section-header__title" id="pricing-heading">Transparent pricing</h2>
+        </header>
+
+        <article class="aom-pricing reveal">
+          <div class="aom-pricing__header">
+            <p class="aom-pricing__name">AI Opportunity Mapping</p>
+            <p class="aom-pricing__range">$5,000 &ndash; $8,000</p>
+            <p class="aom-pricing__typical">Most engagements land at <strong>$6,000</strong></p>
+          </div>
+
+          <div class="aom-pricing__body">
+            <div class="aom-pricing__col">
+              <h3>Price depends on</h3>
+              <ul>
+                <li>Product complexity (user types, workflows, modules)</li>
+                <li>Number of stakeholder interviews required</li>
+                <li>Existing research and documentation available</li>
+              </ul>
+            </div>
+            <div class="aom-pricing__col">
+              <h3>What's not included</h3>
+              <ul>
+                <li>UX design or prototyping (that's <a href="/services/ux-redesign-ai-integration/ai-feature-design">AI Feature Design</a>)</li>
+                <li>Technical architecture or engineering specs</li>
+                <li>Implementation support</li>
+              </ul>
+            </div>
+          </div>
+
+          <p class="aom-pricing__terms"><strong>Payment:</strong> 50% upfront, 50% on delivery.</p>
+        </article>
+      </div>
+    </section>
+
+
+    <!-- ====================================================================
+         WHY US
+         ==================================================================== -->
+    <section class="section section--light" id="why-us" aria-labelledby="why-heading">
+      <div class="container">
+        <header class="section-header reveal">
+          <p class="aom-section-tag">[ Why reloadux ]</p>
+          <h2 class="section-header__title" id="why-heading">Why us</h2>
+        </header>
+
+        <div class="aom-why-grid" role="list">
+          <article class="aom-why-card reveal" data-stagger role="listitem">
+            <span class="aom-why-card__stat">40+</span>
+            <h3>Engagements completed</h3>
+            <p>Mapped opportunities across fintech, HR tech, project management, analytics, healthcare, and vertical SaaS. We know what works.</p>
+          </article>
+
+          <article class="aom-why-card reveal" data-stagger role="listitem">
+            <span class="aom-why-card__stat">2wk</span>
+            <h3>Fast and focused</h3>
+            <p>Two weeks. Not two months. No bloated team. No unnecessary workshops. Just the work that matters.</p>
+          </article>
+
+          <article class="aom-why-card reveal" data-stagger role="listitem">
+            <span class="aom-why-card__stat">500+</span>
+            <h3>Engineers behind us</h3>
+            <p>reloadux is backed by Tkxel. When feasibility questions come up, we get real answers from engineers who build AI systems daily.</p>
+          </article>
+
+          <article class="aom-why-card reveal" data-stagger role="listitem">
+            <span class="aom-why-card__stat">&ne;</span>
+            <h3>Practitioners, not consultants</h3>
+            <p>We actually design AI features. We know what's easy to build, what's deceptively hard, and where the UX landmines are.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ====================================================================
+         FAQ
+         ==================================================================== -->
+    <section class="section section--surface" id="faq" aria-labelledby="faq-heading">
+      <div class="container aom-narrow">
+        <header class="section-header reveal">
+          <p class="aom-section-tag">[ FAQ ]</p>
+          <h2 class="section-header__title" id="faq-heading">Questions we hear</h2>
+        </header>
+
+        <div class="aom-faq reveal" role="region" aria-label="Frequently asked questions">
+          <details class="aom-faq__item">
+            <summary class="aom-faq__question">What if we already have ideas about where to add AI?</summary>
+            <div class="aom-faq__answer"><p>Good. Bring them. We'll validate, challenge, or refine them. Most teams have 1-2 good instincts buried under 10 distractions. We help you find which is which.</p></div>
+          </details>
+
+          <details class="aom-faq__item">
+            <summary class="aom-faq__question">Do you need access to our codebase or data?</summary>
+            <div class="aom-faq__answer"><p>No. We work from product access, stakeholder interviews, and existing documentation. If you have usage analytics or user research, that helps&mdash;but it's not required.</p></div>
+          </details>
+
+          <details class="aom-faq__item">
+            <summary class="aom-faq__question">What if we're not sure AI is even right for our product?</summary>
+            <div class="aom-faq__answer"><p>That's a valid outcome. If we don't find strong opportunities, we'll tell you. You'll pay for honesty, not a forced recommendation.</p></div>
+          </details>
+
+          <details class="aom-faq__item">
+            <summary class="aom-faq__question">Can this be done remotely?</summary>
+            <div class="aom-faq__answer"><p>Yes. 100% of our engagements are remote. Interviews via Zoom. Async collaboration via Notion or your preferred tools.</p></div>
+          </details>
+
+          <details class="aom-faq__item">
+            <summary class="aom-faq__question">How is this different from hiring a consultant?</summary>
+            <div class="aom-faq__answer"><p>Consultants give you frameworks. We give you decisions. Our output isn't &ldquo;consider these options&rdquo;&mdash;it's &ldquo;build this first, here's why, here's what it takes.&rdquo;</p></div>
+          </details>
+
+          <details class="aom-faq__item">
+            <summary class="aom-faq__question">What if our timeline is urgent?</summary>
+            <div class="aom-faq__answer"><p>We can compress to 7 business days for an additional 25% fee. Quality stays the same; we just prioritize your project.</p></div>
+          </details>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ====================================================================
+         SOCIAL PROOF
+         ==================================================================== -->
+    <section class="section section--light aom-has-shapes" id="testimonials" aria-labelledby="testimonials-heading">
+      <div class="aom-glow-orb aom-glow-orb--light-accent" aria-hidden="true"></div>
+      <div class="container">
+        <header class="section-header reveal">
+          <p class="aom-section-tag">[ Social Proof ]</p>
+          <h2 class="section-header__title" id="testimonials-heading">What clients say</h2>
+        </header>
+
+        <div class="aom-quotes" role="list">
+          <blockquote class="aom-quote reveal" data-stagger role="listitem">
+            <p>&ldquo;We came in with twelve AI ideas and no way to choose. We left with one clear priority and the confidence to fund it.&rdquo;</p>
+            <footer>
+              <cite>&mdash; [Name], [Title], [Company]</cite>
+            </footer>
+          </blockquote>
+
+          <blockquote class="aom-quote reveal" data-stagger role="listitem">
+            <p>&ldquo;They talked us out of building an AI chatbot. Saved us six months. The feature they recommended instead moved our activation rate 18%.&rdquo;</p>
+            <footer>
+              <cite>&mdash; [Name], [Title], [Company]</cite>
+            </footer>
+          </blockquote>
+
+          <blockquote class="aom-quote reveal" data-stagger role="listitem">
+            <p>&ldquo;No fluff. No buzzwords. Just a clear answer to 'what should we build first.' Exactly what we needed.&rdquo;</p>
+            <footer>
+              <cite>&mdash; [Name], [Title], [Company]</cite>
+            </footer>
+          </blockquote>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ====================================================================
+         CTA
+         ==================================================================== -->
+    <section id="book-call" class="section cta-glow aom-cta-section" aria-labelledby="cta-heading">
+      <div class="aom-glow-orb aom-glow-orb--top-right aom-glow-orb--large" aria-hidden="true"></div>
+      <div class="aom-glow-orb aom-glow-orb--bottom-left aom-glow-orb--large" aria-hidden="true"></div>
+      <div class="aom-bg-texture" aria-hidden="true"></div>
+      <img src="./assets/vector-shape.svg" class="aom-vector-shape aom-vector-shape--cta" alt="" aria-hidden="true">
+      <div class="container cta">
+        <h2 class="aom-cta__title reveal" id="cta-heading">
+          Ready to find out where AI<br><em>actually matters</em> in your product?
+        </h2>
+        <p class="cta__text reveal">Book a 30-minute discovery call. No pitch deck. No pressure. Just a conversation about your product and whether this engagement makes sense.</p>
+        <div class="aom-hero__actions reveal">
+          <a class="btn btn--primary btn--glow" href="mailto:hello@reloadux.com?subject=Discovery%20Call%20-%20AI%20Opportunity%20Mapping">
+            Book Discovery Call
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M4 10h12m0 0l-4-4m4 4l-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+        </div>
+        <p class="aom-cta__email reveal">Or email directly: <a href="mailto:hello@reloadux.com">hello@reloadux.com</a></p>
+      </div>
+    </section>
+
+
+    <!-- ====================================================================
+         RELATED
+         ==================================================================== -->
+    <section class="section section--light" id="related" aria-labelledby="related-heading">
+      <div class="container">
+        <header class="section-header reveal">
+          <p class="aom-section-tag">[ Related ]</p>
+          <h2 class="section-header__title" id="related-heading">Keep exploring</h2>
+        </header>
+
+        <div class="aom-split">
+          <article class="aom-glass-card reveal" data-stagger>
+            <h3 class="aom-glass-card__title">Related services</h3>
+            <ul class="aom-link-list">
+              <li><a href="/services/ux-redesign-ai-integration/ai-feature-design">AI Feature Design</a></li>
+              <li><a href="/services/ux-redesign-ai-integration/ai-readiness-audit">AI Readiness Audit</a></li>
+              <li><a href="/services/ux-redesign-ai-integration/legacy-ux-modernization">Legacy UX Modernization</a></li>
+            </ul>
+          </article>
+          <article class="aom-glass-card reveal" data-stagger>
+            <h3 class="aom-glass-card__title">Related reading</h3>
+            <ul class="aom-link-list">
+              <li><a href="/blog/where-to-add-ai-saas">Where to Add AI in Your SaaS Product: 12 High-Impact Opportunities</a></li>
+              <li><a href="/blog/ai-feature-failure">Why Most AI Features Fail (And How to Avoid It)</a></li>
+              <li><a href="/blog/ai-integration-patterns">AI Integration Patterns: Copilot vs. Automation vs. Augmentation</a></li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <script src="../../../animations.js"></script>
+  <script src="./ai-opportunity-mapping.js"></script>
+</body>
+</html>

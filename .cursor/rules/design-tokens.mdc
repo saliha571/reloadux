@@ -1,0 +1,54 @@
+---
+description: Design token usage rules — colors, typography, spacing, borders
+globs:
+  - "**/*.css"
+  - "**/*.module.css"
+  - "**/*.tsx"
+alwaysApply: true
+---
+
+# Design Tokens
+
+All values must come from CSS custom properties defined in `src/app/globals.css` and mirrored in `design-system/css/variables.css`. Never use raw hex values or pixel literals for colors, fonts, or spacing.
+
+## Color-to-Token Mapping
+
+| Purpose                  | Token                          | Value     |
+|--------------------------|--------------------------------|-----------|
+| Page background (dark)   | `var(--bg-dark)` / `var(--color-night)` | `#090909` |
+| Light section bg         | `var(--color-light)`           | `#F7F8FB` |
+| Smoke / divider bg       | `var(--color-smoke)`           | `#D9D9D9` |
+| Pure white               | `var(--color-white)` / `var(--white)` | `#FFFFFF` |
+| Pure black               | `var(--color-black)` / `var(--black)` | `#000000` |
+| Footer grey text         | `var(--color-grey-400)` / `var(--grey)` | `#A5A9AC` |
+| Blog meta grey           | `var(--color-grey-300)`        | `#C3C3C3` |
+| Dark border / separator  | `var(--color-grey-700)`        | `#333333` |
+| Purple accent            | `var(--color-purple-500)` / `var(--purple)` | `#9662FF` |
+| Magenta accent           | `var(--color-purple-900)` / `var(--magenta)` | `#A401B7` |
+
+## Font Families — Never Use Raw Font Names
+
+| Font                  | Token                  | Usage                                         |
+|-----------------------|------------------------|-----------------------------------------------|
+| Manrope               | `var(--font-primary)`  | All body text, headings, navigation, buttons   |
+| Libre Baskerville     | `var(--font-serif)`    | Author names, section tag text, serif accents  |
+| Lexend                | `var(--font-accent)`   | Counter numbers (stat counters)                |
+
+## Spacing — Always Use `var(--space-*)` Tokens
+
+Common values: `--space-4` (4px), `--space-8` (8px), `--space-12` (12px), `--space-16` (16px), `--space-20` (20px), `--space-24` (24px), `--space-32` (32px), `--space-40` (40px), `--space-48` (48px), `--space-60` (60px), `--space-80` (80px), `--space-120` (120px).
+
+Section vertical padding: always `var(--section-padding)` (120px).
+
+## Borders
+
+- Dark background separators: `1px solid #333` (use `var(--color-grey-700)`)
+- Light background separators: `1px solid #c3c3c3` (use `var(--color-grey-300)`)
+- Button / interactive borders: `1px solid var(--white)` on dark, `1px solid var(--black)` on light
+
+## Section Backgrounds — Only These Are Allowed
+
+- `var(--bg-dark)` — `#090909` (primary dark)
+- `var(--color-smoke)` — `#D9D9D9` (divider / accent)
+- `var(--color-white)` — `#FFFFFF` (light sections)
+- `var(--color-light)` — `#F7F8FB` (subtle light)

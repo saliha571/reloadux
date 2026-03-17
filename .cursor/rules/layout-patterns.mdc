@@ -1,0 +1,72 @@
+---
+description: Layout patterns — section containers, full-bleed, responsive breakpoints
+globs:
+  - "**/*.module.css"
+---
+
+# Layout Patterns
+
+## Standard Section Container
+
+Every section follows this two-layer pattern:
+
+```css
+.section {
+  width: 100%;
+  padding: var(--section-padding) 0;
+}
+
+.inner {
+  max-width: var(--content-width);
+  margin: 0 auto;
+  padding-inline: var(--page-padding);
+}
+```
+
+- `--content-width` = 1440px
+- `--page-padding` = 80px
+- `--section-padding` = 120px
+
+## Full-Bleed Right Pattern
+
+Used when content (e.g. blog carousel cards) needs to extend past the right edge of the content container:
+
+```css
+.section {
+  overflow: hidden;
+}
+
+.inner {
+  padding-left: max(var(--page-padding), calc((100vw - var(--content-width)) / 2 + var(--page-padding)));
+  padding-right: 0;
+}
+```
+
+## Footer Layout
+
+- Flex columns with `border-bottom: 1px solid #333` as row separators
+- Each row: `padding: 52px 0`
+- Top row: `display: flex; justify-content: space-between; align-items: flex-start;`
+- Bottom row (capabilities/industries): `display: flex; gap: 80px;`
+
+## Responsive Breakpoints
+
+Three breakpoints — desktop first:
+
+| Name    | Query                    | Key changes                              |
+|---------|--------------------------|------------------------------------------|
+| Desktop | Default                  | Full layout, `--page-padding: 80px`      |
+| Tablet  | `@media (max-width: 1024px)` | Stack columns, reduce padding to 40px |
+| Mobile  | `@media (max-width: 767px)`  | Single column, reduce padding to 24px  |
+
+At **tablet** (≤ 1024px):
+- Multi-column layouts switch to `flex-wrap: wrap` or single column
+- Page padding reduces: `padding-inline: 40px`
+- Section padding reduces: `padding: 80px 0`
+- Font sizes scale down proportionally
+
+At **mobile** (≤ 767px):
+- All layouts are single column
+- Page padding reduces: `padding-inline: 24px`
+- Section padding reduces: `padding: 60px 0`
+- Hero headings cap at `32px`

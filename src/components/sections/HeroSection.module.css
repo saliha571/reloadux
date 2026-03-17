@@ -1,0 +1,248 @@
+/* ==========================================================================
+   Hero Section — matched to WordPress/Elementor reference (reloadux.com)
+   ========================================================================== */
+
+.hero {
+  position: relative;
+  min-height: calc(100vh - clamp(64px, 6vw, 86px));
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: var(--bg-dark);
+  overflow: hidden;
+  width: 100%;
+}
+
+.content {
+  max-width: var(--content-width);
+  width: 100%;
+  margin-inline: auto;
+  padding-inline: var(--page-padding);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 30px;
+  padding-top: 80px;
+  padding-bottom: 50px;
+  flex-grow: 1;
+}
+
+/* ── Heading ────────────────────────────────────────────────────────────── */
+
+.title {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  width: 65%;
+  max-width: 65%;
+  margin-top: -10px;
+}
+
+.titleLine,
+.titleAccent {
+  font-family: var(--font-primary);
+  font-size: clamp(32px, 4.4vw, 64px);
+  font-weight: 500;
+  line-height: 135%;
+  color: var(--text-primary);
+}
+
+/* ── Subtitle ───────────────────────────────────────────────────────────── */
+
+.subtitle {
+  font-family: var(--font-primary);
+  font-size: 18px;
+  font-weight: 400;
+  line-height: normal;
+  color: #D1D1D1;
+}
+
+/* ── CTA Button ─────────────────────────────────────────────────────────── */
+
+.cta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px 40px;
+  background: transparent;
+  color: var(--white);
+  font-family: var(--font-primary);
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 28px;
+  border-radius: 50px;
+  text-decoration: none;
+  transition: color 0.15s cubic-bezier(0.645, 0.045, 0.355, 1);
+  position: relative;
+  overflow: hidden;
+  border: none;
+  white-space: nowrap;
+  gap: 0.363636em;
+  max-width: 280px;
+  word-break: break-word;
+}
+
+.cta::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border: 1px solid var(--white);
+  border-radius: 50px;
+  pointer-events: none;
+}
+
+.cta:hover {
+  color: var(--black);
+}
+
+.ctaFlair {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  transform: scale(0);
+  transform-origin: 0 0;
+  will-change: transform;
+  transition: transform 0.4s cubic-bezier(0.645, 0.045, 0.355, 1);
+}
+
+.ctaFlair::before {
+  content: '';
+  display: block;
+  position: absolute;
+  left: 0;
+  top: 0;
+  transform: translate(-50%, -50%);
+  width: 170%;
+  aspect-ratio: 1/1;
+  border-radius: 50%;
+  background-color: var(--white);
+  pointer-events: none;
+}
+
+.cta:hover .ctaFlair {
+  transform: scale(1);
+}
+
+.ctaLabel {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.363636em;
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  transition: color 0.15s cubic-bezier(0.645, 0.045, 0.355, 1);
+}
+
+.ctaIcon {
+  width: 26px;
+  height: 26px;
+  margin-right: -4px;
+  flex-shrink: 0;
+}
+
+.ctaIcon path {
+  stroke: currentColor;
+  transition: stroke 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
+}
+
+/* ── Logo Strip (GSAP infinite loop — matches WordPress 73e1f2b + .inf-loop-wrapper) */
+
+.logoStrip {
+  width: 100%;
+  max-width: 1280px;
+  margin-inline: auto;
+  position: relative;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  padding: 20px 0 56px;
+  flex-shrink: 0;
+}
+
+.logoStrip::before,
+.logoStrip::after {
+  content: '';
+  position: absolute;
+  display: block;
+  height: 100%;
+  width: 150px;
+  top: 0;
+  z-index: 1;
+}
+
+.logoStrip::before {
+  left: 0;
+  background: linear-gradient(90deg, rgba(9, 9, 9, 1) 8%, rgba(0, 0, 0, 0) 100%);
+}
+
+.logoStrip::after {
+  right: 0;
+  background: linear-gradient(270deg, #090909 0, rgba(0, 0, 0, 0) 100%);
+}
+
+.logoItem {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  width: 150px;
+  margin: 0;
+  padding: 0;
+  position: relative;
+  flex-shrink: 0;
+  overflow: hidden;
+  margin-right: 40px;
+}
+
+.logoImage {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  filter: brightness(0) invert(1);
+}
+
+/* ── Tablet ─────────────────────────────────────────────────────────────── */
+
+@media (max-width: 1024px) {
+  .content {
+    padding-top: 100px;
+    padding-bottom: 100px;
+  }
+
+  .title {
+    width: 89%;
+    max-width: 89%;
+  }
+
+  .cta {
+    font-size: 16px;
+    font-weight: 500;
+    line-height: normal;
+    padding: 16px 28px;
+    border-radius: 50px;
+  }
+
+  .cta::after {
+    border-radius: 50px;
+  }
+}
+
+/* ── Mobile ─────────────────────────────────────────────────────────────── */
+
+@media (max-width: 767px) {
+  .content {
+    padding-top: 40px;
+    padding-bottom: 60px;
+  }
+
+  .title {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .logoStrip::before,
+  .logoStrip::after {
+    width: 80px;
+  }
+}

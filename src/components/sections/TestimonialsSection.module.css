@@ -1,0 +1,286 @@
+.section {
+  background-color: #D9D9D9;
+  background-image: url('/images/testimonials/review-bg-shape.webp');
+  background-position: bottom left;
+  background-repeat: no-repeat;
+  background-size: contain;
+  padding: 120px 0;
+  overflow: hidden;
+  width: 100%;
+}
+
+.inner {
+  max-width: var(--content-width);
+  margin: 0 auto;
+  padding: 0 var(--page-padding);
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+
+.left {
+  flex-shrink: 0;
+  padding-top: 0;
+}
+
+.right {
+  display: flex;
+  align-items: flex-start;
+  gap: 24px;
+  flex-shrink: 0;
+}
+
+.carousel {
+  position: relative;
+  overflow: hidden;
+  width: 602px;
+  flex-shrink: 0;
+}
+
+.track {
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.6s cubic-bezier(0.645, 0.045, 0.355, 1);
+}
+
+.slide {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  flex-shrink: 0;
+  align-items: flex-start;
+  padding: 18px 0 100px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+}
+
+.counter {
+  font-family: var(--font-primary);
+  font-size: 22px;
+  font-weight: 400;
+  line-height: 40px;
+  color: #000000;
+}
+
+.quote {
+  font-family: var(--font-primary);
+  font-size: 28px;
+  font-weight: 400;
+  line-height: 48px;
+  color: #000000;
+}
+
+.author {
+  display: flex;
+  align-items: center;
+  gap: var(--space-16);
+  margin-bottom: 40px;
+}
+
+.avatar {
+  width: 68px;
+  height: 68px;
+  border-radius: 50%;
+  background: #c0c0c0;
+  flex-shrink: 0;
+}
+
+.avatarImg {
+  width: 68px;
+  height: 68px;
+  border-radius: 50%;
+  object-fit: cover;
+  flex-shrink: 0;
+}
+
+.companyLogo {
+  height: 20px;
+  width: auto;
+  object-fit: contain;
+  display: inline-block;
+  vertical-align: middle;
+  margin-left: 4px;
+}
+
+.authorInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.name {
+  font-family: var(--font-serif);
+  font-size: 16px;
+  font-weight: 700;
+  color: #000000;
+  text-transform: uppercase;
+  letter-spacing: 0.32px;
+  line-height: normal;
+}
+
+.role {
+  font-family: var(--font-primary);
+  font-size: 18px;
+  font-weight: 500;
+  color: #333333;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  height: 25px;
+  line-height: normal;
+}
+
+.role strong {
+  font-weight: 600;
+  color: var(--color-night);
+}
+
+.dots {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  padding-top: 0;
+  flex-shrink: 0;
+}
+
+.dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: rgba(0, 0, 0, 0.12);
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  transition: background 0.2s ease;
+}
+
+.dotActive {
+  background: var(--color-night);
+}
+
+.reviewCursor {
+  position: absolute;
+  pointer-events: none;
+  z-index: 10;
+  transform: translate(-50%, -50%);
+  width: 127px;
+  height: 127px;
+  border-radius: 50%;
+  overflow: hidden;
+  padding: 22px;
+  background: rgba(0, 0, 0, 0.15);
+}
+
+.reviewCursorVideo {
+  background: url('/images/testimonials/review-play-bg.png') no-repeat center center;
+  background-size: 127px 127px;
+}
+
+.cursorAvatar {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.videoOverlay {
+  position: fixed;
+  inset: 0;
+  z-index: 999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.6);
+  cursor: pointer;
+}
+
+.videoContainer {
+  position: relative;
+  width: 720px;
+  max-width: 90vw;
+  aspect-ratio: 16 / 9;
+  cursor: default;
+}
+
+.videoIframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+  border-radius: 12px;
+  box-shadow: 0 8px 40px rgba(0, 0, 0, 0.4);
+}
+
+.videoClose {
+  position: absolute;
+  top: -44px;
+  right: 0;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  border: none;
+  background: rgba(255, 255, 255, 0.15);
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 6;
+  transition: background 0.2s ease;
+}
+
+.videoClose:hover {
+  background: rgba(255, 255, 255, 0.3);
+}
+
+@media (max-width: 1023px) {
+  .inner {
+    flex-direction: column;
+    padding: 0 var(--space-24);
+    gap: 40px;
+  }
+
+  .left {
+    flex: none;
+    width: 100%;
+  }
+
+  .carousel {
+    height: 420px;
+    cursor: auto;
+    flex: none;
+    width: 100%;
+  }
+
+  .right {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .slide {
+    height: 420px;
+    padding-right: 0;
+  }
+
+  .quote {
+    font-size: 22px;
+    line-height: 38px;
+  }
+
+  .dots {
+    flex-direction: row;
+    margin-left: 0;
+    padding-top: 0;
+    margin-top: 24px;
+    align-self: center;
+  }
+
+  .section {
+    padding: var(--section-padding) 0;
+  }
+
+  .reviewCursor {
+    display: none;
+  }
+}

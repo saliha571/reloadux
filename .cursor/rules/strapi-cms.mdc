@@ -1,0 +1,35 @@
+---
+description: Strapi CMS integration conventions
+globs: "src/lib/**/*.ts,reloadux-cms/**"
+alwaysApply: false
+---
+
+# Strapi CMS Integration
+
+## Architecture
+
+```
+src/lib/strapi.ts    → Raw Strapi API client (fetchers + interfaces)
+src/lib/content.ts   → Content abstraction layer (Strapi-first, JSON fallback)
+src/lib/media.ts     → Strapi media URL helper
+src/lib/types.ts     → Shared TypeScript interfaces
+```
+
+## Adding New Content Types
+
+1. Create schema in `reloadux-cms/src/api/{name}/content-types/{name}/schema.json`
+2. Create routes/controllers/services files (Strapi v5 requires all three)
+3. Add Strapi interface and fetcher in `src/lib/strapi.ts`
+4. Add content function in `src/lib/content.ts` with try/catch fallback
+5. Add TypeScript types in `src/lib/types.ts`
+
+## API Token
+
+- Stored in `.env.local` as `STRAPI_API_TOKEN`
+- Admin JWT tokens do NOT work with Strapi v5 Content API — only API tokens
+- Strapi runs at `http://localhost:1337`
+- Admin: `salihashahzad23@gmail.com` / `Admin1234!`
+
+## Seed Script
+
+`reloadux-cms/seed.js` populates all content types. Uses the API token (not admin JWT) for Content API calls. Run with `node seed.js` from the CMS directory.

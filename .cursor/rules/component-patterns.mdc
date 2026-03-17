@@ -1,0 +1,110 @@
+---
+description: React component and CSS module patterns for reloadux
+globs: "**/*.tsx,**/*.module.css"
+alwaysApply: false
+---
+
+# Component & Styling Patterns
+
+## File Structure
+
+Each section component lives in `src/components/sections/` with a colocated CSS module:
+```
+SectionName.tsx
+SectionName.module.css
+```
+
+Reusable UI primitives live in `src/components/ui/`.
+Layout components (Header, Footer) live in `src/components/layout/`.
+
+## Section Component Template
+
+```tsx
+import styles from "./SectionName.module.css";
+import { SectionTag } from "@/components/ui/SectionTag";
+
+interface SectionNameProps {
+  // typed props
+}
+
+export function SectionName({ ...props }: SectionNameProps) {
+  return (
+    <section className={styles.section}>
+      <div className={styles.inner}>
+        <SectionTag text="SECTION LABEL" />
+        {/* content */}
+      </div>
+    </section>
+  );
+}
+```
+
+## CSS Module Pattern
+
+```css
+.section {
+  width: 100%;
+  padding: var(--section-padding) 0;
+  /* use token for background: var(--bg-dark), var(--color-smoke), etc. */
+}
+
+.inner {
+  max-width: var(--content-width);
+  margin: 0 auto;
+  padding-inline: var(--page-padding);
+}
+```
+
+## Full-Bleed Right Pattern
+
+For content (like blog cards) that extends past the right content boundary:
+
+```css
+.section {
+  overflow: hidden;
+}
+
+.inner {
+  padding-left: max(var(--page-padding), calc((100vw - var(--content-width)) / 2 + var(--page-padding)));
+  padding-right: 0;
+}
+```
+
+## Carousel Pattern
+
+Horizontal scroll carousel (e.g. blog listing):
+
+```css
+.track {
+  display: flex;
+  gap: 32px;
+  overflow-x: auto;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.track::-webkit-scrollbar {
+  display: none;
+}
+```
+
+Navigation via `ArrowNav` component, scrolling via `scrollBy({ left: cardWidth + gap, behavior: "smooth" })`.
+
+## Responsive Breakpoints
+
+Three breakpoints, desktop first:
+
+- Default: full layout
+- `@media (max-width: 1024px)`: tablet — stack columns, reduce padding
+- `@media (max-width: 767px)`: mobile — single column, minimal padding
+
+## Rules
+
+- Always use CSS modules (`.module.css`), never inline styles for layout
+- Use `var(--font-primary)` not `"Manrope"` — same for all fonts and colors
+- Every section must have `width: 100%` on its root element
+- Use `"use client"` directive only when the component uses hooks, event handlers, or browser APIs
+- Prefer `<Image>` from `next/image` for raster images; use native `<img>` only for SVGs that need to fill their container
+- All tag text must be ALL CAPS when passed to `SectionTag`
+- Import shared UI from `@/components/ui` — check barrel export at `src/components/ui/index.ts`
+- Footer uses `border-bottom` on parent containers as row dividers, not separate `<div>` elements

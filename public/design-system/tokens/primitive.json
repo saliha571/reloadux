@@ -1,0 +1,316 @@
+{
+  "$schema": "https://design-tokens.github.io/community-group/format/",
+  "meta": {
+    "name": "Reloadux Design System — Primitive Tokens",
+    "version": "1.0.0",
+    "source": "Figma (Home Page + Work Page — Final)",
+    "description": "Raw design values extracted directly from Figma variables and design context"
+  },
+
+  "color": {
+    "base": {
+      "night":   { "value": "#090909", "type": "color", "description": "Near-black primary surface" },
+      "black":   { "value": "#000000", "type": "color", "description": "Pure black" },
+      "white":   { "value": "#FFFFFF", "type": "color", "description": "Pure white" },
+      "smoke":   { "value": "#D9D9D9", "type": "color", "description": "Light grey / muted UI" },
+      "dark-bg": { "value": "#131A22", "type": "color", "description": "Dark background — alternate surface" },
+      "light":   { "value": "#F7F8FB", "type": "color", "description": "Near-white light surface background" }
+    },
+
+    "grey": {
+      "200": { "value": "#D1D1D1", "type": "color" },
+      "300": { "value": "#C3C3C3", "type": "color" },
+      "400": { "value": "#A5A9AC", "type": "color", "description": "Mid grey — secondary text, captions" },
+      "600": { "value": "#565656", "type": "color" },
+      "700": { "value": "#333333", "type": "color" },
+      "50":  { "value": "#5F6D7E", "type": "color", "description": "Dark grey — paragraph text" },
+      "05":  { "value": "#242634", "type": "color", "description": "Deep blue-grey — dark card surface" },
+      "500": { "value": "#697586", "type": "color", "description": "Grey modern mid — secondary UI" }
+    },
+
+    "grey-nav": {
+      "default":   { "value": "#95A2B4", "type": "color", "description": "Navigation grey / muted links" },
+      "text":      { "value": "#5F5F5F", "type": "color", "description": "Text grey — muted body" },
+      "light":     { "value": "#929AA6", "type": "color", "description": "Light grey — tertiary text" },
+      "mid":       { "value": "#959CB6", "type": "color", "description": "Blue-grey mid tone" }
+    },
+
+    "neutral": {
+      "25":  { "value": "#FCFCFD", "type": "color" },
+      "100": { "value": "#F2F4F7", "type": "color" },
+      "200": { "value": "#EAECF0", "type": "color" },
+      "300": { "value": "#D0D5DD", "type": "color" },
+      "400": { "value": "#98A2B3", "type": "color" },
+      "500": { "value": "#667085", "type": "color" },
+      "600": { "value": "#475467", "type": "color" },
+      "700": { "value": "#344054", "type": "color" },
+      "900": { "value": "#101828", "type": "color" },
+      "25-dark":  { "value": "#3B3B3F", "type": "color", "description": "Material neutral 25 — dark surface" },
+      "40-dark":  { "value": "#5E5E62", "type": "color", "description": "Material neutral 40 — dim text" },
+      "100-light": { "value": "#FBFBFB", "type": "color", "description": "Material neutral 100 — near-white" },
+      "n500":     { "value": "#42526E", "type": "color", "description": "Neutral N500 — dark blue-grey" },
+      "n20a":     { "value": "#091E42", "type": "color", "description": "Neutral N20A — deepest dark blue" },
+      "300-alt":  { "value": "#94A3B8", "type": "color", "description": "Neutral 300 — cool slate" }
+    },
+
+    "purple": {
+      "50":  { "value": "#F9F5FF", "type": "color" },
+      "300": { "value": "#D6BBFB", "type": "color" },
+      "500": { "value": "#9662FF", "type": "color", "description": "Vibrant purple — gradient start" },
+      "700": { "value": "#7F56D9", "type": "color", "description": "Button primary bg" },
+      "900": { "value": "#A401B7", "type": "color", "description": "Deep magenta — gradient end" }
+    },
+
+    "blue": {
+      "primary":  { "value": "#02C2EA", "type": "color", "description": "Bright cyan — primary blue accent" },
+      "atlassian": { "value": "#0C66E4", "type": "color", "description": "Material primary blue" },
+      "1":   { "value": "#2F80ED", "type": "color", "description": "Blue 1 — standard link blue" },
+      "500": { "value": "#2E90FA", "type": "color" },
+      "700": { "value": "#175CD3", "type": "color" }
+    },
+
+    "green": {
+      "100": { "value": "#DCFAE6", "type": "color" },
+      "400": { "value": "#47CD89", "type": "color" },
+      "500": { "value": "#17B26A", "type": "color" },
+      "600": { "value": "#079455", "type": "color" },
+      "800": { "value": "#085D3A", "type": "color" },
+      "950": { "value": "#053321", "type": "color" },
+      "brand":  { "value": "#136114", "type": "color", "description": "Green branding — deep forest" },
+      "neon":   { "value": "#00EC93", "type": "color", "description": "Neon green accent" },
+      "bright": { "value": "#07AF4A", "type": "color", "description": "Bright green — positive / success" }
+    },
+
+    "dark-green": {
+      "900": { "value": "#002737", "type": "color", "description": "Deep teal dark green" }
+    },
+
+    "red": {
+      "50":  { "value": "#FEF3F2", "type": "color" },
+      "100": { "value": "#FEE4E2", "type": "color" },
+      "400": { "value": "#F97066", "type": "color" },
+      "600": { "value": "#D92D20", "type": "color" },
+      "brand": { "value": "#BE1E2D", "type": "color", "description": "Red brand accent" }
+    },
+
+    "orange": {
+      "500": { "value": "#FF912C", "type": "color", "description": "Orange — warning / accent" }
+    },
+
+    "pink": {
+      "400": { "value": "#F670C7", "type": "color" }
+    },
+
+    "brand-secondary": {
+      "moonstone": {
+        "100": { "value": "#F2FBFB", "type": "color" },
+        "200": { "value": "#E2FBFB", "type": "color" },
+        "900": { "value": "#00A7B7", "type": "color" }
+      },
+      "sunset": {
+        "100": { "value": "#FFF9F0", "type": "color" },
+        "200": { "value": "#FEF1DC", "type": "color" },
+        "700": { "value": "#F99806", "type": "color" },
+        "800": { "value": "#A46404", "type": "color" }
+      },
+      "periwinkle": {
+        "100": { "value": "#ECF2FF", "type": "color" }
+      },
+      "dark-grey": {
+        "900": { "value": "#0D2A52", "type": "color", "description": "Dark navy — strong contrast surface" }
+      },
+      "outline": {
+        "default": { "value": "#DDE4F4", "type": "color", "description": "Light outline / border on light bg" }
+      },
+      "sandstone": {
+        "900": { "value": "#F8F1E4", "type": "color" }
+      },
+      "oxford": {
+        "900": { "value": "#1D2939", "type": "color" }
+      }
+    },
+
+    "gradient": {
+      "purple-glow": {
+        "value": "linear-gradient(180deg, #9662FF 0%, #A401B7 88%)",
+        "type": "gradient",
+        "description": "CTA purple atmospheric glow — applied as blurred orbs over Night background"
+      }
+    }
+  },
+
+  "typography": {
+    "font-family": {
+      "primary":  { "value": "'Manrope', sans-serif", "type": "fontFamily", "description": "Primary body + heading font" },
+      "serif":    { "value": "'Libre Baskerville', serif", "type": "fontFamily", "description": "Accent serif — tags, italic emphasis" },
+      "accent":   { "value": "'Lexend', sans-serif", "type": "fontFamily", "description": "Step numbers, numeric accent labels" },
+      "system":   { "value": "'Graphik', sans-serif", "type": "fontFamily", "description": "Footer copyright text" }
+    },
+
+    "font-size": {
+      "14":  { "value": "14px",  "type": "fontSize", "description": "Tag small / label" },
+      "16":  { "value": "16px",  "type": "fontSize", "description": "Body / button / tag" },
+      "18":  { "value": "18px",  "type": "fontSize", "description": "Subtitle / tag accent" },
+      "20":  { "value": "20px",  "type": "fontSize", "description": "Subtext / button xl" },
+      "22":  { "value": "22px",  "type": "fontSize", "description": "Paragraph md" },
+      "28":  { "value": "28px",  "type": "fontSize", "description": "Paragraph lg" },
+      "30":  { "value": "30px",  "type": "fontSize", "description": "Subheading / card title" },
+      "32":  { "value": "32px",  "type": "fontSize", "description": "Step card title" },
+      "40":  { "value": "40px",  "type": "fontSize", "description": "Heading H3" },
+      "48":  { "value": "48px",  "type": "fontSize", "description": "Heading lg" },
+      "50":  { "value": "50px",  "type": "fontSize", "description": "Heading xl" },
+      "70":  { "value": "70px",  "type": "fontSize", "description": "Hero title" },
+      "80":  { "value": "80px",  "type": "fontSize", "description": "CTA display" }
+    },
+
+    "font-weight": {
+      "regular":    { "value": "400", "type": "fontWeight" },
+      "medium":     { "value": "500", "type": "fontWeight" },
+      "semibold":   { "value": "600", "type": "fontWeight" },
+      "bold":       { "value": "700", "type": "fontWeight" },
+      "extrabold":  { "value": "800", "type": "fontWeight" }
+    },
+
+    "line-height": {
+      "22":  { "value": "22px",  "type": "lineHeight" },
+      "26":  { "value": "26px",  "type": "lineHeight" },
+      "28":  { "value": "28px",  "type": "lineHeight" },
+      "40":  { "value": "40px",  "type": "lineHeight" },
+      "48":  { "value": "48px",  "type": "lineHeight" },
+      "53":  { "value": "53px",  "type": "lineHeight" },
+      "60":  { "value": "60px",  "type": "lineHeight" },
+      "68":  { "value": "68px",  "type": "lineHeight" },
+      "88":  { "value": "88px",  "type": "lineHeight" },
+      "90":  { "value": "90px",  "type": "lineHeight" },
+      "100": { "value": "100%",  "type": "lineHeight", "description": "Auto / normal" }
+    },
+
+    "letter-spacing": {
+      "none":    { "value": "0px",    "type": "letterSpacing" },
+      "tight":   { "value": "0.32px", "type": "letterSpacing", "description": "Uppercase tags" },
+      "normal":  { "value": "0.36px", "type": "letterSpacing", "description": "Tag accents" },
+      "wide":    { "value": "1.6px",  "type": "letterSpacing", "description": "CTA italic display" },
+      "wider":   { "value": "2px",    "type": "letterSpacing", "description": "Tag/T1 style" }
+    }
+  },
+
+  "spacing": {
+    "0":   { "value": "0px",   "type": "spacing" },
+    "4":   { "value": "4px",   "type": "spacing" },
+    "6":   { "value": "6px",   "type": "spacing" },
+    "8":   { "value": "8px",   "type": "spacing" },
+    "12":  { "value": "12px",  "type": "spacing" },
+    "16":  { "value": "16px",  "type": "spacing" },
+    "18":  { "value": "18px",  "type": "spacing" },
+    "20":  { "value": "20px",  "type": "spacing" },
+    "24":  { "value": "24px",  "type": "spacing" },
+    "28":  { "value": "28px",  "type": "spacing" },
+    "32":  { "value": "32px",  "type": "spacing" },
+    "40":  { "value": "40px",  "type": "spacing" },
+    "48":  { "value": "48px",  "type": "spacing" },
+    "52":  { "value": "52px",  "type": "spacing" },
+    "60":  { "value": "60px",  "type": "spacing" },
+    "62":  { "value": "62px",  "type": "spacing" },
+    "80":  { "value": "80px",  "type": "spacing" },
+    "100": { "value": "100px", "type": "spacing" },
+    "120": { "value": "120px", "type": "spacing" },
+    "160": { "value": "160px", "type": "spacing" }
+  },
+
+  "border-radius": {
+    "0":    { "value": "0px",    "type": "borderRadius", "description": "None" },
+    "4":    { "value": "4px",    "type": "borderRadius" },
+    "8":    { "value": "8px",    "type": "borderRadius" },
+    "12":   { "value": "12px",   "type": "borderRadius" },
+    "16":   { "value": "16px",   "type": "borderRadius" },
+    "24":   { "value": "24px",   "type": "borderRadius" },
+    "30":   { "value": "30px",   "type": "borderRadius", "description": "Button pill" },
+    "400":  { "value": "400px",  "type": "borderRadius", "description": "Glow orb" },
+    "full": { "value": "9999px", "type": "borderRadius", "description": "Circle" }
+  },
+
+  "shadow": {
+    "button-glow": {
+      "value": "0px 0px 12px 0px rgba(255, 255, 255, 0.5)",
+      "type": "boxShadow",
+      "description": "Hero CTA button white glow"
+    },
+    "natural": {
+      "value": "6px 6px 9px rgba(0, 0, 0, 0.2)",
+      "type": "boxShadow",
+      "description": "WP preset natural shadow — card hover"
+    },
+    "deep": {
+      "value": "12px 12px 50px rgba(0, 0, 0, 0.4)",
+      "type": "boxShadow",
+      "description": "WP preset deep shadow"
+    },
+    "card": {
+      "value": "0 1px 3px rgba(0, 0, 0, 0.08)",
+      "type": "boxShadow",
+      "description": "Subtle card resting shadow"
+    },
+    "sharp": {
+      "value": "6px 6px 0px rgba(0, 0, 0, 0.2)",
+      "type": "boxShadow",
+      "description": "WP preset sharp shadow"
+    },
+    "card-hover": {
+      "value": "6px 6px 9px rgba(0, 0, 0, 0.2)",
+      "type": "boxShadow",
+      "description": "Card hover shadow (same as natural)"
+    }
+  },
+
+  "blur": {
+    "glow": {
+      "value": "325px",
+      "type": "dimension",
+      "description": "Purple glow orb blur radius"
+    }
+  },
+
+  "opacity": {
+    "glow":        { "value": "0.6",  "type": "number", "description": "Purple glow orb opacity" },
+    "holo-shape":  { "value": "0.1",  "type": "number", "description": "Holographic shape overlay (CTA)" },
+    "text-muted":  { "value": "0.8",  "type": "number", "description": "Hero subtitle text opacity" }
+  },
+
+  "layout": {
+    "canvas-width":    { "value": "1440px", "type": "sizing", "description": "Full design canvas width" },
+    "content-width":   { "value": "1440px", "type": "sizing", "description": "Primary content area (max-width; effective width = 1440 - 80 - 80 = 1280px)" },
+    "inner-width":     { "value": "1200px", "type": "sizing", "description": "Narrow content area (hero)" },
+    "narrow-width":    { "value": "1152px", "type": "sizing", "description": "CTA content area" },
+    "page-padding":    { "value": "80px",   "type": "spacing", "description": "Horizontal page gutters" },
+    "section-padding": { "value": "120px",  "type": "spacing", "description": "Vertical section padding" },
+    "section-gap":     { "value": "120px",  "type": "spacing", "description": "Gap between service cards" }
+  },
+
+  "motion": {
+    "transition": { "value": "all 0.3s ease-in-out", "type": "other" },
+    "duration": {
+      "instant":   { "value": "100ms",  "type": "duration" },
+      "fast":      { "value": "200ms",  "type": "duration" },
+      "normal":    { "value": "300ms",  "type": "duration" },
+      "slow":      { "value": "500ms",  "type": "duration" },
+      "slower":    { "value": "700ms",  "type": "duration" },
+      "entrance":  { "value": "600ms",  "type": "duration" }
+    },
+    "easing": {
+      "default": { "value": "ease-in-out",                       "type": "cubicBezier" },
+      "in":      { "value": "cubic-bezier(0.4, 0, 1, 1)",        "type": "cubicBezier" },
+      "out":     { "value": "cubic-bezier(0, 0, 0.2, 1)",        "type": "cubicBezier" },
+      "spring":  { "value": "cubic-bezier(0.34, 1.56, 0.64, 1)", "type": "cubicBezier" }
+    },
+    "stagger-delay": { "value": "80ms", "type": "duration" }
+  },
+
+  "z-index": {
+    "behind":  { "value": "-1",  "type": "other", "description": "Behind content (WebGL, holo shapes)" },
+    "base":    { "value": "0",   "type": "other" },
+    "raised":  { "value": "10",  "type": "other" },
+    "nav":     { "value": "100", "type": "other" },
+    "overlay": { "value": "200", "type": "other" },
+    "modal":   { "value": "300", "type": "other" }
+  }
+}

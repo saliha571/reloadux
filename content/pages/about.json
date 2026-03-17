@@ -1,0 +1,36 @@
+{
+  "hero": {
+    "title": "About reloadux",
+    "subtitle": "We're a UI/UX design agency specializing in AI-native product experiences for B2B and SaaS companies.",
+    "ctaText": "Get in touch",
+    "ctaHref": "/contact-us/"
+  },
+  "stats": [
+    { "value": "50", "suffix": "+", "label": "Projects delivered" },
+    { "value": "30", "suffix": "+", "label": "Happy clients" },
+    { "value": "5", "suffix": "+", "label": "Years of experience" },
+    { "value": "450", "prefix": "$", "suffix": "M", "label": "Raised by founders we've supported" }
+  ],
+  "values": [
+    { "title": "Think first, design second", "description": "We invest time understanding the problem before proposing solutions." },
+    { "title": "Honest collaboration", "description": "We push back when needed and celebrate wins together." },
+    { "title": "AI-native mindset", "description": "Every design decision considers how AI can enhance the experience." },
+    { "title": "Measurable impact", "description": "We tie every design decision to business outcomes." }
+  ],
+  "team": [
+    { "name": "Sahar Asif", "role": "Key Account Manager", "image": "/images/team/sahar.jpg", "linkedin": "https://www.linkedin.com/in/sahar-asif-284a9955/" },
+    { "name": "Lara Kazan", "role": "Business Development Executive", "image": "/images/team/lara.jpg", "linkedin": "https://www.linkedin.com/in/lara-kazan-82a24113b/" }
+  ],
+  "glance": [
+    { "label": "Founded", "value": "2020" },
+    { "label": "Headquarters", "value": "Washington D.C." },
+    { "label": "Team Size", "value": "20+" },
+    { "label": "Domains", "value": "AI, SaaS, Fintech, Healthcare" }
+  ],
+  "cta": {
+    "title": "Ready to work with us?",
+    "subtitle": "Let's build something intelligent together.",
+    "ctaText": "Contact Us",
+    "ctaHref": "/contact-us/"
+  }
+}

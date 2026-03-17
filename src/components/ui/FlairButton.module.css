@@ -1,0 +1,143 @@
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px 32px;
+  background: transparent;
+  color: var(--white);
+  font-family: var(--font-primary);
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 1.4;
+  border-radius: 50px;
+  text-decoration: none;
+  overflow: hidden;
+  position: relative;
+  white-space: nowrap;
+  border: none;
+  transition: color 0.15s cubic-bezier(0.645, 0.045, 0.355, 1);
+}
+
+.btn::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border: 1px solid var(--white);
+  border-radius: 50px;
+  pointer-events: none;
+}
+
+.btn:hover {
+  color: var(--black);
+}
+
+/* ── Sizes ───────────────────────────────── */
+
+.sm {
+  padding: 12px 24px;
+  font-size: 16px;
+  line-height: 22px;
+}
+
+.lg {
+  padding: 20px 40px;
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 28px;
+}
+
+/* ── Flair (circle fill on hover) ────────── */
+
+.flair {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  transform: scale(0);
+  transform-origin: 0 0;
+  will-change: transform;
+  transition: transform 0.4s cubic-bezier(0.645, 0.045, 0.355, 1);
+}
+
+.flair::before {
+  content: '';
+  display: block;
+  position: absolute;
+  left: 0;
+  top: 0;
+  transform: translate(-50%, -50%);
+  width: 250%;
+  aspect-ratio: 1 / 1;
+  border-radius: 50%;
+  background-color: var(--white);
+  pointer-events: none;
+}
+
+.btn:hover .flair {
+  transform: scale(1);
+}
+
+/* ── Label ───────────────────────────────── */
+
+.label {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.36em;
+  position: relative;
+  text-align: center;
+  transition: color 0.15s cubic-bezier(0.645, 0.045, 0.355, 1);
+  z-index: 1;
+}
+
+/* ── Arrow icon ──────────────────────────── */
+
+.arrow {
+  width: 20px;
+  height: 20px;
+  flex-shrink: 0;
+  margin-right: -4px;
+}
+
+.lg .arrow {
+  width: 26px;
+  height: 26px;
+}
+
+.arrow path {
+  stroke: currentColor;
+  transition: stroke 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
+}
+
+/* ── Dark variant (for light backgrounds) ── */
+
+.dark {
+  color: var(--black);
+}
+
+.dark::after {
+  border-color: var(--black);
+}
+
+.dark:hover {
+  color: var(--white);
+}
+
+.dark .flair::before {
+  background-color: var(--black);
+}
+
+/* ── Responsive ──────────────────────────── */
+
+@media (max-width: 1024px) {
+  .sm {
+    padding: 8px 16px;
+    font-size: 13px;
+    line-height: normal;
+  }
+
+  .lg {
+    font-size: 16px;
+    font-weight: 500;
+    line-height: normal;
+    padding: 16px 28px;
+  }
+}

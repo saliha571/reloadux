@@ -1,0 +1,1110 @@
+/* ==========================================================================
+   Reloadux — Global Stylesheet
+   Assembled from design-system tokens + WordPress reference styles
+   ========================================================================== */
+
+
+/* ==========================================================================
+   1. Reset & Base
+   ========================================================================== */
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 100%;
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  font-family: var(--font-body);
+  font-size: var(--text-base);
+  font-weight: var(--weight-regular);
+  line-height: var(--leading-normal);
+  color: var(--text-inverse);
+  background-color: var(--bg-page);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+img,
+svg {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+ul, ol {
+  list-style: none;
+}
+
+
+/* ==========================================================================
+   2. CSS Custom Properties — Design Tokens (Primitive + Semantic)
+   Source: design-system/css/variables.css + src-wordpress-ref/styles.css
+   ========================================================================== */
+
+:root {
+
+  /* ── Primitive Colors: Base ─────────────────────────────────────────────── */
+  --color-night:    #090909;
+  --color-black:    #000000;
+  --color-white:    #FFFFFF;
+  --color-smoke:    #D9D9D9;
+  --color-dark-bg:  #131A22;
+  --color-light:    #F7F8FB;
+
+  /* Short aliases (WordPress-compatible) */
+  --night:   #090909;
+  --smokey:  #D9D9D9;
+  --white:   #FFFFFF;
+  --black:   #000000;
+  --grey:    #A5A9AC;
+  --purple:  #9662FF;
+  --magenta: #A401B7;
+
+  /* ── Primitive Colors: Grey Scale ───────────────────────────────────────── */
+  --color-grey-200: #D1D1D1;
+  --color-grey-300: #C3C3C3;
+  --color-grey-400: #A5A9AC;
+  --color-grey-600: #565656;
+  --color-grey-700: #333333;
+  --color-grey-50:  #5F6D7E;
+  --color-grey-05:  #242634;
+  --color-grey-500: #697586;
+
+  /* ── Primitive Colors: Grey Navigation ────────────────────────────────── */
+  --color-grey-nav:       #95A2B4;
+  --color-text-grey:      #5F5F5F;
+  --color-grey-light:     #929AA6;
+  --color-grey-mid:       #959CB6;
+
+  /* ── Primitive Colors: Neutral Scale ────────────────────────────────────── */
+  --color-neutral-25:  #FCFCFD;
+  --color-neutral-100: #F2F4F7;
+  --color-neutral-200: #EAECF0;
+  --color-neutral-300: #D0D5DD;
+  --color-neutral-400: #98A2B3;
+  --color-neutral-500: #667085;
+  --color-neutral-600: #475467;
+  --color-neutral-700: #344054;
+  --color-neutral-900: #101828;
+  --color-neutral-25-dark:  #3B3B3F;
+  --color-neutral-40-dark:  #5E5E62;
+  --color-neutral-100-light: #FBFBFB;
+  --color-neutral-n500:     #42526E;
+  --color-neutral-n20a:     #091E42;
+  --color-neutral-300-alt:  #94A3B8;
+
+  /* ── Primitive Colors: Purple ───────────────────────────────────────────── */
+  --color-purple-50:  #F9F5FF;
+  --color-purple-300: #D6BBFB;
+  --color-purple-500: #9662FF;
+  --color-purple-700: #7F56D9;
+  --color-purple-900: #A401B7;
+
+  /* ── Primitive Colors: Blue ─────────────────────────────────────────────── */
+  --color-blue-primary:  #02C2EA;
+  --color-blue-atlassian: #0C66E4;
+  --color-blue-1:   #2F80ED;
+  --color-blue-500: #2E90FA;
+  --color-blue-700: #175CD3;
+
+  /* ── Primitive Colors: Green ────────────────────────────────────────────── */
+  --color-green-100: #DCFAE6;
+  --color-green-400: #47CD89;
+  --color-green-500: #17B26A;
+  --color-green-600: #079455;
+  --color-green-800: #085D3A;
+  --color-green-950: #053321;
+  --color-green-brand:  #136114;
+  --color-green-neon:   #00EC93;
+  --color-green-bright: #07AF4A;
+
+  /* ── Primitive Colors: Dark Green ─────────────────────────────────────── */
+  --color-dark-green: #002737;
+
+  /* ── Primitive Colors: Red ──────────────────────────────────────────────── */
+  --color-red-50:  #FEF3F2;
+  --color-red-100: #FEE4E2;
+  --color-red-400: #F97066;
+  --color-red-600: #D92D20;
+  --color-red-brand: #BE1E2D;
+
+  /* ── Primitive Colors: Orange ─────────────────────────────────────────── */
+  --color-orange-500: #FF912C;
+
+  /* ── Primitive Colors: Pink ─────────────────────────────────────────────── */
+  --color-pink-400: #F670C7;
+
+  /* ── Primitive Colors: Brand Secondary ──────────────────────────────────── */
+  --color-moonstone-100: #F2FBFB;
+  --color-moonstone-200: #E2FBFB;
+  --color-moonstone-900: #00A7B7;
+  --color-sunset-100:    #FFF9F0;
+  --color-sunset-200:    #FEF1DC;
+  --color-sunset-700:    #F99806;
+  --color-sunset-800:    #A46404;
+  --color-periwinkle-100: #ECF2FF;
+  --color-sandstone-900:  #F8F1E4;
+  --color-oxford-900:     #1D2939;
+  --color-dark-grey-900:  #0D2A52;
+  --color-outline:        #DDE4F4;
+
+  /* ── Gradient ──────────────────────────────────────────────────────────── */
+  --gradient-purple-glow: linear-gradient(180deg, var(--color-purple-500) 0%, var(--color-purple-900) 88%);
+
+  /* ── Semantic Colors: Text ─────────────────────────────────────────────── */
+  --text-primary:    var(--color-white);
+  --text-secondary:  var(--color-grey-400);
+  --text-tertiary:   var(--color-grey-200);
+  --text-inverse:    var(--color-night);
+  --text-on-dark:    var(--color-white);
+  --text-muted:      rgba(255, 255, 255, 0.8);
+  --text-tag:        var(--color-grey-400);
+  --text-grey:       var(--color-text-grey);
+  --text-nav:        var(--color-grey-nav);
+  --text-slate:      var(--color-grey-50);
+  --text-link:       var(--color-white);
+  --text-success:    var(--color-green-500);
+  --text-error:      var(--color-red-600);
+  --text-warning:    var(--color-sunset-700);
+  --text-info:       var(--color-blue-500);
+
+  /* WP-compatible semantic aliases */
+  --color-text-primary:    var(--white);
+  --color-text-secondary:  var(--grey);
+  --color-text-inverse:    var(--night);
+  --color-text-on-dark:    var(--white);
+
+  /* ── Semantic Colors: Backgrounds ──────────────────────────────────────── */
+  --bg-page:      var(--color-night);
+  --bg-surface:   var(--color-neutral-100);
+  --bg-elevated:  var(--color-white);
+  --bg-dark:      var(--color-night);
+  --bg-darker:    var(--color-black);
+  --bg-cta:       var(--color-night);
+  --bg-card-dark: var(--color-grey-05);
+  --bg-alt-dark:  var(--color-dark-bg);
+  --bg-light-surface: var(--color-light);
+  --bg-overlay:   rgba(0, 0, 0, 0.6);
+  --bg-success:   var(--color-green-100);
+  --bg-error:     var(--color-red-50);
+  --bg-info:      var(--color-purple-50);
+
+  /* WP-compatible semantic aliases */
+  --color-bg-page:         var(--white);
+  --color-bg-surface:      #F5F5F5;
+  --color-bg-elevated:     var(--white);
+  --color-bg-dark:         var(--night);
+  --color-bg-black:        var(--black);
+  --color-bg-cta:          var(--night);
+
+  /* ── Semantic Colors: Borders ──────────────────────────────────────────── */
+  --border-default:  var(--color-smoke);
+  --border-subtle:   var(--color-neutral-200);
+  --border-strong:   var(--color-grey-400);
+  --border-focus:    var(--color-white);
+  --border-outline:  var(--color-outline);
+
+  --color-border-default:  var(--smokey);
+  --color-border-subtle:   #E8E8E8;
+
+  /* ── Semantic Colors: Interactive ──────────────────────────────────────── */
+  --interactive-primary:    var(--color-white);
+  --interactive-primary-fg: var(--color-black);
+  --interactive-hover:      var(--color-smoke);
+  --interactive-accent:     var(--color-purple-500);
+
+  /* ── Typography: Font Families ─────────────────────────────────────────── */
+  --font-primary: 'Manrope', sans-serif;
+  --font-serif:   'Libre Baskerville', serif;
+  --font-accent:  'Lexend', sans-serif;
+
+  --manrope:   "Manrope", sans-serif;
+  --libre:     "Libre Baskerville", serif;
+  --lexend:    "Lexend", sans-serif;
+  --fallback:  "Inter", "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+
+  --font-heading:  var(--libre);
+  --font-body:     var(--manrope);
+
+  /* ── Typography: Font Sizes (design-system scale, px) ────────────────── */
+  --text-14: 14px;
+  --text-16: 16px;
+  --text-18: 18px;
+  --text-20: 20px;
+  --text-22: 22px;
+  --text-28: 28px;
+  --text-30: 30px;
+  --text-40: 40px;
+  --text-48: 48px;
+  --text-50: 50px;
+  --text-70: 70px;
+  --text-80: 80px;
+
+  /* ── Typography: Font Sizes (rem scale, WP-compatible) ──────────────── */
+  --text-xs:    0.75rem;
+  --text-sm:    0.8125rem;
+  --text-base:  1rem;
+  --text-md:    1.125rem;
+  --text-lg:    1.25rem;
+  --text-xl:    1.5rem;
+  --text-2xl:   1.875rem;
+  --text-3xl:   2.25rem;
+  --text-4xl:   2.625rem;
+  --text-5xl:   3.75rem;
+
+  /* ── Typography: Font Weights ──────────────────────────────────────────── */
+  --weight-regular:   400;
+  --weight-medium:    500;
+  --weight-semibold:  600;
+  --weight-bold:      700;
+  --weight-extrabold: 800;
+
+  /* ── Typography: Line Heights (design-system, px) ────────────────────── */
+  --leading-22:  22px;
+  --leading-26:  26px;
+  --leading-28:  28px;
+  --leading-40:  40px;
+  --leading-48:  48px;
+  --leading-53:  53px;
+  --leading-60:  60px;
+  --leading-68:  68px;
+  --leading-88:  88px;
+  --leading-90:  90px;
+  --leading-auto: normal;
+
+  /* ── Typography: Line Heights (ratio scale, WP-compatible) ─────────── */
+  --leading-tight:    1.2;
+  --leading-snug:     1.35;
+  --leading-normal:   1.6;
+  --leading-relaxed:  1.75;
+
+  /* ── Typography: Letter Spacing ────────────────────────────────────────── */
+  --tracking-none:   0px;
+  --tracking-tight:  -0.02em;
+  --tracking-normal: 0em;
+  --tracking-wide:   0.05em;
+  --tracking-wider:  0.1em;
+
+  /* ── Spacing Scale (design-system, px) ─────────────────────────────────── */
+  --space-0:   0px;
+  --space-4:   4px;
+  --space-6:   6px;
+  --space-8:   8px;
+  --space-12:  12px;
+  --space-16:  16px;
+  --space-18:  18px;
+  --space-20:  20px;
+  --space-24:  24px;
+  --space-28:  28px;
+  --space-32:  32px;
+  --space-40:  40px;
+  --space-48:  48px;
+  --space-52:  52px;
+  --space-60:  60px;
+  --space-62:  62px;
+  --space-80:  80px;
+  --space-100: 100px;
+  --space-120: 120px;
+  --space-160: 160px;
+
+  /* ── Spacing Scale (named, WP-compatible) ────────────────────────────── */
+  --space-2xs:  4px;
+  --space-xs:   8px;
+  --space-sm:   12px;
+  --space-md:   16px;
+  --space-lg:   24px;
+  --space-xl:   32px;
+  --space-2xl:  48px;
+  --space-3xl:  64px;
+  --space-4xl:  96px;
+
+  /* ── Layout ────────────────────────────────────────────────────────────── */
+  --canvas-width:    1440px;
+  --content-width:   1440px;
+  --inner-width:     1200px;
+  --narrow-width:    1152px;
+  --page-padding:    80px;
+  --section-padding: 120px;
+  --container:       1440px;
+  --container-max:   var(--container);
+  --gutter:          24px;
+
+  /* ── Border Radius ─────────────────────────────────────────────────────── */
+  --radius-0:    0px;
+  --radius-none: 0;
+  --radius-4:    4px;
+  --radius-sm:   4px;
+  --radius-8:    8px;
+  --radius-md:   8px;
+  --radius-12:   12px;
+  --radius-lg:   12px;
+  --radius-16:   16px;
+  --radius-xl:   16px;
+  --radius-24:   24px;
+  --radius-2xl:  24px;
+  --radius-30:   30px;
+  --radius-400:  400px;
+  --radius-full: 9999px;
+
+  /* ── Shadows ───────────────────────────────────────────────────────────── */
+  --shadow-button-glow: 0px 0px 12px 0px rgba(255, 255, 255, 0.5);
+  --shadow-natural:     6px 6px 9px rgba(0, 0, 0, 0.2);
+  --shadow-deep:        12px 12px 50px rgba(0, 0, 0, 0.4);
+  --shadow-sharp:       6px 6px 0px rgba(0, 0, 0, 0.2);
+  --shadow-card:        0 1px 3px rgba(0, 0, 0, 0.08);
+  --shadow-card-hover:  var(--shadow-natural);
+
+  /* ── Blur & Opacity ────────────────────────────────────────────────────── */
+  --blur-glow: 325px;
+  --opacity-glow:       0.6;
+  --opacity-holo-shape: 0.1;
+  --opacity-text-muted: 0.8;
+
+  /* ── Motion ────────────────────────────────────────────────────────────── */
+  --transition:       all 0.3s ease-in-out;
+  --duration-instant:  100ms;
+  --duration-fast:     200ms;
+  --duration-normal:   300ms;
+  --duration-slow:     500ms;
+  --duration-slower:   700ms;
+  --duration-entrance: 600ms;
+  --ease-default:  ease-in-out;
+  --ease-in:       cubic-bezier(0.4, 0, 1, 1);
+  --ease-out:      cubic-bezier(0, 0, 0.2, 1);
+  --ease-in-out:   ease-in-out;
+  --ease-spring:   cubic-bezier(0.34, 1.56, 0.64, 1);
+  --stagger-delay: 80ms;
+
+  /* ── Z-Index ───────────────────────────────────────────────────────────── */
+  --z-behind:  -1;
+  --z-unicorn: -1;
+  --z-base:     0;
+  --z-raised:   10;
+  --z-nav:      100;
+  --z-overlay:  200;
+  --z-modal:    300;
+}
+
+
+/* ==========================================================================
+   3. Utility Classes (from design-system/css/utilities.css)
+   ========================================================================== */
+
+/* ── Text Colors ─────────────────────────────────────────────────────────── */
+.text-primary    { color: var(--text-primary); }
+.text-secondary  { color: var(--text-secondary); }
+.text-tertiary   { color: var(--text-tertiary); }
+.text-inverse    { color: var(--text-inverse); }
+.text-on-dark    { color: var(--text-on-dark); }
+.text-muted      { color: var(--text-muted); }
+.text-tag        { color: var(--text-tag); }
+.text-success    { color: var(--text-success); }
+.text-error      { color: var(--text-error); }
+.text-warning    { color: var(--text-warning); }
+.text-info       { color: var(--text-info); }
+.text-grey       { color: var(--text-grey); }
+.text-nav        { color: var(--text-nav); }
+.text-slate      { color: var(--text-slate); }
+
+/* ── Background Colors ───────────────────────────────────────────────────── */
+.bg-page      { background-color: var(--bg-page); }
+.bg-surface   { background-color: var(--bg-surface); }
+.bg-elevated  { background-color: var(--bg-elevated); }
+.bg-dark      { background-color: var(--bg-dark); }
+.bg-darker    { background-color: var(--bg-darker); }
+.bg-cta       { background-color: var(--bg-cta); }
+.bg-success   { background-color: var(--bg-success); }
+.bg-error     { background-color: var(--bg-error); }
+.bg-info      { background-color: var(--bg-info); }
+.bg-card-dark { background-color: var(--bg-card-dark); }
+.bg-alt-dark  { background-color: var(--bg-alt-dark); }
+.bg-light-surface { background-color: var(--bg-light-surface); }
+
+/* ── Typography: Font Families ───────────────────────────────────────────── */
+.font-primary { font-family: var(--font-primary); }
+.font-serif   { font-family: var(--font-serif); }
+.font-accent  { font-family: var(--font-accent); }
+
+/* ── Typography: Composite Styles ────────────────────────────────────────── */
+.type-display {
+  font-family: var(--font-primary);
+  font-size: var(--text-80);
+  font-weight: var(--weight-extrabold);
+  line-height: var(--leading-90);
+}
+
+.type-hero {
+  font-family: var(--font-primary);
+  font-size: var(--text-70);
+  font-weight: var(--weight-medium);
+  line-height: var(--leading-88);
+}
+
+.type-heading-xl {
+  font-family: var(--font-primary);
+  font-size: var(--text-50);
+  font-weight: var(--weight-regular);
+  line-height: var(--leading-68);
+}
+
+.type-heading-lg {
+  font-family: var(--font-primary);
+  font-size: var(--text-48);
+  font-weight: var(--weight-medium);
+  line-height: var(--leading-auto);
+}
+
+.type-heading-md {
+  font-family: var(--font-serif);
+  font-size: var(--text-40);
+  font-weight: var(--weight-regular);
+  line-height: var(--leading-53);
+}
+
+.type-heading-sm {
+  font-family: var(--font-primary);
+  font-size: var(--text-30);
+  font-weight: var(--weight-medium);
+  line-height: var(--leading-48);
+}
+
+.type-paragraph-xl {
+  font-family: var(--font-primary);
+  font-size: var(--text-28);
+  font-weight: var(--weight-regular);
+  line-height: var(--leading-48);
+}
+
+.type-paragraph-lg {
+  font-family: var(--font-primary);
+  font-size: var(--text-22);
+  font-weight: var(--weight-regular);
+  line-height: var(--leading-40);
+}
+
+.type-paragraph-md {
+  font-family: var(--font-primary);
+  font-size: var(--text-20);
+  font-weight: var(--weight-regular);
+  line-height: var(--leading-28);
+}
+
+.type-body {
+  font-family: var(--font-primary);
+  font-size: var(--text-18);
+  font-weight: var(--weight-regular);
+  line-height: var(--leading-auto);
+}
+
+.type-body-semibold {
+  font-family: var(--font-primary);
+  font-size: var(--text-18);
+  font-weight: var(--weight-semibold);
+  line-height: var(--leading-auto);
+}
+
+.type-body-sm-semibold {
+  font-family: var(--font-primary);
+  font-size: var(--text-16);
+  font-weight: var(--weight-semibold);
+  line-height: var(--leading-26);
+}
+
+.type-body-sm {
+  font-family: var(--font-primary);
+  font-size: var(--text-16);
+  font-weight: var(--weight-regular);
+  line-height: var(--leading-26);
+}
+
+.type-tag {
+  font-family: var(--font-serif);
+  font-size: var(--text-18);
+  font-weight: var(--weight-regular);
+  line-height: var(--leading-60);
+  letter-spacing: var(--tracking-wider);
+  text-transform: uppercase;
+}
+
+.type-tag-sm {
+  font-family: var(--font-serif);
+  font-size: var(--text-16);
+  font-weight: var(--weight-regular);
+  line-height: var(--leading-60);
+  letter-spacing: var(--tracking-tight);
+  text-transform: uppercase;
+}
+
+.type-label {
+  font-family: var(--font-primary);
+  font-size: var(--text-14);
+  font-weight: var(--weight-regular);
+  line-height: var(--leading-22);
+}
+
+.type-button {
+  font-family: var(--font-primary);
+  font-size: var(--text-16);
+  font-weight: var(--weight-medium);
+  line-height: var(--leading-auto);
+}
+
+.type-button-xl {
+  font-family: var(--font-primary);
+  font-size: var(--text-20);
+  font-weight: var(--weight-medium);
+  line-height: var(--leading-28);
+}
+
+.italic-accent {
+  font-family: var(--font-serif);
+  font-style: italic;
+  letter-spacing: var(--tracking-wide);
+}
+
+/* ── Font Weights ────────────────────────────────────────────────────────── */
+.weight-regular   { font-weight: var(--weight-regular); }
+.weight-medium    { font-weight: var(--weight-medium); }
+.weight-semibold  { font-weight: var(--weight-semibold); }
+.weight-bold      { font-weight: var(--weight-bold); }
+.weight-extrabold { font-weight: var(--weight-extrabold); }
+
+/* ── Border Radius ───────────────────────────────────────────────────────── */
+.rounded-0    { border-radius: var(--radius-0); }
+.rounded-4    { border-radius: var(--radius-4); }
+.rounded-8    { border-radius: var(--radius-8); }
+.rounded-12   { border-radius: var(--radius-12); }
+.rounded-16   { border-radius: var(--radius-16); }
+.rounded-24   { border-radius: var(--radius-24); }
+.rounded-30   { border-radius: var(--radius-30); }
+.rounded-full { border-radius: var(--radius-full); }
+
+/* ── Shadows ─────────────────────────────────────────────────────────────── */
+.shadow-card        { box-shadow: var(--shadow-card); }
+.shadow-natural     { box-shadow: var(--shadow-natural); }
+.shadow-deep        { box-shadow: var(--shadow-deep); }
+.shadow-button-glow { box-shadow: var(--shadow-button-glow); }
+
+
+/* ==========================================================================
+   4. Layout Components
+   ========================================================================== */
+
+.container {
+  width: 100%;
+  max-width: var(--content-width);
+  margin-inline: auto;
+  padding-inline: var(--page-padding);
+}
+
+.container--narrow {
+  max-width: var(--inner-width);
+}
+
+.container--wide {
+  max-width: var(--container-max);
+  padding-inline: var(--gutter);
+}
+
+.section {
+  position: relative;
+  padding-block: var(--section-padding);
+  overflow: hidden;
+}
+
+.section--dark {
+  background-color: var(--bg-dark);
+  color: var(--text-on-dark);
+}
+
+.section--light {
+  background-color: var(--bg-page);
+  color: var(--text-inverse);
+}
+
+.section--surface {
+  background-color: var(--bg-surface);
+  color: var(--text-inverse);
+}
+
+
+/* ==========================================================================
+   5. Button Base Styles
+   ========================================================================== */
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-xs);
+  padding: var(--space-sm) var(--space-xl);
+  font-family: var(--font-body);
+  font-size: var(--text-base);
+  font-weight: var(--weight-semibold);
+  line-height: 1;
+  border: 2px solid transparent;
+  border-radius: var(--radius-md);
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.btn:focus-visible {
+  outline: 2px solid var(--white);
+  outline-offset: 2px;
+}
+
+.btn--primary {
+  background-color: var(--white);
+  color: var(--night);
+}
+
+.btn--primary:hover {
+  background-color: var(--smokey);
+  box-shadow: var(--shadow-natural);
+  transform: translateY(-1px);
+}
+
+.btn--primary:active {
+  transform: translateY(0);
+}
+
+.btn--outline {
+  background-color: transparent;
+  color: var(--white);
+  border-color: var(--grey);
+}
+
+.btn--outline:hover {
+  border-color: var(--white);
+  background-color: rgba(255, 255, 255, 0.06);
+}
+
+
+/* ==========================================================================
+   6. Section Headings
+   ========================================================================== */
+
+.section-header {
+  text-align: center;
+  max-width: 700px;
+  margin-inline: auto;
+  margin-bottom: var(--space-3xl);
+}
+
+.section-header__title {
+  font-family: var(--font-heading);
+  font-size: var(--text-4xl);
+  font-weight: var(--weight-bold);
+  line-height: var(--leading-tight);
+  letter-spacing: var(--tracking-tight);
+  margin-bottom: var(--space-md);
+}
+
+.section-header__text {
+  font-family: var(--font-body);
+  font-size: var(--text-md);
+  color: var(--grey);
+  line-height: var(--leading-normal);
+}
+
+.section--dark .section-header__title {
+  color: var(--white);
+}
+
+.section--dark .section-header__text {
+  color: var(--smokey);
+}
+
+
+/* ==========================================================================
+   7. Hero Section
+   ========================================================================== */
+
+.hero {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  min-height: 80vh;
+  position: relative;
+  z-index: var(--z-base);
+}
+
+.hero__overline {
+  display: inline-block;
+  font-family: var(--font-accent);
+  font-size: var(--text-xs);
+  font-weight: var(--weight-medium);
+  letter-spacing: var(--tracking-wider);
+  text-transform: uppercase;
+  color: var(--smokey);
+  margin-bottom: var(--space-md);
+}
+
+.hero__title {
+  font-family: var(--font-heading);
+  font-size: var(--text-5xl);
+  font-weight: var(--weight-bold);
+  line-height: var(--leading-tight);
+  letter-spacing: var(--tracking-tight);
+  color: var(--white);
+  max-width: 900px;
+  margin-bottom: var(--space-lg);
+}
+
+.hero__subtitle {
+  font-family: var(--font-body);
+  font-size: var(--text-lg);
+  line-height: var(--leading-normal);
+  color: var(--grey);
+  max-width: 600px;
+  margin-bottom: var(--space-2xl);
+}
+
+
+/* ==========================================================================
+   8. Services Grid
+   ========================================================================== */
+
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+  gap: var(--space-lg);
+}
+
+.service-card {
+  background-color: var(--color-bg-elevated);
+  border: 1px solid var(--color-border-subtle);
+  border-radius: var(--radius-lg);
+  padding: var(--space-xl);
+  box-shadow: var(--shadow-card);
+  transition: var(--transition);
+}
+
+.service-card:hover {
+  box-shadow: var(--shadow-card-hover);
+  transform: translateY(-4px);
+}
+
+.service-card__icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  margin-bottom: var(--space-lg);
+  color: var(--night);
+}
+
+.service-card__icon svg {
+  width: 100%;
+  height: 100%;
+}
+
+.service-card__title {
+  font-family: var(--font-heading);
+  font-size: var(--text-xl);
+  font-weight: var(--weight-semibold);
+  line-height: var(--leading-snug);
+  color: var(--night);
+  margin-bottom: var(--space-sm);
+}
+
+.service-card__text {
+  font-family: var(--font-body);
+  font-size: var(--text-base);
+  color: var(--grey);
+  line-height: var(--leading-normal);
+  margin-bottom: var(--space-lg);
+}
+
+.service-card__link {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2xs);
+  font-family: var(--font-accent);
+  font-size: var(--text-sm);
+  font-weight: var(--weight-semibold);
+  color: var(--night);
+  transition: var(--transition);
+}
+
+.service-card__link:hover {
+  gap: var(--space-xs);
+  color: var(--black);
+}
+
+.service-card__link::after {
+  content: '\2192';
+}
+
+
+/* ==========================================================================
+   9. Process Steps
+   ========================================================================== */
+
+.process-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--space-xl);
+  counter-reset: step;
+}
+
+.process-step {
+  text-align: center;
+}
+
+.process-step__number {
+  display: block;
+  font-family: var(--font-heading);
+  font-size: var(--text-4xl);
+  font-weight: var(--weight-bold);
+  color: var(--night);
+  line-height: 1;
+  margin-bottom: var(--space-md);
+}
+
+.process-step__title {
+  font-family: var(--font-heading);
+  font-size: var(--text-lg);
+  font-weight: var(--weight-semibold);
+  line-height: var(--leading-snug);
+  color: var(--night);
+  margin-bottom: var(--space-xs);
+}
+
+.process-step__text {
+  font-family: var(--font-body);
+  font-size: var(--text-base);
+  color: var(--grey);
+  line-height: var(--leading-normal);
+}
+
+
+/* ==========================================================================
+   10. CTA Section
+   ========================================================================== */
+
+.cta {
+  text-align: center;
+  position: relative;
+  z-index: var(--z-base);
+}
+
+.cta__title {
+  font-family: var(--font-heading);
+  font-size: var(--text-4xl);
+  font-weight: var(--weight-bold);
+  line-height: var(--leading-tight);
+  color: var(--white);
+  margin-bottom: var(--space-md);
+}
+
+.cta__text {
+  font-family: var(--font-body);
+  font-size: var(--text-md);
+  color: var(--smokey);
+  max-width: 540px;
+  margin-inline: auto;
+  margin-bottom: var(--space-2xl);
+  line-height: var(--leading-normal);
+}
+
+.cta-glow {
+  background-color: var(--bg-cta);
+  position: relative;
+  overflow: hidden;
+}
+
+.cta-glow::before,
+.cta-glow::after {
+  content: '';
+  position: absolute;
+  border-radius: var(--radius-400);
+  background: var(--gradient-purple-glow);
+  filter: blur(var(--blur-glow));
+  opacity: var(--opacity-glow);
+  pointer-events: none;
+}
+
+.cta-glow::before {
+  width: 855px;
+  height: 855px;
+  top: 44px;
+  right: -260px;
+}
+
+.cta-glow::after {
+  width: 812px;
+  height: 812px;
+  top: -461px;
+  left: -343px;
+}
+
+
+/* ==========================================================================
+   11. Unicorn Studio Backdrop
+   ========================================================================== */
+
+.unicorn-backdrop {
+  position: absolute;
+  inset: 0;
+  z-index: var(--z-unicorn);
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.unicorn-backdrop[data-us-project],
+.unicorn-backdrop[data-us-project-src] {
+  pointer-events: auto;
+}
+
+
+/* ==========================================================================
+   12. Holographic Abstract Shape
+   ========================================================================== */
+
+.holo-shape {
+  position: absolute;
+  background: url('/images/holo-abstract.png') center / contain no-repeat;
+  pointer-events: none;
+  border-radius: 40px;
+  z-index: var(--z-unicorn);
+}
+
+.holo-shape--testimonials {
+  width: 1848px;
+  height: 1848px;
+  top: 50%;
+  left: -72%;
+  transform: translateY(-50%) rotate(-164deg);
+  opacity: 0.59;
+}
+
+.holo-shape--cta {
+  width: 1459px;
+  height: 1411px;
+  top: -71px;
+  left: 323px;
+  opacity: 0.1;
+}
+
+.holo-shape--hero {
+  width: 1365px;
+  height: 735px;
+  top: -21px;
+  left: 38px;
+  opacity: 0;
+  border-radius: 0;
+}
+
+
+/* ==========================================================================
+   13. Scroll Reveal
+   ========================================================================== */
+
+.reveal {
+  opacity: 0;
+  transform: translateY(20px);
+  transition:
+    opacity var(--duration-entrance) var(--ease-out),
+    transform var(--duration-entrance) var(--ease-out);
+  will-change: opacity, transform;
+}
+
+.reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.reveal[data-stagger] {
+  transition-delay: calc(var(--stagger-index, 0) * var(--stagger-delay));
+}
+
+
+/* ==========================================================================
+   14. Responsive
+   ========================================================================== */
+
+@media (max-width: 1023px) {
+  .process-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  :root {
+    --page-padding: 40px;
+  }
+}
+
+@media (max-width: 767px) {
+  :root {
+    --section-padding: 80px;
+    --page-padding: 24px;
+  }
+
+  .hero__title {
+    font-size: var(--text-3xl);
+  }
+
+  .hero__subtitle {
+    font-size: var(--text-base);
+  }
+
+  .section-header__title {
+    font-size: var(--text-2xl);
+  }
+
+  .services-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .process-grid {
+    grid-template-columns: 1fr;
+    gap: var(--space-2xl);
+  }
+
+  .cta__title {
+    font-size: var(--text-2xl);
+  }
+}
+
+
+/* ==========================================================================
+   15. Reduced Motion
+   ========================================================================== */
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+
+  .reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+
+  .unicorn-backdrop {
+    display: none;
+  }
+}

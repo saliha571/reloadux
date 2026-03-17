@@ -1,0 +1,218 @@
+.section {
+  background: var(--color-smoke);
+  padding: var(--section-padding) 0;
+  width: 100%;
+  overflow: hidden;
+}
+
+.inner {
+  max-width: var(--content-width);
+  margin: 0 auto;
+  padding-inline: var(--page-padding);
+}
+
+.header {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 40px;
+  margin-bottom: var(--space-100);
+}
+
+.heading {
+  font-family: var(--font-primary);
+  font-size: 48px;
+  font-weight: 500;
+  line-height: 1.35;
+  color: var(--color-black);
+  max-width: 750px;
+}
+
+/* ── Carousel (bleeds right past content boundary) ──── */
+
+.carousel {
+  overflow: visible;
+  margin-right: calc(-1 * var(--page-padding));
+}
+
+.track {
+  display: flex;
+  gap: 40px;
+}
+
+.slide {
+  flex: 0 0 400px;
+  min-width: 0;
+}
+
+/* ── Card (entire card is a link) ────────────────────── */
+
+.card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 380px;
+  padding: 40px 32px;
+  border: 1px solid var(--color-grey-300);
+  border-radius: 0;
+  background: var(--color-smoke);
+  text-decoration: none;
+  color: var(--color-night);
+  transition: var(--transition);
+  overflow: hidden;
+  position: relative;
+}
+
+.card::after {
+  content: "";
+  display: block;
+  position: absolute;
+  z-index: 0;
+  height: 340px;
+  width: 340px;
+  bottom: -170px;
+  right: -170px;
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  animation: rotating 24s linear infinite;
+  pointer-events: none;
+}
+
+.slide:nth-child(4n+1) .card::after {
+  background-image: url("/images/diver-1.png");
+}
+
+.slide:nth-child(4n+2) .card::after {
+  background-image: url("/images/diver-2.png");
+}
+
+.slide:nth-child(4n+3) .card::after {
+  background-image: url("/images/diver-3.png");
+}
+
+.slide:nth-child(4n+4) .card::after {
+  background-image: url("/images/diver-4.png");
+}
+
+@keyframes rotating {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.card:hover {
+  border-color: var(--color-grey-400);
+  box-shadow: var(--shadow-card);
+}
+
+/* ── Card title ──────────────────────────────────────── */
+
+.catTitle {
+  font-family: var(--font-primary);
+  font-size: 28px;
+  font-weight: 500;
+  line-height: 1.2;
+  color: var(--color-night);
+  margin: 0 0 24px;
+  position: relative;
+  z-index: 1;
+}
+
+/* ── Tag pills ───────────────────────────────────────── */
+
+.pageTags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-bottom: auto;
+  position: relative;
+  z-index: 1;
+}
+
+.pageTags span {
+  display: inline-flex;
+  align-items: center;
+  padding: 8px 20px;
+  border: 1px solid var(--color-grey-300);
+  border-radius: 30px;
+  font-family: var(--font-primary);
+  font-size: 14px;
+  font-weight: var(--weight-regular);
+  color: var(--color-night);
+  white-space: nowrap;
+}
+
+/* ── Bottom CTA row ──────────────────────────────────── */
+
+.diversityCta {
+  display: flex;
+  align-items: center;
+  margin-top: 32px;
+  position: relative;
+  z-index: 1;
+}
+
+.arrowIcon {
+  width: 32px;
+  height: 32px;
+  color: var(--color-night);
+  transition: transform 0.3s ease;
+}
+
+.card:hover .arrowIcon {
+  transform: translateX(4px);
+}
+
+/* ── Pagination dots ─────────────────────────────────── */
+
+.dots {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-6);
+  margin-top: 81px;
+}
+
+.dot {
+  width: 11px;
+  height: 11px;
+  border-radius: var(--radius-full);
+  background: rgba(0, 0, 0, 0.15);
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  transition: background var(--duration-fast) var(--ease-default);
+}
+
+.dotActive {
+  background: var(--color-night);
+}
+
+/* ── Responsive ──────────────────────────────────────── */
+
+@media (max-width: 1023px) {
+  .inner {
+    padding-inline: var(--space-24);
+  }
+
+  .header {
+    flex-direction: column;
+    gap: var(--space-24);
+  }
+
+  .heading {
+    font-size: var(--text-30);
+  }
+
+  .slide {
+    flex: 0 0 300px;
+  }
+
+  .section {
+    padding: var(--section-padding) 0;
+  }
+}

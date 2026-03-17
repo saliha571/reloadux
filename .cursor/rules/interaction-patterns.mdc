@@ -1,0 +1,96 @@
+---
+description: Interaction patterns — hovers, scrolling, carousels, cursors
+globs:
+  - "**/*.tsx"
+  - "**/*.module.css"
+---
+
+# Interaction Patterns
+
+## Hover Underline for Links
+
+Footer and nav links use an `::after` pseudo-element underline:
+
+```css
+.link {
+  position: relative;
+}
+
+.link::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -2px;
+  width: 0;
+  height: 1px;
+  background: currentColor;
+  transition: width 0.3s ease;
+}
+
+.link:hover::after {
+  width: 100%;
+}
+```
+
+## FlairButton Hover
+
+Never reimplement the flair hover effect. Always use the `FlairButton` component from `@/components/ui/FlairButton`.
+
+- Default (`variant="light"`): white border + white fill on hover (for dark backgrounds)
+- Dark (`variant="dark"`): black border + black fill on hover (for light backgrounds)
+- Sizes: `sm` (header), `md` (default), `lg` (hero/CTA)
+
+## Custom Cursor
+
+Only use for specific interactive elements (e.g., video testimonials). Implementation:
+
+- Track mouse position with `onMouseMove`
+- Show/hide with `onMouseEnter` / `onMouseLeave`
+- Position with `left` / `top` inline styles on an absolutely-positioned element
+- Use `cursor: none` on the parent container
+
+## Scroll Locking
+
+Use `position: fixed` on `document.body` (not `overflow: hidden`) for cross-browser reliability:
+
+```ts
+function lockScroll() {
+  const scrollY = window.scrollY;
+  document.body.style.position = "fixed";
+  document.body.style.top = `-${scrollY}px`;
+  document.body.style.left = "0";
+  document.body.style.right = "0";
+  document.body.dataset.scrollLock = String(scrollY);
+}
+
+function unlockScroll() {
+  const scrollY = document.body.dataset.scrollLock;
+  document.body.style.position = "";
+  document.body.style.top = "";
+  // ... restore scroll position
+}
+```
+
+## Carousel — Horizontal Scroll
+
+Used by `BlogSection`:
+
+```tsx
+ref.current.scrollBy({ left: cardWidth + gap, behavior: "smooth" });
+```
+
+- Hide scrollbar: `scrollbar-width: none; -ms-overflow-style: none;` + `::-webkit-scrollbar { display: none; }`
+- Use `ArrowNav` component for prev/next buttons
+
+## Carousel — Vertical Slide
+
+Used by `TestimonialsSection`:
+
+- Track via `translateY(-${offset}px)` on the track element
+- Wheel/touch events navigate between slides
+- Use `CarouselDots` component for dot indicators
+- Lock page scroll while user is interacting with the carousel
+
+## Scroll Reveal Animation
+
+Use the `ScrollReveal` component for fade-in-up entrance animations. Wraps any content with an intersection observer trigger.

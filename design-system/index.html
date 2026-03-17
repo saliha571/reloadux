@@ -1,0 +1,1010 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Reloadux Design System — Visual Reference</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+    html { font-size: 100%; scroll-behavior: smooth; }
+    body {
+      font-family: 'Manrope', sans-serif;
+      font-size: 16px;
+      line-height: 1.6;
+      color: #101828;
+      background: #FCFCFD;
+      -webkit-font-smoothing: antialiased;
+    }
+    a { color: inherit; text-decoration: none; }
+
+    .ds-header {
+      background: #090909;
+      color: #fff;
+      padding: 64px 48px;
+      text-align: center;
+    }
+    .ds-header h1 {
+      font-family: 'Manrope', sans-serif;
+      font-size: 48px;
+      font-weight: 500;
+      margin-bottom: 12px;
+    }
+    .ds-header h1 em {
+      font-family: 'Libre Baskerville', serif;
+      font-style: italic;
+      letter-spacing: 1.6px;
+    }
+    .ds-header p {
+      font-size: 18px;
+      color: #A5A9AC;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    .ds-nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: #fff;
+      border-bottom: 1px solid #EAECF0;
+      padding: 12px 48px;
+      display: flex;
+      gap: 32px;
+      overflow-x: auto;
+    }
+    .ds-nav a {
+      font-size: 14px;
+      font-weight: 500;
+      color: #667085;
+      white-space: nowrap;
+      padding: 4px 0;
+      border-bottom: 2px solid transparent;
+      transition: all 0.2s;
+    }
+    .ds-nav a:hover { color: #090909; border-color: #090909; }
+
+    .ds-section {
+      padding: 64px 48px;
+      border-bottom: 1px solid #EAECF0;
+    }
+    .ds-section h2 {
+      font-size: 30px;
+      font-weight: 500;
+      margin-bottom: 8px;
+    }
+    .ds-section .ds-subtitle {
+      font-size: 16px;
+      color: #667085;
+      margin-bottom: 40px;
+    }
+
+    .ds-grid { display: grid; gap: 16px; }
+    .ds-grid--colors { grid-template-columns: repeat(auto-fill, minmax(140px, 1fr)); }
+    .ds-grid--spacing { grid-template-columns: repeat(auto-fill, minmax(100px, 1fr)); }
+    .ds-grid--radius { grid-template-columns: repeat(auto-fill, minmax(120px, 1fr)); }
+    .ds-grid--shadows { grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); }
+    .ds-grid--type { grid-template-columns: 1fr; gap: 32px; }
+    .ds-grid--assets { grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); gap: 24px; }
+
+    .ds-color-card {
+      border-radius: 12px;
+      overflow: hidden;
+      border: 1px solid #EAECF0;
+      background: #fff;
+    }
+    .ds-color-swatch {
+      height: 80px;
+      display: flex;
+      align-items: flex-end;
+      padding: 8px 12px;
+    }
+    .ds-color-info {
+      padding: 12px;
+    }
+    .ds-color-info .name {
+      font-size: 13px;
+      font-weight: 600;
+      color: #101828;
+      margin-bottom: 4px;
+    }
+    .ds-color-info .value {
+      font-size: 12px;
+      font-family: 'Menlo', 'Consolas', monospace;
+      color: #667085;
+    }
+
+    .ds-type-row {
+      padding: 24px 0;
+      border-bottom: 1px solid #EAECF0;
+    }
+    .ds-type-row:last-child { border-bottom: none; }
+    .ds-type-meta {
+      display: flex;
+      gap: 16px;
+      font-size: 12px;
+      color: #667085;
+      font-family: 'Menlo', monospace;
+      margin-bottom: 8px;
+      flex-wrap: wrap;
+    }
+    .ds-type-meta span { background: #F2F4F7; padding: 2px 8px; border-radius: 4px; }
+
+    .ds-spacing-item {
+      text-align: center;
+      padding: 16px 8px;
+      background: #fff;
+      border: 1px solid #EAECF0;
+      border-radius: 8px;
+    }
+    .ds-spacing-bar {
+      background: #9662FF;
+      height: 8px;
+      border-radius: 4px;
+      margin: 0 auto 12px;
+      transition: width 0.2s;
+    }
+    .ds-spacing-item .name { font-size: 12px; font-weight: 600; color: #101828; }
+    .ds-spacing-item .value { font-size: 11px; color: #667085; font-family: 'Menlo', monospace; }
+
+    .ds-radius-item {
+      text-align: center;
+      padding: 20px 12px;
+      background: #fff;
+      border: 1px solid #EAECF0;
+      border-radius: 8px;
+    }
+    .ds-radius-demo {
+      width: 64px;
+      height: 64px;
+      background: #090909;
+      margin: 0 auto 12px;
+    }
+    .ds-radius-item .name { font-size: 12px; font-weight: 600; }
+    .ds-radius-item .value { font-size: 11px; color: #667085; font-family: 'Menlo', monospace; }
+
+    .ds-shadow-item {
+      padding: 32px;
+      background: #fff;
+      border-radius: 12px;
+      text-align: center;
+    }
+    .ds-shadow-item .name { font-size: 13px; font-weight: 600; margin-top: 16px; }
+    .ds-shadow-item .value { font-size: 11px; color: #667085; font-family: 'Menlo', monospace; word-break: break-all; }
+
+    .ds-asset-card {
+      background: #fff;
+      border: 1px solid #EAECF0;
+      border-radius: 12px;
+      padding: 24px;
+      text-align: center;
+    }
+    .ds-asset-card img, .ds-asset-card svg {
+      max-width: 100%;
+      max-height: 60px;
+      margin: 0 auto 16px;
+      display: block;
+    }
+    .ds-asset-card .name { font-size: 12px; font-weight: 500; color: #101828; word-break: break-all; }
+    .ds-asset-card .type { font-size: 11px; color: #667085; }
+
+    .ds-gradient-demo {
+      height: 120px;
+      border-radius: 12px;
+      display: flex;
+      align-items: flex-end;
+      padding: 16px;
+      color: #fff;
+      font-size: 13px;
+      margin-bottom: 24px;
+    }
+
+    .ds-subsection { margin-bottom: 48px; }
+    .ds-subsection h3 {
+      font-size: 18px;
+      font-weight: 600;
+      margin-bottom: 20px;
+      color: #344054;
+    }
+
+    .ds-motion-table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+    .ds-motion-table th, .ds-motion-table td {
+      text-align: left;
+      padding: 12px 16px;
+      border-bottom: 1px solid #EAECF0;
+      font-size: 14px;
+    }
+    .ds-motion-table th {
+      font-weight: 600;
+      color: #344054;
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+    .ds-motion-table td:nth-child(2) {
+      font-family: 'Menlo', monospace;
+      font-size: 13px;
+      color: #667085;
+    }
+
+    .ds-dark-bg { background: #090909; }
+    .ds-asset-card.ds-dark-bg img { filter: brightness(0) invert(1); }
+
+    .ds-grid--portfolio { grid-template-columns: repeat(auto-fill, minmax(340px, 1fr)); gap: 24px; }
+    .ds-grid--logos-sm { grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 16px; }
+    .ds-grid--avatars { grid-template-columns: repeat(auto-fill, minmax(120px, 1fr)); gap: 16px; }
+
+    .ds-portfolio-card {
+      border-radius: 12px;
+      overflow: hidden;
+      border: 1px solid #EAECF0;
+      background: #fff;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .ds-portfolio-card:hover { transform: translateY(-3px); box-shadow: 0 8px 24px rgba(0,0,0,0.12); }
+    .ds-portfolio-card img {
+      width: 100%;
+      height: 220px;
+      object-fit: cover;
+      display: block;
+      background: #F2F4F7;
+    }
+    .ds-portfolio-card--tall img { height: 280px; }
+    .ds-portfolio-card .ds-card-label {
+      padding: 12px 16px;
+      font-size: 12px;
+      color: #667085;
+      font-family: 'Menlo', monospace;
+      border-top: 1px solid #EAECF0;
+    }
+
+    .ds-logo-card {
+      background: #fff;
+      border: 1px solid #EAECF0;
+      border-radius: 8px;
+      padding: 16px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 80px;
+    }
+    .ds-logo-card img {
+      max-width: 100%;
+      max-height: 40px;
+      object-fit: contain;
+    }
+
+    .ds-avatar-card {
+      text-align: center;
+      background: #fff;
+      border: 1px solid #EAECF0;
+      border-radius: 12px;
+      padding: 16px;
+    }
+    .ds-avatar-card img {
+      width: 72px;
+      height: 72px;
+      border-radius: 50%;
+      object-fit: cover;
+      display: block;
+      margin: 0 auto 8px;
+    }
+    .ds-avatar-card .name { font-size: 11px; color: #667085; }
+
+    .ds-section--wp {
+      background: #FAFBFC;
+      border-left: 4px solid #9662FF;
+    }
+    .ds-section--wp h2 span {
+      display: inline-block;
+      background: #9662FF;
+      color: #fff;
+      font-size: 11px;
+      font-weight: 600;
+      padding: 2px 8px;
+      border-radius: 4px;
+      margin-left: 12px;
+      vertical-align: middle;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+  </style>
+</head>
+<body>
+
+  <header class="ds-header">
+    <h1>Reloadux Design <em>System</em></h1>
+    <p>Visual reference catalog — colors, typography, spacing, radii, shadows, and assets extracted from Figma (Home + Work Page)</p>
+  </header>
+
+  <nav class="ds-nav">
+    <a href="#colors">Colors</a>
+    <a href="#gradients">Gradients</a>
+    <a href="#typography">Typography</a>
+    <a href="#spacing">Spacing</a>
+    <a href="#radius">Border Radius</a>
+    <a href="#shadows">Shadows</a>
+    <a href="#motion">Motion</a>
+    <a href="#icons">Icons</a>
+    <a href="#logos">Logos</a>
+    <a href="#images">Images</a>
+    <a href="#wp-colors" style="color:#9662FF">Work Page Colors</a>
+    <a href="#wp-typography" style="color:#9662FF">Work Page Type</a>
+    <a href="#portfolio" style="color:#9662FF">Portfolio</a>
+    <a href="#case-studies" style="color:#9662FF">Case Studies</a>
+    <a href="#mockups" style="color:#9662FF">Mockups</a>
+    <a href="#client-logos" style="color:#9662FF">Client Logos</a>
+    <a href="#avatars" style="color:#9662FF">Avatars</a>
+    <a href="#awards" style="color:#9662FF">Awards</a>
+  </nav>
+
+  <!-- ═══════════════════ COLORS ═══════════════════ -->
+  <section class="ds-section" id="colors">
+    <h2>Colors</h2>
+    <p class="ds-subtitle">Primitive color palette extracted from Figma variables</p>
+
+    <div class="ds-subsection">
+      <h3>Base</h3>
+      <div class="ds-grid ds-grid--colors">
+        <div class="ds-color-card"><div class="ds-color-swatch" style="background:#090909"></div><div class="ds-color-info"><div class="name">Night</div><div class="value">#090909</div></div></div>
+        <div class="ds-color-card"><div class="ds-color-swatch" style="background:#000000"></div><div class="ds-color-info"><div class="name">Black</div><div class="value">#000000</div></div></div>
+        <div class="ds-color-card"><div class="ds-color-swatch" style="background:#FFFFFF; border-bottom: 1px solid #eee"></div><div class="ds-color-info"><div class="name">White</div><div class="value">#FFFFFF</div></div></div>
+        <div class="ds-color-card"><div class="ds-color-swatch" style="background:#D9D9D9"></div><div class="ds-color-info"><div class="name">Smoke</div><div class="value">#D9D9D9</div></div></div>
+      </div>
+    </div>
+
+    <div class="ds-subsection">
+      <h3>Grey</h3>
+      <div class="ds-grid ds-grid--colors">
+        <div class="ds-color-card"><div class="ds-color-swatch" style="background:#D1D1D1"></div><div class="ds-color-info"><div class="name">Grey 200</div><div class="value">#D1D1D1</div></div></div>
+        <div class="ds-color-card"><div class="ds-color-swatch" style="background:#C3C3C3"></div><div class="ds-color-info"><div class="name">Grey 300</div><div class="value">#C3C3C3</div></div></div>
+        <div class="ds-color-card"><div class="ds-color-swatch" style="background:#A5A9AC"></div><div class="ds-color-info"><div class="name">Grey 400</div><div class="value">#A5A9AC</div></div></div>
+        <div class="ds-color-card"><div class="ds-color-swatch" style="background:#565656"></div><div class="ds-color-info"><div class="name">Grey 600</div><div class="value">#565656</div></div></div>
+        <div class="ds-color-card"><div class="ds-color-swatch" style="background:#333333"></div><div class="ds-color-info"><div class="name">Grey 700</div><div class="value">#333333</div></div></div>
+      </div>
+    </div>
+
+    <div class="ds-subsection">
+      <h3>Neutral</h3>
+      <div class="ds-grid ds-grid--colors">
+        <div class="ds-color-card"><div class="ds-color-swatch" style="background:#FCFCFD; border-bottom:1px solid #eee"></div><div class="ds-color-info"><div class="name">Neutral 25</div><div class="value">#FCFCFD</div></div></div>
+        <div class="ds-color-card"><div class="ds-color-swatch" style="background:#F2F4F7"></div><div class="ds-color-info"><div class="name">Neutral 100</div><div class="value">#F2F4F7</div></div></div>
+        <div class="ds-color-card"><div class="ds-color-swatch" style="background:#EAECF0"></div><div class="ds-color-info"><div class="name">Neutral 200</div><div class="value">#EAECF0</div></div></div>
+        <div class="ds-color-card"><div class="ds-color-swatch" style="background:#D0D5DD"></div><div class="ds-color-info"><div class="name">Neutral 300</div><div class="value">#D0D5DD</div></div></div>
+        <div class="ds-color-card"><div class="ds-color-swatch" style="background:#98A2B3"></div><div class="ds-color-info"><div class="name">Neutral 400</div><div class="value">#98A2B3</div></div></div>
+        <div class="ds-color-card"><div class="ds-color-swatch" style="background:#667085"></div><div class="ds-color-info"><div class="name">Neutral 500</div><div class="value">#667085</div></div></div>
+        <div class="ds-color-card"><div class="ds-color-swatch" style="background:#475467"></div><div class="ds-color-info"><div class="name">Neutral 600</div><div class="value">#475467</div></div></div>
+        <div class="ds-color-card"><div class="ds-color-swatch" style="background:#344054"></div><div class="ds-color-info"><div class="name">Neutral 700</div><div class="value">#344054</div></div></div>
+        <div class="ds-color-card"><div class="ds-color-swatch" style="background:#101828"></div><div class="ds-color-info"><div class="name">Neutral 900</div><div class="value">#101828</div></div></div>
+      </div>
+    </div>
+
+    <div class="ds-subsection">
+      <h3>Purple</h3>
+      <div class="ds-grid ds-grid--colors">
+        <div class="ds-color-card"><div class="ds-color-swatch" style="background:#F9F5FF"></div><div class="ds-color-info"><div class="name">Purple 50</div><div class="value">#F9F5FF</div></div></div>
+        <div class="ds-color-card"><div class="ds-color-swatch" style="background:#D6BBFB"></div><div class="ds-color-info"><div class="name">Purple 300</div><div class="value">#D6BBFB</div></div></div>
+        <div class="ds-color-card"><div class="ds-color-swatch" style="background:#9662FF"></div><div class="ds-color-info"><div class="name">Purple 500</div><div class="value">#9662FF</div></div></div>
+        <div class="ds-color-card"><div class="ds-color-swatch" style="background:#7F56D9"></div><div class="ds-color-info"><div class="name">Purple 700</div><div class="value">#7F56D9</div></div></div>
+        <div class="ds-color-card"><div class="ds-color-swatch" style="background:#A401B7"></div><div class="ds-color-info"><div class="name">Magenta 900</div><div class="value">#A401B7</div></div></div>
+      </div>
+    </div>
+
+    <div class="ds-subsection">
+      <h3>Status Colors</h3>
+      <div class="ds-grid ds-grid--colors">
+        <div class="ds-color-card"><div class="ds-color-swatch" style="background:#DCFAE6"></div><div class="ds-color-info"><div class="name">Green 100</div><div class="value">#DCFAE6</div></div></div>
+        <div class="ds-color-card"><div class="ds-color-swatch" style="background:#47CD89"></div><div class="ds-color-info"><div class="name">Green 400</div><div class="value">#47CD89</div></div></div>
+        <div class="ds-color-card"><div class="ds-color-swatch" style="background:#17B26A"></div><div class="ds-color-info"><div class="name">Green 500</div><div class="value">#17B26A</div></div></div>
+        <div class="ds-color-card"><div class="ds-color-swatch" style="background:#079455"></div><div class="ds-color-info"><div class="name">Green 600</div><div class="value">#079455</div></div></div>
+        <div class="ds-color-card"><div class="ds-color-swatch" style="background:#FEF3F2"></div><div class="ds-color-info"><div class="name">Red 50</div><div class="value">#FEF3F2</div></div></div>
+        <div class="ds-color-card"><div class="ds-color-swatch" style="background:#F97066"></div><div class="ds-color-info"><div class="name">Red 400</div><div class="value">#F97066</div></div></div>
+        <div class="ds-color-card"><div class="ds-color-swatch" style="background:#D92D20"></div><div class="ds-color-info"><div class="name">Red 600</div><div class="value">#D92D20</div></div></div>
+        <div class="ds-color-card"><div class="ds-color-swatch" style="background:#2E90FA"></div><div class="ds-color-info"><div class="name">Blue 500</div><div class="value">#2E90FA</div></div></div>
+        <div class="ds-color-card"><div class="ds-color-swatch" style="background:#F670C7"></div><div class="ds-color-info"><div class="name">Pink 400</div><div class="value">#F670C7</div></div></div>
+      </div>
+    </div>
+
+    <div class="ds-subsection">
+      <h3>Brand Secondary</h3>
+      <div class="ds-grid ds-grid--colors">
+        <div class="ds-color-card"><div class="ds-color-swatch" style="background:#00A7B7"></div><div class="ds-color-info"><div class="name">Moonstone 900</div><div class="value">#00A7B7</div></div></div>
+        <div class="ds-color-card"><div class="ds-color-swatch" style="background:#F2FBFB"></div><div class="ds-color-info"><div class="name">Moonstone 100</div><div class="value">#F2FBFB</div></div></div>
+        <div class="ds-color-card"><div class="ds-color-swatch" style="background:#F99806"></div><div class="ds-color-info"><div class="name">Sunset 700</div><div class="value">#F99806</div></div></div>
+        <div class="ds-color-card"><div class="ds-color-swatch" style="background:#FFF9F0; border-bottom:1px solid #eee"></div><div class="ds-color-info"><div class="name">Sunset 100</div><div class="value">#FFF9F0</div></div></div>
+        <div class="ds-color-card"><div class="ds-color-swatch" style="background:#ECF2FF"></div><div class="ds-color-info"><div class="name">Periwinkle 100</div><div class="value">#ECF2FF</div></div></div>
+        <div class="ds-color-card"><div class="ds-color-swatch" style="background:#F8F1E4"></div><div class="ds-color-info"><div class="name">Sandstone 900</div><div class="value">#F8F1E4</div></div></div>
+        <div class="ds-color-card"><div class="ds-color-swatch" style="background:#1D2939"></div><div class="ds-color-info"><div class="name">Oxford 900</div><div class="value">#1D2939</div></div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════ GRADIENTS ═══════════════════ -->
+  <section class="ds-section" id="gradients">
+    <h2>Gradients</h2>
+    <p class="ds-subtitle">Purple glow gradient used for CTA atmospheric effects</p>
+
+    <div class="ds-gradient-demo" style="background: linear-gradient(180deg, #9662FF 0%, #A401B7 88%)">
+      <span>linear-gradient(180deg, #9662FF 0%, #A401B7 88%)</span>
+    </div>
+
+    <div class="ds-gradient-demo" style="background: #090909; position: relative; overflow: hidden;">
+      <div style="position:absolute; width:400px; height:400px; border-radius:400px; background:linear-gradient(180deg,#9662FF 0%,#A401B7 88%); filter:blur(150px); opacity:0.6; top:-100px; right:-80px;"></div>
+      <div style="position:absolute; width:350px; height:350px; border-radius:400px; background:linear-gradient(180deg,#9662FF 0%,#A401B7 88%); filter:blur(150px); opacity:0.6; bottom:-100px; left:-80px;"></div>
+      <span style="position:relative; z-index:1;">CTA glow effect — blurred orbs on Night background</span>
+    </div>
+  </section>
+
+  <!-- ═══════════════════ TYPOGRAPHY ═══════════════════ -->
+  <section class="ds-section" id="typography">
+    <h2>Typography</h2>
+    <p class="ds-subtitle">Two font families — Manrope (primary) and Libre Baskerville (accent serif)</p>
+
+    <div class="ds-grid ds-grid--type">
+      <div class="ds-type-row">
+        <div class="ds-type-meta"><span>Display</span><span>Manrope 80px</span><span>ExtraBold 800</span><span>line-height: 90px</span></div>
+        <div style="font-family:'Manrope',sans-serif; font-size:60px; font-weight:800; line-height:1.125;">Ready to discuss your project?</div>
+      </div>
+      <div class="ds-type-row">
+        <div class="ds-type-meta"><span>Hero</span><span>Manrope 70px</span><span>Medium 500</span><span>line-height: 88px</span></div>
+        <div style="font-family:'Manrope',sans-serif; font-size:52px; font-weight:500; line-height:1.26;">Your trusted design partner</div>
+      </div>
+      <div class="ds-type-row">
+        <div class="ds-type-meta"><span>Heading LG</span><span>Manrope 48px</span><span>Medium 500</span><span>line-height: auto</span></div>
+        <div style="font-family:'Manrope',sans-serif; font-size:48px; font-weight:500;">Build your future with digital services</div>
+      </div>
+      <div class="ds-type-row">
+        <div class="ds-type-meta"><span>Heading MD</span><span>Libre Baskerville 40px</span><span>Regular 400</span><span>line-height: 53px</span></div>
+        <div style="font-family:'Libre Baskerville',serif; font-size:40px; font-weight:400; line-height:53px;">Research &amp; Discovery</div>
+      </div>
+      <div class="ds-type-row">
+        <div class="ds-type-meta"><span>Heading SM</span><span>Manrope 30px</span><span>Medium 500</span><span>line-height: 48px</span></div>
+        <div style="font-family:'Manrope',sans-serif; font-size:30px; font-weight:500; line-height:48px;">Build from Scratch — MVP</div>
+      </div>
+      <div class="ds-type-row">
+        <div class="ds-type-meta"><span>Paragraph XL</span><span>Manrope 28px</span><span>Regular 400</span><span>line-height: 48px</span></div>
+        <div style="font-family:'Manrope',sans-serif; font-size:28px; font-weight:400; line-height:48px;">We help forward-thinking companies move beyond traditional UX.</div>
+      </div>
+      <div class="ds-type-row">
+        <div class="ds-type-meta"><span>Paragraph LG</span><span>Manrope 22px</span><span>Regular 400</span><span>line-height: 40px</span></div>
+        <div style="font-family:'Manrope',sans-serif; font-size:22px; font-weight:400; line-height:40px;">We design intelligent, AI-powered experiences, helping SaaS and B2B companies turn complexity to clarity.</div>
+      </div>
+      <div class="ds-type-row">
+        <div class="ds-type-meta"><span>Body</span><span>Manrope 18px</span><span>Regular 400</span><span>line-height: auto</span></div>
+        <div style="font-family:'Manrope',sans-serif; font-size:18px; font-weight:400;">Designing high-performing B2B SaaS &amp; Enterprise products</div>
+      </div>
+      <div class="ds-type-row">
+        <div class="ds-type-meta"><span>Body SM</span><span>Manrope 16px</span><span>Regular 400</span><span>line-height: 26px</span></div>
+        <div style="font-family:'Manrope',sans-serif; font-size:16px; font-weight:400; line-height:26px;">User touchpoints shaped across global products.</div>
+      </div>
+      <div class="ds-type-row">
+        <div class="ds-type-meta"><span>Tag</span><span>Libre Baskerville 18px</span><span>Regular 400</span><span>tracking: 2px</span><span>uppercase</span></div>
+        <div style="font-family:'Libre Baskerville',serif; font-size:18px; font-weight:400; letter-spacing:2px; text-transform:uppercase; line-height:60px;">[ our services ]</div>
+      </div>
+      <div class="ds-type-row">
+        <div class="ds-type-meta"><span>Tag SM</span><span>Libre Baskerville 16px</span><span>Regular 400</span><span>tracking: 0.32px</span><span>uppercase</span></div>
+        <div style="font-family:'Libre Baskerville',serif; font-size:16px; font-weight:400; letter-spacing:0.32px; text-transform:uppercase; color:#A5A9AC;">[ for startups ]</div>
+      </div>
+      <div class="ds-type-row">
+        <div class="ds-type-meta"><span>Label</span><span>Manrope 14px</span><span>Regular 400</span><span>line-height: 22px</span></div>
+        <div style="font-family:'Manrope',sans-serif; font-size:14px; font-weight:400; line-height:22px;">AI Chatbots &bull; AI + Content &bull; AI + Marketing</div>
+      </div>
+      <div class="ds-type-row">
+        <div class="ds-type-meta"><span>Italic Accent</span><span>Libre Baskerville Italic</span><span>tracking: 1.6px</span></div>
+        <div style="font-family:'Libre Baskerville',serif; font-size:48px; font-style:italic; letter-spacing:1.6px;">intelligent experiences</div>
+      </div>
+      <div class="ds-type-row">
+        <div class="ds-type-meta"><span>Button LG</span><span>Manrope 16px</span><span>Medium 500</span></div>
+        <div style="display:inline-flex; align-items:center; gap:8px; background:#fff; border:1px solid #090909; padding:12px 28px; border-radius:30px; font-family:'Manrope',sans-serif; font-size:16px; font-weight:500;">Let's Connect &rarr;</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════ SPACING ═══════════════════ -->
+  <section class="ds-section" id="spacing">
+    <h2>Spacing</h2>
+    <p class="ds-subtitle">Spacing scale extracted from Figma layout measurements</p>
+
+    <div class="ds-grid ds-grid--spacing">
+      <div class="ds-spacing-item"><div class="ds-spacing-bar" style="width:4px"></div><div class="name">4</div><div class="value">4px</div></div>
+      <div class="ds-spacing-item"><div class="ds-spacing-bar" style="width:6px"></div><div class="name">6</div><div class="value">6px</div></div>
+      <div class="ds-spacing-item"><div class="ds-spacing-bar" style="width:8px"></div><div class="name">8</div><div class="value">8px</div></div>
+      <div class="ds-spacing-item"><div class="ds-spacing-bar" style="width:12px"></div><div class="name">12</div><div class="value">12px</div></div>
+      <div class="ds-spacing-item"><div class="ds-spacing-bar" style="width:16px"></div><div class="name">16</div><div class="value">16px</div></div>
+      <div class="ds-spacing-item"><div class="ds-spacing-bar" style="width:20px"></div><div class="name">20</div><div class="value">20px</div></div>
+      <div class="ds-spacing-item"><div class="ds-spacing-bar" style="width:24px"></div><div class="name">24</div><div class="value">24px</div></div>
+      <div class="ds-spacing-item"><div class="ds-spacing-bar" style="width:28px"></div><div class="name">28</div><div class="value">28px</div></div>
+      <div class="ds-spacing-item"><div class="ds-spacing-bar" style="width:32px"></div><div class="name">32</div><div class="value">32px</div></div>
+      <div class="ds-spacing-item"><div class="ds-spacing-bar" style="width:40px"></div><div class="name">40</div><div class="value">40px</div></div>
+      <div class="ds-spacing-item"><div class="ds-spacing-bar" style="width:48px"></div><div class="name">48</div><div class="value">48px</div></div>
+      <div class="ds-spacing-item"><div class="ds-spacing-bar" style="width:60px"></div><div class="name">60</div><div class="value">60px</div></div>
+      <div class="ds-spacing-item"><div class="ds-spacing-bar" style="width:80px"></div><div class="name">80</div><div class="value">80px</div></div>
+      <div class="ds-spacing-item"><div class="ds-spacing-bar" style="width:100%"></div><div class="name">120</div><div class="value">120px</div></div>
+      <div class="ds-spacing-item"><div class="ds-spacing-bar" style="width:100%"></div><div class="name">160</div><div class="value">160px</div></div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════ BORDER RADIUS ═══════════════════ -->
+  <section class="ds-section" id="radius">
+    <h2>Border Radius</h2>
+    <p class="ds-subtitle">Border radius values used across the design</p>
+
+    <div class="ds-grid ds-grid--radius">
+      <div class="ds-radius-item"><div class="ds-radius-demo" style="border-radius:0px"></div><div class="name">None</div><div class="value">0px</div></div>
+      <div class="ds-radius-item"><div class="ds-radius-demo" style="border-radius:4px"></div><div class="name">4</div><div class="value">4px</div></div>
+      <div class="ds-radius-item"><div class="ds-radius-demo" style="border-radius:8px"></div><div class="name">8</div><div class="value">8px</div></div>
+      <div class="ds-radius-item"><div class="ds-radius-demo" style="border-radius:12px"></div><div class="name">12</div><div class="value">12px</div></div>
+      <div class="ds-radius-item"><div class="ds-radius-demo" style="border-radius:16px"></div><div class="name">16</div><div class="value">16px</div></div>
+      <div class="ds-radius-item"><div class="ds-radius-demo" style="border-radius:24px"></div><div class="name">24</div><div class="value">24px</div></div>
+      <div class="ds-radius-item"><div class="ds-radius-demo" style="border-radius:30px"></div><div class="name">30 (Pill)</div><div class="value">30px</div></div>
+      <div class="ds-radius-item"><div class="ds-radius-demo" style="border-radius:9999px"></div><div class="name">Full</div><div class="value">9999px</div></div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════ SHADOWS ═══════════════════ -->
+  <section class="ds-section" id="shadows">
+    <h2>Shadows</h2>
+    <p class="ds-subtitle">Box shadow values from the design</p>
+
+    <div class="ds-grid ds-grid--shadows">
+      <div class="ds-shadow-item" style="box-shadow: 0 1px 3px rgba(0,0,0,0.08)">
+        <div style="width:60px;height:60px;background:#fff;border-radius:12px;margin:0 auto;box-shadow: 0 1px 3px rgba(0,0,0,0.08)"></div>
+        <div class="name">Card</div>
+        <div class="value">0 1px 3px rgba(0,0,0,0.08)</div>
+      </div>
+      <div class="ds-shadow-item">
+        <div style="width:60px;height:60px;background:#fff;border-radius:12px;margin:0 auto;box-shadow: 6px 6px 9px rgba(0,0,0,0.2)"></div>
+        <div class="name">Natural</div>
+        <div class="value">6px 6px 9px rgba(0,0,0,0.2)</div>
+      </div>
+      <div class="ds-shadow-item">
+        <div style="width:60px;height:60px;background:#fff;border-radius:12px;margin:0 auto;box-shadow: 12px 12px 50px rgba(0,0,0,0.4)"></div>
+        <div class="name">Deep</div>
+        <div class="value">12px 12px 50px rgba(0,0,0,0.4)</div>
+      </div>
+      <div class="ds-shadow-item" style="background:#090909; color:#fff">
+        <div style="width:60px;height:60px;background:#fff;border-radius:30px;margin:0 auto;box-shadow: 0px 0px 12px 0px rgba(255,255,255,0.5)"></div>
+        <div class="name">Button Glow</div>
+        <div class="value">0 0 12px rgba(255,255,255,0.5)</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════ MOTION ═══════════════════ -->
+  <section class="ds-section" id="motion">
+    <h2>Motion</h2>
+    <p class="ds-subtitle">Duration and easing values for transitions and animations</p>
+
+    <div class="ds-subsection">
+      <h3>Durations</h3>
+      <table class="ds-motion-table">
+        <thead><tr><th>Token</th><th>Value</th><th>Usage</th></tr></thead>
+        <tbody>
+          <tr><td>Instant</td><td>100ms</td><td>Micro interactions</td></tr>
+          <tr><td>Fast</td><td>200ms</td><td>Quick feedback</td></tr>
+          <tr><td>Normal</td><td>300ms</td><td>Standard transitions</td></tr>
+          <tr><td>Slow</td><td>500ms</td><td>Emphasis transitions</td></tr>
+          <tr><td>Slower</td><td>700ms</td><td>Complex animations</td></tr>
+          <tr><td>Entrance</td><td>600ms</td><td>Scroll-reveal entry</td></tr>
+          <tr><td>Stagger Delay</td><td>80ms</td><td>Sequential child animation offset</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="ds-subsection">
+      <h3>Easing</h3>
+      <table class="ds-motion-table">
+        <thead><tr><th>Token</th><th>Value</th></tr></thead>
+        <tbody>
+          <tr><td>Default</td><td>ease-in-out</td></tr>
+          <tr><td>In</td><td>cubic-bezier(0.4, 0, 1, 1)</td></tr>
+          <tr><td>Out</td><td>cubic-bezier(0, 0, 0.2, 1)</td></tr>
+          <tr><td>Spring</td><td>cubic-bezier(0.34, 1.56, 0.64, 1)</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- ═══════════════════ ICONS ═══════════════════ -->
+  <section class="ds-section" id="icons">
+    <h2>Icons</h2>
+    <p class="ds-subtitle">SVG icons extracted from the Figma design</p>
+
+    <div class="ds-grid ds-grid--assets">
+      <div class="ds-asset-card"><img src="assets/icons/arrow-right.svg" alt="Arrow Right"><div class="name">arrow-right.svg</div><div class="type">SVG Icon</div></div>
+      <div class="ds-asset-card"><img src="assets/icons/arrow-diagonal.svg" alt="Arrow Diagonal"><div class="name">arrow-diagonal.svg</div><div class="type">SVG Icon</div></div>
+      <div class="ds-asset-card"><img src="assets/icons/arrow-diagonal-alt.svg" alt="Arrow Diagonal Alt"><div class="name">arrow-diagonal-alt.svg</div><div class="type">SVG Icon</div></div>
+      <div class="ds-asset-card"><img src="assets/icons/plus.svg" alt="Plus"><div class="name">plus.svg</div><div class="type">SVG Icon</div></div>
+      <div class="ds-asset-card"><img src="assets/icons/circle-outline.svg" alt="Circle Outline"><div class="name">circle-outline.svg</div><div class="type">SVG Icon</div></div>
+      <div class="ds-asset-card"><img src="assets/icons/vector-arrow-01.svg" alt="Vector Arrow 01"><div class="name">vector-arrow-01.svg</div><div class="type">SVG Icon</div></div>
+      <div class="ds-asset-card"><img src="assets/icons/vector-arrow-02.svg" alt="Vector Arrow 02"><div class="name">vector-arrow-02.svg</div><div class="type">SVG Icon</div></div>
+      <div class="ds-asset-card"><img src="assets/icons/vector-arrow-03.svg" alt="Vector Arrow 03"><div class="name">vector-arrow-03.svg</div><div class="type">SVG Icon</div></div>
+      <div class="ds-asset-card"><img src="assets/icons/line-separator.svg" alt="Line Separator"><div class="name">line-separator.svg</div><div class="type">SVG Divider</div></div>
+    </div>
+
+    <div class="ds-subsection">
+      <h3>Navigation Icons <span style="display:inline-block;background:#9662FF;color:#fff;font-size:10px;padding:1px 6px;border-radius:3px;vertical-align:middle">WORK PAGE</span></h3>
+      <div class="ds-grid ds-grid--assets">
+        <div class="ds-asset-card"><img src="assets/icons/nav-icon-01.svg" alt="Nav Icon 01"><div class="name">nav-icon-01.svg</div><div class="type">SVG Icon</div></div>
+        <div class="ds-asset-card"><img src="assets/icons/nav-icon-02.svg" alt="Nav Icon 02"><div class="name">nav-icon-02.svg</div><div class="type">SVG Icon</div></div>
+        <div class="ds-asset-card"><img src="assets/icons/nav-icon-03.svg" alt="Nav Icon 03"><div class="name">nav-icon-03.svg</div><div class="type">SVG Icon</div></div>
+        <div class="ds-asset-card"><img src="assets/icons/nav-icon-04.svg" alt="Nav Icon 04"><div class="name">nav-icon-04.svg</div><div class="type">SVG Icon</div></div>
+        <div class="ds-asset-card"><img src="assets/icons/nav-icon-05.svg" alt="Nav Icon 05"><div class="name">nav-icon-05.svg</div><div class="type">SVG Icon</div></div>
+      </div>
+    </div>
+
+    <div class="ds-subsection">
+      <h3>Frame / UI Icons <span style="display:inline-block;background:#9662FF;color:#fff;font-size:10px;padding:1px 6px;border-radius:3px;vertical-align:middle">WORK PAGE</span></h3>
+      <div class="ds-grid ds-grid--assets">
+        <div class="ds-asset-card"><img src="assets/icons/frame-icon-05.svg" alt="Frame Icon 05"><div class="name">frame-icon-05.svg</div><div class="type">SVG Icon</div></div>
+        <div class="ds-asset-card"><img src="assets/icons/frame-icon-06.svg" alt="Frame Icon 06"><div class="name">frame-icon-06.svg</div><div class="type">SVG Icon</div></div>
+        <div class="ds-asset-card"><img src="assets/icons/frame-icon-07.svg" alt="Frame Icon 07"><div class="name">frame-icon-07.svg</div><div class="type">SVG Icon</div></div>
+        <div class="ds-asset-card"><img src="assets/icons/frame-icon-08.svg" alt="Frame Icon 08"><div class="name">frame-icon-08.svg</div><div class="type">SVG Icon</div></div>
+        <div class="ds-asset-card"><img src="assets/icons/frame-icon-09.svg" alt="Frame Icon 09"><div class="name">frame-icon-09.svg</div><div class="type">SVG Icon</div></div>
+        <div class="ds-asset-card"><img src="assets/icons/icon-group-8666.svg" alt="Group 8666"><div class="name">icon-group-8666.svg</div><div class="type">SVG Icon</div></div>
+      </div>
+    </div>
+
+    <div class="ds-subsection">
+      <h3>Decorative &amp; Line Elements <span style="display:inline-block;background:#9662FF;color:#fff;font-size:10px;padding:1px 6px;border-radius:3px;vertical-align:middle">WORK PAGE</span></h3>
+      <div class="ds-grid ds-grid--assets">
+        <div class="ds-asset-card"><img src="assets/icons/decorative-dd2.svg" alt="DD2"><div class="name">decorative-dd2.svg</div><div class="type">SVG Decorative</div></div>
+        <div class="ds-asset-card"><img src="assets/icons/decorative-element.svg" alt="Element"><div class="name">decorative-element.svg</div><div class="type">SVG Decorative</div></div>
+        <div class="ds-asset-card"><img src="assets/icons/group-element.svg" alt="Group"><div class="name">group-element.svg</div><div class="type">SVG Decorative</div></div>
+        <div class="ds-asset-card"><img src="assets/icons/group-element-alt.svg" alt="Group Alt"><div class="name">group-element-alt.svg</div><div class="type">SVG Decorative</div></div>
+        <div class="ds-asset-card"><img src="assets/icons/line-37.svg" alt="Line 37"><div class="name">line-37.svg</div><div class="type">SVG Divider</div></div>
+        <div class="ds-asset-card"><img src="assets/icons/line-1441.svg" alt="Line 1441"><div class="name">line-1441.svg</div><div class="type">SVG Divider</div></div>
+        <div class="ds-asset-card"><img src="assets/icons/line-1446.svg" alt="Line 1446"><div class="name">line-1446.svg</div><div class="type">SVG Divider</div></div>
+        <div class="ds-asset-card"><img src="assets/icons/est-badge.svg" alt="Est Badge"><div class="name">est-badge.svg</div><div class="type">SVG Badge</div></div>
+        <div class="ds-asset-card"><img src="assets/icons/teal-dot-01.svg" alt="Teal Dot 01"><div class="name">teal-dot-01.svg</div><div class="type">SVG Decorative</div></div>
+        <div class="ds-asset-card"><img src="assets/icons/teal-dot-02.svg" alt="Teal Dot 02"><div class="name">teal-dot-02.svg</div><div class="type">SVG Decorative</div></div>
+        <div class="ds-asset-card"><img src="assets/icons/teal-dot-03.svg" alt="Teal Dot 03"><div class="name">teal-dot-03.svg</div><div class="type">SVG Decorative</div></div>
+        <div class="ds-asset-card"><img src="assets/icons/teal-dot-04.svg" alt="Teal Dot 04"><div class="name">teal-dot-04.svg</div><div class="type">SVG Decorative</div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════ LOGOS ═══════════════════ -->
+  <section class="ds-section" id="logos">
+    <h2>Logos</h2>
+    <p class="ds-subtitle">Brand and client logos from the design</p>
+
+    <div class="ds-subsection">
+      <h3>Brand Logo</h3>
+      <div class="ds-grid ds-grid--assets">
+        <div class="ds-asset-card ds-dark-bg" style="background:#090909; color:#fff"><img src="assets/logos/reloadux-logo-part1.svg" alt="Reloadux Logo Part 1"><div class="name">reloadux-logo-part1.svg</div></div>
+        <div class="ds-asset-card ds-dark-bg" style="background:#090909; color:#fff"><img src="assets/logos/reloadux-logo-part2.svg" alt="Reloadux Logo Part 2"><div class="name">reloadux-logo-part2.svg</div></div>
+      </div>
+    </div>
+
+    <div class="ds-subsection">
+      <h3>Client Logos</h3>
+      <div class="ds-grid ds-grid--assets">
+        <div class="ds-asset-card"><img src="assets/logos/client-logo-01.svg" alt="Client Logo 01"><div class="name">client-logo-01.svg</div></div>
+        <div class="ds-asset-card"><img src="assets/logos/client-logo-02.svg" alt="Client Logo 02"><div class="name">client-logo-02.svg</div></div>
+        <div class="ds-asset-card"><img src="assets/logos/client-logo-03.svg" alt="Client Logo 03"><div class="name">client-logo-03.svg</div></div>
+        <div class="ds-asset-card"><img src="assets/logos/client-logo-04-path5.svg" alt="Client Logo 04"><div class="name">client-logo-04-path5.svg</div></div>
+        <div class="ds-asset-card"><img src="assets/logos/client-logo-05-knowles.svg" alt="Client Logo 05 Knowles"><div class="name">client-logo-05-knowles.svg</div></div>
+        <div class="ds-asset-card"><img src="assets/logos/client-logo-06-replenium.svg" alt="Client Logo 06 Replenium"><div class="name">client-logo-06-replenium.svg</div></div>
+        <div class="ds-asset-card"><img src="assets/logos/client-logo-07.svg" alt="Client Logo 07"><div class="name">client-logo-07.svg</div></div>
+        <div class="ds-asset-card"><img src="assets/logos/client-logo-08.svg" alt="Client Logo 08"><div class="name">client-logo-08.svg</div></div>
+        <div class="ds-asset-card"><img src="assets/logos/moment-ai-logo-02.svg" alt="Moment AI"><div class="name">moment-ai-logo-02.svg</div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════ IMAGES ═══════════════════ -->
+  <section class="ds-section" id="images">
+    <h2>Images</h2>
+    <p class="ds-subtitle">Raster images exported from the design</p>
+
+    <div class="ds-grid ds-grid--assets">
+      <div class="ds-asset-card" style="background:#090909; padding:16px; border-radius:12px;">
+        <img src="assets/images/holo-abstract-bg.png" alt="Holographic Abstract BG" style="max-height:120px; opacity:0.6">
+        <div class="name" style="color:#fff; margin-top:8px">holo-abstract-bg.png</div>
+        <div class="type" style="color:#A5A9AC">PNG — Holographic decorative shape</div>
+      </div>
+      <div class="ds-asset-card">
+        <img src="assets/images/client-mask-01.png" alt="Client Mask 01" style="max-height:80px">
+        <div class="name">client-mask-01.png</div>
+        <div class="type">PNG — Logo mask image</div>
+      </div>
+      <div class="ds-asset-card">
+        <img src="assets/images/client-mask-02.png" alt="Client Mask 02" style="max-height:80px">
+        <div class="name">client-mask-02.png</div>
+        <div class="type">PNG — Logo mask image</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════ WORK PAGE: NEW COLORS ═══════════════════ -->
+  <section class="ds-section ds-section--wp" id="wp-colors">
+    <h2>New Colors <span>Work Page</span></h2>
+    <p class="ds-subtitle">Additional color values discovered on the Work / Portfolio page</p>
+
+    <div class="ds-subsection">
+      <h3>Accent / Brand</h3>
+      <div class="ds-grid ds-grid--colors">
+        <div class="ds-color-card"><div class="ds-color-swatch" style="background:#002737"></div><div class="ds-color-info"><div class="name">Dark Green</div><div class="value">#002737</div></div></div>
+        <div class="ds-color-card"><div class="ds-color-swatch" style="background:#00EC93"></div><div class="ds-color-info"><div class="name">Neon Green</div><div class="value">#00EC93</div></div></div>
+        <div class="ds-color-card"><div class="ds-color-swatch" style="background:#136114"></div><div class="ds-color-info"><div class="name">Green Brand</div><div class="value">#136114</div></div></div>
+        <div class="ds-color-card"><div class="ds-color-swatch" style="background:#07AF4A"></div><div class="ds-color-info"><div class="name">Green Bright</div><div class="value">#07AF4A</div></div></div>
+        <div class="ds-color-card"><div class="ds-color-swatch" style="background:#FF912C"></div><div class="ds-color-info"><div class="name">Orange 500</div><div class="value">#FF912C</div></div></div>
+        <div class="ds-color-card"><div class="ds-color-swatch" style="background:#BE1E2D"></div><div class="ds-color-info"><div class="name">Red Brand</div><div class="value">#BE1E2D</div></div></div>
+        <div class="ds-color-card"><div class="ds-color-swatch" style="background:#02C2EA"></div><div class="ds-color-info"><div class="name">Blue Primary</div><div class="value">#02C2EA</div></div></div>
+        <div class="ds-color-card"><div class="ds-color-swatch" style="background:#2F80ED"></div><div class="ds-color-info"><div class="name">Blue 1</div><div class="value">#2F80ED</div></div></div>
+        <div class="ds-color-card"><div class="ds-color-swatch" style="background:#0C66E4"></div><div class="ds-color-info"><div class="name">Blue Atlassian</div><div class="value">#0C66E4</div></div></div>
+      </div>
+    </div>
+
+    <div class="ds-subsection">
+      <h3>Grey / Navigation / Surface</h3>
+      <div class="ds-grid ds-grid--colors">
+        <div class="ds-color-card"><div class="ds-color-swatch" style="background:#131A22"></div><div class="ds-color-info"><div class="name">Dark BG</div><div class="value">#131A22</div></div></div>
+        <div class="ds-color-card"><div class="ds-color-swatch" style="background:#F7F8FB; border-bottom:1px solid #eee"></div><div class="ds-color-info"><div class="name">Light</div><div class="value">#F7F8FB</div></div></div>
+        <div class="ds-color-card"><div class="ds-color-swatch" style="background:#242634"></div><div class="ds-color-info"><div class="name">Grey 05</div><div class="value">#242634</div></div></div>
+        <div class="ds-color-card"><div class="ds-color-swatch" style="background:#5F6D7E"></div><div class="ds-color-info"><div class="name">Grey 50</div><div class="value">#5F6D7E</div></div></div>
+        <div class="ds-color-card"><div class="ds-color-swatch" style="background:#697586"></div><div class="ds-color-info"><div class="name">Grey Modern 500</div><div class="value">#697586</div></div></div>
+        <div class="ds-color-card"><div class="ds-color-swatch" style="background:#95A2B4"></div><div class="ds-color-info"><div class="name">Grey Nav</div><div class="value">#95A2B4</div></div></div>
+        <div class="ds-color-card"><div class="ds-color-swatch" style="background:#5F5F5F"></div><div class="ds-color-info"><div class="name">Text Grey</div><div class="value">#5F5F5F</div></div></div>
+        <div class="ds-color-card"><div class="ds-color-swatch" style="background:#929AA6"></div><div class="ds-color-info"><div class="name">Grey Light</div><div class="value">#929AA6</div></div></div>
+        <div class="ds-color-card"><div class="ds-color-swatch" style="background:#959CB6"></div><div class="ds-color-info"><div class="name">Grey Mid</div><div class="value">#959CB6</div></div></div>
+      </div>
+    </div>
+
+    <div class="ds-subsection">
+      <h3>Neutral Extended</h3>
+      <div class="ds-grid ds-grid--colors">
+        <div class="ds-color-card"><div class="ds-color-swatch" style="background:#3B3B3F"></div><div class="ds-color-info"><div class="name">Neutral 25 Dark</div><div class="value">#3B3B3F</div></div></div>
+        <div class="ds-color-card"><div class="ds-color-swatch" style="background:#5E5E62"></div><div class="ds-color-info"><div class="name">Neutral 40 Dark</div><div class="value">#5E5E62</div></div></div>
+        <div class="ds-color-card"><div class="ds-color-swatch" style="background:#FBFBFB; border-bottom:1px solid #eee"></div><div class="ds-color-info"><div class="name">Neutral 100 Light</div><div class="value">#FBFBFB</div></div></div>
+        <div class="ds-color-card"><div class="ds-color-swatch" style="background:#42526E"></div><div class="ds-color-info"><div class="name">Neutral N500</div><div class="value">#42526E</div></div></div>
+        <div class="ds-color-card"><div class="ds-color-swatch" style="background:#091E42"></div><div class="ds-color-info"><div class="name">Neutral N20A</div><div class="value">#091E42</div></div></div>
+        <div class="ds-color-card"><div class="ds-color-swatch" style="background:#94A3B8"></div><div class="ds-color-info"><div class="name">Neutral 300 Alt</div><div class="value">#94A3B8</div></div></div>
+        <div class="ds-color-card"><div class="ds-color-swatch" style="background:#0D2A52"></div><div class="ds-color-info"><div class="name">Dark Grey 900</div><div class="value">#0D2A52</div></div></div>
+        <div class="ds-color-card"><div class="ds-color-swatch" style="background:#DDE4F4"></div><div class="ds-color-info"><div class="name">Outline</div><div class="value">#DDE4F4</div></div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════ WORK PAGE: NEW TYPOGRAPHY ═══════════════════ -->
+  <section class="ds-section ds-section--wp" id="wp-typography">
+    <h2>New Typography <span>Work Page</span></h2>
+    <p class="ds-subtitle">Additional type styles discovered on the Work Page</p>
+
+    <div class="ds-grid ds-grid--type">
+      <div class="ds-type-row">
+        <div class="ds-type-meta"><span>Heading XL</span><span>Manrope 50px</span><span>Regular 400</span><span>line-height: 68px</span></div>
+        <div style="font-family:'Manrope',sans-serif; font-size:50px; font-weight:400; line-height:68px;">Shaping the future of Interaction!</div>
+      </div>
+      <div class="ds-type-row">
+        <div class="ds-type-meta"><span>Body Semibold</span><span>Manrope 18px</span><span>SemiBold 600</span></div>
+        <div style="font-family:'Manrope',sans-serif; font-size:18px; font-weight:600;">SaaS &middot; Healthcare &middot; AI &middot; NFTs &middot; CRM</div>
+      </div>
+      <div class="ds-type-row">
+        <div class="ds-type-meta"><span>Body SM Semibold</span><span>Manrope 16px</span><span>SemiBold 600</span><span>line-height: 26px</span></div>
+        <div style="font-family:'Manrope',sans-serif; font-size:16px; font-weight:600; line-height:26px;">Case study tags and category badges</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════ WORK PAGE: PORTFOLIO ═══════════════════ -->
+  <section class="ds-section ds-section--wp" id="portfolio">
+    <h2>Portfolio Projects <span>Work Page</span></h2>
+    <p class="ds-subtitle">Project mockups and case study hero images</p>
+
+    <div class="ds-grid ds-grid--portfolio">
+      <div class="ds-portfolio-card ds-portfolio-card--tall"><img src="assets/portfolio/vocable-dashboard.png" alt="Vocable Dashboard"><div class="ds-card-label">vocable-dashboard.png</div></div>
+      <div class="ds-portfolio-card ds-portfolio-card--tall"><img src="assets/portfolio/tradezilla-mockup.png" alt="TradeZilla"><div class="ds-card-label">tradezilla-mockup.png</div></div>
+      <div class="ds-portfolio-card ds-portfolio-card--tall"><img src="assets/portfolio/bridge-mockup.png" alt="Bridge"><div class="ds-card-label">bridge-mockup.png</div></div>
+      <div class="ds-portfolio-card ds-portfolio-card--tall"><img src="assets/portfolio/moment-ai-mockup.png" alt="Moment AI"><div class="ds-card-label">moment-ai-mockup.png</div></div>
+      <div class="ds-portfolio-card ds-portfolio-card--tall"><img src="assets/portfolio/psav-mockup.png" alt="PSAV"><div class="ds-card-label">psav-mockup.png</div></div>
+      <div class="ds-portfolio-card ds-portfolio-card--tall"><img src="assets/portfolio/lumatax-mockup.png" alt="LumaTax"><div class="ds-card-label">lumatax-mockup.png</div></div>
+      <div class="ds-portfolio-card ds-portfolio-card--tall"><img src="assets/portfolio/skfg-mockup.png" alt="SKFG"><div class="ds-card-label">skfg-mockup.png</div></div>
+      <div class="ds-portfolio-card ds-portfolio-card--tall"><img src="assets/portfolio/simpla-mockup.png" alt="Simpla"><div class="ds-card-label">simpla-mockup.png</div></div>
+      <div class="ds-portfolio-card ds-portfolio-card--tall"><img src="assets/portfolio/nbc-universal-mockup.png" alt="NBC Universal"><div class="ds-card-label">nbc-universal-mockup.png</div></div>
+      <div class="ds-portfolio-card ds-portfolio-card--tall"><img src="assets/portfolio/replenium.png" alt="Replenium"><div class="ds-card-label">replenium.png</div></div>
+      <div class="ds-portfolio-card ds-portfolio-card--tall"><img src="assets/portfolio/main-screen.png" alt="Main Screen"><div class="ds-card-label">main-screen.png</div></div>
+      <div class="ds-portfolio-card ds-portfolio-card--tall"><img src="assets/portfolio/maps.png" alt="Maps"><div class="ds-card-label">maps.png</div></div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════ WORK PAGE: CASE STUDIES ═══════════════════ -->
+  <section class="ds-section ds-section--wp" id="case-studies">
+    <h2>Case Study Frames <span>Work Page</span></h2>
+    <p class="ds-subtitle">UI screenshots, project frames, device mockups, and supplementary imagery</p>
+
+    <div class="ds-subsection">
+      <h3>Project Frames</h3>
+      <div class="ds-grid ds-grid--assets">
+        <div class="ds-portfolio-card"><img src="assets/portfolio/frame-project-01.png" alt="Frame 01"><div class="ds-card-label">frame-project-01.png</div></div>
+        <div class="ds-portfolio-card"><img src="assets/portfolio/frame-project-02.png" alt="Frame 02"><div class="ds-card-label">frame-project-02.png</div></div>
+        <div class="ds-portfolio-card"><img src="assets/portfolio/frame-project-03.png" alt="Frame 03"><div class="ds-card-label">frame-project-03.png</div></div>
+        <div class="ds-portfolio-card"><img src="assets/portfolio/frame-project-04.png" alt="Frame 04"><div class="ds-card-label">frame-project-04.png</div></div>
+      </div>
+    </div>
+
+    <div class="ds-subsection">
+      <h3>Case Study UI Screenshots</h3>
+      <div class="ds-grid ds-grid--assets">
+        <div class="ds-portfolio-card"><img src="assets/portfolio/case-frame-01.png" alt="Case 01"><div class="ds-card-label">case-frame-01.png</div></div>
+        <div class="ds-portfolio-card"><img src="assets/portfolio/case-frame-02.png" alt="Case 02"><div class="ds-card-label">case-frame-02.png</div></div>
+        <div class="ds-portfolio-card"><img src="assets/portfolio/case-frame-03.png" alt="Case 03"><div class="ds-card-label">case-frame-03.png</div></div>
+        <div class="ds-portfolio-card"><img src="assets/portfolio/case-frame-04.png" alt="Case 04"><div class="ds-card-label">case-frame-04.png</div></div>
+        <div class="ds-portfolio-card"><img src="assets/portfolio/case-frame-05.png" alt="Case 05"><div class="ds-card-label">case-frame-05.png</div></div>
+        <div class="ds-portfolio-card"><img src="assets/portfolio/case-frame-06.png" alt="Case 06"><div class="ds-card-label">case-frame-06.png</div></div>
+        <div class="ds-portfolio-card"><img src="assets/portfolio/case-frame-07.png" alt="Case 07"><div class="ds-card-label">case-frame-07.png</div></div>
+        <div class="ds-portfolio-card"><img src="assets/portfolio/case-frame-08.png" alt="Case 08"><div class="ds-card-label">case-frame-08.png</div></div>
+      </div>
+    </div>
+
+    <div class="ds-subsection">
+      <h3>Product Screenshots</h3>
+      <div class="ds-grid ds-grid--assets">
+        <div class="ds-portfolio-card"><img src="assets/portfolio/screenshot-product-01.png" alt="Product 01"><div class="ds-card-label">screenshot-product-01.png</div></div>
+        <div class="ds-portfolio-card"><img src="assets/portfolio/screenshot-product-02.png" alt="Product 02"><div class="ds-card-label">screenshot-product-02.png</div></div>
+        <div class="ds-portfolio-card"><img src="assets/portfolio/screenshot-product-03.png" alt="Product 03"><div class="ds-card-label">screenshot-product-03.png</div></div>
+        <div class="ds-portfolio-card"><img src="assets/portfolio/screenshot-alt-01.png" alt="Alt 01"><div class="ds-card-label">screenshot-alt-01.png</div></div>
+        <div class="ds-portfolio-card"><img src="assets/portfolio/contact-details-tasks.png" alt="Contact"><div class="ds-card-label">contact-details-tasks.png</div></div>
+        <div class="ds-portfolio-card"><img src="assets/portfolio/pro-112.png" alt="Pro 112"><div class="ds-card-label">pro-112.png</div></div>
+      </div>
+    </div>
+
+    <div class="ds-subsection">
+      <h3>Supplementary Images</h3>
+      <div class="ds-grid ds-grid--logos-sm">
+        <div class="ds-portfolio-card"><img src="assets/portfolio/asset-image-01.png" alt="Asset 01" style="height:140px"><div class="ds-card-label">asset-image-01.png</div></div>
+        <div class="ds-portfolio-card"><img src="assets/portfolio/asset-image-02.png" alt="Asset 02" style="height:140px"><div class="ds-card-label">asset-image-02.png</div></div>
+        <div class="ds-portfolio-card"><img src="assets/portfolio/asset-image-03.png" alt="Asset 03" style="height:140px"><div class="ds-card-label">asset-image-03.png</div></div>
+        <div class="ds-portfolio-card"><img src="assets/portfolio/image-534.png" alt="534" style="height:140px"><div class="ds-card-label">image-534.png</div></div>
+        <div class="ds-portfolio-card"><img src="assets/portfolio/image-276.png" alt="276" style="height:140px"><div class="ds-card-label">image-276.png</div></div>
+        <div class="ds-portfolio-card"><img src="assets/portfolio/image-279.png" alt="279" style="height:140px"><div class="ds-card-label">image-279.png</div></div>
+        <div class="ds-portfolio-card"><img src="assets/portfolio/image-297.png" alt="297" style="height:140px"><div class="ds-card-label">image-297.png</div></div>
+        <div class="ds-portfolio-card"><img src="assets/portfolio/image-420.png" alt="420" style="height:140px"><div class="ds-card-label">image-420.png</div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════ WORK PAGE: MOCKUPS ═══════════════════ -->
+  <section class="ds-section ds-section--wp" id="mockups">
+    <h2>Device Mockups <span>Work Page</span></h2>
+    <p class="ds-subtitle">iPhone mockups, screens, backgrounds, and textures</p>
+
+    <div class="ds-subsection">
+      <h3>iPhone Mockups</h3>
+      <div class="ds-grid ds-grid--portfolio">
+        <div class="ds-portfolio-card ds-portfolio-card--tall"><img src="assets/portfolio/iphone-mockup-01.png" alt="iPhone 01"><div class="ds-card-label">iphone-mockup-01.png</div></div>
+        <div class="ds-portfolio-card ds-portfolio-card--tall"><img src="assets/portfolio/iphone-mockup-02.png" alt="iPhone 02"><div class="ds-card-label">iphone-mockup-02.png</div></div>
+        <div class="ds-portfolio-card ds-portfolio-card--tall"><img src="assets/portfolio/iphone-mockup-03.png" alt="iPhone 03"><div class="ds-card-label">iphone-mockup-03.png</div></div>
+      </div>
+    </div>
+
+    <div class="ds-subsection">
+      <h3>Screens</h3>
+      <div class="ds-grid ds-grid--assets">
+        <div class="ds-portfolio-card"><img src="assets/portfolio/screen-01.png" alt="Screen 01"><div class="ds-card-label">screen-01.png</div></div>
+        <div class="ds-portfolio-card"><img src="assets/portfolio/screen-02.png" alt="Screen 02"><div class="ds-card-label">screen-02.png</div></div>
+        <div class="ds-portfolio-card"><img src="assets/portfolio/frame-83.png" alt="Frame 83"><div class="ds-card-label">frame-83.png</div></div>
+        <div class="ds-portfolio-card"><img src="assets/portfolio/frame-868.png" alt="Frame 868"><div class="ds-card-label">frame-868.png</div></div>
+      </div>
+    </div>
+
+    <div class="ds-subsection">
+      <h3>Backgrounds &amp; Textures</h3>
+      <div class="ds-grid ds-grid--assets">
+        <div class="ds-portfolio-card"><img src="assets/portfolio/background.png" alt="BG"><div class="ds-card-label">background.png</div></div>
+        <div class="ds-portfolio-card"><img src="assets/portfolio/rectangle-bg.png" alt="Rect BG"><div class="ds-card-label">rectangle-bg.png</div></div>
+        <div class="ds-portfolio-card"><img src="assets/portfolio/shape.png" alt="Shape"><div class="ds-card-label">shape.png</div></div>
+        <div class="ds-portfolio-card"><img src="assets/portfolio/shadow.png" alt="Shadow"><div class="ds-card-label">shadow.png</div></div>
+        <div class="ds-portfolio-card"><img src="assets/portfolio/surface-unsplash.png" alt="Surface"><div class="ds-card-label">surface-unsplash.png</div></div>
+        <div class="ds-portfolio-card"><img src="assets/portfolio/pexels-barbara-olsen.png" alt="Pexels"><div class="ds-card-label">pexels-barbara-olsen.png</div></div>
+        <div class="ds-portfolio-card"><img src="assets/portfolio/pexels-mart.png" alt="Mart"><div class="ds-card-label">pexels-mart.png</div></div>
+      </div>
+    </div>
+
+    <div class="ds-subsection">
+      <h3>Thumbnails</h3>
+      <div class="ds-grid ds-grid--logos-sm">
+        <div class="ds-portfolio-card"><img src="assets/portfolio/image-44.png" alt="44" style="height:100px"><div class="ds-card-label">image-44.png</div></div>
+        <div class="ds-portfolio-card"><img src="assets/portfolio/image-45.png" alt="45" style="height:100px"><div class="ds-card-label">image-45.png</div></div>
+        <div class="ds-portfolio-card"><img src="assets/portfolio/image-46.png" alt="46" style="height:100px"><div class="ds-card-label">image-46.png</div></div>
+        <div class="ds-portfolio-card"><img src="assets/portfolio/image-47.png" alt="47" style="height:100px"><div class="ds-card-label">image-47.png</div></div>
+        <div class="ds-portfolio-card"><img src="assets/portfolio/image-48.png" alt="48" style="height:100px"><div class="ds-card-label">image-48.png</div></div>
+        <div class="ds-portfolio-card"><img src="assets/portfolio/image-49.png" alt="49" style="height:100px"><div class="ds-card-label">image-49.png</div></div>
+        <div class="ds-portfolio-card"><img src="assets/portfolio/image-50.png" alt="50" style="height:100px"><div class="ds-card-label">image-50.png</div></div>
+        <div class="ds-portfolio-card"><img src="assets/portfolio/image-51.png" alt="51" style="height:100px"><div class="ds-card-label">image-51.png</div></div>
+        <div class="ds-portfolio-card"><img src="assets/portfolio/image-52.png" alt="52" style="height:100px"><div class="ds-card-label">image-52.png</div></div>
+        <div class="ds-portfolio-card"><img src="assets/portfolio/image-53.png" alt="53" style="height:100px"><div class="ds-card-label">image-53.png</div></div>
+        <div class="ds-portfolio-card"><img src="assets/portfolio/image-54.png" alt="54" style="height:100px"><div class="ds-card-label">image-54.png</div></div>
+        <div class="ds-portfolio-card"><img src="assets/portfolio/map-stockholm.png" alt="Map" style="height:100px"><div class="ds-card-label">map-stockholm.png</div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════ WORK PAGE: CLIENT LOGOS ═══════════════════ -->
+  <section class="ds-section ds-section--wp" id="client-logos">
+    <h2>Client Logo Grid <span>Work Page</span></h2>
+    <p class="ds-subtitle">40+ client logos from the "Trusted by brands" section</p>
+
+    <div class="ds-grid ds-grid--logos-sm">
+      <div class="ds-logo-card"><img src="assets/client-logos/logo-client-s02.png" alt="S02"></div>
+      <div class="ds-logo-card"><img src="assets/client-logos/logo-client-s04.png" alt="S04"></div>
+      <div class="ds-logo-card"><img src="assets/client-logos/logo-client-s10.png" alt="S10"></div>
+      <div class="ds-logo-card"><img src="assets/client-logos/logo-client-s12.png" alt="S12"></div>
+      <div class="ds-logo-card"><img src="assets/client-logos/logo-client-s19.png" alt="S19"></div>
+      <div class="ds-logo-card"><img src="assets/client-logos/logo-client-s22.png" alt="S22"></div>
+      <div class="ds-logo-card"><img src="assets/client-logos/logo-client-s24.png" alt="S24"></div>
+      <div class="ds-logo-card"><img src="assets/client-logos/logo-client-s27.png" alt="S27"></div>
+      <div class="ds-logo-card"><img src="assets/client-logos/logo-client-s28.png" alt="S28"></div>
+      <div class="ds-logo-card"><img src="assets/client-logos/logo-client-s29.png" alt="S29"></div>
+      <div class="ds-logo-card"><img src="assets/client-logos/logo-client-s31.png" alt="S31"></div>
+      <div class="ds-logo-card"><img src="assets/client-logos/logo-client-s33.png" alt="S33"></div>
+      <div class="ds-logo-card"><img src="assets/client-logos/logo-client-s34.png" alt="S34"></div>
+      <div class="ds-logo-card"><img src="assets/client-logos/logo-client-s36.png" alt="S36"></div>
+      <div class="ds-logo-card"><img src="assets/client-logos/logo-client-s39.png" alt="S39"></div>
+      <div class="ds-logo-card"><img src="assets/client-logos/logo-client-s-elia-01.png" alt="Elia 01"></div>
+      <div class="ds-logo-card"><img src="assets/client-logos/logo-client-s-elia-02.png" alt="Elia 02"></div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════ WORK PAGE: AVATARS ═══════════════════ -->
+  <section class="ds-section ds-section--wp" id="avatars">
+    <h2>Avatars &amp; Team <span>Work Page</span></h2>
+    <p class="ds-subtitle">User avatars for testimonials and client inline photos</p>
+
+    <div class="ds-subsection">
+      <h3>Testimonial Avatars</h3>
+      <div class="ds-grid ds-grid--avatars">
+        <div class="ds-avatar-card"><img src="assets/avatars/avatar-01.png" alt="Avatar 01"><div class="name">avatar-01</div></div>
+        <div class="ds-avatar-card"><img src="assets/avatars/avatar-02.png" alt="Avatar 02"><div class="name">avatar-02</div></div>
+        <div class="ds-avatar-card"><img src="assets/avatars/avatar-03.png" alt="Avatar 03"><div class="name">avatar-03</div></div>
+        <div class="ds-avatar-card"><img src="assets/avatars/avatar-04.png" alt="Avatar 04"><div class="name">avatar-04</div></div>
+        <div class="ds-avatar-card"><img src="assets/avatars/avatar-05.png" alt="Avatar 05"><div class="name">avatar-05</div></div>
+        <div class="ds-avatar-card"><img src="assets/avatars/avatar-06.png" alt="Avatar 06"><div class="name">avatar-06</div></div>
+        <div class="ds-avatar-card"><img src="assets/avatars/avatar-07.png" alt="Avatar 07"><div class="name">avatar-07</div></div>
+        <div class="ds-avatar-card"><img src="assets/avatars/avatar-08.png" alt="Avatar 08"><div class="name">avatar-08</div></div>
+        <div class="ds-avatar-card"><img src="assets/avatars/avatar-09.png" alt="Avatar 09"><div class="name">avatar-09</div></div>
+        <div class="ds-avatar-card"><img src="assets/avatars/avatar-10.png" alt="Avatar 10"><div class="name">avatar-10</div></div>
+      </div>
+    </div>
+
+    <div class="ds-subsection">
+      <h3>Client Inline Avatars</h3>
+      <div class="ds-grid ds-grid--avatars">
+        <div class="ds-avatar-card"><img src="assets/portfolio/ellipse-avatar-01.png" alt="Ellipse 01"><div class="name">ellipse-avatar-01</div></div>
+        <div class="ds-avatar-card"><img src="assets/portfolio/ellipse-avatar-02.png" alt="Ellipse 02"><div class="name">ellipse-avatar-02</div></div>
+        <div class="ds-avatar-card"><img src="assets/portfolio/ellipse-avatar-03.png" alt="Ellipse 03"><div class="name">ellipse-avatar-03</div></div>
+        <div class="ds-avatar-card"><img src="assets/portfolio/client-avatar-01.png" alt="Client 01"><div class="name">client-avatar-01</div></div>
+        <div class="ds-avatar-card"><img src="assets/portfolio/client-avatar-02.png" alt="Client 02"><div class="name">client-avatar-02</div></div>
+        <div class="ds-avatar-card"><img src="assets/portfolio/client-avatar-03.png" alt="Client 03"><div class="name">client-avatar-03</div></div>
+        <div class="ds-avatar-card"><img src="assets/portfolio/client-avatar-04.png" alt="Client 04"><div class="name">client-avatar-04</div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════ WORK PAGE: AWARDS ═══════════════════ -->
+  <section class="ds-section ds-section--wp" id="awards">
+    <h2>Awards &amp; Badges <span>Work Page</span></h2>
+    <p class="ds-subtitle">Award logos and certificates from the awards strip</p>
+
+    <div class="ds-grid ds-grid--assets">
+      <div class="ds-asset-card" style="background:#090909; color:#fff"><img src="assets/awards/vega-logo.png" alt="Vega Logo" style="filter:none"><div class="name" style="color:#fff">vega-logo.png</div><div class="type" style="color:#A5A9AC">Award Badge</div></div>
+      <div class="ds-asset-card" style="background:#090909; color:#fff"><img src="assets/awards/vega-status-silver.png" alt="Vega Silver" style="filter:none"><div class="name" style="color:#fff">vega-status-silver.png</div><div class="type" style="color:#A5A9AC">Award Badge</div></div>
+      <div class="ds-asset-card" style="background:#090909; color:#fff"><img src="assets/awards/certificate-shortlist.png" alt="Certificate" style="filter:none"><div class="name" style="color:#fff">certificate-shortlist.png</div><div class="type" style="color:#A5A9AC">Award Badge</div></div>
+      <div class="ds-asset-card" style="background:#090909; color:#fff"><img src="assets/awards/logo-2023.png" alt="Logo 2023" style="filter:none"><div class="name" style="color:#fff">logo-2023.png</div><div class="type" style="color:#A5A9AC">Award Badge</div></div>
+      <div class="ds-asset-card" style="background:#090909; color:#fff"><img src="assets/awards/andrew-wood.png" alt="Andrew Wood" style="filter:none"><div class="name" style="color:#fff">andrew-wood.png</div><div class="type" style="color:#A5A9AC">Award Image</div></div>
+      <div class="ds-asset-card" style="background:#090909; color:#fff"><img src="assets/awards/image-55.png" alt="Award" style="filter:none"><div class="name" style="color:#fff">image-55.png</div><div class="type" style="color:#A5A9AC">Award Image</div></div>
+    </div>
+  </section>
+
+  <footer style="padding:48px; text-align:center; color:#667085; font-size:14px; border-top:1px solid #EAECF0;">
+    <p>Reloadux Design System v1.1.0 — Generated from Figma (Home + Work Page) on <time>2026-02-26</time></p>
+  </footer>
+
+</body>
+</html>

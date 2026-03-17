@@ -1,0 +1,584 @@
+/* ═══════════════════════════════════════════════════════
+   Header — matches WP header.css exactly
+   ═══════════════════════════════════════════════════════ */
+
+.header {
+  position: sticky;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 9999;
+  background-color: rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+}
+
+.container {
+  width: 100%;
+  max-width: var(--content-width);
+  margin-inline: auto;
+  padding-inline: var(--page-padding);
+}
+
+.mainMenu {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: clamp(64px, 6vw, 86px);
+}
+
+/* ── Logo ─────────────────────────────────────────────── */
+
+.headerLogo a {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+}
+
+/* ── Navigation ───────────────────────────────────────── */
+
+.menuContainer {
+  display: flex;
+  align-items: center;
+}
+
+.menu {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.menuItem {
+  display: flex;
+  align-items: center;
+}
+
+.navLink {
+  font-family: var(--font-primary);
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 26px;
+  color: var(--white);
+  transition: color 0.3s;
+  text-decoration: none;
+  white-space: nowrap;
+  background: none;
+  border: none;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 0;
+  position: relative;
+}
+
+.navLink::after {
+  content: '';
+  height: 1px;
+  width: 0;
+  display: block;
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  background-color: var(--white);
+  transition: width 0.3s ease, opacity 0.3s ease;
+  opacity: 0.6;
+}
+
+.navLink:hover::after {
+  width: 100%;
+  opacity: 1;
+}
+
+/* ── Chevron (background image like WP) ───────────────── */
+
+.chevron {
+  display: inline-block;
+  height: 10px;
+  width: 10px;
+  background: url("data:image/svg+xml,%3Csvg%20xmlns%3D'http%3A//www.w3.org/2000/svg'%20width%3D'10'%20height%3D'6'%20viewBox%3D'0%200%2010%206'%20fill%3D'none'%3E%3Cpath%20d%3D'M1%201L5%205L9%201'%20stroke%3D'white'%20stroke-width%3D'1.5'%20stroke-linecap%3D'round'%20stroke-linejoin%3D'round'/%3E%3C/svg%3E") no-repeat center;
+  background-size: 10px 6px;
+  transition: transform 0.3s ease-in-out;
+  margin-top: 2px;
+}
+
+.chevronOpen {
+}
+
+/* ── CTA Button (button--stroke) ──────────────────────── */
+
+.menuCta {
+  display: flex;
+  align-items: center;
+  gap: var(--space-16);
+}
+
+.ctaButton {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 24px;
+  background: transparent;
+  color: var(--white);
+  font-family: var(--font-primary);
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 22px;
+  border-radius: 30px;
+  text-decoration: none;
+  overflow: hidden;
+  position: relative;
+  white-space: nowrap;
+  border: none;
+  transition: color 0.15s cubic-bezier(0.645, 0.045, 0.355, 1);
+}
+
+.ctaButton::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border: 1px solid var(--white);
+  border-radius: 30px;
+  pointer-events: none;
+}
+
+.ctaButton:hover {
+  color: var(--black);
+}
+
+.ctaFlair {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  transform: scale(0);
+  transform-origin: 0 0;
+  will-change: transform;
+  transition: transform 0.4s cubic-bezier(0.645, 0.045, 0.355, 1);
+}
+
+.ctaFlair::before {
+  content: '';
+  display: block;
+  position: absolute;
+  left: 0;
+  top: 0;
+  transform: translate(-50%, -50%);
+  width: 170%;
+  aspect-ratio: 1/1;
+  border-radius: 50%;
+  background-color: var(--white);
+  pointer-events: none;
+}
+
+.ctaButton:hover .ctaFlair {
+  transform: scale(1);
+}
+
+.ctaLabel {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.363636em;
+  position: relative;
+  text-align: center;
+  transition: color 0.15s cubic-bezier(0.645, 0.045, 0.355, 1);
+  z-index: 1;
+}
+
+.ctaArrow {
+  width: 20px;
+  height: 20px;
+  flex-shrink: 0;
+  margin-right: -4px;
+}
+
+.ctaArrow path {
+  stroke: currentColor;
+  transition: stroke 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
+}
+
+/* ── Mobile Toggle ────────────────────────────────────── */
+
+.mobileToggle {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  row-gap: 9px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 4px;
+  width: 32px;
+  height: 32px;
+}
+
+.mobileToggle span {
+  display: block;
+  width: 100%;
+  height: 1.5px;
+  background: var(--white);
+  border-radius: 2px;
+  transition: all 0.3s;
+  transform-origin: center;
+}
+
+.mobileToggleOpen span:first-child {
+  transform: rotate(-45deg) translateX(-0.5px) translateY(0.5px);
+}
+
+.mobileToggleOpen span:last-child {
+  transform: rotate(45deg);
+  margin-top: -10px;
+}
+
+/* ═══════════════════════════════════════════════════════
+   Mega Menu — matches WP mega-menu exactly
+   ═══════════════════════════════════════════════════════ */
+
+.megaMenu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  max-width: 100%;
+  width: 100%;
+  z-index: 10;
+  height: auto;
+  padding-top: 0;
+  display: none;
+}
+
+.megaMenuVisible {
+  display: block;
+}
+
+.megaMenuInner {
+  background: linear-gradient(90deg, #000, #000 61%, #31195b 69%, #31195b);
+  border-bottom: 1px solid #333;
+}
+
+.megaWrapper {
+  display: flex;
+  width: 100%;
+  gap: 15px;
+  height: auto;
+}
+
+/* ── Left Part: services + expertise ──────────────────── */
+
+.leftPart {
+  display: flex;
+  width: 70%;
+}
+
+.serviceMenu {
+  width: 310px;
+  padding: 32px 10px 32px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  row-gap: 20px;
+  flex-shrink: 0;
+}
+
+.partHeading {
+  padding-left: 8px;
+  margin: 0;
+}
+
+.partHeading span {
+  font-size: 14px;
+  line-height: 26px;
+}
+
+.servicesList {
+  display: flex;
+  flex-direction: column;
+  row-gap: 8px;
+  align-self: stretch;
+}
+
+.singleMenuService {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  row-gap: 2px;
+  padding: 12px 8px;
+  transition: all 0.3s ease-in-out;
+  text-decoration: none;
+  border-radius: 4px;
+}
+
+.singleMenuService:hover {
+  background-color: var(--night);
+}
+
+.serviceTitle {
+  color: var(--white);
+  font-family: var(--font-primary);
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 26px;
+  display: flex;
+  justify-content: space-between;
+  gap: 4px;
+  margin: 0;
+}
+
+.serviceHoverArrow {
+  height: 24px;
+  width: 24px;
+  object-fit: contain;
+  opacity: 0;
+  transition: all 0.3s ease-in-out;
+}
+
+.singleMenuService:hover .serviceHoverArrow {
+  opacity: 1;
+}
+
+.serviceAbout {
+  color: var(--grey);
+  font-family: var(--font-primary);
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 16px;
+  margin: 0;
+}
+
+/* ── Expertise ────────────────────────────────────────── */
+
+.capabilitiesMenu {
+  padding: 32px 10px 32px 0;
+  flex: 1;
+}
+
+.subMenus {
+  display: flex;
+  align-items: flex-start;
+  column-gap: 16px;
+  align-self: stretch;
+  margin-top: 20px;
+}
+
+.singleCol {
+  display: flex;
+  flex-direction: column;
+  row-gap: 16px;
+  flex-grow: 1;
+  flex-basis: 0%;
+}
+
+.subMenuItems {
+  padding: 0 8px;
+}
+
+.subMenuItems ul {
+  display: flex;
+  flex-direction: column;
+  row-gap: 16px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.subMenuItems a {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: #d1d1d1;
+  font-family: var(--font-primary);
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 26px;
+  position: relative;
+  transition: all 0.3s ease-in-out;
+  text-decoration: none;
+}
+
+.subMenuItems a::after {
+  content: '';
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 16 16' fill='none'%3E%3Cpath d='M3 8H13M13 8L8.5 3.5M13 8L8.5 12.5' stroke='%23d1d1d1' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") no-repeat center;
+  background-size: 16px 16px;
+  opacity: 0;
+  flex-shrink: 0;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.subMenuItems a:hover {
+  transform: translateX(4px);
+  color: var(--white);
+}
+
+.subMenuItems a:hover::after {
+  opacity: 1;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 16 16' fill='none'%3E%3Cpath d='M3 8H13M13 8L8.5 3.5M13 8L8.5 12.5' stroke='white' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+}
+
+/* ── Right Part: Nura AI card ─────────────────────────── */
+
+.rightPart {
+  position: relative;
+  width: 30%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(49, 25, 91, 1);
+  padding: 0;
+  overflow: hidden;
+}
+
+.rightPartInner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  position: relative;
+  z-index: 1;
+}
+
+.megaMenuLink {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  text-decoration: none;
+}
+
+.nuraImage {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: all 0.5s ease-in-out;
+}
+
+.rightPart:hover .nuraImage {
+  transform: scale(1.05);
+}
+
+/* ── Blurry Backdrop ──────────────────────────────────── */
+
+.blurryBg {
+  background-color: rgba(0, 0, 0, 0.9);
+  backdrop-filter: blur(13px);
+  -webkit-backdrop-filter: blur(13px);
+  position: fixed;
+  top: 86px;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 1;
+  width: 100vw;
+  height: calc(100vh - 86px);
+  display: none;
+  pointer-events: auto;
+}
+
+.blurryBgVisible {
+  display: block;
+}
+
+/* ═══════════════════════════════════════════════════════
+   Responsive
+   ═══════════════════════════════════════════════════════ */
+
+@media (max-width: 1024px) {
+  .menuContainer {
+    position: fixed;
+    top: 74px;
+    left: 0;
+    height: calc(100vh - 78px);
+    width: 100vw;
+    background-color: var(--night);
+    display: none;
+    overflow: auto;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: stretch;
+    padding: 0;
+  }
+
+  .menuContainerOpen {
+    display: flex;
+  }
+
+  .menu {
+    flex-direction: column;
+    gap: 0;
+    align-items: stretch;
+  }
+
+  .menuItem {
+    border-bottom: 1px solid #333;
+  }
+
+  .navLink {
+    padding: 24px;
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  .navLink::after {
+    display: none;
+  }
+
+  .ctaButton {
+    padding: 8px 16px;
+    line-height: normal;
+    font-size: 13px;
+  }
+
+  .mobileToggle {
+    display: flex;
+  }
+
+  .megaMenu {
+    position: static;
+  }
+
+  .megaMenuInner {
+    background: var(--night);
+    border-bottom: 1px solid #333;
+  }
+
+  .megaWrapper {
+    flex-direction: column;
+    gap: 24px;
+  }
+
+  .leftPart {
+    width: 100%;
+    flex-direction: column;
+  }
+
+  .serviceMenu {
+    width: 100%;
+  }
+
+  .rightPart {
+    width: 100%;
+    padding: 24px;
+  }
+
+  .subMenus {
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .blurryBg {
+    display: none !important;
+  }
+}
+
+@media screen and (min-width: 1024px) and (max-width: 1100px) {
+  .serviceMenu {
+    width: 250px;
+  }
+}

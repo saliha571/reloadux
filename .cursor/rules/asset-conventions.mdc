@@ -1,0 +1,47 @@
+---
+description: Asset naming, format, and organization rules
+alwaysApply: true
+---
+
+# Asset Conventions
+
+## Organization
+
+All production assets live in `public/images/` organized by category:
+
+| Folder           | Contents                                  |
+|------------------|-------------------------------------------|
+| `brand/`         | Reloadux logo, tkxel logo                 |
+| `logos/`         | Client logo SVGs                          |
+| `blog/`          | Blog post cover images                    |
+| `testimonials/`  | Avatar photos, company logos              |
+| `portfolio/`     | Portfolio/case study slide images & videos |
+| `cta/`           | CTA section company images                |
+| `covers/`        | Hero and section background images        |
+| `icons/`         | Shared icons (arrows, badges, decorative) |
+
+## Naming Conventions
+
+- **All files**: kebab-case, descriptive names (e.g., `ai-first-redesign.webp`, not `img1.webp`)
+- **Client logos**: `{company}-{variant}.svg` (e.g., `barclays-2.svg`)
+- **Blog images**: `{slug}.webp`
+- **Testimonial avatars**: `{first-name}.webp`
+- **Company logos**: `{company}-logo.webp`
+- **Portfolio slides**: `{project}-slide.webp`
+
+## Format Rules
+
+| Format | Use for                                    |
+|--------|--------------------------------------------|
+| SVG    | Logos, icons, all vector graphics           |
+| WebP   | Photographs, cover images, raster graphics |
+| PNG    | Only when WebP is unavailable              |
+| JPEG   | Never use — convert to WebP                |
+
+## Usage in Code
+
+- Always use `next/image` `<Image>` component for raster images (WebP, PNG)
+- Use native `<img>` only for SVGs that need to fill their container
+- Reference paths from `public/`: `src="/images/logos/barclays-2.svg"`
+- Always provide `width` and `height` props to `<Image>` for layout stability
+- Use `priority` prop on above-the-fold hero images

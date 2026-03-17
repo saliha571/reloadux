@@ -1,0 +1,95 @@
+---
+description: Core project conventions for the reloadux Next.js site
+alwaysApply: true
+---
+
+# Reloadux Project Conventions
+
+## Component Reuse — Always Check Before Creating
+
+Before writing ANY new UI pattern, check `src/components/ui/` for existing components etc:
+
+- `SectionTag` — `[ TAG TEXT ]` labels. Always use `<SectionTag text="TAG" />` with ALL CAPS text. Use `variant="dark"` on dark backgrounds.
+- `FlairButton` — Stroke button with hover fill animation + arrow. Sizes: `sm` (header), `md` (default), `lg` (hero/CTA). Variants: `light` (default, for dark bg), `dark` (for light bg). Use instead of custom link buttons.
+- `Button` — Basic primary/outline button for forms.
+- `ScrollReveal` — Fade-in-up animation triggered by intersection observer. Wrap any element for scroll-triggered entrance.
+- `StatCounter` — Animated number counter for stat sections.
+- `FAQItem` — Accordion item for FAQ sections.
+- `BlogCard` — Blog post card with image, meta, and title.
+- `CarouselDots` — Dot indicators for carousels. Props: `count`, `active`, `onDot`, `direction`.
+- `VideoOverlay` — Full-screen video overlay with close button. Props: `videoUrl`, `onClose`.
+- `ArrowNav` — Circular prev/next arrow buttons for carousels. Props: `onPrev`, `onNext`, `size`.
+
+Never hardcode `[ TEXT ]` brackets in JSX — always use `SectionTag`.
+Never duplicate the flair button markup — always use `FlairButton`.
+Never build custom carousel nav — use `ArrowNav` and `CarouselDots`.
+
+## Design Tokens — Use CSS Variables, Not Hardcoded Values
+
+```css
+/* BAD */
+color: #090909;
+font-family: "Manrope", sans-serif;
+background: #D9D9D9;
+
+/* GOOD */
+color: var(--color-night);
+font-family: var(--font-primary);
+background: var(--color-smoke);
+```
+
+Key token mappings:
+- `#090909` → `var(--color-night)` or `var(--bg-dark)`
+- `#D9D9D9` → `var(--color-smoke)`
+- `#D1D1D1` → `var(--color-grey-200)`
+- `#A5A9AC` → `var(--color-grey-400)` or `var(--grey)` (footer grey)
+- `#C3C3C3` → `var(--color-grey-300)` (blog meta grey)
+- `#333333` → `var(--color-grey-700)` (dark bg borders)
+- `#000000` → `var(--color-black)`
+- `#FFFFFF` → `var(--color-white)`
+- `#9662FF` → `var(--color-purple-500)` or `var(--purple)`
+- `#A401B7` → `var(--color-purple-900)` or `var(--magenta)`
+- `"Manrope"` → `var(--font-primary)`
+- `"Libre Baskerville"` → `var(--font-serif)`
+- `"Lexend"` → `var(--font-accent)`
+
+Font usage rules:
+- Manrope (`--font-primary`): all body/headings/nav/buttons
+- Libre Baskerville (`--font-serif`): author names and section tag serif accents only
+- Lexend (`--font-accent`): counter numbers only
+
+## Section Headings — Consistent Pattern
+
+ALL section headings (h2) must follow this exact pattern:
+
+```css
+font-family: var(--font-primary);  /* Manrope */
+font-size: 48px;
+font-weight: 400;
+line-height: 1.35;
+```
+
+- On dark backgrounds: `color: var(--text-primary)` or `var(--color-white)`
+- On light/smoke backgrounds: `color: var(--color-black)`
+- Never use `--font-serif` (Libre Baskerville) or `--font-heading` for section headings
+- Never use bold (700) for section headings — always 400
+
+## Layout — 1280px Content Width
+
+All sections follow this container pattern:
+- Outer wrapper: full width, `padding-inline: var(--page-padding)` (80px)
+- Inner content: `max-width: var(--content-width)` (1440px), `margin: 0 auto`
+- Effective content area: 1280px (1440 - 80 - 80)
+
+The header follows the same approach for alignment.
+
+## Content Architecture — Strapi-First with JSON Fallback
+
+- All content fetching goes through `src/lib/content.ts`
+- It tries Strapi first, falls back to local JSON files in `content/pages/`
+- Media URLs from Strapi use `getStrapiMediaUrl()` from `src/lib/media.ts`
+- Never fetch Strapi directly from components — always use the content layer
+
+## WordPress Reference
+
+The design source of truth is `reloadux.com` (WordPress/Elementor). When implementing or fixing sections, compare against the live WP site for typography, spacing, colors, and interactions.

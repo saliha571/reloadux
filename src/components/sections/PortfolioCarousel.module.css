@@ -1,0 +1,165 @@
+/* ==========================================================================
+   Portfolio Carousel — Swiper slider matching WordPress .cs-slider
+   Container: elementor-element-12b0ef5
+   ========================================================================== */
+
+.section {
+  background: var(--bg-dark);
+  padding: var(--section-padding) 0;
+  width: 100%;
+}
+
+.sectionInner {
+  max-width: var(--content-width);
+  margin: 0 auto;
+  padding: 0 var(--page-padding);
+}
+
+/* ── Slider wrapper ─────────────────────────────────────────────────────── */
+
+.sliderParent {
+  position: relative;
+  cursor: none;
+}
+
+.swiper {
+  width: 100%;
+  overflow: hidden !important;
+}
+
+/* ── Individual slide ───────────────────────────────────────────────────── */
+
+.slide {
+  width: 100% !important;
+  flex-shrink: 0;
+}
+
+.slideLink {
+  display: inline-block;
+  cursor: none;
+  text-decoration: none;
+  color: inherit;
+  width: 100%;
+}
+
+.slideImage {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 0;
+  object-fit: cover;
+}
+
+/* ── Custom cursor ──────────────────────────────────────────────────────── */
+
+.cursor {
+  position: absolute;
+  pointer-events: none;
+  z-index: 10;
+  transform: translate(-50%, -50%);
+  width: 130px;
+  height: 130px;
+  border-radius: 50%;
+  background: var(--black, #000);
+  color: var(--white, #fff);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  font-family: var(--font-primary);
+  font-size: 14px;
+  font-weight: 500;
+  text-align: center;
+  line-height: 1.3;
+  white-space: pre-line;
+}
+
+.cursorArrow {
+  width: 20px;
+  height: 20px;
+}
+
+/* ── Navigation arrows (bottom-left, below slides) ──────────────────────── */
+
+.navRow {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding-top: 24px;
+}
+
+.navBtn {
+  width: 36px;
+  height: 36px;
+  border: none;
+  border-radius: 0;
+  background: transparent;
+  color: var(--white);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: opacity 0.3s;
+  opacity: 0.5;
+}
+
+.navBtn:hover {
+  opacity: 1;
+}
+
+.navBtn::after {
+  content: '';
+  display: block;
+  width: 8px;
+  height: 8px;
+  border-right: 1.5px solid var(--white);
+  border-bottom: 1.5px solid var(--white);
+}
+
+.navPrev::after {
+  transform: rotate(135deg);
+  margin-left: 2px;
+}
+
+.navNext::after {
+  transform: rotate(-45deg);
+  margin-right: 2px;
+}
+
+/* ── Tablet ─────────────────────────────────────────────────────────────── */
+
+@media (max-width: 1024px) {
+  .sectionInner {
+    padding: 0 var(--page-padding);
+  }
+
+  .section {
+    padding: 32px 0 0;
+  }
+
+  .cursor {
+    display: none;
+  }
+
+  .sliderParent {
+    cursor: auto;
+  }
+
+  .slideLink {
+    cursor: auto;
+  }
+}
+
+/* ── Mobile ─────────────────────────────────────────────────────────────── */
+
+@media (max-width: 767px) {
+  .section {
+    padding: 32px 0 0;
+  }
+
+  .navBtn {
+    width: 36px;
+    height: 36px;
+  }
+}

@@ -1,0 +1,589 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Reloadux Design System — Work Page Assets</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --night: #090909;
+      --white: #FFFFFF;
+      --smoke: #D9D9D9;
+      --grey-400: #A5A9AC;
+      --grey-700: #333333;
+      --grey-05: #242634;
+      --grey-50: #5F6D7E;
+      --dark-bg: #131A22;
+      --light: #F7F8FB;
+      --dark-green: #002737;
+      --neon-green: #00EC93;
+      --green-brand: #136114;
+      --green-bright: #07AF4A;
+      --orange-500: #FF912C;
+      --red-brand: #BE1E2D;
+      --blue-primary: #02C2EA;
+      --blue-1: #2F80ED;
+      --blue-atlassian: #0C66E4;
+      --grey-nav: #95A2B4;
+      --text-grey: #5F5F5F;
+      --grey-light: #929AA6;
+      --grey-mid: #959CB6;
+      --neutral-25-dark: #3B3B3F;
+      --neutral-40-dark: #5E5E62;
+      --neutral-n500: #42526E;
+      --neutral-n20a: #091E42;
+      --neutral-300-alt: #94A3B8;
+      --dark-grey-900: #0D2A52;
+      --outline: #DDE4F4;
+    }
+
+    body {
+      font-family: 'Manrope', sans-serif;
+      background: var(--night);
+      color: var(--white);
+      line-height: 1.6;
+    }
+
+    .ds-header {
+      padding: 60px 80px 40px;
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+    }
+    .ds-header h1 {
+      font-size: 48px;
+      font-weight: 500;
+      line-height: 1.2;
+    }
+    .ds-header h1 em {
+      font-family: 'Libre Baskerville', serif;
+      font-style: italic;
+      font-weight: 400;
+    }
+    .ds-header p {
+      color: var(--grey-400);
+      font-size: 18px;
+      margin-top: 8px;
+    }
+
+    .ds-nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      display: flex;
+      gap: 24px;
+      padding: 16px 80px;
+      background: rgba(9,9,9,0.92);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+      overflow-x: auto;
+    }
+    .ds-nav a {
+      color: var(--grey-400);
+      text-decoration: none;
+      font-size: 14px;
+      font-weight: 500;
+      white-space: nowrap;
+      transition: color 0.2s;
+    }
+    .ds-nav a:hover { color: var(--white); }
+
+    .ds-section {
+      padding: 80px;
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+    }
+    .ds-section h2 {
+      font-size: 36px;
+      font-weight: 600;
+      margin-bottom: 48px;
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+    .ds-section h2::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: rgba(255,255,255,0.1);
+    }
+
+    .ds-section h3 {
+      font-size: 20px;
+      font-weight: 500;
+      margin: 40px 0 20px;
+      color: var(--grey-400);
+    }
+
+    /* Color swatches */
+    .color-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+      gap: 16px;
+    }
+    .swatch {
+      border-radius: 12px;
+      overflow: hidden;
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.06);
+    }
+    .swatch-color {
+      height: 80px;
+      width: 100%;
+    }
+    .swatch-info {
+      padding: 12px;
+    }
+    .swatch-name {
+      font-size: 13px;
+      font-weight: 600;
+      margin-bottom: 4px;
+    }
+    .swatch-value {
+      font-size: 12px;
+      color: var(--grey-400);
+      font-family: 'SF Mono', 'Fira Code', monospace;
+    }
+
+    /* Asset gallery */
+    .asset-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 24px;
+    }
+    .asset-grid--sm {
+      grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    }
+    .asset-grid--lg {
+      grid-template-columns: repeat(auto-fill, minmax(380px, 1fr));
+    }
+    .asset-card {
+      border-radius: 12px;
+      overflow: hidden;
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.06);
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .asset-card:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(0,0,0,0.3);
+    }
+    .asset-card img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      display: block;
+      background: var(--grey-05);
+    }
+    .asset-card--tall img {
+      height: 300px;
+    }
+    .asset-card--icon img {
+      height: 100px;
+      object-fit: contain;
+      padding: 20px;
+    }
+    .asset-card--logo img {
+      height: 80px;
+      object-fit: contain;
+      padding: 20px;
+      background: var(--white);
+    }
+    .asset-card--avatar img {
+      height: 120px;
+      object-fit: cover;
+      border-radius: 50%;
+      width: 120px;
+      margin: 20px auto;
+      display: block;
+    }
+    .asset-label {
+      padding: 12px 16px;
+      font-size: 13px;
+      color: var(--grey-400);
+      border-top: 1px solid rgba(255,255,255,0.06);
+    }
+
+    /* Icon gallery */
+    .icon-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+      gap: 16px;
+    }
+    .icon-cell {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 8px;
+      padding: 20px 12px;
+      border-radius: 12px;
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.06);
+    }
+    .icon-cell img {
+      width: 40px;
+      height: 40px;
+      object-fit: contain;
+    }
+    .icon-cell span {
+      font-size: 10px;
+      color: var(--grey-400);
+      text-align: center;
+      word-break: break-all;
+    }
+
+    /* Typography */
+    .type-row {
+      display: flex;
+      align-items: baseline;
+      gap: 24px;
+      padding: 16px 0;
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+    }
+    .type-label {
+      min-width: 180px;
+      font-size: 12px;
+      color: var(--grey-400);
+      font-family: 'SF Mono', monospace;
+    }
+
+    footer {
+      padding: 40px 80px;
+      text-align: center;
+      color: var(--grey-400);
+      font-size: 14px;
+    }
+  </style>
+</head>
+<body>
+
+<header class="ds-header">
+  <h1>Work Page <em>Assets</em></h1>
+  <p>Visual reference for the Reloadux Work / Portfolio page — extracted from Figma</p>
+</header>
+
+<nav class="ds-nav">
+  <a href="#new-colors">New Colors</a>
+  <a href="#typography">Typography</a>
+  <a href="#portfolio">Portfolio</a>
+  <a href="#case-studies">Case Studies</a>
+  <a href="#mockups">Mockups</a>
+  <a href="#client-logos">Client Logos</a>
+  <a href="#avatars">Avatars</a>
+  <a href="#awards">Awards</a>
+  <a href="#icons">Icons</a>
+</nav>
+
+<!-- ═══ NEW COLORS ═══ -->
+<section class="ds-section" id="new-colors">
+  <h2>New Colors (Work Page)</h2>
+
+  <h3>Accent / Brand Colors</h3>
+  <div class="color-grid">
+    <div class="swatch"><div class="swatch-color" style="background:#002737"></div><div class="swatch-info"><div class="swatch-name">Dark Green</div><div class="swatch-value">#002737</div></div></div>
+    <div class="swatch"><div class="swatch-color" style="background:#00EC93"></div><div class="swatch-info"><div class="swatch-name">Neon Green</div><div class="swatch-value">#00EC93</div></div></div>
+    <div class="swatch"><div class="swatch-color" style="background:#136114"></div><div class="swatch-info"><div class="swatch-name">Green Brand</div><div class="swatch-value">#136114</div></div></div>
+    <div class="swatch"><div class="swatch-color" style="background:#07AF4A"></div><div class="swatch-info"><div class="swatch-name">Green Bright</div><div class="swatch-value">#07AF4A</div></div></div>
+    <div class="swatch"><div class="swatch-color" style="background:#FF912C"></div><div class="swatch-info"><div class="swatch-name">Orange</div><div class="swatch-value">#FF912C</div></div></div>
+    <div class="swatch"><div class="swatch-color" style="background:#BE1E2D"></div><div class="swatch-info"><div class="swatch-name">Red Brand</div><div class="swatch-value">#BE1E2D</div></div></div>
+    <div class="swatch"><div class="swatch-color" style="background:#02C2EA"></div><div class="swatch-info"><div class="swatch-name">Blue Primary</div><div class="swatch-value">#02C2EA</div></div></div>
+    <div class="swatch"><div class="swatch-color" style="background:#2F80ED"></div><div class="swatch-info"><div class="swatch-name">Blue 1</div><div class="swatch-value">#2F80ED</div></div></div>
+    <div class="swatch"><div class="swatch-color" style="background:#0C66E4"></div><div class="swatch-info"><div class="swatch-name">Blue Atlassian</div><div class="swatch-value">#0C66E4</div></div></div>
+  </div>
+
+  <h3>Grey / Navigation / Surface</h3>
+  <div class="color-grid">
+    <div class="swatch"><div class="swatch-color" style="background:#131A22"></div><div class="swatch-info"><div class="swatch-name">Dark BG</div><div class="swatch-value">#131A22</div></div></div>
+    <div class="swatch"><div class="swatch-color" style="background:#F7F8FB"></div><div class="swatch-info"><div class="swatch-name">Light</div><div class="swatch-value">#F7F8FB</div></div></div>
+    <div class="swatch"><div class="swatch-color" style="background:#242634"></div><div class="swatch-info"><div class="swatch-name">Grey 05</div><div class="swatch-value">#242634</div></div></div>
+    <div class="swatch"><div class="swatch-color" style="background:#5F6D7E"></div><div class="swatch-info"><div class="swatch-name">Grey 50</div><div class="swatch-value">#5F6D7E</div></div></div>
+    <div class="swatch"><div class="swatch-color" style="background:#697586"></div><div class="swatch-info"><div class="swatch-name">Grey Modern 500</div><div class="swatch-value">#697586</div></div></div>
+    <div class="swatch"><div class="swatch-color" style="background:#95A2B4"></div><div class="swatch-info"><div class="swatch-name">Grey Nav</div><div class="swatch-value">#95A2B4</div></div></div>
+    <div class="swatch"><div class="swatch-color" style="background:#5F5F5F"></div><div class="swatch-info"><div class="swatch-name">Text Grey</div><div class="swatch-value">#5F5F5F</div></div></div>
+    <div class="swatch"><div class="swatch-color" style="background:#929AA6"></div><div class="swatch-info"><div class="swatch-name">Grey Light</div><div class="swatch-value">#929AA6</div></div></div>
+    <div class="swatch"><div class="swatch-color" style="background:#959CB6"></div><div class="swatch-info"><div class="swatch-name">Grey Mid</div><div class="swatch-value">#959CB6</div></div></div>
+  </div>
+
+  <h3>Neutral Extended</h3>
+  <div class="color-grid">
+    <div class="swatch"><div class="swatch-color" style="background:#3B3B3F"></div><div class="swatch-info"><div class="swatch-name">Neutral 25 Dark</div><div class="swatch-value">#3B3B3F</div></div></div>
+    <div class="swatch"><div class="swatch-color" style="background:#5E5E62"></div><div class="swatch-info"><div class="swatch-name">Neutral 40 Dark</div><div class="swatch-value">#5E5E62</div></div></div>
+    <div class="swatch"><div class="swatch-color" style="background:#FBFBFB"></div><div class="swatch-info"><div class="swatch-name">Neutral 100 Light</div><div class="swatch-value">#FBFBFB</div></div></div>
+    <div class="swatch"><div class="swatch-color" style="background:#42526E"></div><div class="swatch-info"><div class="swatch-name">Neutral N500</div><div class="swatch-value">#42526E</div></div></div>
+    <div class="swatch"><div class="swatch-color" style="background:#091E42"></div><div class="swatch-info"><div class="swatch-name">Neutral N20A</div><div class="swatch-value">#091E42</div></div></div>
+    <div class="swatch"><div class="swatch-color" style="background:#94A3B8"></div><div class="swatch-info"><div class="swatch-name">Neutral 300 Alt</div><div class="swatch-value">#94A3B8</div></div></div>
+    <div class="swatch"><div class="swatch-color" style="background:#0D2A52"></div><div class="swatch-info"><div class="swatch-name">Dark Grey 900</div><div class="swatch-value">#0D2A52</div></div></div>
+    <div class="swatch"><div class="swatch-color" style="background:#DDE4F4"></div><div class="swatch-info"><div class="swatch-name">Outline</div><div class="swatch-value">#DDE4F4</div></div></div>
+  </div>
+</section>
+
+<!-- ═══ TYPOGRAPHY ═══ -->
+<section class="ds-section" id="typography">
+  <h2>New Typography Styles</h2>
+
+  <div class="type-row">
+    <div class="type-label">Heading XL<br>50px / 68px / 400</div>
+    <div style="font-size:50px;font-weight:400;line-height:68px;">Shaping the future of Interaction!</div>
+  </div>
+  <div class="type-row">
+    <div class="type-label">Body Semibold<br>18px / auto / 600</div>
+    <div style="font-size:18px;font-weight:600;line-height:normal;">SaaS &middot; Healthcare &middot; AI &middot; NFTs &middot; CRM</div>
+  </div>
+  <div class="type-row">
+    <div class="type-label">Body SM Semibold<br>16px / 26px / 600</div>
+    <div style="font-size:16px;font-weight:600;line-height:26px;">Case study tags and category badges</div>
+  </div>
+  <div class="type-row">
+    <div class="type-label">Heading XL Regular<br>50px / 68px / 400</div>
+    <div style="font-family:'Manrope',sans-serif;font-size:50px;font-weight:400;line-height:68px;">Trusted by brands, from startups to fortune 500s</div>
+  </div>
+</section>
+
+<!-- ═══ PORTFOLIO IMAGES ═══ -->
+<section class="ds-section" id="portfolio">
+  <h2>Portfolio / Project Images</h2>
+
+  <div class="asset-grid asset-grid--lg">
+    <div class="asset-card asset-card--tall"><img src="assets/portfolio/vocable-dashboard.png" alt="Vocable Dashboard"><div class="asset-label">vocable-dashboard.png</div></div>
+    <div class="asset-card asset-card--tall"><img src="assets/portfolio/tradezilla-mockup.png" alt="TradeZilla Mockup"><div class="asset-label">tradezilla-mockup.png</div></div>
+    <div class="asset-card asset-card--tall"><img src="assets/portfolio/bridge-mockup.png" alt="Bridge Mockup"><div class="asset-label">bridge-mockup.png</div></div>
+    <div class="asset-card asset-card--tall"><img src="assets/portfolio/moment-ai-mockup.png" alt="Moment AI Mockup"><div class="asset-label">moment-ai-mockup.png</div></div>
+    <div class="asset-card asset-card--tall"><img src="assets/portfolio/psav-mockup.png" alt="PSAV Mockup"><div class="asset-label">psav-mockup.png</div></div>
+    <div class="asset-card asset-card--tall"><img src="assets/portfolio/lumatax-mockup.png" alt="LumaTax Mockup"><div class="asset-label">lumatax-mockup.png</div></div>
+    <div class="asset-card asset-card--tall"><img src="assets/portfolio/skfg-mockup.png" alt="SKFG Mockup"><div class="asset-label">skfg-mockup.png</div></div>
+    <div class="asset-card asset-card--tall"><img src="assets/portfolio/simpla-mockup.png" alt="Simpla Mockup"><div class="asset-label">simpla-mockup.png</div></div>
+    <div class="asset-card asset-card--tall"><img src="assets/portfolio/nbc-universal-mockup.png" alt="NBC Universal Mockup"><div class="asset-label">nbc-universal-mockup.png</div></div>
+    <div class="asset-card asset-card--tall"><img src="assets/portfolio/replenium.png" alt="Replenium"><div class="asset-label">replenium.png</div></div>
+    <div class="asset-card asset-card--tall"><img src="assets/portfolio/main-screen.png" alt="Main Screen"><div class="asset-label">main-screen.png</div></div>
+    <div class="asset-card asset-card--tall"><img src="assets/portfolio/maps.png" alt="Maps"><div class="asset-label">maps.png</div></div>
+  </div>
+</section>
+
+<!-- ═══ CASE STUDY FRAMES ═══ -->
+<section class="ds-section" id="case-studies">
+  <h2>Case Study Frames &amp; Screens</h2>
+
+  <h3>Project Frames</h3>
+  <div class="asset-grid">
+    <div class="asset-card"><img src="assets/portfolio/frame-project-01.png" alt="Project Frame 01"><div class="asset-label">frame-project-01.png</div></div>
+    <div class="asset-card"><img src="assets/portfolio/frame-project-02.png" alt="Project Frame 02"><div class="asset-label">frame-project-02.png</div></div>
+    <div class="asset-card"><img src="assets/portfolio/frame-project-03.png" alt="Project Frame 03"><div class="asset-label">frame-project-03.png</div></div>
+    <div class="asset-card"><img src="assets/portfolio/frame-project-04.png" alt="Project Frame 04"><div class="asset-label">frame-project-04.png</div></div>
+  </div>
+
+  <h3>Case Study UI Screenshots</h3>
+  <div class="asset-grid">
+    <div class="asset-card"><img src="assets/portfolio/case-frame-01.png" alt="Case Frame 01"><div class="asset-label">case-frame-01.png</div></div>
+    <div class="asset-card"><img src="assets/portfolio/case-frame-02.png" alt="Case Frame 02"><div class="asset-label">case-frame-02.png</div></div>
+    <div class="asset-card"><img src="assets/portfolio/case-frame-03.png" alt="Case Frame 03"><div class="asset-label">case-frame-03.png</div></div>
+    <div class="asset-card"><img src="assets/portfolio/case-frame-04.png" alt="Case Frame 04"><div class="asset-label">case-frame-04.png</div></div>
+    <div class="asset-card"><img src="assets/portfolio/case-frame-05.png" alt="Case Frame 05"><div class="asset-label">case-frame-05.png</div></div>
+    <div class="asset-card"><img src="assets/portfolio/case-frame-06.png" alt="Case Frame 06"><div class="asset-label">case-frame-06.png</div></div>
+    <div class="asset-card"><img src="assets/portfolio/case-frame-07.png" alt="Case Frame 07"><div class="asset-label">case-frame-07.png</div></div>
+    <div class="asset-card"><img src="assets/portfolio/case-frame-08.png" alt="Case Frame 08"><div class="asset-label">case-frame-08.png</div></div>
+  </div>
+
+  <h3>Screenshots &amp; Product Images</h3>
+  <div class="asset-grid">
+    <div class="asset-card"><img src="assets/portfolio/screenshot-product-01.png" alt="Product 01"><div class="asset-label">screenshot-product-01.png</div></div>
+    <div class="asset-card"><img src="assets/portfolio/screenshot-product-02.png" alt="Product 02"><div class="asset-label">screenshot-product-02.png</div></div>
+    <div class="asset-card"><img src="assets/portfolio/screenshot-product-03.png" alt="Product 03"><div class="asset-label">screenshot-product-03.png</div></div>
+    <div class="asset-card"><img src="assets/portfolio/screenshot-alt-01.png" alt="Screenshot Alt"><div class="asset-label">screenshot-alt-01.png</div></div>
+    <div class="asset-card"><img src="assets/portfolio/contact-details-tasks.png" alt="Contact Details"><div class="asset-label">contact-details-tasks.png</div></div>
+    <div class="asset-card"><img src="assets/portfolio/pro-112.png" alt="Pro 112"><div class="asset-label">pro-112.png</div></div>
+  </div>
+
+  <h3>Supplementary Images</h3>
+  <div class="asset-grid asset-grid--sm">
+    <div class="asset-card"><img src="assets/portfolio/asset-image-01.png" alt="Asset 01"><div class="asset-label">asset-image-01.png</div></div>
+    <div class="asset-card"><img src="assets/portfolio/asset-image-02.png" alt="Asset 02"><div class="asset-label">asset-image-02.png</div></div>
+    <div class="asset-card"><img src="assets/portfolio/asset-image-03.png" alt="Asset 03"><div class="asset-label">asset-image-03.png</div></div>
+    <div class="asset-card"><img src="assets/portfolio/image-534.png" alt="Image 534"><div class="asset-label">image-534.png</div></div>
+    <div class="asset-card"><img src="assets/portfolio/image-276.png" alt="Image 276"><div class="asset-label">image-276.png</div></div>
+    <div class="asset-card"><img src="assets/portfolio/image-279.png" alt="Image 279"><div class="asset-label">image-279.png</div></div>
+    <div class="asset-card"><img src="assets/portfolio/image-297.png" alt="Image 297"><div class="asset-label">image-297.png</div></div>
+    <div class="asset-card"><img src="assets/portfolio/image-298.png" alt="Image 298"><div class="asset-label">image-298.png</div></div>
+    <div class="asset-card"><img src="assets/portfolio/image-275.png" alt="Image 275"><div class="asset-label">image-275.png</div></div>
+    <div class="asset-card"><img src="assets/portfolio/image-420.png" alt="Image 420"><div class="asset-label">image-420.png</div></div>
+  </div>
+</section>
+
+<!-- ═══ MOCKUPS ═══ -->
+<section class="ds-section" id="mockups">
+  <h2>Device Mockups</h2>
+
+  <h3>iPhone Mockups</h3>
+  <div class="asset-grid">
+    <div class="asset-card asset-card--tall"><img src="assets/portfolio/iphone-mockup-01.png" alt="iPhone Mockup 01"><div class="asset-label">iphone-mockup-01.png</div></div>
+    <div class="asset-card asset-card--tall"><img src="assets/portfolio/iphone-mockup-02.png" alt="iPhone Mockup 02"><div class="asset-label">iphone-mockup-02.png</div></div>
+    <div class="asset-card asset-card--tall"><img src="assets/portfolio/iphone-mockup-03.png" alt="iPhone Mockup 03"><div class="asset-label">iphone-mockup-03.png</div></div>
+  </div>
+
+  <h3>Screens</h3>
+  <div class="asset-grid">
+    <div class="asset-card"><img src="assets/portfolio/screen-01.png" alt="Screen 01"><div class="asset-label">screen-01.png</div></div>
+    <div class="asset-card"><img src="assets/portfolio/screen-02.png" alt="Screen 02"><div class="asset-label">screen-02.png</div></div>
+    <div class="asset-card"><img src="assets/portfolio/frame-83.png" alt="Frame 83"><div class="asset-label">frame-83.png</div></div>
+    <div class="asset-card"><img src="assets/portfolio/frame-868.png" alt="Frame 868"><div class="asset-label">frame-868.png</div></div>
+  </div>
+
+  <h3>Background &amp; Textures</h3>
+  <div class="asset-grid">
+    <div class="asset-card"><img src="assets/portfolio/background.png" alt="Background"><div class="asset-label">background.png</div></div>
+    <div class="asset-card"><img src="assets/portfolio/rectangle-bg.png" alt="Rectangle BG"><div class="asset-label">rectangle-bg.png</div></div>
+    <div class="asset-card"><img src="assets/portfolio/shape.png" alt="Shape"><div class="asset-label">shape.png</div></div>
+    <div class="asset-card"><img src="assets/portfolio/shadow.png" alt="Shadow"><div class="asset-label">shadow.png</div></div>
+    <div class="asset-card"><img src="assets/portfolio/surface-unsplash.png" alt="Surface Unsplash"><div class="asset-label">surface-unsplash.png</div></div>
+    <div class="asset-card"><img src="assets/portfolio/pexels-barbara-olsen.png" alt="Pexels Barbara Olsen"><div class="asset-label">pexels-barbara-olsen.png</div></div>
+    <div class="asset-card"><img src="assets/portfolio/pexels-mart.png" alt="Pexels Mart"><div class="asset-label">pexels-mart.png</div></div>
+  </div>
+
+  <h3>Misc Thumbnails</h3>
+  <div class="asset-grid asset-grid--sm">
+    <div class="asset-card"><img src="assets/portfolio/image-44.png" alt="Image 44"><div class="asset-label">image-44.png</div></div>
+    <div class="asset-card"><img src="assets/portfolio/image-45.png" alt="Image 45"><div class="asset-label">image-45.png</div></div>
+    <div class="asset-card"><img src="assets/portfolio/image-46.png" alt="Image 46"><div class="asset-label">image-46.png</div></div>
+    <div class="asset-card"><img src="assets/portfolio/image-47.png" alt="Image 47"><div class="asset-label">image-47.png</div></div>
+    <div class="asset-card"><img src="assets/portfolio/image-48.png" alt="Image 48"><div class="asset-label">image-48.png</div></div>
+    <div class="asset-card"><img src="assets/portfolio/image-49.png" alt="Image 49"><div class="asset-label">image-49.png</div></div>
+    <div class="asset-card"><img src="assets/portfolio/image-50.png" alt="Image 50"><div class="asset-label">image-50.png</div></div>
+    <div class="asset-card"><img src="assets/portfolio/image-51.png" alt="Image 51"><div class="asset-label">image-51.png</div></div>
+    <div class="asset-card"><img src="assets/portfolio/image-52.png" alt="Image 52"><div class="asset-label">image-52.png</div></div>
+    <div class="asset-card"><img src="assets/portfolio/image-53.png" alt="Image 53"><div class="asset-label">image-53.png</div></div>
+    <div class="asset-card"><img src="assets/portfolio/image-54.png" alt="Image 54"><div class="asset-label">image-54.png</div></div>
+    <div class="asset-card"><img src="assets/portfolio/7eleven-franchise.png" alt="7-Eleven"><div class="asset-label">7eleven-franchise.png</div></div>
+    <div class="asset-card"><img src="assets/portfolio/image-01.png" alt="Image 01"><div class="asset-label">image-01.png</div></div>
+    <div class="asset-card"><img src="assets/portfolio/image-08.png" alt="Image 08"><div class="asset-label">image-08.png</div></div>
+    <div class="asset-card"><img src="assets/portfolio/map-stockholm.png" alt="Map Stockholm"><div class="asset-label">map-stockholm.png</div></div>
+    <div class="asset-card"><img src="assets/portfolio/photo-person-01.png" alt="Photo Person 01"><div class="asset-label">photo-person-01.png</div></div>
+    <div class="asset-card"><img src="assets/portfolio/photo-person-02.png" alt="Photo Person 02"><div class="asset-label">photo-person-02.png</div></div>
+  </div>
+</section>
+
+<!-- ═══ CLIENT LOGOS ═══ -->
+<section class="ds-section" id="client-logos">
+  <h2>Client Logos (40+ Brand Grid)</h2>
+  <div class="asset-grid asset-grid--sm">
+    <div class="asset-card asset-card--logo"><img src="assets/client-logos/logo-client-s02.png" alt="Client S02"><div class="asset-label">logo-client-s02.png</div></div>
+    <div class="asset-card asset-card--logo"><img src="assets/client-logos/logo-client-s04.png" alt="Client S04"><div class="asset-label">logo-client-s04.png</div></div>
+    <div class="asset-card asset-card--logo"><img src="assets/client-logos/logo-client-s10.png" alt="Client S10"><div class="asset-label">logo-client-s10.png</div></div>
+    <div class="asset-card asset-card--logo"><img src="assets/client-logos/logo-client-s12.png" alt="Client S12"><div class="asset-label">logo-client-s12.png</div></div>
+    <div class="asset-card asset-card--logo"><img src="assets/client-logos/logo-client-s19.png" alt="Client S19"><div class="asset-label">logo-client-s19.png</div></div>
+    <div class="asset-card asset-card--logo"><img src="assets/client-logos/logo-client-s22.png" alt="Client S22"><div class="asset-label">logo-client-s22.png</div></div>
+    <div class="asset-card asset-card--logo"><img src="assets/client-logos/logo-client-s24.png" alt="Client S24"><div class="asset-label">logo-client-s24.png</div></div>
+    <div class="asset-card asset-card--logo"><img src="assets/client-logos/logo-client-s27.png" alt="Client S27"><div class="asset-label">logo-client-s27.png</div></div>
+    <div class="asset-card asset-card--logo"><img src="assets/client-logos/logo-client-s28.png" alt="Client S28"><div class="asset-label">logo-client-s28.png</div></div>
+    <div class="asset-card asset-card--logo"><img src="assets/client-logos/logo-client-s29.png" alt="Client S29"><div class="asset-label">logo-client-s29.png</div></div>
+    <div class="asset-card asset-card--logo"><img src="assets/client-logos/logo-client-s31.png" alt="Client S31"><div class="asset-label">logo-client-s31.png</div></div>
+    <div class="asset-card asset-card--logo"><img src="assets/client-logos/logo-client-s33.png" alt="Client S33"><div class="asset-label">logo-client-s33.png</div></div>
+    <div class="asset-card asset-card--logo"><img src="assets/client-logos/logo-client-s34.png" alt="Client S34"><div class="asset-label">logo-client-s34.png</div></div>
+    <div class="asset-card asset-card--logo"><img src="assets/client-logos/logo-client-s36.png" alt="Client S36"><div class="asset-label">logo-client-s36.png</div></div>
+    <div class="asset-card asset-card--logo"><img src="assets/client-logos/logo-client-s39.png" alt="Client S39"><div class="asset-label">logo-client-s39.png</div></div>
+    <div class="asset-card asset-card--logo"><img src="assets/client-logos/logo-client-s-elia-01.png" alt="Elia 01"><div class="asset-label">logo-client-s-elia-01.png</div></div>
+    <div class="asset-card asset-card--logo"><img src="assets/client-logos/logo-client-s-elia-02.png" alt="Elia 02"><div class="asset-label">logo-client-s-elia-02.png</div></div>
+  </div>
+</section>
+
+<!-- ═══ AVATARS ═══ -->
+<section class="ds-section" id="avatars">
+  <h2>Avatars &amp; Team Members</h2>
+
+  <h3>User Avatars (Testimonials)</h3>
+  <div class="asset-grid asset-grid--sm">
+    <div class="asset-card asset-card--avatar"><img src="assets/avatars/avatar-01.png" alt="Avatar 01"><div class="asset-label">avatar-01.png</div></div>
+    <div class="asset-card asset-card--avatar"><img src="assets/avatars/avatar-02.png" alt="Avatar 02"><div class="asset-label">avatar-02.png</div></div>
+    <div class="asset-card asset-card--avatar"><img src="assets/avatars/avatar-03.png" alt="Avatar 03"><div class="asset-label">avatar-03.png</div></div>
+    <div class="asset-card asset-card--avatar"><img src="assets/avatars/avatar-04.png" alt="Avatar 04"><div class="asset-label">avatar-04.png</div></div>
+    <div class="asset-card asset-card--avatar"><img src="assets/avatars/avatar-05.png" alt="Avatar 05"><div class="asset-label">avatar-05.png</div></div>
+    <div class="asset-card asset-card--avatar"><img src="assets/avatars/avatar-06.png" alt="Avatar 06"><div class="asset-label">avatar-06.png</div></div>
+    <div class="asset-card asset-card--avatar"><img src="assets/avatars/avatar-07.png" alt="Avatar 07"><div class="asset-label">avatar-07.png</div></div>
+    <div class="asset-card asset-card--avatar"><img src="assets/avatars/avatar-08.png" alt="Avatar 08"><div class="asset-label">avatar-08.png</div></div>
+    <div class="asset-card asset-card--avatar"><img src="assets/avatars/avatar-09.png" alt="Avatar 09"><div class="asset-label">avatar-09.png</div></div>
+    <div class="asset-card asset-card--avatar"><img src="assets/avatars/avatar-10.png" alt="Avatar 10"><div class="asset-label">avatar-10.png</div></div>
+  </div>
+
+  <h3>Client Avatars (Inline)</h3>
+  <div class="asset-grid asset-grid--sm">
+    <div class="asset-card asset-card--avatar"><img src="assets/portfolio/ellipse-avatar-01.png" alt="Ellipse 01"><div class="asset-label">ellipse-avatar-01.png</div></div>
+    <div class="asset-card asset-card--avatar"><img src="assets/portfolio/ellipse-avatar-02.png" alt="Ellipse 02"><div class="asset-label">ellipse-avatar-02.png</div></div>
+    <div class="asset-card asset-card--avatar"><img src="assets/portfolio/ellipse-avatar-03.png" alt="Ellipse 03"><div class="asset-label">ellipse-avatar-03.png</div></div>
+    <div class="asset-card asset-card--avatar"><img src="assets/portfolio/client-avatar-01.png" alt="Client Avatar 01"><div class="asset-label">client-avatar-01.png</div></div>
+    <div class="asset-card asset-card--avatar"><img src="assets/portfolio/client-avatar-02.png" alt="Client Avatar 02"><div class="asset-label">client-avatar-02.png</div></div>
+    <div class="asset-card asset-card--avatar"><img src="assets/portfolio/client-avatar-03.png" alt="Client Avatar 03"><div class="asset-label">client-avatar-03.png</div></div>
+    <div class="asset-card asset-card--avatar"><img src="assets/portfolio/client-avatar-04.png" alt="Client Avatar 04"><div class="asset-label">client-avatar-04.png</div></div>
+  </div>
+</section>
+
+<!-- ═══ AWARDS ═══ -->
+<section class="ds-section" id="awards">
+  <h2>Awards &amp; Badges</h2>
+  <div class="asset-grid">
+    <div class="asset-card"><img src="assets/awards/vega-logo.png" alt="Vega Logo" style="object-fit:contain;padding:20px;background:#090909"><div class="asset-label">vega-logo.png</div></div>
+    <div class="asset-card"><img src="assets/awards/vega-status-silver.png" alt="Vega Silver" style="object-fit:contain;padding:20px;background:#090909"><div class="asset-label">vega-status-silver.png</div></div>
+    <div class="asset-card"><img src="assets/awards/certificate-shortlist.png" alt="Certificate Shortlist" style="object-fit:contain;padding:20px;background:#090909"><div class="asset-label">certificate-shortlist.png</div></div>
+    <div class="asset-card"><img src="assets/awards/logo-2023.png" alt="Logo 2023" style="object-fit:contain;padding:20px;background:#090909"><div class="asset-label">logo-2023.png</div></div>
+    <div class="asset-card"><img src="assets/awards/andrew-wood.png" alt="Andrew Wood" style="object-fit:contain;padding:20px;background:#090909"><div class="asset-label">andrew-wood.png</div></div>
+    <div class="asset-card"><img src="assets/awards/image-55.png" alt="Award Image" style="object-fit:contain;padding:20px;background:#090909"><div class="asset-label">image-55.png</div></div>
+  </div>
+</section>
+
+<!-- ═══ ICONS ═══ -->
+<section class="ds-section" id="icons">
+  <h2>New Icons &amp; Decorative Elements</h2>
+
+  <h3>Navigation Icons</h3>
+  <div class="icon-grid">
+    <div class="icon-cell"><img src="assets/icons/nav-icon-01.svg" alt="Nav 01"><span>nav-icon-01</span></div>
+    <div class="icon-cell"><img src="assets/icons/nav-icon-02.svg" alt="Nav 02"><span>nav-icon-02</span></div>
+    <div class="icon-cell"><img src="assets/icons/nav-icon-03.svg" alt="Nav 03"><span>nav-icon-03</span></div>
+    <div class="icon-cell"><img src="assets/icons/nav-icon-04.svg" alt="Nav 04"><span>nav-icon-04</span></div>
+    <div class="icon-cell"><img src="assets/icons/nav-icon-05.svg" alt="Nav 05"><span>nav-icon-05</span></div>
+  </div>
+
+  <h3>Frame / UI Icons</h3>
+  <div class="icon-grid">
+    <div class="icon-cell"><img src="assets/icons/frame-icon-05.svg" alt="Frame 05"><span>frame-icon-05</span></div>
+    <div class="icon-cell"><img src="assets/icons/frame-icon-06.svg" alt="Frame 06"><span>frame-icon-06</span></div>
+    <div class="icon-cell"><img src="assets/icons/frame-icon-07.svg" alt="Frame 07"><span>frame-icon-07</span></div>
+    <div class="icon-cell"><img src="assets/icons/frame-icon-08.svg" alt="Frame 08"><span>frame-icon-08</span></div>
+    <div class="icon-cell"><img src="assets/icons/frame-icon-09.svg" alt="Frame 09"><span>frame-icon-09</span></div>
+    <div class="icon-cell"><img src="assets/icons/icon-group-8666.svg" alt="Group 8666"><span>icon-group-8666</span></div>
+  </div>
+
+  <h3>Decorative &amp; Line Elements</h3>
+  <div class="icon-grid">
+    <div class="icon-cell"><img src="assets/icons/decorative-dd2.svg" alt="DD2"><span>decorative-dd2</span></div>
+    <div class="icon-cell"><img src="assets/icons/decorative-element.svg" alt="Element"><span>decorative-element</span></div>
+    <div class="icon-cell"><img src="assets/icons/group-element.svg" alt="Group"><span>group-element</span></div>
+    <div class="icon-cell"><img src="assets/icons/group-element-alt.svg" alt="Group Alt"><span>group-element-alt</span></div>
+    <div class="icon-cell"><img src="assets/icons/line-37.svg" alt="Line 37"><span>line-37</span></div>
+    <div class="icon-cell"><img src="assets/icons/line-1441.svg" alt="Line 1441"><span>line-1441</span></div>
+    <div class="icon-cell"><img src="assets/icons/line-1446.svg" alt="Line 1446"><span>line-1446</span></div>
+    <div class="icon-cell"><img src="assets/icons/est-badge.svg" alt="Est Badge"><span>est-badge</span></div>
+  </div>
+
+  <h3>Teal Decorative Dots</h3>
+  <div class="icon-grid">
+    <div class="icon-cell"><img src="assets/icons/teal-dot-01.svg" alt="Teal 01"><span>teal-dot-01</span></div>
+    <div class="icon-cell"><img src="assets/icons/teal-dot-02.svg" alt="Teal 02"><span>teal-dot-02</span></div>
+    <div class="icon-cell"><img src="assets/icons/teal-dot-03.svg" alt="Teal 03"><span>teal-dot-03</span></div>
+    <div class="icon-cell"><img src="assets/icons/teal-dot-04.svg" alt="Teal 04"><span>teal-dot-04</span></div>
+  </div>
+
+  <h3>Previously Extracted (Home Page)</h3>
+  <div class="icon-grid">
+    <div class="icon-cell"><img src="assets/icons/arrow-right.svg" alt="Arrow Right"><span>arrow-right</span></div>
+    <div class="icon-cell"><img src="assets/icons/arrow-diagonal.svg" alt="Arrow Diagonal"><span>arrow-diagonal</span></div>
+    <div class="icon-cell"><img src="assets/icons/plus.svg" alt="Plus"><span>plus</span></div>
+    <div class="icon-cell"><img src="assets/icons/circle-outline.svg" alt="Circle"><span>circle-outline</span></div>
+  </div>
+</section>
+
+<footer>
+  <p>Reloadux Design System — Work Page Assets &middot; Generated from Figma &middot; v1.1.0</p>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,140 @@
+.section {
+  background-color: #D9D9D9;
+  padding: var(--section-padding) 0;
+  width: 100%;
+}
+
+.inner {
+  max-width: var(--content-width);
+  margin: 0 auto;
+  padding: 0 var(--page-padding);
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+/* ── Top row: label + heading side by side ──────────────────────────────── */
+
+.topRow {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 40px;
+}
+
+.heading {
+  font-family: var(--font-primary);
+  font-size: 48px;
+  font-weight: 500;
+  line-height: 1.35;
+  color: var(--color-black);
+  margin: 0;
+  width: 750px;
+  max-width: 100%;
+  margin-left: auto;
+}
+
+/* ── Service list (57% width, right-aligned) ────────────────────────────── */
+
+.list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  width: 730px;
+  max-width: 100%;
+  align-self: flex-end;
+}
+
+.item {
+  border-top: 1px solid rgba(0, 0, 0, 0.15);
+}
+
+.item:last-child {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.15);
+}
+
+.link {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 24px 0;
+  text-decoration: none;
+  color: #333;
+  transition: color 0.3s;
+}
+
+.link:hover {
+  color: #090909;
+}
+
+.linkText {
+  font-family: var(--font-primary);
+  font-size: 30px;
+  font-weight: 500;
+  line-height: 1.6;
+  transition: transform 0.3s ease;
+}
+
+.link:hover .linkText {
+  transform: translateX(10px);
+}
+
+.arrow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background-color: transparent;
+  transition: background-color 0.3s ease;
+  flex-shrink: 0;
+}
+
+.link:hover .arrow {
+  background-color: #D1D1D1;
+}
+
+.arrow svg {
+  width: 33px;
+  height: 33px;
+}
+
+/* ── Tablet ─────────────────────────────────────────────────────────────── */
+
+@media (max-width: 1024px) {
+  .section {
+    padding: var(--section-padding) 0;
+  }
+
+  .inner {
+    padding: 0 var(--page-padding);
+    gap: 32px;
+  }
+
+  .topRow {
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .list {
+    width: 100%;
+    align-self: auto;
+  }
+}
+
+/* ── Mobile ─────────────────────────────────────────────────────────────── */
+
+@media (max-width: 767px) {
+  .section {
+    padding: 60px 0 48px;
+  }
+
+  .inner {
+    padding: 0 var(--page-padding);
+  }
+
+  .link {
+    padding: 20px 0;
+  }
+}

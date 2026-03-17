@@ -1,0 +1,289 @@
+/* ==========================================================================
+   Reloadux Design System — CSS Custom Properties
+   Source of truth: synced with src/app/globals.css
+   ========================================================================== */
+
+:root {
+
+  /* ── Primitive Colors: Base ─────────────────────────────────────────────── */
+  --color-night:    #090909;
+  --color-black:    #000000;
+  --color-white:    #FFFFFF;
+  --color-smoke:    #D9D9D9;
+  --color-dark-bg:  #131A22;
+  --color-light:    #F7F8FB;
+
+  /* Short aliases (WordPress-compatible) */
+  --night:   #090909;
+  --smokey:  #D9D9D9;
+  --white:   #FFFFFF;
+  --black:   #000000;
+  --grey:    #A5A9AC;
+  --purple:  #9662FF;
+  --magenta: #A401B7;
+
+  /* ── Primitive Colors: Grey Scale ───────────────────────────────────────── */
+  --color-grey-200: #D1D1D1;
+  --color-grey-300: #C3C3C3;
+  --color-grey-400: #A5A9AC;
+  --color-grey-600: #565656;
+  --color-grey-700: #333333;
+  --color-grey-50:  #5F6D7E;
+  --color-grey-05:  #242634;
+  --color-grey-500: #697586;
+
+  /* ── Primitive Colors: Grey Navigation ────────────────────────────────── */
+  --color-grey-nav:       #95A2B4;
+  --color-text-grey:      #5F5F5F;
+  --color-grey-light:     #929AA6;
+  --color-grey-mid:       #959CB6;
+
+  /* ── Primitive Colors: Neutral Scale ────────────────────────────────────── */
+  --color-neutral-25:  #FCFCFD;
+  --color-neutral-100: #F2F4F7;
+  --color-neutral-200: #EAECF0;
+  --color-neutral-300: #D0D5DD;
+  --color-neutral-400: #98A2B3;
+  --color-neutral-500: #667085;
+  --color-neutral-600: #475467;
+  --color-neutral-700: #344054;
+  --color-neutral-900: #101828;
+  --color-neutral-25-dark:  #3B3B3F;
+  --color-neutral-40-dark:  #5E5E62;
+  --color-neutral-100-light: #FBFBFB;
+  --color-neutral-n500:     #42526E;
+  --color-neutral-n20a:     #091E42;
+  --color-neutral-300-alt:  #94A3B8;
+
+  /* ── Primitive Colors: Purple ───────────────────────────────────────────── */
+  --color-purple-50:  #F9F5FF;
+  --color-purple-300: #D6BBFB;
+  --color-purple-500: #9662FF;
+  --color-purple-700: #7F56D9;
+  --color-purple-900: #A401B7;
+
+  /* ── Primitive Colors: Blue ─────────────────────────────────────────────── */
+  --color-blue-primary:  #02C2EA;
+  --color-blue-atlassian: #0C66E4;
+  --color-blue-1:   #2F80ED;
+  --color-blue-500: #2E90FA;
+  --color-blue-700: #175CD3;
+
+  /* ── Primitive Colors: Green ────────────────────────────────────────────── */
+  --color-green-100: #DCFAE6;
+  --color-green-400: #47CD89;
+  --color-green-500: #17B26A;
+  --color-green-600: #079455;
+  --color-green-800: #085D3A;
+  --color-green-950: #053321;
+  --color-green-brand:  #136114;
+  --color-green-neon:   #00EC93;
+  --color-green-bright: #07AF4A;
+
+  /* ── Primitive Colors: Dark Green ─────────────────────────────────────── */
+  --color-dark-green: #002737;
+
+  /* ── Primitive Colors: Red ──────────────────────────────────────────────── */
+  --color-red-50:  #FEF3F2;
+  --color-red-100: #FEE4E2;
+  --color-red-400: #F97066;
+  --color-red-600: #D92D20;
+  --color-red-brand: #BE1E2D;
+
+  /* ── Primitive Colors: Orange ─────────────────────────────────────────── */
+  --color-orange-500: #FF912C;
+
+  /* ── Primitive Colors: Pink ─────────────────────────────────────────────── */
+  --color-pink-400: #F670C7;
+
+  /* ── Primitive Colors: Brand Secondary ──────────────────────────────────── */
+  --color-moonstone-100: #F2FBFB;
+  --color-moonstone-200: #E2FBFB;
+  --color-moonstone-900: #00A7B7;
+  --color-sunset-100:    #FFF9F0;
+  --color-sunset-200:    #FEF1DC;
+  --color-sunset-700:    #F99806;
+  --color-sunset-800:    #A46404;
+  --color-periwinkle-100: #ECF2FF;
+  --color-sandstone-900:  #F8F1E4;
+  --color-oxford-900:     #1D2939;
+  --color-dark-grey-900:  #0D2A52;
+  --color-outline:        #DDE4F4;
+
+  /* ── Gradient ──────────────────────────────────────────────────────────── */
+  --gradient-purple-glow: linear-gradient(180deg, var(--color-purple-500) 0%, var(--color-purple-900) 88%);
+
+  /* ── Semantic Colors: Text ─────────────────────────────────────────────── */
+  --text-primary:    var(--color-white);
+  --text-secondary:  var(--color-grey-400);
+  --text-tertiary:   var(--color-grey-200);
+  --text-inverse:    var(--color-night);
+  --text-on-dark:    var(--color-white);
+  --text-muted:      rgba(255, 255, 255, 0.8);
+  --text-tag:        var(--color-grey-400);
+  --text-grey:       var(--color-text-grey);
+  --text-nav:        var(--color-grey-nav);
+  --text-slate:      var(--color-grey-50);
+  --text-link:       var(--color-white);
+  --text-success:    var(--color-green-500);
+  --text-error:      var(--color-red-600);
+  --text-warning:    var(--color-sunset-700);
+  --text-info:       var(--color-blue-500);
+
+  /* ── Semantic Colors: Backgrounds ──────────────────────────────────────── */
+  --bg-page:      var(--color-night);
+  --bg-surface:   var(--color-neutral-100);
+  --bg-elevated:  var(--color-white);
+  --bg-dark:      var(--color-night);
+  --bg-darker:    var(--color-black);
+  --bg-cta:       var(--color-night);
+  --bg-card-dark: var(--color-grey-05);
+  --bg-alt-dark:  var(--color-dark-bg);
+  --bg-light-surface: var(--color-light);
+  --bg-overlay:   rgba(0, 0, 0, 0.6);
+  --bg-success:   var(--color-green-100);
+  --bg-error:     var(--color-red-50);
+  --bg-info:      var(--color-purple-50);
+
+  /* ── Semantic Colors: Borders ──────────────────────────────────────────── */
+  --border-default:  var(--color-smoke);
+  --border-subtle:   var(--color-neutral-200);
+  --border-strong:   var(--color-grey-400);
+  --border-focus:    var(--color-white);
+  --border-outline:  var(--color-outline);
+
+  /* ── Semantic Colors: Interactive ──────────────────────────────────────── */
+  --interactive-primary:    var(--color-white);
+  --interactive-primary-fg: var(--color-black);
+  --interactive-hover:      var(--color-smoke);
+  --interactive-accent:     var(--color-purple-500);
+
+  /* ── Typography: Font Families ─────────────────────────────────────────── */
+  --font-primary: 'Manrope', sans-serif;
+  --font-serif:   'Libre Baskerville', serif;
+  --font-accent:  'Lexend', sans-serif;
+
+  /* ── Typography: Font Sizes ────────────────────────────────────────────── */
+  --text-14: 14px;
+  --text-16: 16px;
+  --text-18: 18px;
+  --text-20: 20px;
+  --text-22: 22px;
+  --text-28: 28px;
+  --text-30: 30px;
+  --text-40: 40px;
+  --text-48: 48px;
+  --text-50: 50px;
+  --text-70: 70px;
+  --text-80: 80px;
+
+  /* ── Typography: Font Weights ──────────────────────────────────────────── */
+  --weight-regular:   400;
+  --weight-medium:    500;
+  --weight-semibold:  600;
+  --weight-bold:      700;
+  --weight-extrabold: 800;
+
+  /* ── Typography: Line Heights ──────────────────────────────────────────── */
+  --leading-22:  22px;
+  --leading-26:  26px;
+  --leading-28:  28px;
+  --leading-40:  40px;
+  --leading-48:  48px;
+  --leading-53:  53px;
+  --leading-60:  60px;
+  --leading-68:  68px;
+  --leading-88:  88px;
+  --leading-90:  90px;
+  --leading-auto: normal;
+
+  /* ── Typography: Line Heights (ratio scale) ─────────────────────────── */
+  --leading-tight:    1.2;
+  --leading-snug:     1.35;
+  --leading-normal:   1.6;
+  --leading-relaxed:  1.75;
+
+  /* ── Typography: Letter Spacing ────────────────────────────────────────── */
+  --tracking-none:   0px;
+  --tracking-tight:  0.32px;
+  --tracking-normal: 0.36px;
+  --tracking-wide:   1.6px;
+  --tracking-wider:  2px;
+
+  /* ── Spacing Scale ─────────────────────────────────────────────────────── */
+  --space-0:   0px;
+  --space-4:   4px;
+  --space-6:   6px;
+  --space-8:   8px;
+  --space-12:  12px;
+  --space-16:  16px;
+  --space-18:  18px;
+  --space-20:  20px;
+  --space-24:  24px;
+  --space-28:  28px;
+  --space-32:  32px;
+  --space-40:  40px;
+  --space-48:  48px;
+  --space-52:  52px;
+  --space-60:  60px;
+  --space-62:  62px;
+  --space-80:  80px;
+  --space-100: 100px;
+  --space-120: 120px;
+  --space-160: 160px;
+
+  /* ── Layout ────────────────────────────────────────────────────────────── */
+  --canvas-width:    1440px;
+  --content-width:   1440px;
+  --inner-width:     1200px;
+  --narrow-width:    1152px;
+  --page-padding:    80px;
+  --section-padding: 120px;
+
+  /* ── Border Radius ─────────────────────────────────────────────────────── */
+  --radius-0:    0px;
+  --radius-4:    4px;
+  --radius-8:    8px;
+  --radius-12:   12px;
+  --radius-16:   16px;
+  --radius-24:   24px;
+  --radius-30:   30px;
+  --radius-400:  400px;
+  --radius-full: 9999px;
+
+  /* ── Shadows ───────────────────────────────────────────────────────────── */
+  --shadow-button-glow: 0px 0px 12px 0px rgba(255, 255, 255, 0.5);
+  --shadow-natural:     6px 6px 9px rgba(0, 0, 0, 0.2);
+  --shadow-deep:        12px 12px 50px rgba(0, 0, 0, 0.4);
+  --shadow-sharp:       6px 6px 0px rgba(0, 0, 0, 0.2);
+  --shadow-card:        0 1px 3px rgba(0, 0, 0, 0.08);
+  --shadow-card-hover:  var(--shadow-natural);
+
+  /* ── Blur & Opacity ────────────────────────────────────────────────────── */
+  --blur-glow: 325px;
+  --opacity-glow:       0.6;
+  --opacity-holo-shape: 0.1;
+  --opacity-text-muted: 0.8;
+
+  /* ── Motion ────────────────────────────────────────────────────────────── */
+  --transition:       all 0.3s ease-in-out;
+  --duration-instant:  100ms;
+  --duration-fast:     200ms;
+  --duration-normal:   300ms;
+  --duration-slow:     500ms;
+  --duration-slower:   700ms;
+  --duration-entrance: 600ms;
+  --ease-default:  ease-in-out;
+  --ease-in:       cubic-bezier(0.4, 0, 1, 1);
+  --ease-out:      cubic-bezier(0, 0, 0.2, 1);
+  --ease-spring:   cubic-bezier(0.34, 1.56, 0.64, 1);
+  --stagger-delay: 80ms;
+
+  /* ── Z-Index ───────────────────────────────────────────────────────────── */
+  --z-behind:  -1;
+  --z-base:     0;
+  --z-raised:   10;
+  --z-nav:      100;
+  --z-overlay:  200;
+  --z-modal:    300;
+}
