@@ -1,0 +1,297 @@
+{
+  "hero": {
+    "tag": "UX REDESIGN",
+    "title": "AI-Ready UX Redesign for B2B & SaaS Products",
+    "subtitle": "If you're planning to integrate AI into your existing product experience, you're in the right place.",
+    "ctaText": "Get Started",
+    "ctaHref": "/contact-us/"
+  },
+  "clientLogos": [
+    "/images/logos/barclays-2.svg",
+    "/images/logos/nokia-2.svg",
+    "/images/logos/nbc-1.svg",
+    "/images/logos/groupon-1.svg",
+    "/images/logos/7-eleven-1.svg",
+    "/images/logos/nitro-2.svg",
+    "/images/logos/digno-2.svg",
+    "/images/logos/encore-1.svg",
+    "/images/logos/peopleguru-2.svg"
+  ],
+  "challenges": {
+    "tag": "CHALLENGES",
+    "heading": "You want AI in your product. Your users already expect it.",
+    "description": "Your users' expectations are evolving fast and you already know it. What you don't know is where to start or how to do it right. That's where we help.",
+    "cards": [
+      { "tag": "Placement Uncertainty", "description": "We don't know where AI fits into our users' journeys." },
+      { "tag": "Idea Overload", "description": "We have too many AI ideas, but no way to prioritize what improves UX." },
+      { "tag": "Adoption Risk", "description": "Adding AI might confuse our existing users or disrupt workflows." },
+      { "tag": "Feature Bloat", "description": "The product already feels cluttered; AI could make it harder to navigate." },
+      { "tag": "Behavior Stagnation", "description": "We shipped AI features, but users aren't engaging differently." },
+      { "tag": "Budget Pressure", "description": "Leadership wants an AI roadmap, but we can't redesign the UX from scratch." },
+      { "tag": "Execution Risk", "description": "We can't risk implementing AI that frustrates users or lowers satisfaction." }
+    ]
+  },
+  "caseStudies": {
+    "items": [
+      {
+        "tag": "Case Study 01",
+        "description": "We transformed the performance review system in a legacy HRMS with an AI-native experience, where managers no longer rely on memory, but on intelligence.",
+        "image": "/images/case-studies/case-study-01.webp",
+        "slides": [
+          { "type": "video", "src": "https://reloadux.com/wp-content/uploads/2026/02/Untitled-design.mkv" },
+          { "type": "image", "src": "/images/case-studies/people-guru-7.png" },
+          { "type": "image", "src": "/images/case-studies/people-guru-1-1.png" }
+        ]
+      },
+      {
+        "tag": "Case Study 02",
+        "description": "We replaced manual onboarding coordination with an AI-orchestrated, role-based onboarding experience.",
+        "image": "/images/case-studies/case-study-02.webp",
+        "slides": [
+          { "type": "video", "src": "https://reloadux.com/wp-content/uploads/2026/02/Untitled-design-1.mkv" },
+          { "type": "image", "src": "/images/case-studies/omne-1.png" },
+          { "type": "image", "src": "/images/case-studies/omne-1-1.png" }
+        ]
+      }
+    ],
+    "ctaText": "Explore More Cases",
+    "ctaHref": "/case-studies/"
+  },
+  "approach": {
+    "tag": "AI-READY UX REDESIGN",
+    "heading": "How we think about",
+    "headingItalic": "AI-ready UX redesign",
+    "description": "Your users are starting to expect products to behave more intelligently. Adding AI to the experience isn't just about shipping a new feature. It changes how users navigate, what they expect, and how much they trust your product. Successful AI integration follows three principles:",
+    "principles": [
+      {
+        "number": "01",
+        "title": "Redesign with purpose",
+        "description": "We never start with AI features. We start with your product, your users, and your business goals. Only then we identify where AI genuinely adds value.",
+        "gif": "/images/approach/subscribe.gif"
+      },
+      {
+        "number": "02",
+        "title": "Protect user trust",
+        "description": "Your users trust your product. Introducing AI carelessly breaks that trust. We design for uncertainty, clear explanations, easy overrides, and failures with clear indications.",
+        "gif": "/images/approach/get-matched.gif"
+      },
+      {
+        "number": "03",
+        "title": "Measure adoption",
+        "description": "A shipped feature that nobody uses is a failed feature. We design for adoption and stay engaged until the metrics prove it's working.",
+        "gif": "/images/approach/get-started.gif"
+      }
+    ]
+  },
+  "howWeWork": {
+    "tag": "HOW WE WORK",
+    "subtitle": "A 5-stage process from product insight to an AI-native experience users love.",
+    "stages": [
+      {
+        "title": "UX Audit & AI Readiness",
+        "counter": "01",
+        "description": "We learn your business, goals, and audience fast, then assess your product's UX gaps to determine if it can carry AI experiences today, or if the foundation needs work first.",
+        "deliverables": ["UX audit report with prioritized findings", "AI readiness scorecard"],
+        "href": "/service/ux-audit/"
+      },
+      {
+        "title": "AI Opportunity Mapping",
+        "counter": "02",
+        "description": "We pinpoint the 2–3 highest-impact AI opportunities where intelligence will improve user outcomes and business metrics. By analyzing your workflows, user behavior, and conducting user interviews, we map where AI should change decisions and execution, not just automate steps.",
+        "deliverables": ["AI opportunity map across your product", "Top 3 recommendations with success criteria"],
+        "href": "/service/ai-opportunity-mapping/"
+      },
+      {
+        "title": "AI Feature Experience Design",
+        "counter": "03",
+        "description": "We setup your product foundation and design an AI-native experience including every interaction, error state and edge cases.",
+        "deliverables": ["Interactive prototypes", "AI interaction patterns (confidence, explanations, overrides)", "Developer handoff package"],
+        "href": "/service/ai-feature-experience-design/"
+      },
+      {
+        "title": "Legacy UX Modernization",
+        "counter": "04",
+        "description": "Sometimes AI can't sit on top of your current interface. We modernize your UX to support intelligent features, without disrupting existing users.",
+        "deliverables": ["Restructured information architecture", "Updated design system with AI-ready components", "Redesigned key flows", "Phased rollout strategy"],
+        "note": "Not always required, Stage 1 determines if you need this.",
+        "href": "/service/legacy-ux-modernization/"
+      },
+      {
+        "title": "Adoption & Optimization",
+        "counter": "05",
+        "description": "Shipping isn't success. Adoption is. We track how users actually engage with AI features, run usability tests, and iterate based on real data.",
+        "deliverables": ["Iteration recommendations", "Usability testing findings", "Analytics dashboard for AI feature adoption"]
+      }
+    ]
+  },
+  "whoThisIsFor": {
+    "tag": "WHO THIS IS FOR",
+    "heading": "We work with companies who have",
+    "cards": [
+      {
+        "title": "An established product with real users",
+        "description": "You're not starting from zero. You have customers, revenue, and a product that delivers value."
+      },
+      {
+        "title": "Enterprise or B2B customers",
+        "description": "Your users are professionals — operations teams, analysts, managers, specialists. They need AI that respects their expertise."
+      },
+      {
+        "title": "Complex workflows or data-heavy products",
+        "description": "Platforms, dashboards, management systems, professional tools. The kind of software where AI can genuinely reduce friction."
+      },
+      {
+        "title": "Pressure to add AI but no clear roadmap",
+        "description": "Your board is asking. Competitors are moving. You need a structured approach, not guesswork."
+      }
+    ]
+  },
+  "midCta": {
+    "title": "Ready to build an AI-native user experience?",
+    "subtitle": "We create AI-native experiences and make products launch-ready with a clear roadmap.",
+    "ctaText": "Book a Call",
+    "ctaHref": "/contact-us/"
+  },
+  "testimonials": [
+    {
+      "index": "/01",
+      "quote": "We started with reloadux with an AI product and a lot of assumptions. They challenged most of them, in a good way. By the time we launched, we had an AI marketing tool marketers actually wanted. I loved the fact that they always spent time thinking through what they are building",
+      "name": "Iman Oubou",
+      "role": "CEO",
+      "company": "Swaypay",
+      "avatar": "/images/testimonials/iman.webp",
+      "companyLogo": ""
+    },
+    {
+      "index": "/02",
+      "quote": "We had the AI product knowledge. What we didn't have was a way to present it that didn't overwhelm users, reloadux team took the time to understand the product and created end to end interactive flows that became the foundation of the product.",
+      "name": "Matthew Tarascio",
+      "role": "Tech Entrepreneur",
+      "company": "Vocable",
+      "avatar": "/images/testimonials/matthew.jpeg",
+      "companyLogo": "/images/testimonials/vocable-logo.webp"
+    },
+    {
+      "index": "/03",
+      "quote": "The collaboration was smooth from start to finish. They asked the right questions, pushed back when we were off track, and helped us identify where AI actually made sense, then delivered ahead of schedule.",
+      "name": "Yuriy Shikhanovich",
+      "role": "Manager",
+      "company": "OCC",
+      "avatar": "/images/testimonials/yuriy.webp",
+      "companyLogo": "/images/testimonials/occ-logo.webp"
+    },
+    {
+      "index": "/04",
+      "quote": "Operations managers are skeptical people. reloadux team got that immediately. Everything they designed had a clear explanation behind it. That's why it actually got used.",
+      "name": "Viktor Misyutin",
+      "role": "Manager",
+      "company": "TradeZella",
+      "avatar": "/images/testimonials/viktor.webp",
+      "companyLogo": "/images/testimonials/tradezella-logo.webp"
+    },
+    {
+      "index": "/05",
+      "quote": "reloadux clear updates kept us informed every step of the way. Their straightforward approach made our partnership efficient and productive",
+      "name": "Mahir Iskender",
+      "role": "CEO",
+      "company": "Digno",
+      "avatar": "/images/testimonials/mahir.webp",
+      "companyLogo": "/images/testimonials/digno-logo.webp"
+    }
+  ],
+  "whyUs": {
+    "tag": "WHY US",
+    "heading": "Why teams choose reloadux",
+    "cards": [
+      {
+        "title": "AI UX specialists, not generalists",
+        "description": "Our AI redesign services exclusively focus on AI interface design. While other agencies are learning AI UX on your project, we've been doing this for years."
+      },
+      {
+        "title": "B2B & SaaS experts",
+        "description": "We design for enterprise workflows, multi-user systems, and complex data products, where users are professionals who need AI that fits how they work, not one that gets in the way."
+      },
+      {
+        "title": "Backed by engineering reality",
+        "description": "We're part of the Tkxel network, a 1000+ person software company, giving us direct access to engineers who build AI systems daily, so every design decision we make is grounded in what can actually ship."
+      },
+      {
+        "title": "Strategy before pixels",
+        "description": "We don't start with wireframes. We start with understanding where AI actually makes sense for your product and your users."
+      },
+      {
+        "title": "Obsessed with adoption",
+        "description": "A feature nobody uses is a failed feature. We design AI experiences that users actually adopt, because that's the only metric that matters."
+      }
+    ]
+  },
+  "sprintCta": {
+    "heading": "Still figuring out where AI fits?",
+    "subheading": "We'll show you in 3 days.",
+    "description": "Start with our 3-Day AI-Readiness Sprint, so you get clarity before committing to anything.",
+    "steps": [
+      { "number": "1", "text": "We pick one use-case of your app to run a proper UX audit." },
+      { "number": "2", "text": "Identify where AI actually makes sense for your users within the workflows." },
+      { "number": "3", "text": "Flag the structural gaps that could block adoption or slow your redesign down." },
+      { "number": "4", "text": "Redesign 1–2 screens so you can see the direction before going all in." }
+    ],
+    "ctaText": "Start a 3 Day Trial",
+    "ctaHref": "/contact-us/"
+  },
+  "faqs": {
+    "tag": "FAQS",
+    "heading": "Reimagine your product experience with our AI-native redesign services.",
+    "items": [
+      {
+        "question": "How long does it take to redesign a product for an AI-native experience?",
+
+        "answer": "It depends on scope. A single AI feature (like smart search) can be designed in 4-6 weeks. A comprehensive AI integration with UX modernization typically takes 12-16 weeks for design, with engineering implementation following."
+      },
+      {
+        "question": "Do we need to redesign our whole product to become an AI-native experience?",
+        "answer": "Not always. Sometimes AI can be layered onto your existing interface. Our AI readiness audit will tell you whether your current UX can support AI features or needs structural updates first."
+      },
+      {
+        "question": "What if we don't know where AI fits in our product's user experience?",
+        "answer": "That's exactly what our AI opportunity assessment solves. We analyze your product, users, and competitive landscape to identify the 2-3 AI integrations that will deliver the most impact."
+      },
+      {
+        "question": "How do you ensure users actually adopt the AI features?",
+        "answer": "We design for adoption from day one. This includes progressive disclosure (introducing AI gradually), clear explanations of what the AI does, easy opt-out mechanisms, and onboarding that builds trust."
+      },
+      {
+        "question": "How do you prioritize which AI features to build first?",
+        "answer": "We start by looking at how your users actually work. Where do they lose time? Where do they get stuck? Then we spot the places where AI can genuinely help, like automating repetitive steps or offering smart suggestions. Next, we weigh each idea against effort and risk, and pick the top 2–3 that will make the biggest difference."
+      },
+      {
+        "question": "Can you work with our existing design system?",
+        "answer": "Yes. We extend your existing design system to include AI-specific components. If your design system needs updates to support AI, we'll handle that too."
+      },
+      {
+        "question": "What's the difference between redesigning and building an AI-native product experience from scratch?",
+        "answer": "AI integrated product redesign focuses on adding intelligence to products that already have users, workflows, and established interfaces. It's about evolution, not revolution. Building AI-native products from scratch is a different process—one we also offer under our AI-native UX services."
+      },
+      {
+        "question": "Do you help with implementation?",
+        "answer": "We create production-ready designs and detailed specifications for your engineering team. We also offer implementation support to answer questions, review builds, and ensure the final product matches the design intent."
+      },
+      {
+        "question": "What industries do you work with?",
+        "answer": "We specialize in B2B SaaS across fintech, healthcare, HR tech, project management, analytics, and enterprise software. If your product serves business users, we can help."
+      }
+    ]
+  },
+  "nextSteps": [
+    { "number": "01", "text": "We'll respond within 24 hours." },
+    { "number": "02", "text": "Our UX Expert will collect project details and create a brief." },
+    { "number": "03", "text": "We'll prepare estimates and share a project proposal." }
+  ],
+  "contactInfo": {
+    "phone": "(202) 978 3410",
+    "email": "info@reloadux.com",
+    "team": [
+      { "name": "Sahar", "role": "Key Account Manager", "linkedin": "https://www.linkedin.com/in/sahar-asif-284a9955/" },
+      { "name": "Lara Kazan", "role": "Business Development Executive", "linkedin": "https://www.linkedin.com/in/lara-kazan-82a24113b/" }
+    ]
+  }
+}

@@ -2,6 +2,7 @@
 
 import { useRef } from "react";
 import { motion, useInView } from "framer-motion";
+import styles from "./ScrollReveal.module.css";
 
 interface ScrollRevealProps {
   children: React.ReactNode;
@@ -35,7 +36,7 @@ export function ScrollReveal({
   return (
     <motion.div
       ref={ref}
-      className={className}
+      className={`${styles.fallback} ${className ?? ""}`}
       initial={{ opacity: 0, x: offset.x, y: offset.y }}
       animate={isInView ? { opacity: 1, x: 0, y: 0 } : undefined}
       transition={{

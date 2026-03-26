@@ -1,9 +1,15 @@
 "use client";
 import { useState } from "react";
 import { Button } from "@/components/ui/Button";
+import { SectionTag } from "@/components/ui/SectionTag";
 import styles from "./ContactFormSection.module.css";
 
-export function ContactFormSection() {
+interface ContactFormSectionProps {
+  tag?: string;
+  heading?: string;
+}
+
+export function ContactFormSection({ tag, heading }: ContactFormSectionProps) {
   const [submitted, setSubmitted] = useState(false);
 
   async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
@@ -27,6 +33,12 @@ export function ContactFormSection() {
   return (
     <section className="section section--light" id="contact-form">
       <div className="container">
+        {(tag || heading) && (
+          <div className={styles.header}>
+            {tag && <SectionTag text={tag} />}
+            {heading && <h2 className={styles.heading}>{heading}</h2>}
+          </div>
+        )}
         <form onSubmit={handleSubmit} className={styles.form}>
           <div className={styles.row}>
             <div className={styles.field}>

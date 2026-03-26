@@ -2,6 +2,7 @@ import type {
   HomePageData,
   AboutPageData,
   ContactPageData,
+  UXRedesignPageData,
   Service,
   CaseStudy,
   BlogPost,
@@ -18,6 +19,7 @@ import { getStrapiMediaUrl } from "./media";
 import homeData from "../../content/pages/home.json";
 import aboutData from "../../content/pages/about.json";
 import contactData from "../../content/pages/contact.json";
+import uxRedesignData from "../../content/pages/ux-redesign.json";
 
 import {
   getStrapiHomepage,
@@ -94,6 +96,12 @@ export async function getAboutPage(): Promise<AboutPageData> {
 
 export async function getContactPage(): Promise<ContactPageData> {
   return contactData as ContactPageData;
+}
+
+// ─── UX Redesign Page ────────────────────────────────────────────────────────
+
+export async function getUXRedesignPage(): Promise<UXRedesignPageData> {
+  return uxRedesignData as UXRedesignPageData;
 }
 
 // ─── Services ─────────────────────────────────────────────────────────────────

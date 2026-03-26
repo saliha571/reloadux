@@ -1,0 +1,131 @@
+/* ── From WP element a4b2359 ── */
+
+.section {
+  background-color: #F2F2F2;
+  background-image: url("/images/backgrounds/to_do_bg.webp");
+  background-position: top right;
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding: 120px 80px 80px;
+}
+
+.inner {
+  max-width: var(--content-width);
+  margin: 0 auto;
+}
+
+/* ── Header: tag + heading stacked ── */
+
+.header {
+  margin-bottom: 0;
+}
+
+/* ── Tag (d9232bc): Libre Baskerville 18px, uppercase ── */
+
+.tagWrap {
+  display: block;
+}
+
+.tagWrap span {
+  font-family: var(--font-serif);
+  font-size: 18px;
+  font-weight: 400;
+  text-transform: uppercase;
+  line-height: 60px;
+  letter-spacing: 0.36px;
+  color: var(--color-black);
+}
+
+/* ── Heading (e3a5072): 48px, 500, black, right-aligned ── */
+
+.heading {
+  font-family: var(--font-primary);
+  font-size: 48px;
+  font-weight: 500;
+  line-height: normal;
+  color: var(--color-black);
+  padding: 12px 0 80px 0;
+  text-align: right;
+}
+
+/* ── List: two-column rows with dividers ── */
+
+.list {
+  display: flex;
+  flex-direction: column;
+}
+
+.item {
+  display: grid;
+  grid-template-columns: 35% 1fr;
+  gap: 40px;
+  align-items: flex-start;
+  padding: 32px 0;
+  border-top: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+.item:first-child {
+  border-top: none;
+  padding-top: 0;
+}
+
+/* ── Title (saas-use-case h3) ── */
+
+.itemTitle {
+  font-family: var(--font-serif);
+  font-size: 32px;
+  font-weight: 400;
+  flex-grow: 1;
+  max-width: 445px;
+  color: var(--color-black);
+  text-align: right;
+}
+
+/* ── Description (saas-use-case p) ── */
+
+.itemDescription {
+  font-family: var(--font-primary);
+  font-size: 18px;
+  font-weight: 400;
+  width: 380px;
+  max-width: 100%;
+  line-height: 1.6;
+  color: var(--color-black);
+  text-align: right;
+}
+
+/* ── Tablet ── */
+
+@media (max-width: 1024px) {
+  .section {
+    padding: 80px 32px 40px;
+  }
+
+  .heading {
+    font-size: 32px;
+    padding: 12px 0 56px 0;
+  }
+
+  .item {
+    grid-template-columns: 1fr;
+    gap: 16px;
+    padding: 24px 0;
+  }
+}
+
+/* ── Mobile ── */
+
+@media (max-width: 767px) {
+  .section {
+    padding: 56px 16px 56px;
+  }
+
+  .heading {
+    font-size: 22px;
+    padding: 12px 0 40px 0;
+  }
+
+  .item {
+    padding: 20px 0;
+  }
+}

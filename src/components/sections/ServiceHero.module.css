@@ -1,0 +1,143 @@
+.section {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: var(--bg-dark);
+  overflow: hidden;
+  width: 100%;
+}
+
+.withBg {
+  min-height: 100vh;
+  justify-content: flex-end;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.withBg .content {
+  align-items: center;
+  text-align: center;
+  padding-top: 0;
+}
+
+.withBg .title {
+  width: auto;
+  max-width: 880px;
+}
+
+.content {
+  max-width: var(--content-width);
+  width: 100%;
+  margin-inline: auto;
+  padding-inline: var(--page-padding);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 30px;
+  padding-top: 80px;
+  padding-bottom: 0;
+  flex-grow: 1;
+}
+
+.title {
+  font-family: var(--font-primary);
+  font-size: clamp(32px, 4.4vw, 64px);
+  font-weight: 500;
+  line-height: 135%;
+  color: var(--text-primary);
+  width: 65%;
+}
+
+.subtitle {
+  font-family: var(--font-primary);
+  font-size: 18px;
+  font-weight: 400;
+  line-height: normal;
+  color: var(--color-grey-200);
+}
+
+.logoStrip {
+  width: 100%;
+  max-width: 1280px;
+  margin-inline: auto;
+  position: relative;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  padding: 20px 0 40px;
+  flex-shrink: 0;
+}
+
+.logoStrip::before,
+.logoStrip::after {
+  content: "";
+  position: absolute;
+  display: block;
+  height: 100%;
+  width: 150px;
+  top: 0;
+  z-index: 1;
+}
+
+.logoStrip::before {
+  left: 0;
+  background: linear-gradient(
+    90deg,
+    rgba(9, 9, 9, 1) 8%,
+    rgba(0, 0, 0, 0) 100%
+  );
+}
+
+.logoStrip::after {
+  right: 0;
+  background: linear-gradient(270deg, #090909 0, rgba(0, 0, 0, 0) 100%);
+}
+
+.logoItem {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  width: 150px;
+  margin: 0;
+  padding: 0;
+  position: relative;
+  flex-shrink: 0;
+  overflow: hidden;
+  margin-right: 40px;
+}
+
+.logoImage {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  filter: brightness(0) invert(1);
+}
+
+@media (max-width: 1024px) {
+  .content {
+    padding-top: 100px;
+  }
+
+  .title {
+    width: 89%;
+  }
+}
+
+@media (max-width: 767px) {
+  .content {
+    padding-top: 40px;
+  }
+
+  .title {
+    width: 100%;
+  }
+
+  .logoStrip::before,
+  .logoStrip::after {
+    width: 80px;
+  }
+}

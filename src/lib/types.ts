@@ -237,3 +237,124 @@ export interface IndustryDomain {
   link?: string;
   order: number;
 }
+
+// ─── UX Redesign Page ──────────────────────────────────────────────────────────
+
+export interface ChallengeCard {
+  tag: string;
+  description: string;
+}
+
+export interface CaseStudySlide {
+  type: "video" | "image";
+  src: string;
+}
+
+export interface CaseStudyVideo {
+  tag: string;
+  description: string;
+  videoUrl?: string;
+  image?: string;
+  slides?: CaseStudySlide[];
+}
+
+export interface Principle {
+  number: string;
+  title: string;
+  description: string;
+  gif?: string;
+}
+
+export interface ProcessStageItem {
+  title: string;
+  counter: string;
+  description: string;
+  deliverables: string[];
+  note?: string;
+  href?: string;
+}
+
+export interface IdealClientCard {
+  title: string;
+  description: string;
+}
+
+export interface ValueProp {
+  title: string;
+  description: string;
+}
+
+export interface SprintStep {
+  number: string;
+  text: string;
+}
+
+export interface UXRedesignPageData {
+  hero: {
+    tag: string;
+    title: string;
+    subtitle: string;
+    ctaText: string;
+    ctaHref: string;
+  };
+  clientLogos: string[];
+  challenges: {
+    tag: string;
+    heading: string;
+    description: string;
+    cards: ChallengeCard[];
+  };
+  caseStudies: {
+    items: CaseStudyVideo[];
+    ctaText: string;
+    ctaHref: string;
+  };
+  approach: {
+    tag: string;
+    heading: string;
+    headingItalic: string;
+    description: string;
+    principles: Principle[];
+  };
+  howWeWork: {
+    tag: string;
+    subtitle: string;
+    stages: ProcessStageItem[];
+  };
+  whoThisIsFor: {
+    tag: string;
+    heading: string;
+    cards: IdealClientCard[];
+  };
+  midCta: {
+    title: string;
+    subtitle: string;
+    ctaText: string;
+    ctaHref: string;
+  };
+  testimonials: Testimonial[];
+  whyUs: {
+    tag: string;
+    heading: string;
+    cards: ValueProp[];
+  };
+  sprintCta: {
+    heading: string;
+    subheading: string;
+    description: string;
+    steps: SprintStep[];
+    ctaText: string;
+    ctaHref: string;
+  };
+  faqs: {
+    tag: string;
+    heading: string;
+    items: FAQItem[];
+  };
+  nextSteps: NextStep[];
+  contactInfo: {
+    phone: string;
+    email: string;
+    team: { name: string; role: string; linkedin: string }[];
+  };
+}

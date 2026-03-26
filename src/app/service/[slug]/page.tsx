@@ -18,9 +18,13 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   };
 }
 
+const DEDICATED_PAGES = ["ux-redesign"];
+
 export async function generateStaticParams() {
   const services = await getServices();
-  return services.map((s) => ({ slug: s.slug }));
+  return services
+    .filter((s) => !DEDICATED_PAGES.includes(s.slug))
+    .map((s) => ({ slug: s.slug }));
 }
 
 export default async function ServicePage({ params }: Props) {

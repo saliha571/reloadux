@@ -1,0 +1,256 @@
+.section {
+  background-color: var(--bg-dark, #090909);
+  padding: var(--section-padding) 0;
+}
+
+.inner {
+  max-width: var(--content-width);
+  margin: 0 auto;
+  padding-inline: var(--page-padding);
+}
+
+/* ── Header: tag left, heading right (800px container) ── */
+
+.header {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+}
+
+.subtitle {
+  font-family: var(--font-primary);
+  font-size: clamp(28px, 3.5vw, 48px);
+  font-weight: 500;
+  line-height: normal;
+  color: var(--color-white);
+  width: 800px;
+  max-width: 100%;
+  margin-left: auto;
+  flex-shrink: 0;
+}
+
+/* ── Stage rows ── */
+
+.list {
+  margin-top: var(--space-60);
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+  text-decoration: none;
+  color: inherit;
+  position: relative;
+  overflow: hidden;
+  transition: color 0.3s;
+}
+
+.row:hover {
+  color: inherit;
+}
+
+.linkRow {
+  cursor: pointer;
+}
+
+/* ── Hover background overlay (from WP .our-uxservices) ── */
+
+.ourUxservices::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: url("/images/backgrounds/how-we-work-hover-bg.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  opacity: 0;
+  transition: opacity 0.8s ease;
+  z-index: 0;
+}
+
+.ourUxservices:hover::before {
+  opacity: 1;
+}
+
+.ourUxservices > * {
+  position: relative;
+  z-index: 1;
+}
+
+/* ── Title slide + arrow slide on hover ── */
+
+.title,
+.arrowIcon {
+  transition: transform 0.5s ease;
+}
+
+.ourUxservices:hover .title {
+  transform: translateX(10px);
+}
+
+.ourUxservices:hover .arrowIcon {
+  transform: translateX(-10px);
+}
+
+/* ── Row layout ── */
+
+.rowLeft {
+  width: 41.797%;
+  flex-shrink: 0;
+  padding: 24px 24px 24px 0;
+}
+
+.title {
+  font-family: var(--font-serif);
+  font-size: 18px;
+  font-weight: 400;
+  text-transform: uppercase;
+  color: var(--color-white);
+  line-height: 60px;
+}
+
+.rowRight {
+  flex: 1;
+  min-width: 0;
+  padding: 24px 48px 24px 24px;
+}
+
+.description {
+  font-family: var(--font-primary);
+  font-size: 22px;
+  font-weight: 400;
+  line-height: 40px;
+  color: #C3C3C3;
+  margin-bottom: var(--space-16);
+}
+
+.deliverablesLabel {
+  font-family: var(--font-primary);
+  font-size: 14px;
+  font-weight: 400;
+  text-transform: uppercase;
+  color: var(--color-white);
+  margin-bottom: var(--space-12);
+}
+
+.deliverablesList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-8);
+}
+
+.deliverablesList li {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+}
+
+.checkIcon {
+  flex-shrink: 0;
+  width: 38px;
+  height: 38px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.checkIcon svg {
+  width: 24px;
+  height: 24px;
+}
+
+.deliverableText {
+  font-family: var(--font-primary);
+  font-size: 22px;
+  font-weight: 400;
+  line-height: 40px;
+  color: #C3C3C3;
+  transition: color 0.3s;
+}
+
+.ourUxservices:hover .deliverableText {
+  color: #C3C3C3;
+}
+
+.note {
+  font-family: var(--font-primary);
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.5);
+  font-style: italic;
+  margin-top: var(--space-16);
+}
+
+/* ── Arrow icon (top right) ── */
+
+.arrowIcon {
+  position: absolute;
+  top: 24px;
+  right: 0;
+  color: var(--color-white);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.arrowIcon svg {
+  width: 19px;
+  height: 19px;
+}
+
+/* ── Tablet ── */
+
+@media (max-width: 1024px) {
+  .section {
+    padding: 80px 0;
+  }
+
+  .header {
+    flex-direction: column;
+    gap: 24px;
+  }
+
+  .row {
+    flex-direction: column;
+  }
+
+  .rowLeft {
+    width: 100%;
+    padding-right: 0;
+  }
+
+  .rowRight {
+    padding-left: 0;
+  }
+
+  .title {
+    font-size: 18px;
+    line-height: 1.4;
+  }
+
+  .description,
+  .deliverableText {
+    font-size: 18px;
+    line-height: 1.6;
+  }
+}
+
+/* ── Mobile ── */
+
+@media (max-width: 767px) {
+  .section {
+    padding: 60px 0;
+  }
+
+  .subtitle {
+    font-size: 28px;
+  }
+
+  .checkIcon svg {
+    width: 20px;
+    height: 20px;
+  }
+}

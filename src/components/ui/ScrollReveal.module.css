@@ -1,0 +1,10 @@
+@keyframes scrollRevealFallback {
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+.fallback {
+  animation: scrollRevealFallback 0s ease 1.5s forwards;
+}

@@ -18,6 +18,7 @@ interface Testimonial {
 
 interface TestimonialsSectionProps {
   testimonials: Testimonial[];
+  tagText?: string;
 }
 
 const SCROLL_COOLDOWN = 800;
@@ -46,7 +47,7 @@ function isScrollLocked() {
   return document.body.style.position === "fixed";
 }
 
-export function TestimonialsSection({ testimonials }: TestimonialsSectionProps) {
+export function TestimonialsSection({ testimonials, tagText = "WORDS OF OUR CLIENTS" }: TestimonialsSectionProps) {
   const [active, setActive] = useState(0);
   const [cursorVisible, setCursorVisible] = useState(false);
   const [cursorPos, setCursorPos] = useState({ x: 0, y: 0 });
@@ -165,7 +166,7 @@ export function TestimonialsSection({ testimonials }: TestimonialsSectionProps) 
     <section className={styles.section} ref={sectionRef}>
       <div className={styles.inner}>
         <div className={styles.left}>
-          <SectionTag text="WORDS OF OUR CLIENTS" />
+          <SectionTag text={tagText} />
         </div>
 
         <div className={styles.right}>

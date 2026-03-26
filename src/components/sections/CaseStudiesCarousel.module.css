@@ -1,0 +1,175 @@
+.section {
+  background: var(--bg-dark);
+  padding: 120px 0 0;
+  width: 100%;
+}
+
+.inner {
+  max-width: var(--content-width);
+  margin: 0 auto;
+  padding-inline: var(--page-padding);
+}
+
+/* ── Single case study block ── */
+
+.caseStudy {
+  margin-bottom: 80px;
+}
+
+.aboutRow {
+  display: flex;
+  align-items: baseline;
+  margin-bottom: 40px;
+}
+
+.tag {
+  font-family: var(--font-serif);
+  font-size: 18px;
+  font-weight: 400;
+  color: var(--color-white);
+  text-transform: uppercase;
+  letter-spacing: 0.36px;
+  white-space: nowrap;
+  line-height: 1.4;
+  margin-right: auto;
+}
+
+.description {
+  font-family: var(--font-primary);
+  font-size: clamp(24px, 3vw, 36px);
+  font-weight: 500;
+  color: var(--color-white);
+  line-height: 1.4;
+  width: 840px;
+  max-width: 100%;
+  flex-shrink: 0;
+}
+
+/* ── Horizontal slider ── */
+
+.sliderParent {
+  width: 100%;
+}
+
+.sliderViewport {
+  overflow: hidden;
+}
+
+.sliderTrack {
+  display: flex;
+  will-change: transform;
+}
+
+.slide {
+  flex-shrink: 0;
+  width: 100%;
+}
+
+.media {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: contain;
+  background: var(--bg-dark);
+}
+
+/* ── Nav arrows (below slider) ── */
+
+.navRow {
+  display: flex;
+  gap: 16px;
+  padding-top: 24px;
+}
+
+.navBtn {
+  width: 40px;
+  height: 40px;
+  border: none;
+  background: none;
+  color: var(--color-white);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: opacity 0.2s;
+  padding: 0;
+}
+
+.navBtn:hover {
+  opacity: 0.7;
+}
+
+.navDisabled {
+  opacity: 0.3;
+  cursor: default;
+}
+
+.navDisabled:hover {
+  opacity: 0.3;
+}
+
+/* ── CTA row ── */
+
+.ctaRow {
+  display: flex;
+  justify-content: flex-start;
+  padding: 40px 0 80px;
+}
+
+.exploreLink {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-family: var(--font-primary);
+  font-size: 18px;
+  font-weight: 500;
+  color: var(--color-white);
+  text-decoration: none;
+  transition: transform 0.2s;
+}
+
+.exploreLink:hover {
+  transform: translateX(3px);
+}
+
+/* ── Tablet ── */
+
+@media (max-width: 1024px) {
+  .section {
+    padding-top: 80px;
+  }
+
+  .aboutRow {
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .caseStudy {
+    margin-bottom: 60px;
+  }
+}
+
+/* ── Mobile ── */
+
+@media (max-width: 767px) {
+  .section {
+    padding-top: 60px;
+  }
+
+  .aboutRow {
+    gap: 12px;
+  }
+
+  .description {
+    font-size: 20px;
+  }
+
+  .navBtn {
+    width: 36px;
+    height: 36px;
+  }
+
+  .ctaRow {
+    padding: 32px 0 60px;
+  }
+}

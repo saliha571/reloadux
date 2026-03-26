@@ -7,6 +7,7 @@ interface CTASectionProps {
   ctaText: string;
   ctaHref: string;
   subtitle?: string;
+  hideLogos?: boolean;
 }
 
 const clientLogos = [
@@ -22,6 +23,7 @@ export function CTASection({
   ctaText,
   ctaHref,
   subtitle,
+  hideLogos,
 }: CTASectionProps) {
   const parts = title.split("your product");
 
@@ -46,19 +48,21 @@ export function CTASection({
 
         {subtitle && <p className={styles.subtitle}>{subtitle}</p>}
 
-        <div className={styles.logos}>
-          {clientLogos.map((logo, i) => (
-            <img
-              key={i}
-              src={logo.src}
-              alt={logo.alt}
-              width={174}
-              height={34}
-              className={styles.logo}
-              loading="lazy"
-            />
-          ))}
-        </div>
+        {!hideLogos && (
+          <div className={styles.logos}>
+            {clientLogos.map((logo, i) => (
+              <img
+                key={i}
+                src={logo.src}
+                alt={logo.alt}
+                width={174}
+                height={34}
+                className={styles.logo}
+                loading="lazy"
+              />
+            ))}
+          </div>
+        )}
       </div>
     </section>
   );

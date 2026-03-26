@@ -1,0 +1,181 @@
+.section {
+  background-color: var(--color-smoke, #D9D9D9);
+  background-image: url("/images/backgrounds/lg-challenges-bg.webp");
+  background-position: bottom left;
+  background-repeat: no-repeat;
+  background-size: 365px auto;
+}
+
+.inner {
+  max-width: var(--content-width);
+  margin: 0 auto;
+  padding-inline: var(--page-padding);
+  display: flex;
+  gap: 60px;
+  align-items: flex-start;
+}
+
+.left {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-24);
+  padding-top: 120px;
+  padding-bottom: 120px;
+}
+
+.heading {
+  font-family: var(--font-primary);
+  font-size: clamp(32px, 3.5vw, 48px);
+  font-weight: 500;
+  line-height: normal;
+  color: var(--color-black);
+  max-width: 500px;
+}
+
+.description {
+  font-family: var(--font-primary);
+  font-size: 22px;
+  font-weight: 400;
+  line-height: 40px;
+  color: var(--color-black);
+  max-width: 460px;
+}
+
+/* ── Right column: vertical auto-scroll carousel ── */
+
+.right {
+  flex: 1;
+  max-height: 872px;
+  overflow: hidden;
+  position: relative;
+  padding-top: 120px;
+  padding-bottom: 120px;
+}
+
+.right::before,
+.right::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 100px;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.right::before {
+  top: 0;
+  background: linear-gradient(to bottom, var(--color-smoke, #D9D9D9), transparent);
+}
+
+.right::after {
+  bottom: 0;
+  background: linear-gradient(to top, var(--color-smoke, #D9D9D9), transparent);
+}
+
+.track {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+/* ── Card ── */
+
+.card {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: calc(100% - 80px);
+  margin: 0 auto;
+  padding: 46px 60px;
+  border: 0.875px solid var(--grey, #A5A9AC);
+  flex-shrink: 0;
+}
+
+.emoji {
+  height: 34px;
+  width: auto;
+  align-self: flex-start;
+}
+
+.cardTag {
+  color: var(--color-black);
+  font-family: var(--font-secondary, var(--font-primary));
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 60px;
+  letter-spacing: 0.36px;
+  text-transform: uppercase;
+}
+
+.cardDescription {
+  color: var(--color-black);
+  font-family: var(--font-primary);
+  font-size: 36px;
+  font-weight: 700;
+  line-height: 48px;
+  max-width: 511px;
+}
+
+/* ── Tablet ── */
+
+@media (max-width: 1024px) {
+  .inner {
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .left {
+    position: static;
+    padding-top: 80px;
+    padding-bottom: 40px;
+  }
+
+  .right {
+    max-height: 520px;
+    width: 100%;
+    padding-top: 0;
+    padding-bottom: 80px;
+  }
+
+  .card {
+    padding: 36px 40px;
+  }
+
+  .cardDescription {
+    font-size: 28px;
+    line-height: 40px;
+  }
+}
+
+/* ── Mobile ── */
+
+@media (max-width: 767px) {
+  .section {
+    background-size: 200px auto;
+  }
+
+  .left {
+    padding-top: 60px;
+    padding-bottom: 32px;
+  }
+
+  .right {
+    max-height: 420px;
+    padding-bottom: 60px;
+  }
+
+  .card {
+    padding: 42px 24px;
+  }
+
+  .cardDescription {
+    font-size: 24px;
+    line-height: 36px;
+  }
+
+  .cardTag {
+    font-size: 16px;
+  }
+}
