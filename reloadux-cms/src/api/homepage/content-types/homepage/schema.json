@@ -1,0 +1,126 @@
+{
+  "kind": "singleType",
+  "collectionName": "homepages",
+  "info": {
+    "singularName": "homepage",
+    "pluralName": "homepages",
+    "displayName": "Homepage",
+    "description": "Homepage content for reloadux.com"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "heroTitle": {
+      "type": "string",
+      "required": true,
+      "default": "UX design agency for"
+    },
+    "heroTitleAccent": {
+      "type": "string",
+      "default": "AI-native experiences"
+    },
+    "heroSubtitle": {
+      "type": "text",
+      "default": "We help B2B and SaaS companies design products that are intelligent, usable, and built for adoption."
+    },
+    "heroCtaText": {
+      "type": "string",
+      "default": "Let's talk"
+    },
+    "heroCtaLink": {
+      "type": "string",
+      "default": "/contact-us"
+    },
+    "heroImage": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": ["images", "videos"]
+    },
+    "ourServices": {
+      "type": "component",
+      "repeatable": true,
+      "component": "shared.service-link"
+    },
+    "servicesSectionLabel": {
+      "type": "string",
+      "default": "OUR SERVICES"
+    },
+    "servicesSectionTitle": {
+      "type": "string",
+      "default": "Start, improve, or scale an AI-native product experience."
+    },
+    "aboutSectionLabel": {
+      "type": "string",
+      "default": "ABOUT US"
+    },
+    "aboutSectionTitle": {
+      "type": "string",
+      "default": "Our work delivers results you can measure. The numbers below say it all."
+    },
+    "stats": {
+      "type": "component",
+      "repeatable": true,
+      "component": "shared.stat"
+    },
+    "industriesSectionLabel": {
+      "type": "string",
+      "default": "DIVERSITY"
+    },
+    "industriesSectionTitle": {
+      "type": "string",
+      "default": "We design AI experiences for complex domains."
+    },
+    "workSectionLabel": {
+      "type": "string",
+      "default": "OUR WORK"
+    },
+    "workSectionTitle": {
+      "type": "string",
+      "default": "From intelligent redesigns to AI-native products, we've got success stories showcasing our impact."
+    },
+    "testimonialsSectionLabel": {
+      "type": "string",
+      "default": "WORDS OF OUR CLIENTS"
+    },
+    "blogSectionLabel": {
+      "type": "string",
+      "default": "LATEST ARTICLES"
+    },
+    "blogSectionTitle": {
+      "type": "string",
+      "default": "AI insights from our UX leaders."
+    },
+    "ctaSectionTitle": {
+      "type": "string",
+      "default": "Ready to make your product experience AI-native?"
+    },
+    "ctaSectionButtonText": {
+      "type": "string",
+      "default": "Contact Us"
+    },
+    "ctaSectionButtonLink": {
+      "type": "string",
+      "default": "/contact-us"
+    },
+    "ctaSectionSubtitle": {
+      "type": "string",
+      "default": "Join our list of clients."
+    },
+    "seoTitle": {
+      "type": "string",
+      "default": "Expert UI UX Design and Development Services | reloadux"
+    },
+    "seoDescription": {
+      "type": "text"
+    },
+    "seoImage": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": ["images"]
+    }
+  }
+}

@@ -1,0 +1,100 @@
+{
+  "kind": "collectionType",
+  "collectionName": "case_studies",
+  "info": {
+    "singularName": "case-study",
+    "pluralName": "case-studies",
+    "displayName": "Case Study",
+    "description": "Portfolio case studies"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "slug": {
+      "type": "uid",
+      "targetField": "title",
+      "required": true
+    },
+    "client": {
+      "type": "string"
+    },
+    "tagline": {
+      "type": "text"
+    },
+    "backgroundText": {
+      "type": "string"
+    },
+    "description": {
+      "type": "richtext"
+    },
+    "featuredImage": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": ["images", "videos"]
+    },
+    "mobileImage": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": ["images"]
+    },
+    "sliderImage": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": ["images"]
+    },
+    "sliderMobileImage": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": ["images"]
+    },
+    "industry": {
+      "type": "enumeration",
+      "enum": ["AI", "SaaS", "Fintech", "Healthcare", "Web3_Blockchain", "Media_Communication", "Other"],
+      "default": "SaaS"
+    },
+    "results": {
+      "type": "component",
+      "repeatable": true,
+      "component": "shared.result"
+    },
+    "featured": {
+      "type": "boolean",
+      "default": false
+    },
+    "showInSlider": {
+      "type": "boolean",
+      "default": false
+    },
+    "showInWorkGrid": {
+      "type": "boolean",
+      "default": true
+    },
+    "comingSoon": {
+      "type": "boolean",
+      "default": false
+    },
+    "publishedAt": {
+      "type": "datetime"
+    },
+    "order": {
+      "type": "integer",
+      "default": 0
+    },
+    "seoTitle": {
+      "type": "string"
+    },
+    "seoDescription": {
+      "type": "text"
+    }
+  }
+}

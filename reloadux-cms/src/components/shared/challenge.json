@@ -1,0 +1,21 @@
+{
+  "collectionName": "components_shared_challenges",
+  "info": {
+    "displayName": "Challenge",
+    "icon": "exclamation",
+    "description": "Challenge/pain point for service pages"
+  },
+  "options": {},
+  "attributes": {
+    "label": {
+      "type": "string"
+    },
+    "question": {
+      "type": "string",
+      "required": true
+    },
+    "icon": {
+      "type": "string"
+    }
+  }
+}

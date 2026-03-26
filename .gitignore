@@ -35,8 +35,7 @@ yarn-error.log*
 *.tsbuildinfo
 next-env.d.ts
 
-# Strapi CMS backend (separate deploy)
-/reloadux-cms/
+# Strapi CMS lives in reloadux-cms/ (tracked); node_modules and .env ignored via reloadux-cms/.gitignore
 
 # WordPress reference files (dev-only)
 /oldreload/

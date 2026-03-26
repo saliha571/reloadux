@@ -1,0 +1,23 @@
+{
+  "collectionName": "components_shared_service_links",
+  "info": {
+    "displayName": "Service Link",
+    "icon": "link",
+    "description": "Link to a service page"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "link": {
+      "type": "string",
+      "required": true
+    },
+    "isNew": {
+      "type": "boolean",
+      "default": false
+    }
+  }
+}

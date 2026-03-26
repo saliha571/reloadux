@@ -1,0 +1,15 @@
+{
+  "collectionName": "components_shared_outcomes",
+  "info": {
+    "displayName": "Outcome",
+    "icon": "star",
+    "description": "Outcome/benefit item"
+  },
+  "options": {},
+  "attributes": {
+    "text": {
+      "type": "string",
+      "required": true
+    }
+  }
+}

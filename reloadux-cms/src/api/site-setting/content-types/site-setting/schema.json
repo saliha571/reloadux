@@ -1,0 +1,84 @@
+{
+  "kind": "singleType",
+  "collectionName": "site_settings",
+  "info": {
+    "singularName": "site-setting",
+    "pluralName": "site-settings",
+    "displayName": "Site Settings",
+    "description": "Global site settings (logo, contact, social links)"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "siteName": {
+      "type": "string",
+      "default": "reloadux"
+    },
+    "siteTagline": {
+      "type": "string",
+      "default": "UX design agency for AI-native experiences"
+    },
+    "logo": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": ["images"]
+    },
+    "logoFooter": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": ["images"]
+    },
+    "favicon": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": ["images"]
+    },
+    "email": {
+      "type": "email",
+      "default": "info@reloadux.com"
+    },
+    "phone": {
+      "type": "string",
+      "default": "(202) 978 3410"
+    },
+    "address": {
+      "type": "text",
+      "default": "Freedom Drive 13th Floor\nReston, VA 20190"
+    },
+    "socialLinks": {
+      "type": "component",
+      "repeatable": true,
+      "component": "shared.social-link"
+    },
+    "footerCopyright": {
+      "type": "string",
+      "default": "© 2026 Reloadux - all rights reserved"
+    },
+    "contactFormTitle": {
+      "type": "string",
+      "default": "Let's talk about your product."
+    },
+    "contactNextSteps": {
+      "type": "component",
+      "repeatable": true,
+      "component": "shared.outcome"
+    },
+    "defaultSeoTitle": {
+      "type": "string"
+    },
+    "defaultSeoDescription": {
+      "type": "text"
+    },
+    "defaultSeoImage": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": ["images"]
+    }
+  }
+}

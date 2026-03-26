@@ -1,0 +1,118 @@
+{
+  "kind": "collectionType",
+  "collectionName": "services",
+  "info": {
+    "singularName": "service",
+    "pluralName": "services",
+    "displayName": "Service",
+    "description": "Service pages (UI/UX Design, Web Design, etc.)"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "slug": {
+      "type": "uid",
+      "targetField": "title",
+      "required": true
+    },
+    "tagline": {
+      "type": "string"
+    },
+    "heroTitle": {
+      "type": "text"
+    },
+    "heroDescription": {
+      "type": "text"
+    },
+    "heroCtaText": {
+      "type": "string",
+      "default": "Book a call"
+    },
+    "heroCtaLink": {
+      "type": "string",
+      "default": "/contact-us"
+    },
+    "featuredImage": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": ["images"]
+    },
+    "icon": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": ["images"]
+    },
+    "category": {
+      "type": "enumeration",
+      "enum": ["Services", "Capabilities", "Research", "Design", "Deliver"],
+      "default": "Services"
+    },
+    "targetAudience": {
+      "type": "string"
+    },
+    "challenges": {
+      "type": "component",
+      "repeatable": true,
+      "component": "shared.challenge"
+    },
+    "process": {
+      "type": "component",
+      "repeatable": true,
+      "component": "shared.process-step"
+    },
+    "deliverables": {
+      "type": "component",
+      "repeatable": true,
+      "component": "shared.deliverable"
+    },
+    "outcomes": {
+      "type": "component",
+      "repeatable": true,
+      "component": "shared.outcome"
+    },
+    "faqs": {
+      "type": "component",
+      "repeatable": true,
+      "component": "shared.faq"
+    },
+    "showInNavServices": {
+      "type": "boolean",
+      "default": false
+    },
+    "showInNavCapabilities": {
+      "type": "boolean",
+      "default": false
+    },
+    "showInNavExpertise": {
+      "type": "boolean",
+      "default": false
+    },
+    "showOnHomepage": {
+      "type": "boolean",
+      "default": false
+    },
+    "homepageCategory": {
+      "type": "enumeration",
+      "enum": ["Main", "Research", "Design", "Deliver"],
+      "default": "Main"
+    },
+    "order": {
+      "type": "integer",
+      "default": 0
+    },
+    "seoTitle": {
+      "type": "string"
+    },
+    "seoDescription": {
+      "type": "text"
+    }
+  }
+}

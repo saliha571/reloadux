@@ -1,0 +1,23 @@
+{
+  "collectionName": "components_shared_process_steps",
+  "info": {
+    "displayName": "Process Step",
+    "icon": "arrowRight",
+    "description": "Process step (Discover, Define, Design, Deliver)"
+  },
+  "options": {},
+  "attributes": {
+    "number": {
+      "type": "string"
+    },
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "phases": {
+      "type": "component",
+      "repeatable": true,
+      "component": "shared.phase"
+    }
+  }
+}

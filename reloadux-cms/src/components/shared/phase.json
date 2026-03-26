@@ -1,0 +1,18 @@
+{
+  "collectionName": "components_shared_phases",
+  "info": {
+    "displayName": "Phase",
+    "icon": "list",
+    "description": "Phase within a process step"
+  },
+  "options": {},
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "items": {
+      "type": "text"
+    }
+  }
+}
