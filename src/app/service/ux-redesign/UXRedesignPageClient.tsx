@@ -14,7 +14,6 @@ import { WhyUsSection } from "@/components/sections/WhyUsSection";
 import { SprintCTASection } from "@/components/sections/SprintCTASection";
 import { ServiceFAQSection } from "@/components/sections/ServiceFAQSection";
 import { ContactFormSection } from "@/components/sections/ContactFormSection";
-import { NextStepsSection } from "@/components/sections/NextStepsSection";
 
 interface Props {
   data: UXRedesignPageData;
@@ -81,14 +80,9 @@ export function UXRedesignPageClient({ data }: Props) {
 
       <ScrollReveal>
         <ContactFormSection
-          tag="Connect with us"
-          heading="Let's talk about your product."
-        />
-      </ScrollReveal>
-
-      <ScrollReveal>
-        <NextStepsSection
-          steps={data.nextSteps}
+          tag="CONNECT WITH US"
+          heading="Let&#8217;s talk about your product."
+          nextSteps={data.nextSteps}
           contactInfo={data.contactInfo}
         />
       </ScrollReveal>

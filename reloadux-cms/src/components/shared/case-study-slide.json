@@ -1,0 +1,21 @@
+{
+  "collectionName": "components_shared_case_study_slides",
+  "info": {
+    "displayName": "Case Study Slide",
+    "icon": "picture",
+    "description": "Slide item (image or video) for case study carousel"
+  },
+  "options": {},
+  "attributes": {
+    "type": {
+      "type": "enumeration",
+      "enum": ["video", "image"],
+      "required": true,
+      "default": "image"
+    },
+    "src": {
+      "type": "string",
+      "required": true
+    }
+  }
+}

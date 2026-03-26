@@ -3,7 +3,6 @@ import { getContactPage } from "@/lib/content";
 import { ContactHeroSection } from "@/components/sections/ContactHeroSection";
 import { ContactFormSection } from "@/components/sections/ContactFormSection";
 import { FAQSection } from "@/components/sections/FAQSection";
-import { NextStepsSection } from "@/components/sections/NextStepsSection";
 
 export const metadata: Metadata = {
   title: "Contact Us",
@@ -17,8 +16,10 @@ export default async function ContactPage() {
   return (
     <>
       <ContactHeroSection {...data.hero} />
-      <ContactFormSection />
-      <NextStepsSection steps={data.nextSteps} contactInfo={data.contactInfo} />
+      <ContactFormSection
+        nextSteps={data.nextSteps}
+        contactInfo={data.contactInfo}
+      />
       <FAQSection faqs={data.faqs} />
     </>
   );

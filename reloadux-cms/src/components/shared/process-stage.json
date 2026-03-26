@@ -1,0 +1,32 @@
+{
+  "collectionName": "components_shared_process_stages",
+  "info": {
+    "displayName": "Process Stage",
+    "icon": "arrowRight",
+    "description": "How We Work process stage with deliverables"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "counter": {
+      "type": "string",
+      "required": true
+    },
+    "description": {
+      "type": "text",
+      "required": true
+    },
+    "deliverables": {
+      "type": "text"
+    },
+    "note": {
+      "type": "string"
+    },
+    "href": {
+      "type": "string"
+    }
+  }
+}

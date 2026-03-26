@@ -294,3 +294,122 @@ export async function getStrapiSiteSettings() {
     "/api/site-setting?populate=*"
   );
 }
+
+// ─── UX Redesign Page ───────────────────────────────────────────────────────
+
+export interface StrapiChallengeCard {
+  tag: string;
+  description: string;
+}
+
+export interface StrapiCaseStudySlide {
+  type: "video" | "image";
+  src: string;
+}
+
+export interface StrapiCaseStudyVideo {
+  tag: string;
+  description: string;
+  videoUrl?: string;
+  image?: string;
+  slides?: StrapiCaseStudySlide[];
+}
+
+export interface StrapiPrinciple {
+  number: string;
+  title: string;
+  description: string;
+  gif?: string;
+}
+
+export interface StrapiProcessStage {
+  title: string;
+  counter: string;
+  description: string;
+  deliverables?: string;
+  note?: string;
+  href?: string;
+}
+
+export interface StrapiIdealClientCard {
+  title: string;
+  description: string;
+}
+
+export interface StrapiValueProp {
+  title: string;
+  description: string;
+}
+
+export interface StrapiSprintStep {
+  number: string;
+  text: string;
+}
+
+export interface StrapiNextStep {
+  number: string;
+  text: string;
+}
+
+export interface StrapiTeamContact {
+  name: string;
+  role: string;
+  linkedin?: string;
+  image?: StrapiMedia;
+}
+
+export interface StrapiUXRedesignPage {
+  id: number;
+  heroTag?: string;
+  heroTitle: string;
+  heroSubtitle?: string;
+  heroCtaText?: string;
+  heroCtaHref?: string;
+  clientLogos?: string;
+  challengesTag?: string;
+  challengesHeading?: string;
+  challengesDescription?: string;
+  challengeCards?: StrapiChallengeCard[];
+  caseStudyItems?: StrapiCaseStudyVideo[];
+  caseStudyCtaText?: string;
+  caseStudyCtaHref?: string;
+  approachTag?: string;
+  approachHeading?: string;
+  approachHeadingItalic?: string;
+  approachDescription?: string;
+  principles?: StrapiPrinciple[];
+  howWeWorkTag?: string;
+  howWeWorkSubtitle?: string;
+  stages?: StrapiProcessStage[];
+  whoThisIsForTag?: string;
+  whoThisIsForHeading?: string;
+  idealClientCards?: StrapiIdealClientCard[];
+  midCtaTitle?: string;
+  midCtaSubtitle?: string;
+  midCtaText?: string;
+  midCtaHref?: string;
+  whyUsTag?: string;
+  whyUsHeading?: string;
+  valueProps?: StrapiValueProp[];
+  sprintHeading?: string;
+  sprintSubheading?: string;
+  sprintDescription?: string;
+  sprintSteps?: StrapiSprintStep[];
+  sprintCtaText?: string;
+  sprintCtaHref?: string;
+  faqsTag?: string;
+  faqsHeading?: string;
+  faqItems?: { question: string; answer: string }[];
+  nextSteps?: StrapiNextStep[];
+  contactPhone?: string;
+  contactEmail?: string;
+  contactTeam?: StrapiTeamContact[];
+  seoTitle?: string;
+  seoDescription?: string;
+}
+
+export async function getStrapiUXRedesignPage() {
+  return fetchStrapi<StrapiSingle<StrapiUXRedesignPage>>(
+    "/api/ux-redesign-page?populate[challengeCards]=*&populate[caseStudyItems][populate]=slides&populate[principles]=*&populate[stages]=*&populate[idealClientCards]=*&populate[valueProps]=*&populate[sprintSteps]=*&populate[faqItems]=*&populate[nextSteps]=*&populate[contactTeam][populate]=image"
+  );
+}

@@ -1,10 +1,11 @@
 .section {
   position: relative;
   padding: 120px 0;
-  background-image: url("/images/cta/home-page-banner.webp");
-  background-position: center;
+  background-color: var(--color-black);
+  background-image: url("/images/cta/sprint-cta-bg.png");
+  background-position: right center;
   background-repeat: no-repeat;
-  background-size: cover;
+  background-size: contain;
   overflow: hidden;
   width: 100%;
 }
@@ -14,24 +15,21 @@
   max-width: var(--content-width);
   margin: 0 auto;
   padding-inline: var(--page-padding);
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 80px;
-  align-items: center;
-}
-
-.left {
   display: flex;
   flex-direction: column;
+  max-width: 720px;
+  margin: 0;
+  margin-left: max(var(--page-padding), calc((100vw - var(--content-width)) / 2 + var(--page-padding)));
 }
 
 .heading {
   font-family: var(--font-primary);
   font-size: clamp(28px, 3.5vw, 48px);
   font-weight: 500;
-  line-height: 1.35;
+  line-height: 1.25;
   color: var(--color-white);
   margin: 0;
+  max-width: 30ch;
 }
 
 .description {
@@ -42,58 +40,49 @@
   line-height: 1.7;
 }
 
-.cta {
-  margin-top: 40px;
-}
-
-.right {
+.steps {
   display: flex;
   flex-direction: column;
-  gap: 24px;
-}
-
-.step {
-  display: flex;
-  gap: 20px;
-  align-items: flex-start;
-}
-
-.stepNumber {
-  width: 40px;
-  height: 40px;
-  min-width: 40px;
-  border: 1px solid rgba(255, 255, 255, 0.3);
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-family: var(--font-primary);
-  font-size: 16px;
-  font-weight: 600;
-  color: var(--color-white);
-  flex-shrink: 0;
+  gap: 8px;
+  margin-top: 24px;
+  padding-left: 8px;
 }
 
 .stepText {
   font-family: var(--font-primary);
+  font-size: 14px;
+  color: var(--color-grey-300);
+  line-height: 1.7;
+  margin: 0;
+}
+
+.closing {
+  font-family: var(--font-primary);
   font-size: 16px;
+  font-style: italic;
   color: var(--color-grey-200);
-  line-height: 1.6;
+  margin-top: 24px;
+  line-height: 1.7;
+}
+
+.cta {
+  margin-top: 32px;
 }
 
 @media (max-width: 1024px) {
   .section {
     padding: 80px 0;
   }
-
-  .inner {
-    grid-template-columns: 1fr;
-    gap: 40px;
-  }
 }
 
 @media (max-width: 767px) {
   .section {
     padding: 60px 0;
+  }
+
+  .inner {
+    margin-left: auto;
+    margin-right: auto;
+    padding-inline: var(--page-padding);
   }
 }

@@ -1,0 +1,19 @@
+{
+  "collectionName": "components_shared_ideal_client_cards",
+  "info": {
+    "displayName": "Ideal Client Card",
+    "icon": "user",
+    "description": "Who This Is For card with title and description"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "description": {
+      "type": "text",
+      "required": true
+    }
+  }
+}

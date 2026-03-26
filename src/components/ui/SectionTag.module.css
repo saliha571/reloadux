@@ -1,12 +1,12 @@
 .tag {
-  font-family: "Libre Baskerville", serif;
+  font-family: var(--font-serif);
   font-size: 18px;
   font-weight: 400;
-  color: #333333;
+  color: var(--color-white);
   white-space: nowrap;
   line-height: 1;
 }
 
 .dark {
-  color: #D1D1D1;
+  color: var(--color-grey-700);
 }

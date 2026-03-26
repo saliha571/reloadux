@@ -226,7 +226,7 @@
 }
 
 .section--surface {
-  background-color: var(--bg-surface);
+  background-color: #d9d9d9;
   color: var(--text-inverse);
 }
 

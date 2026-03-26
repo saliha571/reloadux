@@ -182,7 +182,7 @@ export function ServiceHero({
       style={sectionStyle}
     >
       <div className={styles.content}>
-        <SectionTag text={tag} variant="dark" />
+        <SectionTag text={tag} />
         <h1 className={styles.title}>{title}</h1>
         <p className={styles.subtitle}>{subtitle}</p>
         <FlairButton href={ctaHref} size="lg">

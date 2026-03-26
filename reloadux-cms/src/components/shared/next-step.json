@@ -1,0 +1,19 @@
+{
+  "collectionName": "components_shared_next_steps",
+  "info": {
+    "displayName": "Next Step",
+    "icon": "arrowRight",
+    "description": "Next steps item with number and text"
+  },
+  "options": {},
+  "attributes": {
+    "number": {
+      "type": "string",
+      "required": true
+    },
+    "text": {
+      "type": "text",
+      "required": true
+    }
+  }
+}

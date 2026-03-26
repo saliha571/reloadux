@@ -1,0 +1,26 @@
+{
+  "collectionName": "components_shared_principles",
+  "info": {
+    "displayName": "Principle",
+    "icon": "lightbulb",
+    "description": "Approach principle with number, title, description, and optional gif"
+  },
+  "options": {},
+  "attributes": {
+    "number": {
+      "type": "string",
+      "required": true
+    },
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "description": {
+      "type": "text",
+      "required": true
+    },
+    "gif": {
+      "type": "string"
+    }
+  }
+}

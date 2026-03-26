@@ -1,0 +1,19 @@
+{
+  "collectionName": "components_shared_sprint_steps",
+  "info": {
+    "displayName": "Sprint Step",
+    "icon": "list",
+    "description": "Sprint CTA step with number and text"
+  },
+  "options": {},
+  "attributes": {
+    "number": {
+      "type": "string",
+      "required": true
+    },
+    "text": {
+      "type": "text",
+      "required": true
+    }
+  }
+}

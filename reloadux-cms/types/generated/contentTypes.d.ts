@@ -107,43 +107,6 @@ export interface AdminApiTokenPermission extends Struct.CollectionTypeSchema {
   };
 }
 
-export interface AdminAuditLog extends Struct.CollectionTypeSchema {
-  collectionName: 'strapi_audit_logs';
-  info: {
-    displayName: 'Audit Log';
-    pluralName: 'audit-logs';
-    singularName: 'audit-log';
-  };
-  options: {
-    draftAndPublish: false;
-    timestamps: false;
-  };
-  pluginOptions: {
-    'content-manager': {
-      visible: false;
-    };
-    'content-type-builder': {
-      visible: false;
-    };
-  };
-  attributes: {
-    action: Schema.Attribute.String & Schema.Attribute.Required;
-    createdAt: Schema.Attribute.DateTime;
-    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
-    date: Schema.Attribute.DateTime & Schema.Attribute.Required;
-    locale: Schema.Attribute.String & Schema.Attribute.Private;
-    localizations: Schema.Attribute.Relation<'oneToMany', 'admin::audit-log'> &
-      Schema.Attribute.Private;
-    payload: Schema.Attribute.JSON;
-    publishedAt: Schema.Attribute.DateTime;
-    updatedAt: Schema.Attribute.DateTime;
-    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
-    user: Schema.Attribute.Relation<'oneToOne', 'admin::user'>;
-  };
-}
-
 export interface AdminPermission extends Struct.CollectionTypeSchema {
   collectionName: 'admin_permissions';
   info: {
@@ -906,6 +869,112 @@ export interface ApiTestimonialTestimonial extends Struct.CollectionTypeSchema {
   };
 }
 
+export interface ApiUxRedesignPageUxRedesignPage
+  extends Struct.SingleTypeSchema {
+  collectionName: 'ux_redesign_pages';
+  info: {
+    description: 'AI-Ready UX Redesign service page content';
+    displayName: 'UX Redesign Page';
+    pluralName: 'ux-redesign-pages';
+    singularName: 'ux-redesign-page';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    approachDescription: Schema.Attribute.Text;
+    approachHeading: Schema.Attribute.String &
+      Schema.Attribute.DefaultTo<'How we think about'>;
+    approachHeadingItalic: Schema.Attribute.String &
+      Schema.Attribute.DefaultTo<'AI-ready UX redesign'>;
+    approachTag: Schema.Attribute.String &
+      Schema.Attribute.DefaultTo<'AI-READY UX REDESIGN'>;
+    caseStudyCtaHref: Schema.Attribute.String &
+      Schema.Attribute.DefaultTo<'/case-studies/'>;
+    caseStudyCtaText: Schema.Attribute.String &
+      Schema.Attribute.DefaultTo<'Explore More Cases'>;
+    caseStudyItems: Schema.Attribute.Component<'shared.case-study-video', true>;
+    challengeCards: Schema.Attribute.Component<'shared.challenge-card', true>;
+    challengesDescription: Schema.Attribute.Text;
+    challengesHeading: Schema.Attribute.String &
+      Schema.Attribute.DefaultTo<'You want AI in your product. Your users already expect it.'>;
+    challengesTag: Schema.Attribute.String &
+      Schema.Attribute.DefaultTo<'CHALLENGES'>;
+    clientLogos: Schema.Attribute.Text & Schema.Attribute.DefaultTo<''>;
+    contactEmail: Schema.Attribute.Email &
+      Schema.Attribute.DefaultTo<'info@reloadux.com'>;
+    contactPhone: Schema.Attribute.String &
+      Schema.Attribute.DefaultTo<'(202) 978 3410'>;
+    contactTeam: Schema.Attribute.Component<'shared.team-contact', true>;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    faqItems: Schema.Attribute.Component<'shared.faq', true>;
+    faqsHeading: Schema.Attribute.String &
+      Schema.Attribute.DefaultTo<'Reimagine your product experience with our AI-native redesign services.'>;
+    faqsTag: Schema.Attribute.String & Schema.Attribute.DefaultTo<'FAQS'>;
+    heroCtaHref: Schema.Attribute.String &
+      Schema.Attribute.DefaultTo<'/contact-us/'>;
+    heroCtaText: Schema.Attribute.String &
+      Schema.Attribute.DefaultTo<'Get Started'>;
+    heroSubtitle: Schema.Attribute.Text &
+      Schema.Attribute.DefaultTo<"If you're planning to integrate AI into your existing product experience, you're in the right place.">;
+    heroTag: Schema.Attribute.String &
+      Schema.Attribute.DefaultTo<'UX REDESIGN'>;
+    heroTitle: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.DefaultTo<'AI-Ready UX Redesign for B2B & SaaS Products'>;
+    howWeWorkSubtitle: Schema.Attribute.Text &
+      Schema.Attribute.DefaultTo<'A 5-stage process from product insight to an AI-native experience users love.'>;
+    howWeWorkTag: Schema.Attribute.String &
+      Schema.Attribute.DefaultTo<'HOW WE WORK'>;
+    idealClientCards: Schema.Attribute.Component<
+      'shared.ideal-client-card',
+      true
+    >;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::ux-redesign-page.ux-redesign-page'
+    > &
+      Schema.Attribute.Private;
+    midCtaHref: Schema.Attribute.String &
+      Schema.Attribute.DefaultTo<'/contact-us/'>;
+    midCtaSubtitle: Schema.Attribute.Text;
+    midCtaText: Schema.Attribute.String &
+      Schema.Attribute.DefaultTo<'Book a Call'>;
+    midCtaTitle: Schema.Attribute.String &
+      Schema.Attribute.DefaultTo<'Ready to build an AI-native user experience?'>;
+    nextSteps: Schema.Attribute.Component<'shared.next-step', true>;
+    principles: Schema.Attribute.Component<'shared.principle', true>;
+    publishedAt: Schema.Attribute.DateTime;
+    seoDescription: Schema.Attribute.Text;
+    seoTitle: Schema.Attribute.String;
+    sprintCtaHref: Schema.Attribute.String &
+      Schema.Attribute.DefaultTo<'/contact-us/'>;
+    sprintCtaText: Schema.Attribute.String &
+      Schema.Attribute.DefaultTo<'Start a 3 Day Trial'>;
+    sprintDescription: Schema.Attribute.Text;
+    sprintHeading: Schema.Attribute.String &
+      Schema.Attribute.DefaultTo<'Still figuring out where AI fits?'>;
+    sprintSteps: Schema.Attribute.Component<'shared.sprint-step', true>;
+    sprintSubheading: Schema.Attribute.String &
+      Schema.Attribute.DefaultTo<"We'll show you in 3 days.">;
+    stages: Schema.Attribute.Component<'shared.process-stage', true>;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    valueProps: Schema.Attribute.Component<'shared.value-prop', true>;
+    whoThisIsForHeading: Schema.Attribute.String &
+      Schema.Attribute.DefaultTo<'We work with companies who have'>;
+    whoThisIsForTag: Schema.Attribute.String &
+      Schema.Attribute.DefaultTo<'WHO THIS IS FOR'>;
+    whyUsHeading: Schema.Attribute.String &
+      Schema.Attribute.DefaultTo<'Why teams choose reloadux'>;
+    whyUsTag: Schema.Attribute.String & Schema.Attribute.DefaultTo<'WHY US'>;
+  };
+}
+
 export interface PluginContentReleasesRelease
   extends Struct.CollectionTypeSchema {
   collectionName: 'strapi_releases';
@@ -1411,7 +1480,6 @@ declare module '@strapi/strapi' {
     export interface ContentTypeSchemas {
       'admin::api-token': AdminApiToken;
       'admin::api-token-permission': AdminApiTokenPermission;
-      'admin::audit-log': AdminAuditLog;
       'admin::permission': AdminPermission;
       'admin::role': AdminRole;
       'admin::session': AdminSession;
@@ -1427,6 +1495,7 @@ declare module '@strapi/strapi' {
       'api::site-setting.site-setting': ApiSiteSettingSiteSetting;
       'api::team-member.team-member': ApiTeamMemberTeamMember;
       'api::testimonial.testimonial': ApiTestimonialTestimonial;
+      'api::ux-redesign-page.ux-redesign-page': ApiUxRedesignPageUxRedesignPage;
       'plugin::content-releases.release': PluginContentReleasesRelease;
       'plugin::content-releases.release-action': PluginContentReleasesReleaseAction;
       'plugin::i18n.locale': PluginI18NLocale;

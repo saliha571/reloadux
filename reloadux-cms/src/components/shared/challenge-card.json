@@ -1,0 +1,19 @@
+{
+  "collectionName": "components_shared_challenge_cards",
+  "info": {
+    "displayName": "Challenge Card",
+    "icon": "exclamation",
+    "description": "Challenge card with tag and description"
+  },
+  "options": {},
+  "attributes": {
+    "tag": {
+      "type": "string",
+      "required": true
+    },
+    "description": {
+      "type": "text",
+      "required": true
+    }
+  }
+}

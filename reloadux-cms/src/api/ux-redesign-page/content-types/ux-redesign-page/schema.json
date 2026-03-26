@@ -1,0 +1,205 @@
+{
+  "kind": "singleType",
+  "collectionName": "ux_redesign_pages",
+  "info": {
+    "singularName": "ux-redesign-page",
+    "pluralName": "ux-redesign-pages",
+    "displayName": "UX Redesign Page",
+    "description": "AI-Ready UX Redesign service page content"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "heroTag": {
+      "type": "string",
+      "default": "UX REDESIGN"
+    },
+    "heroTitle": {
+      "type": "string",
+      "required": true,
+      "default": "AI-Ready UX Redesign for B2B & SaaS Products"
+    },
+    "heroSubtitle": {
+      "type": "text",
+      "default": "If you're planning to integrate AI into your existing product experience, you're in the right place."
+    },
+    "heroCtaText": {
+      "type": "string",
+      "default": "Get Started"
+    },
+    "heroCtaHref": {
+      "type": "string",
+      "default": "/contact-us/"
+    },
+    "clientLogos": {
+      "type": "text",
+      "default": ""
+    },
+    "challengesTag": {
+      "type": "string",
+      "default": "CHALLENGES"
+    },
+    "challengesHeading": {
+      "type": "string",
+      "default": "You want AI in your product. Your users already expect it."
+    },
+    "challengesDescription": {
+      "type": "text"
+    },
+    "challengeCards": {
+      "type": "component",
+      "repeatable": true,
+      "component": "shared.challenge-card"
+    },
+    "caseStudyItems": {
+      "type": "component",
+      "repeatable": true,
+      "component": "shared.case-study-video"
+    },
+    "caseStudyCtaText": {
+      "type": "string",
+      "default": "Explore More Cases"
+    },
+    "caseStudyCtaHref": {
+      "type": "string",
+      "default": "/case-studies/"
+    },
+    "approachTag": {
+      "type": "string",
+      "default": "AI-READY UX REDESIGN"
+    },
+    "approachHeading": {
+      "type": "string",
+      "default": "How we think about"
+    },
+    "approachHeadingItalic": {
+      "type": "string",
+      "default": "AI-ready UX redesign"
+    },
+    "approachDescription": {
+      "type": "text"
+    },
+    "principles": {
+      "type": "component",
+      "repeatable": true,
+      "component": "shared.principle"
+    },
+    "howWeWorkTag": {
+      "type": "string",
+      "default": "HOW WE WORK"
+    },
+    "howWeWorkSubtitle": {
+      "type": "text",
+      "default": "A 5-stage process from product insight to an AI-native experience users love."
+    },
+    "stages": {
+      "type": "component",
+      "repeatable": true,
+      "component": "shared.process-stage"
+    },
+    "whoThisIsForTag": {
+      "type": "string",
+      "default": "WHO THIS IS FOR"
+    },
+    "whoThisIsForHeading": {
+      "type": "string",
+      "default": "We work with companies who have"
+    },
+    "idealClientCards": {
+      "type": "component",
+      "repeatable": true,
+      "component": "shared.ideal-client-card"
+    },
+    "midCtaTitle": {
+      "type": "string",
+      "default": "Ready to build an AI-native user experience?"
+    },
+    "midCtaSubtitle": {
+      "type": "text"
+    },
+    "midCtaText": {
+      "type": "string",
+      "default": "Book a Call"
+    },
+    "midCtaHref": {
+      "type": "string",
+      "default": "/contact-us/"
+    },
+    "whyUsTag": {
+      "type": "string",
+      "default": "WHY US"
+    },
+    "whyUsHeading": {
+      "type": "string",
+      "default": "Why teams choose reloadux"
+    },
+    "valueProps": {
+      "type": "component",
+      "repeatable": true,
+      "component": "shared.value-prop"
+    },
+    "sprintHeading": {
+      "type": "string",
+      "default": "Still figuring out where AI fits?"
+    },
+    "sprintSubheading": {
+      "type": "string",
+      "default": "We'll show you in 3 days."
+    },
+    "sprintDescription": {
+      "type": "text"
+    },
+    "sprintSteps": {
+      "type": "component",
+      "repeatable": true,
+      "component": "shared.sprint-step"
+    },
+    "sprintCtaText": {
+      "type": "string",
+      "default": "Start a 3 Day Trial"
+    },
+    "sprintCtaHref": {
+      "type": "string",
+      "default": "/contact-us/"
+    },
+    "faqsTag": {
+      "type": "string",
+      "default": "FAQS"
+    },
+    "faqsHeading": {
+      "type": "string",
+      "default": "Reimagine your product experience with our AI-native redesign services."
+    },
+    "faqItems": {
+      "type": "component",
+      "repeatable": true,
+      "component": "shared.faq"
+    },
+    "nextSteps": {
+      "type": "component",
+      "repeatable": true,
+      "component": "shared.next-step"
+    },
+    "contactPhone": {
+      "type": "string",
+      "default": "(202) 978 3410"
+    },
+    "contactEmail": {
+      "type": "email",
+      "default": "info@reloadux.com"
+    },
+    "contactTeam": {
+      "type": "component",
+      "repeatable": true,
+      "component": "shared.team-contact"
+    },
+    "seoTitle": {
+      "type": "string"
+    },
+    "seoDescription": {
+      "type": "text"
+    }
+  }
+}

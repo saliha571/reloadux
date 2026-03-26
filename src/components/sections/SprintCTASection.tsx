@@ -26,26 +26,27 @@ export function SprintCTASection({
   return (
     <section className={styles.section}>
       <div className={styles.inner}>
-        <div className={styles.left}>
-          <h2 className={styles.heading}>
-            {heading}
-            <br />
-            {subheading}
-          </h2>
-          <p className={styles.description}>{description}</p>
-          <div className={styles.cta}>
-            <FlairButton href={ctaHref} size="lg">
-              {ctaText}
-            </FlairButton>
-          </div>
-        </div>
-        <div className={styles.right}>
+        <h2 className={styles.heading}>
+          {heading}
+          <br />
+          {subheading}
+        </h2>
+        <p className={styles.description}>{description}</p>
+        <div className={styles.steps}>
           {steps.map((step, i) => (
-            <div key={i} className={styles.step}>
-              <span className={styles.stepNumber}>{step.number}</span>
-              <span className={styles.stepText}>{step.text}</span>
-            </div>
+            <p key={i} className={styles.stepText}>
+              {step.number}. {step.text}
+            </p>
           ))}
+        </div>
+        <p className={styles.closing}>
+          You leave with clear priorities, a realistic path forward, and no more
+          guessing.
+        </p>
+        <div className={styles.cta}>
+          <FlairButton href={ctaHref} size="lg">
+            {ctaText}
+          </FlairButton>
         </div>
       </div>
     </section>

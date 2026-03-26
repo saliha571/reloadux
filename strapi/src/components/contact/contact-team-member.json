@@ -1,0 +1,27 @@
+{
+  "collectionName": "components_contact_team_members",
+  "info": {
+    "displayName": "Contact Team Member",
+    "icon": "user",
+    "description": "Team member card with avatar image for contact form sidebar."
+  },
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "role": {
+      "type": "string",
+      "required": true
+    },
+    "linkedin": {
+      "type": "string"
+    },
+    "image": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": ["images"]
+    }
+  }
+}

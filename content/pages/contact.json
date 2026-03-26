@@ -20,8 +20,8 @@
     "phone": "(202) 978 3410",
     "email": "info@reloadux.com",
     "team": [
-      { "name": "Sahar", "role": "Key Account Manager", "linkedin": "https://www.linkedin.com/in/sahar-asif-284a9955/" },
-      { "name": "Lara Kazan", "role": "Business Development Executive", "linkedin": "https://www.linkedin.com/in/lara-kazan-82a24113b/" }
+      { "name": "Sahar", "role": "Key Account Manager", "linkedin": "https://www.linkedin.com/in/sahar-asif-284a9955/", "image": "/images/team/sahar.webp" },
+      { "name": "Lara Kazan", "role": "Business Development Executive", "linkedin": "https://www.linkedin.com/in/lara-kazan-82a24113b/", "image": "/images/team/lara.webp" }
     ]
   },
   "testimonials": []

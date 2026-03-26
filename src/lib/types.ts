@@ -196,7 +196,7 @@ export interface ContactPageData {
   contactInfo: {
     phone: string;
     email: string;
-    team: { name: string; role: string; linkedin: string }[];
+    team: { name: string; role: string; linkedin: string; image?: string }[];
   };
 }
 

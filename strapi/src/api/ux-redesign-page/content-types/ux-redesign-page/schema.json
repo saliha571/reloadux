@@ -1,0 +1,101 @@
+{
+  "kind": "singleType",
+  "collectionName": "ux_redesign_pages",
+  "info": {
+    "singularName": "ux-redesign-page",
+    "pluralName": "ux-redesign-pages",
+    "displayName": "UX Redesign Page"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "heroTag": { "type": "string" },
+    "heroTitle": { "type": "string", "required": true },
+    "heroSubtitle": { "type": "text" },
+    "heroCtaText": { "type": "string" },
+    "heroCtaHref": { "type": "string" },
+    "clientLogos": { "type": "text" },
+    "challengesTag": { "type": "string" },
+    "challengesHeading": { "type": "string" },
+    "challengesDescription": { "type": "text" },
+    "challengeCards": {
+      "type": "component",
+      "repeatable": true,
+      "component": "shared.challenge-card"
+    },
+    "caseStudyItems": {
+      "type": "component",
+      "repeatable": true,
+      "component": "shared.case-study-video"
+    },
+    "caseStudyCtaText": { "type": "string" },
+    "caseStudyCtaHref": { "type": "string" },
+    "approachTag": { "type": "string" },
+    "approachHeading": { "type": "string" },
+    "approachHeadingItalic": { "type": "string" },
+    "approachDescription": { "type": "text" },
+    "principles": {
+      "type": "component",
+      "repeatable": true,
+      "component": "shared.principle"
+    },
+    "howWeWorkTag": { "type": "string" },
+    "howWeWorkSubtitle": { "type": "text" },
+    "stages": {
+      "type": "component",
+      "repeatable": true,
+      "component": "shared.process-stage"
+    },
+    "whoThisIsForTag": { "type": "string" },
+    "whoThisIsForHeading": { "type": "string" },
+    "idealClientCards": {
+      "type": "component",
+      "repeatable": true,
+      "component": "shared.ideal-client-card"
+    },
+    "midCtaTitle": { "type": "string" },
+    "midCtaSubtitle": { "type": "text" },
+    "midCtaText": { "type": "string" },
+    "midCtaHref": { "type": "string" },
+    "whyUsTag": { "type": "string" },
+    "whyUsHeading": { "type": "string" },
+    "valueProps": {
+      "type": "component",
+      "repeatable": true,
+      "component": "shared.value-prop"
+    },
+    "sprintHeading": { "type": "string" },
+    "sprintSubheading": { "type": "string" },
+    "sprintDescription": { "type": "text" },
+    "sprintSteps": {
+      "type": "component",
+      "repeatable": true,
+      "component": "shared.sprint-step"
+    },
+    "sprintCtaText": { "type": "string" },
+    "sprintCtaHref": { "type": "string" },
+    "faqsTag": { "type": "string" },
+    "faqsHeading": { "type": "string" },
+    "faqItems": {
+      "type": "component",
+      "repeatable": true,
+      "component": "shared.faq-item"
+    },
+    "nextSteps": {
+      "type": "component",
+      "repeatable": true,
+      "component": "shared.next-step"
+    },
+    "contactPhone": { "type": "string" },
+    "contactEmail": { "type": "string" },
+    "contactTeam": {
+      "type": "component",
+      "repeatable": true,
+      "component": "contact.contact-team-member"
+    },
+    "seoTitle": { "type": "string" },
+    "seoDescription": { "type": "text" }
+  }
+}
