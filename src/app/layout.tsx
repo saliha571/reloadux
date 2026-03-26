@@ -35,6 +35,9 @@ export const metadata: Metadata = {
   metadataBase: new URL(
     process.env.NEXT_PUBLIC_SITE_URL || "https://reloadux.com"
   ),
+  icons: {
+    icon: "/icon.svg",
+  },
   openGraph: {
     type: "website",
     locale: "en_US",

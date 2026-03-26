@@ -36,16 +36,14 @@
   color: var(--color-black);
 }
 
-/* ── Heading (e3a5072): 48px, 500, black, right-aligned ── */
-
 .heading {
   font-family: var(--font-primary);
   font-size: 48px;
   font-weight: 500;
   line-height: normal;
   color: var(--color-black);
-  padding: 12px 0 80px 0;
-  text-align: right;
+  padding: 12px 0 48px 0;
+  text-align: left;
 }
 
 /* ── List: two-column rows with dividers ── */
@@ -56,42 +54,33 @@
 }
 
 .item {
-  display: grid;
-  grid-template-columns: 35% 1fr;
+  display: flex;
+  justify-content: space-between;
   gap: 40px;
-  align-items: flex-start;
-  padding: 32px 0;
-  border-top: 1px solid rgba(0, 0, 0, 0.08);
-}
-
-.item:first-child {
-  border-top: none;
-  padding-top: 0;
+  align-items: start;
+  padding: 40px 0;
+  border-top: 1px solid rgba(0, 0, 0, 0.15);
 }
 
 /* ── Title (saas-use-case h3) ── */
 
 .itemTitle {
   font-family: var(--font-serif);
-  font-size: 32px;
+  font-size: 28px;
   font-weight: 400;
-  flex-grow: 1;
-  max-width: 445px;
+  line-height: 1.35;
   color: var(--color-black);
-  text-align: right;
+  text-align: left;
 }
-
-/* ── Description (saas-use-case p) ── */
 
 .itemDescription {
   font-family: var(--font-primary);
   font-size: 18px;
   font-weight: 400;
-  width: 380px;
-  max-width: 100%;
+  width: 386.667px;
   line-height: 1.6;
   color: var(--color-black);
-  text-align: right;
+  text-align: left;
 }
 
 /* ── Tablet ── */
@@ -108,7 +97,7 @@
 
   .item {
     grid-template-columns: 1fr;
-    gap: 16px;
+    gap: 12px;
     padding: 24px 0;
   }
 }

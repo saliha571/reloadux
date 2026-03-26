@@ -63,7 +63,7 @@ export function UXRedesignPageClient({ data }: Props) {
       </ScrollReveal>
 
       <ScrollReveal>
-        <TestimonialsSection testimonials={data.testimonials} tagText="WHAT OUR CLIENTS SAY" />
+        <TestimonialsSection testimonials={data.testimonials} tagText="WHAT OUR CLIENTS SAY" tagVariant="dark" />
       </ScrollReveal>
 
       <ScrollReveal>

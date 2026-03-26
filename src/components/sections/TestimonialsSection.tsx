@@ -19,6 +19,7 @@ interface Testimonial {
 interface TestimonialsSectionProps {
   testimonials: Testimonial[];
   tagText?: string;
+  tagVariant?: "light" | "dark";
 }
 
 const SCROLL_COOLDOWN = 800;
@@ -47,7 +48,7 @@ function isScrollLocked() {
   return document.body.style.position === "fixed";
 }
 
-export function TestimonialsSection({ testimonials, tagText = "WORDS OF OUR CLIENTS" }: TestimonialsSectionProps) {
+export function TestimonialsSection({ testimonials, tagText = "WORDS OF OUR CLIENTS", tagVariant = "light" }: TestimonialsSectionProps) {
   const [active, setActive] = useState(0);
   const [cursorVisible, setCursorVisible] = useState(false);
   const [cursorPos, setCursorPos] = useState({ x: 0, y: 0 });
@@ -166,7 +167,7 @@ export function TestimonialsSection({ testimonials, tagText = "WORDS OF OUR CLIE
     <section className={styles.section} ref={sectionRef}>
       <div className={styles.inner}>
         <div className={styles.left}>
-          <SectionTag text={tagText} />
+          <SectionTag text={tagText} variant={tagVariant} />
         </div>
 
         <div className={styles.right}>
