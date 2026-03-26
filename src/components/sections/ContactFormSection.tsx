@@ -80,25 +80,21 @@ export function ContactFormSection({
             <form onSubmit={handleSubmit} noValidate className={`${styles.form} ${attempted ? styles.attempted : ""}`}>
               <div className={styles.row}>
                 <div className={styles.field}>
-                  <label className={styles.label}>
-                    Your Name<span className={styles.required}>*</span>
-                  </label>
                   <input
                     type="text"
                     name="name"
                     required
+                    placeholder="Your Name*"
                     className={styles.input}
                   />
                   <span className={styles.error}>Please fill out this field.</span>
                 </div>
                 <div className={styles.field}>
-                  <label className={styles.label}>
-                    Work Email<span className={styles.required}>*</span>
-                  </label>
                   <input
                     type="email"
                     name="email"
                     required
+                    placeholder="Work Email*"
                     className={styles.input}
                   />
                   <span className={styles.error}>Please fill out this field.</span>
@@ -107,31 +103,29 @@ export function ContactFormSection({
 
               <div className={styles.row}>
                 <div className={styles.field}>
-                  <label className={styles.label}>Company Name</label>
                   <input
                     type="text"
                     name="company"
+                    placeholder="Company Name"
                     className={styles.input}
                   />
                 </div>
                 <div className={styles.field}>
-                  <label className={styles.label}>Contact No.</label>
                   <input
                     type="tel"
                     name="phone"
+                    placeholder="Contact No."
                     className={styles.input}
                   />
                 </div>
               </div>
 
               <div className={styles.field}>
-                <label className={styles.label}>
-                  About Project<span className={styles.required}>*</span>
-                </label>
                 <textarea
                   name="message"
                   rows={4}
                   required
+                  placeholder="About Project*"
                   className={styles.textarea}
                 />
                 <span className={styles.error}>Please fill out this field.</span>
