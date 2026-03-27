@@ -1,0 +1,189 @@
+{
+  "hero": {
+    "tag": "MVP DEVELOPMENT",
+    "title": "Craft a winning product.",
+    "titleAccent": "Your Idea, Our Expertise",
+    "ctaText": "Build my product",
+    "ctaHref": "#contact-form"
+  },
+  "clientLogos": [
+    { "src": "/images/logos/vocable-1.svg", "alt": "Vocable", "width": 163 },
+    { "src": "/images/logos/nitro-2.svg", "alt": "Nitro", "width": 142 },
+    { "src": "/images/logos/digno-2.svg", "alt": "Digno", "width": 120 },
+    { "src": "/images/logos/nokia-2.svg", "alt": "Nokia", "width": 156 },
+    { "src": "/images/logos/sterne-kessler.svg", "alt": "Sterne Kessler", "width": 221 },
+    { "src": "/images/logos/artvisor-1.svg", "alt": "Artvisor", "width": 222 },
+    { "src": "/images/logos/today-1.svg", "alt": "Today", "width": 151 },
+    { "src": "/images/logos/excheqr-1.svg", "alt": "Excheqr", "width": 192 },
+    { "src": "/images/logos/barclays-2.svg", "alt": "Barclays", "width": 178 }
+  ],
+  "challenges": {
+    "tag": "CHALLENGES",
+    "heading": "We know what frustrates you",
+    "cards": [
+      { "actorImage": "/images/challenges/card-1.webp", "actorName": "Shannon Madon", "content": "I have an idea but i want to make a good UX product" },
+      { "actorImage": "/images/challenges/logo.webp", "actorName": "John", "content": "I need help in following best practices & standards." },
+      { "actorImage": "/images/challenges/logo-1.webp", "actorName": "Interaktell", "content": "I have a great idea but don't know where to start." },
+      { "actorImage": "/images/challenges/logo-2.webp", "actorName": "Mark", "content": "My concept feels unfinished and needs refinement." },
+      { "actorImage": "/images/challenges/logo-4.webp", "actorName": "Samantha", "content": "I'm struggling to translate my vision into a prototype." },
+      { "actorImage": "/images/challenges/logo-1.webp", "actorName": "Shannon Madon", "content": "I need help in following best practices & standards." },
+      { "actorImage": "/images/challenges/logo-4.webp", "actorName": "Angelina Wayne", "content": "I have an idea but i want to make a good UX product" },
+      { "actorImage": "/images/challenges/logo.webp", "actorName": "Mark Bruce", "content": "I need help in following best practices & standards." }
+    ]
+  },
+  "caseStudies": {
+    "tag": "WE HEAR YOU",
+    "heading": "Transform your ideas & vision into reality",
+    "description": "with our start from scratch solutions, offering thorough planning, technical expertise, and support to transform your ideas into successful products.",
+    "items": [
+      {
+        "name": "vocable",
+        "description": "Boosted content efficiency by 300-500%, accelerating content marketing up to 4x through streamlined workflows and AI automation.",
+        "desktopImage": "/images/mvp-case-studies/vocable-desktop.webp",
+        "mobileImage": "/images/mvp-case-studies/vocable-mobile.webp",
+        "href": "/case-study/vocable/"
+      },
+      {
+        "name": "Digno",
+        "description": "Enhanced profitability with an integrated scoring system, leading to a 15% increase in sales & a 20% reduction in operational costs.",
+        "desktopImage": "/images/mvp-case-studies/digno-desktop.webp",
+        "mobileImage": "/images/mvp-case-studies/digno-mobile.webp",
+        "href": "/case-study/digno/"
+      },
+      {
+        "name": "NITRO",
+        "description": "A futuristic play to earn racing experience that secured $5M funding in 3 months",
+        "desktopImage": "/images/mvp-case-studies/nitro-desktop.webp",
+        "mobileImage": "/images/mvp-case-studies/nitro-mobile.webp",
+        "href": "/case-study/nitro/"
+      },
+      {
+        "name": "Artvisor",
+        "description": "Streamlined art collection, enhancing efficiency for exhibitors.",
+        "desktopImage": "/images/mvp-case-studies/artvisor-desktop.webp",
+        "mobileImage": "/images/mvp-case-studies/artvisor-mobile.webp",
+        "href": "#",
+        "comingSoon": true
+      }
+    ]
+  },
+  "midCta": {
+    "title": "Launch a winning product from the ground up.",
+    "ctaText": "Build my product",
+    "ctaHref": "#contact-form"
+  },
+  "process": {
+    "tag": "HOW WE DO IT",
+    "heading": "From concept to execution, we turn your ideas into reality with strategic planning and technical expertise, ensuring your product's success from the ground up",
+    "steps": [
+      { "counter": "01", "title": "Define Objectives", "content": "We collaboratively define project goals and establish benchmarks." },
+      { "counter": "02", "title": "Ideate & Prototype", "content": "We generate innovative ideas, create prototypes, and validate concepts." },
+      { "counter": "03", "title": "Design & Develop", "content": "Our team designs user-centric solutions and collaborates closely with developers." },
+      { "counter": "04", "title": "Usability Testing", "content": "We conduct usability tests and iteratively refine the design." },
+      { "counter": "05", "title": "Launch & Measure", "content": "We ensure a smooth project launch and evaluate results." }
+    ],
+    "deliverables": [
+      "Vision & Goals",
+      "User flows",
+      "Style-guide",
+      "Wireframes",
+      "Design System",
+      "UI Design",
+      "Prototypes",
+      "Testing Reports"
+    ]
+  },
+  "outcomes": {
+    "tag": "OUTCOMES",
+    "heading": "Our solutions that bring visions to life.",
+    "items": [
+      "Enhanced User Satisfaction",
+      "Streamlined Product Navigation",
+      "Increased User Engagement",
+      "Improved Brand Perception",
+      "Reduced Bounce Rates",
+      "Higher Conversion Rates"
+    ]
+  },
+  "testimonials": [
+    {
+      "index": "/01",
+      "quote": "We started with reloadux with an AI product and a lot of assumptions. They challenged most of them, in a good way. By the time we launched, we had an AI marketing tool marketers actually wanted.",
+      "name": "Iman Oubou",
+      "role": "CEO",
+      "company": "Swaypay",
+      "avatar": "/images/testimonials/iman.webp",
+      "companyLogo": ""
+    },
+    {
+      "index": "/02",
+      "quote": "We had the AI product knowledge. What we didn't have was a way to present it that didn't overwhelm users, reloadux team took the time to understand the product and created end to end interactive flows that became the foundation of the product.",
+      "name": "Matthew Tarascio",
+      "role": "Tech Entrepreneur",
+      "company": "Vocable",
+      "avatar": "/images/testimonials/matthew.jpeg",
+      "companyLogo": "/images/testimonials/vocable-logo.webp"
+    },
+    {
+      "index": "/03",
+      "quote": "The collaboration was smooth from start to finish. They asked the right questions, pushed back when we were off track, and helped us identify where AI actually made sense, then delivered ahead of schedule.",
+      "name": "Yuriy Shikhanovich",
+      "role": "Manager",
+      "company": "OCC",
+      "avatar": "/images/testimonials/yuriy.webp",
+      "companyLogo": "/images/testimonials/occ-logo.webp"
+    },
+    {
+      "index": "/04",
+      "quote": "Operations managers are skeptical people. reloadux team got that immediately. Everything they designed had a clear explanation behind it. That's why it actually got used.",
+      "name": "Viktor Misyutin",
+      "role": "Manager",
+      "company": "TradeZella",
+      "avatar": "/images/testimonials/viktor.webp",
+      "companyLogo": "/images/testimonials/tradezella-logo.webp"
+    },
+    {
+      "index": "/05",
+      "quote": "reloadux clear updates kept us informed every step of the way. Their straightforward approach made our partnership efficient and productive",
+      "name": "Mahir Iskender",
+      "role": "CEO",
+      "company": "Digno",
+      "avatar": "/images/testimonials/mahir.webp",
+      "companyLogo": "/images/testimonials/digno-logo.webp"
+    }
+  ],
+  "bottomCta": {
+    "title": "Transform your idea into a successful product.",
+    "ctaText": "Build my product",
+    "ctaHref": "#contact-form"
+  },
+  "faqs": {
+    "tag": "FAQS",
+    "heading": "Starting from scratch? Get your design questions answered",
+    "items": [
+      { "question": "What services do you offer in UI/UX design?", "answer": "We specialize in end-to-end UI/UX design services, including user research, wireframing, interactive prototypes, user interface design, user experience strategy, and usability testing. Our focus is on creating intuitive, engaging, and effective designs that meet the specific needs of your business and your users." },
+      { "question": "How do you approach a new UI/UX project?", "answer": "Our approach begins with understanding your business goals and user needs. We conduct thorough research and user interviews to gather insights. This is followed by creating wireframes and prototypes, which are then refined through iterative design and user testing, ensuring the final product is both user-friendly and aligned with your business objectives." },
+      { "question": "Can you redesign an existing website/app?", "answer": "Absolutely! We can evaluate your existing website or app to identify usability issues and redesign it for improved user experience and engagement." },
+      { "question": "How long does a typical UI/UX project take?", "answer": "The duration of a UI/UX project varies based on its complexity and scope. A basic UI/UX design project can take anywhere from a few weeks to a couple of months." },
+      { "question": "What makes your UI/UX design services unique?", "answer": "Our unique strength lies in our tailored approach. We don't just create designs; we craft experiences that resonate with your target audience." },
+      { "question": "How do you ensure the design aligns with our brand?", "answer": "We begin by understanding your brand identity, values, and target audience. Our designs are crafted to reflect your brand's personality." },
+      { "question": "Do you provide support after the project completion?", "answer": "Yes, we offer post-launch support and maintenance services. This includes monitoring the design's performance and providing ongoing design updates." },
+      { "question": "How do you measure the success of your UI/UX designs?", "answer": "Success is measured through various metrics such as user engagement, conversion rates, user feedback, and usability testing results." },
+      { "question": "Can you work within our budget?", "answer": "We strive to offer flexible solutions tailored to different budget ranges. We can discuss your budget constraints and adjust the scope of work accordingly." },
+      { "question": "How do we get started with a UI/UX design project?", "answer": "To get started, reach out to us with your project details. We will schedule an initial consultation to discuss your needs, goals, and timelines." }
+    ]
+  },
+  "nextSteps": [
+    { "number": "01", "text": "We'll respond within 24 hours." },
+    { "number": "02", "text": "Our UX Expert will collect project details and create a brief." },
+    { "number": "03", "text": "We'll prepare estimates and share a project proposal." }
+  ],
+  "contactInfo": {
+    "phone": "(202) 978 3410",
+    "email": "info@reloadux.com",
+    "team": [
+      { "name": "Sahar", "role": "Key Account Manager", "linkedin": "https://www.linkedin.com/in/sahar-asif-284a9955/", "image": "/images/team/sahar.webp" },
+      { "name": "Lara Kazan", "role": "Business Development Executive", "linkedin": "https://www.linkedin.com/in/lara-kazan-82a24113b/", "image": "/images/team/lara.webp" }
+    ]
+  }
+}

@@ -3,6 +3,8 @@ import type {
   AboutPageData,
   ContactPageData,
   UXRedesignPageData,
+  MVPPageData,
+  TeamExtensionPageData,
   Service,
   CaseStudy,
   BlogPost,
@@ -20,9 +22,13 @@ import homeData from "../../content/pages/home.json";
 import aboutData from "../../content/pages/about.json";
 import contactData from "../../content/pages/contact.json";
 import uxRedesignData from "../../content/pages/ux-redesign.json";
+import mvpData from "../../content/pages/design-from-scratch-mvp.json";
+import teamExtensionData from "../../content/pages/team-extension.json";
 
 import {
   getStrapiHomepage,
+  getStrapiMVPPage,
+  getStrapiTeamExtensionPage,
   getStrapiCaseStudies,
   getStrapiCaseStudyBySlug,
   getStrapiServices,
@@ -223,6 +229,220 @@ export async function getUXRedesignPage(): Promise<UXRedesignPageData> {
   }
 
   return fallback;
+}
+
+// ─── MVP Page ─────────────────────────────────────────────────────────────────
+
+export async function getMVPPage(): Promise<MVPPageData> {
+  const fallback = mvpData as MVPPageData;
+
+  try {
+    const res = await getStrapiMVPPage();
+    const s = res?.data;
+    if (!s) return fallback;
+
+    return {
+      hero: {
+        tag: s.heroTag ?? fallback.hero.tag,
+        title: s.heroTitle ?? fallback.hero.title,
+        titleAccent: s.heroTitleAccent ?? fallback.hero.titleAccent,
+        ctaText: s.heroCtaText ?? fallback.hero.ctaText,
+        ctaHref: s.heroCtaHref ?? fallback.hero.ctaHref,
+      },
+      clientLogos: s.clientLogos?.length
+        ? s.clientLogos.map((l) => ({ src: l.src, alt: l.alt, width: l.width }))
+        : fallback.clientLogos,
+      challenges: {
+        tag: s.challengesTag ?? fallback.challenges.tag,
+        heading: s.challengesHeading ?? fallback.challenges.heading,
+        cards: s.challengeCards?.length
+          ? s.challengeCards.map((c) => ({
+              actorImage: c.actorImage,
+              actorName: c.actorName,
+              content: c.content,
+            }))
+          : fallback.challenges.cards,
+      },
+      caseStudies: {
+        tag: s.caseStudiesTag ?? fallback.caseStudies.tag,
+        heading: s.caseStudiesHeading ?? fallback.caseStudies.heading,
+        description: s.caseStudiesDescription ?? fallback.caseStudies.description,
+        items: s.caseStudyItems?.length
+          ? s.caseStudyItems.map((i) => ({
+              name: i.name,
+              description: i.description,
+              desktopImage: i.desktopImage,
+              mobileImage: i.mobileImage,
+              href: i.href,
+              comingSoon: i.comingSoon ?? false,
+            }))
+          : fallback.caseStudies.items,
+      },
+      midCta: {
+        title: s.midCtaTitle ?? fallback.midCta.title,
+        ctaText: s.midCtaText ?? fallback.midCta.ctaText,
+        ctaHref: s.midCtaHref ?? fallback.midCta.ctaHref,
+      },
+      process: {
+        tag: s.processTag ?? fallback.process.tag,
+        heading: s.processHeading ?? fallback.process.heading,
+        steps: s.processSteps?.length
+          ? s.processSteps.map((p) => ({
+              counter: p.counter,
+              title: p.title,
+              content: p.content,
+            }))
+          : fallback.process.steps,
+        deliverables: s.deliverables?.length
+          ? s.deliverables.map((d) => d.title)
+          : fallback.process.deliverables,
+      },
+      outcomes: {
+        tag: s.outcomesTag ?? fallback.outcomes.tag,
+        heading: s.outcomesHeading ?? fallback.outcomes.heading,
+        items: s.outcomeItems?.length
+          ? s.outcomeItems.map((o) => o.text)
+          : fallback.outcomes.items,
+      },
+      testimonials: fallback.testimonials,
+      bottomCta: {
+        title: s.bottomCtaTitle ?? fallback.bottomCta.title,
+        ctaText: s.bottomCtaText ?? fallback.bottomCta.ctaText,
+        ctaHref: s.bottomCtaHref ?? fallback.bottomCta.ctaHref,
+      },
+      faqs: {
+        tag: s.faqsTag ?? fallback.faqs.tag,
+        heading: s.faqsHeading ?? fallback.faqs.heading,
+        items: s.faqItems?.length
+          ? s.faqItems.map((f) => ({ question: f.question, answer: f.answer }))
+          : fallback.faqs.items,
+      },
+      nextSteps: s.nextSteps?.length
+        ? s.nextSteps.map((n) => ({ number: n.number, text: n.text }))
+        : fallback.nextSteps,
+      contactInfo: {
+        phone: s.contactPhone ?? fallback.contactInfo.phone,
+        email: s.contactEmail ?? fallback.contactInfo.email,
+        team: s.contactTeam?.length
+          ? s.contactTeam.map((t) => ({
+              name: t.name,
+              role: t.role,
+              linkedin: t.linkedin ?? "",
+              image: t.image ? getStrapiMediaUrl(t.image) : undefined,
+            }))
+          : fallback.contactInfo.team,
+      },
+    };
+  } catch {
+    return fallback;
+  }
+}
+
+// ─── Team Extension Page ──────────────────────────────────────────────────────
+
+export async function getTeamExtensionPage(): Promise<TeamExtensionPageData> {
+  const fallback = teamExtensionData as TeamExtensionPageData;
+
+  try {
+    const res = await getStrapiTeamExtensionPage();
+    const s = res?.data;
+    if (!s) return fallback;
+
+    return {
+      hero: {
+        tag: s.heroTag ?? fallback.hero.tag,
+        title: s.heroTitle ?? fallback.hero.title,
+        titleAccent: s.heroTitleAccent ?? fallback.hero.titleAccent,
+        ctaText: s.heroCtaText ?? fallback.hero.ctaText,
+        ctaHref: s.heroCtaHref ?? fallback.hero.ctaHref,
+      },
+      clientLogos: s.clientLogos?.length
+        ? s.clientLogos.map((l) => ({ src: l.src, alt: l.alt, width: l.width }))
+        : fallback.clientLogos,
+      challenges: {
+        tag: s.challengesTag ?? fallback.challenges.tag,
+        heading: s.challengesHeading ?? fallback.challenges.heading,
+        cards: s.challengeCards?.length
+          ? s.challengeCards.map((c) => ({
+              actorImage: c.actorImage,
+              actorName: c.actorName,
+              content: c.content,
+            }))
+          : fallback.challenges.cards,
+      },
+      caseStudies: {
+        tag: s.caseStudiesTag ?? fallback.caseStudies.tag,
+        heading: s.caseStudiesHeading ?? fallback.caseStudies.heading,
+        description: s.caseStudiesDescription ?? fallback.caseStudies.description,
+        items: s.caseStudyItems?.length
+          ? s.caseStudyItems.map((i) => ({
+              name: i.name,
+              description: i.description,
+              desktopImage: i.desktopImage,
+              mobileImage: i.mobileImage,
+              href: i.href,
+              comingSoon: i.comingSoon ?? false,
+            }))
+          : fallback.caseStudies.items,
+      },
+      midCta: {
+        title: s.midCtaTitle ?? fallback.midCta.title,
+        ctaText: s.midCtaText ?? fallback.midCta.ctaText,
+        ctaHref: s.midCtaHref ?? fallback.midCta.ctaHref,
+      },
+      process: {
+        tag: s.processTag ?? fallback.process.tag,
+        heading: s.processHeading ?? fallback.process.heading,
+        steps: s.processSteps?.length
+          ? s.processSteps.map((p) => ({
+              counter: p.counter,
+              title: p.title,
+              content: p.content,
+            }))
+          : fallback.process.steps,
+        deliverables: s.deliverables?.length
+          ? s.deliverables.map((d) => d.title)
+          : fallback.process.deliverables,
+      },
+      outcomes: {
+        tag: s.outcomesTag ?? fallback.outcomes.tag,
+        heading: s.outcomesHeading ?? fallback.outcomes.heading,
+        items: s.outcomeItems?.length
+          ? s.outcomeItems.map((o) => o.text)
+          : fallback.outcomes.items,
+      },
+      testimonials: fallback.testimonials,
+      bottomCta: {
+        title: s.bottomCtaTitle ?? fallback.bottomCta.title,
+        ctaText: s.bottomCtaText ?? fallback.bottomCta.ctaText,
+        ctaHref: s.bottomCtaHref ?? fallback.bottomCta.ctaHref,
+      },
+      faqs: {
+        tag: s.faqsTag ?? fallback.faqs.tag,
+        heading: s.faqsHeading ?? fallback.faqs.heading,
+        items: s.faqItems?.length
+          ? s.faqItems.map((f) => ({ question: f.question, answer: f.answer }))
+          : fallback.faqs.items,
+      },
+      nextSteps: s.nextSteps?.length
+        ? s.nextSteps.map((n) => ({ number: n.number, text: n.text }))
+        : fallback.nextSteps,
+      contactInfo: {
+        phone: s.contactPhone ?? fallback.contactInfo.phone,
+        email: s.contactEmail ?? fallback.contactInfo.email,
+        team: s.contactTeam?.length
+          ? s.contactTeam.map((t) => ({
+              name: t.name,
+              role: t.role,
+              linkedin: t.linkedin ?? "",
+              image: t.image ? getStrapiMediaUrl(t.image) : undefined,
+            }))
+          : fallback.contactInfo.team,
+      },
+    };
+  } catch {
+    return fallback;
+  }
 }
 
 // ─── Services ─────────────────────────────────────────────────────────────────

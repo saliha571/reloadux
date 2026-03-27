@@ -1,0 +1,23 @@
+{
+  "collectionName": "components_shared_client_logo_items",
+  "info": {
+    "displayName": "Client Logo Item",
+    "icon": "landscape",
+    "description": "Client logo with src path, alt text and display width"
+  },
+  "options": {},
+  "attributes": {
+    "src": {
+      "type": "string",
+      "required": true
+    },
+    "alt": {
+      "type": "string",
+      "required": true
+    },
+    "width": {
+      "type": "integer",
+      "required": true
+    }
+  }
+}

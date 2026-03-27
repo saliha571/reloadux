@@ -681,6 +681,98 @@ export interface ApiIndustryIndustry extends Struct.CollectionTypeSchema {
   };
 }
 
+export interface ApiMvpPageMvpPage extends Struct.SingleTypeSchema {
+  collectionName: 'mvp_pages';
+  info: {
+    description: 'Design from Scratch \u2013 MVP service page content';
+    displayName: 'MVP Page';
+    pluralName: 'mvp-pages';
+    singularName: 'mvp-page';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    bottomCtaHref: Schema.Attribute.String &
+      Schema.Attribute.DefaultTo<'#contact-form'>;
+    bottomCtaText: Schema.Attribute.String &
+      Schema.Attribute.DefaultTo<'Build my product'>;
+    bottomCtaTitle: Schema.Attribute.String &
+      Schema.Attribute.DefaultTo<'Transform your idea into a successful product.'>;
+    caseStudiesDescription: Schema.Attribute.Text;
+    caseStudiesHeading: Schema.Attribute.String &
+      Schema.Attribute.DefaultTo<'Transform your ideas & vision into reality'>;
+    caseStudiesTag: Schema.Attribute.String &
+      Schema.Attribute.DefaultTo<'WE HEAR YOU'>;
+    caseStudyItems: Schema.Attribute.Component<
+      'shared.mvp-case-study-item',
+      true
+    >;
+    challengeCards: Schema.Attribute.Component<
+      'shared.mvp-challenge-card',
+      true
+    >;
+    challengesHeading: Schema.Attribute.String &
+      Schema.Attribute.DefaultTo<'We know what frustrates you'>;
+    challengesTag: Schema.Attribute.String &
+      Schema.Attribute.DefaultTo<'CHALLENGES'>;
+    clientLogos: Schema.Attribute.Component<'shared.client-logo-item', true>;
+    contactEmail: Schema.Attribute.Email &
+      Schema.Attribute.DefaultTo<'info@reloadux.com'>;
+    contactPhone: Schema.Attribute.String &
+      Schema.Attribute.DefaultTo<'(202) 978 3410'>;
+    contactTeam: Schema.Attribute.Component<'shared.team-contact', true>;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    deliverables: Schema.Attribute.Component<'shared.deliverable', true>;
+    faqItems: Schema.Attribute.Component<'shared.faq', true>;
+    faqsHeading: Schema.Attribute.String &
+      Schema.Attribute.DefaultTo<'Starting from scratch? Get your design questions answered'>;
+    faqsTag: Schema.Attribute.String & Schema.Attribute.DefaultTo<'FAQS'>;
+    heroCtaHref: Schema.Attribute.String &
+      Schema.Attribute.DefaultTo<'#contact-form'>;
+    heroCtaText: Schema.Attribute.String &
+      Schema.Attribute.DefaultTo<'Build my product'>;
+    heroTag: Schema.Attribute.String &
+      Schema.Attribute.DefaultTo<'MVP DEVELOPMENT'>;
+    heroTitle: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.DefaultTo<'Craft a winning product.'>;
+    heroTitleAccent: Schema.Attribute.String &
+      Schema.Attribute.DefaultTo<'Your Idea, Our Expertise'>;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::mvp-page.mvp-page'
+    > &
+      Schema.Attribute.Private;
+    midCtaHref: Schema.Attribute.String &
+      Schema.Attribute.DefaultTo<'#contact-form'>;
+    midCtaText: Schema.Attribute.String &
+      Schema.Attribute.DefaultTo<'Build my product'>;
+    midCtaTitle: Schema.Attribute.String &
+      Schema.Attribute.DefaultTo<'Launch a winning product from the ground up.'>;
+    nextSteps: Schema.Attribute.Component<'shared.next-step', true>;
+    outcomeItems: Schema.Attribute.Component<'shared.outcome', true>;
+    outcomesHeading: Schema.Attribute.String &
+      Schema.Attribute.DefaultTo<'Our solutions that bring visions to life.'>;
+    outcomesTag: Schema.Attribute.String &
+      Schema.Attribute.DefaultTo<'OUTCOMES'>;
+    processHeading: Schema.Attribute.Text &
+      Schema.Attribute.DefaultTo<"From concept to execution, we turn your ideas into reality with strategic planning and technical expertise, ensuring your product's success from the ground up">;
+    processSteps: Schema.Attribute.Component<'shared.mvp-process-step', true>;
+    processTag: Schema.Attribute.String &
+      Schema.Attribute.DefaultTo<'HOW WE DO IT'>;
+    publishedAt: Schema.Attribute.DateTime;
+    seoDescription: Schema.Attribute.Text;
+    seoTitle: Schema.Attribute.String;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiServiceService extends Struct.CollectionTypeSchema {
   collectionName: 'services';
   info: {
@@ -788,6 +880,99 @@ export interface ApiSiteSettingSiteSetting extends Struct.SingleTypeSchema {
     siteTagline: Schema.Attribute.String &
       Schema.Attribute.DefaultTo<'UX design agency for AI-native experiences'>;
     socialLinks: Schema.Attribute.Component<'shared.social-link', true>;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiTeamExtensionPageTeamExtensionPage
+  extends Struct.SingleTypeSchema {
+  collectionName: 'team_extension_pages';
+  info: {
+    description: 'Team Extension service page content';
+    displayName: 'Team Extension Page';
+    pluralName: 'team-extension-pages';
+    singularName: 'team-extension-page';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    bottomCtaHref: Schema.Attribute.String &
+      Schema.Attribute.DefaultTo<'#contact-form'>;
+    bottomCtaText: Schema.Attribute.String &
+      Schema.Attribute.DefaultTo<'Extend my team'>;
+    bottomCtaTitle: Schema.Attribute.String &
+      Schema.Attribute.DefaultTo<'Expand your team\u2019s capabilities with our design experts.'>;
+    caseStudiesDescription: Schema.Attribute.Text;
+    caseStudiesHeading: Schema.Attribute.String &
+      Schema.Attribute.DefaultTo<'Transform your team\u2019s gaps into strength'>;
+    caseStudiesTag: Schema.Attribute.String &
+      Schema.Attribute.DefaultTo<'WE HEAR YOU'>;
+    caseStudyItems: Schema.Attribute.Component<
+      'shared.mvp-case-study-item',
+      true
+    >;
+    challengeCards: Schema.Attribute.Component<
+      'shared.mvp-challenge-card',
+      true
+    >;
+    challengesHeading: Schema.Attribute.String &
+      Schema.Attribute.DefaultTo<'We know what frustrates you'>;
+    challengesTag: Schema.Attribute.String &
+      Schema.Attribute.DefaultTo<'CHALLENGES'>;
+    clientLogos: Schema.Attribute.Component<'shared.client-logo-item', true>;
+    contactEmail: Schema.Attribute.Email &
+      Schema.Attribute.DefaultTo<'info@reloadux.com'>;
+    contactPhone: Schema.Attribute.String &
+      Schema.Attribute.DefaultTo<'(202) 978 3410'>;
+    contactTeam: Schema.Attribute.Component<'shared.team-contact', true>;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    deliverables: Schema.Attribute.Component<'shared.deliverable', true>;
+    faqItems: Schema.Attribute.Component<'shared.faq', true>;
+    faqsHeading: Schema.Attribute.String &
+      Schema.Attribute.DefaultTo<'Ready to extend your team? Get your design questions answered'>;
+    faqsTag: Schema.Attribute.String & Schema.Attribute.DefaultTo<'FAQS'>;
+    heroCtaHref: Schema.Attribute.String &
+      Schema.Attribute.DefaultTo<'#contact-form'>;
+    heroCtaText: Schema.Attribute.String &
+      Schema.Attribute.DefaultTo<'Extend my team'>;
+    heroTag: Schema.Attribute.String &
+      Schema.Attribute.DefaultTo<'TEAM EXTENSION'>;
+    heroTitle: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.DefaultTo<'Empower your design vision'>;
+    heroTitleAccent: Schema.Attribute.String &
+      Schema.Attribute.DefaultTo<'with our Expert Team'>;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::team-extension-page.team-extension-page'
+    > &
+      Schema.Attribute.Private;
+    midCtaHref: Schema.Attribute.String &
+      Schema.Attribute.DefaultTo<'#contact-form'>;
+    midCtaText: Schema.Attribute.String &
+      Schema.Attribute.DefaultTo<'Extend my team'>;
+    midCtaTitle: Schema.Attribute.String &
+      Schema.Attribute.DefaultTo<'Outpace the competition with expert design support.'>;
+    nextSteps: Schema.Attribute.Component<'shared.next-step', true>;
+    outcomeItems: Schema.Attribute.Component<'shared.outcome', true>;
+    outcomesHeading: Schema.Attribute.String &
+      Schema.Attribute.DefaultTo<'Our extension outcomes that drive excellence.'>;
+    outcomesTag: Schema.Attribute.String &
+      Schema.Attribute.DefaultTo<'OUTCOMES'>;
+    processHeading: Schema.Attribute.Text &
+      Schema.Attribute.DefaultTo<'Whether you need to fill skill gaps or expand your team, we provide expert talent to uplift your product and ensure timely delivery with our extension service'>;
+    processSteps: Schema.Attribute.Component<'shared.mvp-process-step', true>;
+    processTag: Schema.Attribute.String &
+      Schema.Attribute.DefaultTo<'HOW WE DO IT'>;
+    publishedAt: Schema.Attribute.DateTime;
+    seoDescription: Schema.Attribute.Text;
+    seoTitle: Schema.Attribute.String;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -1491,8 +1676,10 @@ declare module '@strapi/strapi' {
       'api::client-logo.client-logo': ApiClientLogoClientLogo;
       'api::homepage.homepage': ApiHomepageHomepage;
       'api::industry.industry': ApiIndustryIndustry;
+      'api::mvp-page.mvp-page': ApiMvpPageMvpPage;
       'api::service.service': ApiServiceService;
       'api::site-setting.site-setting': ApiSiteSettingSiteSetting;
+      'api::team-extension-page.team-extension-page': ApiTeamExtensionPageTeamExtensionPage;
       'api::team-member.team-member': ApiTeamMemberTeamMember;
       'api::testimonial.testimonial': ApiTestimonialTestimonial;
       'api::ux-redesign-page.ux-redesign-page': ApiUxRedesignPageUxRedesignPage;

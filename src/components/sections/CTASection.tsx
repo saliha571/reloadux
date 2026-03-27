@@ -8,6 +8,8 @@ interface CTASectionProps {
   ctaHref: string;
   subtitle?: string;
   hideLogos?: boolean;
+  backgroundImage?: string;
+  accentWord?: string;
 }
 
 const clientLogos = [
@@ -24,17 +26,24 @@ export function CTASection({
   ctaHref,
   subtitle,
   hideLogos,
+  backgroundImage,
+  accentWord,
 }: CTASectionProps) {
-  const parts = title.split("your product");
+  const keyword = accentWord || "your product";
+  const parts = title.split(keyword);
+
+  const sectionStyle = backgroundImage
+    ? { backgroundImage: `url(${backgroundImage})` }
+    : undefined;
 
   return (
-    <section className={styles.section}>
+    <section className={styles.section} style={sectionStyle}>
       <div className={styles.inner}>
         <h2 className={styles.heading}>
           {parts.length > 1 ? (
             <>
               {parts[0]}
-              <span className={styles.accent}>your product</span>
+              <span className={styles.accent}>{keyword}</span>
               {parts[1]}
             </>
           ) : (

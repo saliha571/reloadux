@@ -1,0 +1,23 @@
+{
+  "collectionName": "components_shared_mvp_process_steps",
+  "info": {
+    "displayName": "MVP Process Step",
+    "icon": "arrowRight",
+    "description": "Accordion step for the MVP How We Do It section"
+  },
+  "options": {},
+  "attributes": {
+    "counter": {
+      "type": "string",
+      "required": true
+    },
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "content": {
+      "type": "text",
+      "required": true
+    }
+  }
+}

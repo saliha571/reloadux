@@ -1,0 +1,163 @@
+{
+  "kind": "singleType",
+  "collectionName": "mvp_pages",
+  "info": {
+    "singularName": "mvp-page",
+    "pluralName": "mvp-pages",
+    "displayName": "MVP Page",
+    "description": "Design from Scratch – MVP service page content"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "heroTag": {
+      "type": "string",
+      "default": "MVP DEVELOPMENT"
+    },
+    "heroTitle": {
+      "type": "string",
+      "required": true,
+      "default": "Craft a winning product."
+    },
+    "heroTitleAccent": {
+      "type": "string",
+      "default": "Your Idea, Our Expertise"
+    },
+    "heroCtaText": {
+      "type": "string",
+      "default": "Build my product"
+    },
+    "heroCtaHref": {
+      "type": "string",
+      "default": "#contact-form"
+    },
+    "clientLogos": {
+      "type": "component",
+      "repeatable": true,
+      "component": "shared.client-logo-item"
+    },
+    "challengesTag": {
+      "type": "string",
+      "default": "CHALLENGES"
+    },
+    "challengesHeading": {
+      "type": "string",
+      "default": "We know what frustrates you"
+    },
+    "challengeCards": {
+      "type": "component",
+      "repeatable": true,
+      "component": "shared.mvp-challenge-card"
+    },
+    "caseStudiesTag": {
+      "type": "string",
+      "default": "WE HEAR YOU"
+    },
+    "caseStudiesHeading": {
+      "type": "string",
+      "default": "Transform your ideas & vision into reality"
+    },
+    "caseStudiesDescription": {
+      "type": "text"
+    },
+    "caseStudyItems": {
+      "type": "component",
+      "repeatable": true,
+      "component": "shared.mvp-case-study-item"
+    },
+    "midCtaTitle": {
+      "type": "string",
+      "default": "Launch a winning product from the ground up."
+    },
+    "midCtaText": {
+      "type": "string",
+      "default": "Build my product"
+    },
+    "midCtaHref": {
+      "type": "string",
+      "default": "#contact-form"
+    },
+    "processTag": {
+      "type": "string",
+      "default": "HOW WE DO IT"
+    },
+    "processHeading": {
+      "type": "text",
+      "default": "From concept to execution, we turn your ideas into reality with strategic planning and technical expertise, ensuring your product's success from the ground up"
+    },
+    "processSteps": {
+      "type": "component",
+      "repeatable": true,
+      "component": "shared.mvp-process-step"
+    },
+    "deliverables": {
+      "type": "component",
+      "repeatable": true,
+      "component": "shared.deliverable"
+    },
+    "outcomesTag": {
+      "type": "string",
+      "default": "OUTCOMES"
+    },
+    "outcomesHeading": {
+      "type": "string",
+      "default": "Our solutions that bring visions to life."
+    },
+    "outcomeItems": {
+      "type": "component",
+      "repeatable": true,
+      "component": "shared.outcome"
+    },
+    "bottomCtaTitle": {
+      "type": "string",
+      "default": "Transform your idea into a successful product."
+    },
+    "bottomCtaText": {
+      "type": "string",
+      "default": "Build my product"
+    },
+    "bottomCtaHref": {
+      "type": "string",
+      "default": "#contact-form"
+    },
+    "faqsTag": {
+      "type": "string",
+      "default": "FAQS"
+    },
+    "faqsHeading": {
+      "type": "string",
+      "default": "Starting from scratch? Get your design questions answered"
+    },
+    "faqItems": {
+      "type": "component",
+      "repeatable": true,
+      "component": "shared.faq"
+    },
+    "nextSteps": {
+      "type": "component",
+      "repeatable": true,
+      "component": "shared.next-step"
+    },
+    "contactPhone": {
+      "type": "string",
+      "default": "(202) 978 3410"
+    },
+    "contactEmail": {
+      "type": "email",
+      "default": "info@reloadux.com"
+    },
+    "contactTeam": {
+      "type": "component",
+      "repeatable": true,
+      "component": "shared.team-contact"
+    },
+    "seoTitle": {
+      "type": "string"
+    },
+    "seoDescription": {
+      "type": "text"
+    }
+  }
+}

@@ -51,6 +51,18 @@
   width: 65%;
 }
 
+.titleAccent {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-weight: 400;
+}
+
+.titleAccentPlain {
+  font-family: var(--font-serif);
+  font-style: normal;
+  font-weight: 400;
+}
+
 .subtitle {
   font-family: var(--font-primary);
   font-size: 18px;

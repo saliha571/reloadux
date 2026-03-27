@@ -18,7 +18,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   };
 }
 
-const DEDICATED_PAGES = ["ux-redesign"];
+const DEDICATED_PAGES = ["ux-redesign", "design-from-scratch-mvp", "team-extension"];
 
 export async function generateStaticParams() {
   const services = await getServices();

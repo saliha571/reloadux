@@ -1,38 +1,38 @@
 .section {
   position: relative;
-  padding: 160px 155px 160px 144px;
+  padding: 120px 0;
   background-image: url("/images/cta/home-page-banner.webp");
-  background-position: center center;
+  background-position: center right;
   background-repeat: no-repeat;
-  background-size: cover;
+  background-size: contain;
   overflow: hidden;
   width: 100%;
+  border-top: 1px solid var(--color-grey-700);
 }
 
 .inner {
   position: relative;
   max-width: var(--content-width);
   margin: 0 auto;
+  padding-inline: var(--page-padding);
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: flex-start;
   gap: 62px;
 }
 
 .heading {
   font-family: var(--font-primary);
-  font-size: 80px;
-  font-weight: 700;
-  line-height: 90px;
+  font-size: 56px;
+  font-weight: 600;
+  line-height: 72px;
   color: var(--color-white);
   margin: 0;
-  text-align: center;
+  text-align: left;
+  width: 23ch;
 }
 
 .accent {
-  font-family: var(--font-serif);
-  font-style: italic;
-  font-weight: 400;
 }
 
 .subtitle {

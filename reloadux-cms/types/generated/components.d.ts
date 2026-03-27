@@ -58,6 +58,20 @@ export interface SharedChallengeCard extends Struct.ComponentSchema {
   };
 }
 
+export interface SharedClientLogoItem extends Struct.ComponentSchema {
+  collectionName: 'components_shared_client_logo_items';
+  info: {
+    description: 'Client logo with src path, alt text and display width';
+    displayName: 'Client Logo Item';
+    icon: 'landscape';
+  };
+  attributes: {
+    alt: Schema.Attribute.String & Schema.Attribute.Required;
+    src: Schema.Attribute.String & Schema.Attribute.Required;
+    width: Schema.Attribute.Integer & Schema.Attribute.Required;
+  };
+}
+
 export interface SharedDeliverable extends Struct.ComponentSchema {
   collectionName: 'components_shared_deliverables';
   info: {
@@ -93,6 +107,51 @@ export interface SharedIdealClientCard extends Struct.ComponentSchema {
   };
   attributes: {
     description: Schema.Attribute.Text & Schema.Attribute.Required;
+    title: Schema.Attribute.String & Schema.Attribute.Required;
+  };
+}
+
+export interface SharedMvpCaseStudyItem extends Struct.ComponentSchema {
+  collectionName: 'components_shared_mvp_case_study_items';
+  info: {
+    description: 'Case study item for the MVP page with desktop and mobile images';
+    displayName: 'MVP Case Study Item';
+    icon: 'folder';
+  };
+  attributes: {
+    comingSoon: Schema.Attribute.Boolean & Schema.Attribute.DefaultTo<false>;
+    description: Schema.Attribute.Text & Schema.Attribute.Required;
+    desktopImage: Schema.Attribute.String & Schema.Attribute.Required;
+    href: Schema.Attribute.String & Schema.Attribute.Required;
+    mobileImage: Schema.Attribute.String & Schema.Attribute.Required;
+    name: Schema.Attribute.String & Schema.Attribute.Required;
+  };
+}
+
+export interface SharedMvpChallengeCard extends Struct.ComponentSchema {
+  collectionName: 'components_shared_mvp_challenge_cards';
+  info: {
+    description: 'Social-style challenge card with avatar, name and message';
+    displayName: 'MVP Challenge Card';
+    icon: 'message';
+  };
+  attributes: {
+    actorImage: Schema.Attribute.String & Schema.Attribute.Required;
+    actorName: Schema.Attribute.String & Schema.Attribute.Required;
+    content: Schema.Attribute.Text & Schema.Attribute.Required;
+  };
+}
+
+export interface SharedMvpProcessStep extends Struct.ComponentSchema {
+  collectionName: 'components_shared_mvp_process_steps';
+  info: {
+    description: 'Accordion step for the MVP How We Do It section';
+    displayName: 'MVP Process Step';
+    icon: 'arrowRight';
+  };
+  attributes: {
+    content: Schema.Attribute.Text & Schema.Attribute.Required;
+    counter: Schema.Attribute.String & Schema.Attribute.Required;
     title: Schema.Attribute.String & Schema.Attribute.Required;
   };
 }
@@ -298,9 +357,13 @@ declare module '@strapi/strapi' {
       'shared.case-study-video': SharedCaseStudyVideo;
       'shared.challenge': SharedChallenge;
       'shared.challenge-card': SharedChallengeCard;
+      'shared.client-logo-item': SharedClientLogoItem;
       'shared.deliverable': SharedDeliverable;
       'shared.faq': SharedFaq;
       'shared.ideal-client-card': SharedIdealClientCard;
+      'shared.mvp-case-study-item': SharedMvpCaseStudyItem;
+      'shared.mvp-challenge-card': SharedMvpChallengeCard;
+      'shared.mvp-process-step': SharedMvpProcessStep;
       'shared.next-step': SharedNextStep;
       'shared.outcome': SharedOutcome;
       'shared.phase': SharedPhase;

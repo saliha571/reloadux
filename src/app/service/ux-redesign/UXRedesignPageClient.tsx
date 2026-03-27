@@ -28,7 +28,6 @@ export function UXRedesignPageClient({ data }: Props) {
         subtitle={data.hero.subtitle}
         ctaText={data.hero.ctaText}
         ctaHref={data.hero.ctaHref}
-        clientLogos={data.clientLogos}
         backgroundImage="/images/hero/bg-1-1.webp"
       />
 

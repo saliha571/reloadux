@@ -413,3 +413,87 @@ export async function getStrapiUXRedesignPage() {
     "/api/ux-redesign-page?populate[challengeCards]=*&populate[caseStudyItems][populate]=slides&populate[principles]=*&populate[stages]=*&populate[idealClientCards]=*&populate[valueProps]=*&populate[sprintSteps]=*&populate[faqItems]=*&populate[nextSteps]=*&populate[contactTeam][populate]=image"
   );
 }
+
+// ─── MVP Page ────────────────────────────────────────────────────────────────
+
+export interface StrapiMVPChallengeCard {
+  actorImage: string;
+  actorName: string;
+  content: string;
+}
+
+export interface StrapiMVPCaseStudyItem {
+  name: string;
+  description: string;
+  desktopImage: string;
+  mobileImage: string;
+  href: string;
+  comingSoon?: boolean;
+}
+
+export interface StrapiMVPProcessStep {
+  counter: string;
+  title: string;
+  content: string;
+}
+
+export interface StrapiClientLogoItem {
+  src: string;
+  alt: string;
+  width: number;
+}
+
+export interface StrapiMVPPage {
+  id: number;
+  heroTag?: string;
+  heroTitle: string;
+  heroTitleAccent?: string;
+  heroCtaText?: string;
+  heroCtaHref?: string;
+  clientLogos?: StrapiClientLogoItem[];
+  challengesTag?: string;
+  challengesHeading?: string;
+  challengeCards?: StrapiMVPChallengeCard[];
+  caseStudiesTag?: string;
+  caseStudiesHeading?: string;
+  caseStudiesDescription?: string;
+  caseStudyItems?: StrapiMVPCaseStudyItem[];
+  midCtaTitle?: string;
+  midCtaText?: string;
+  midCtaHref?: string;
+  processTag?: string;
+  processHeading?: string;
+  processSteps?: StrapiMVPProcessStep[];
+  deliverables?: { title: string }[];
+  outcomesTag?: string;
+  outcomesHeading?: string;
+  outcomeItems?: { text: string }[];
+  bottomCtaTitle?: string;
+  bottomCtaText?: string;
+  bottomCtaHref?: string;
+  faqsTag?: string;
+  faqsHeading?: string;
+  faqItems?: { question: string; answer: string }[];
+  nextSteps?: StrapiNextStep[];
+  contactPhone?: string;
+  contactEmail?: string;
+  contactTeam?: StrapiTeamContact[];
+  seoTitle?: string;
+  seoDescription?: string;
+}
+
+export async function getStrapiMVPPage() {
+  return fetchStrapi<StrapiSingle<StrapiMVPPage>>(
+    "/api/mvp-page?populate=*"
+  );
+}
+
+// ─── Team Extension Page ──────────────────────────────────────────────────────
+
+export type StrapiTeamExtensionPage = StrapiMVPPage;
+
+export async function getStrapiTeamExtensionPage() {
+  return fetchStrapi<StrapiSingle<StrapiTeamExtensionPage>>(
+    "/api/team-extension-page?populate=*"
+  );
+}

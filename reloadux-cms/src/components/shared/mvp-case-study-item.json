@@ -1,0 +1,35 @@
+{
+  "collectionName": "components_shared_mvp_case_study_items",
+  "info": {
+    "displayName": "MVP Case Study Item",
+    "icon": "folder",
+    "description": "Case study item for the MVP page with desktop and mobile images"
+  },
+  "options": {},
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "description": {
+      "type": "text",
+      "required": true
+    },
+    "desktopImage": {
+      "type": "string",
+      "required": true
+    },
+    "mobileImage": {
+      "type": "string",
+      "required": true
+    },
+    "href": {
+      "type": "string",
+      "required": true
+    },
+    "comingSoon": {
+      "type": "boolean",
+      "default": false
+    }
+  }
+}

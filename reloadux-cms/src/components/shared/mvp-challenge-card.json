@@ -1,0 +1,23 @@
+{
+  "collectionName": "components_shared_mvp_challenge_cards",
+  "info": {
+    "displayName": "MVP Challenge Card",
+    "icon": "message",
+    "description": "Social-style challenge card with avatar, name and message"
+  },
+  "options": {},
+  "attributes": {
+    "actorImage": {
+      "type": "string",
+      "required": true
+    },
+    "actorName": {
+      "type": "string",
+      "required": true
+    },
+    "content": {
+      "type": "text",
+      "required": true
+    }
+  }
+}

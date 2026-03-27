@@ -7,17 +7,25 @@ import styles from "./ServiceHero.module.css";
 import { SectionTag } from "@/components/ui/SectionTag";
 import { FlairButton } from "@/components/ui/FlairButton";
 
+interface LogoItem {
+  src: string;
+  alt: string;
+  width: number;
+}
+
 interface ServiceHeroProps {
   tag: string;
   title: string;
-  subtitle: string;
+  titleAccent?: string;
+  titleAccentItalic?: boolean;
+  subtitle?: string;
   ctaText: string;
   ctaHref: string;
-  clientLogos?: string[];
+  clientLogos?: LogoItem[];
   backgroundImage?: string;
 }
 
-const logoFiles = [
+const defaultLogos: LogoItem[] = [
   { src: "/images/logos/nbc-1.svg", alt: "NBC", width: 211 },
   { src: "/images/logos/barclays-2.svg", alt: "Barclays", width: 178 },
   { src: "/images/logos/groupon-1.svg", alt: "Groupon", width: 145 },
@@ -133,6 +141,8 @@ function horizontalLoop(
 export function ServiceHero({
   tag,
   title,
+  titleAccent,
+  titleAccentItalic = false,
   subtitle,
   ctaText,
   ctaHref,
@@ -183,15 +193,25 @@ export function ServiceHero({
     >
       <div className={styles.content}>
         <SectionTag text={tag} />
-        <h1 className={styles.title}>{title}</h1>
-        <p className={styles.subtitle}>{subtitle}</p>
+        <h1 className={styles.title}>
+          {title}
+          {titleAccent && (
+            <>
+              <br />
+              <span className={titleAccentItalic ? styles.titleAccent : styles.titleAccentPlain}>
+                {titleAccent}
+              </span>
+            </>
+          )}
+        </h1>
+        {subtitle && <p className={styles.subtitle}>{subtitle}</p>}
         <FlairButton href={ctaHref} size="lg">
           {ctaText}
         </FlairButton>
       </div>
 
       <div ref={wrapperRef} className={styles.logoStrip}>
-        {logoFiles.map((logo, i) => (
+        {(clientLogos || defaultLogos).map((logo, i) => (
           <div key={i} className={styles.logoItem}>
             <img
               src={logo.src}

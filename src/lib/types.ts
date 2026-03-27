@@ -358,3 +358,83 @@ export interface UXRedesignPageData {
     team: { name: string; role: string; linkedin: string }[];
   };
 }
+
+// ─── MVP / Team Extension Page ───────────────────────────────────────────────────
+
+export interface MVPChallengeCard {
+  actorImage: string;
+  actorName: string;
+  content: string;
+}
+
+export interface MVPCaseStudyItem {
+  name: string;
+  description: string;
+  desktopImage: string;
+  mobileImage: string;
+  href: string;
+  comingSoon?: boolean;
+}
+
+export interface MVPProcessStep {
+  counter: string;
+  title: string;
+  content: string;
+}
+
+export type TeamExtensionPageData = MVPPageData;
+
+export interface MVPPageData {
+  hero: {
+    tag: string;
+    title: string;
+    titleAccent: string;
+    ctaText: string;
+    ctaHref: string;
+  };
+  clientLogos: { src: string; alt: string; width: number }[];
+  challenges: {
+    tag: string;
+    heading: string;
+    cards: MVPChallengeCard[];
+  };
+  caseStudies: {
+    tag: string;
+    heading: string;
+    description: string;
+    items: MVPCaseStudyItem[];
+  };
+  midCta: {
+    title: string;
+    ctaText: string;
+    ctaHref: string;
+  };
+  process: {
+    tag: string;
+    heading: string;
+    steps: MVPProcessStep[];
+    deliverables: string[];
+  };
+  outcomes: {
+    tag: string;
+    heading: string;
+    items: string[];
+  };
+  testimonials: Testimonial[];
+  bottomCta: {
+    title: string;
+    ctaText: string;
+    ctaHref: string;
+  };
+  faqs: {
+    tag: string;
+    heading: string;
+    items: FAQItem[];
+  };
+  nextSteps: NextStep[];
+  contactInfo: {
+    phone: string;
+    email: string;
+    team: { name: string; role: string; linkedin: string; image?: string }[];
+  };
+}

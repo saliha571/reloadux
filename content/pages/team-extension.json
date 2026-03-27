@@ -1,0 +1,199 @@
+{
+  "hero": {
+    "tag": "TEAM EXTENSION",
+    "title": "Empower your design vision",
+    "titleAccent": "with our Expert Team",
+    "ctaText": "Extend my team",
+    "ctaHref": "#contact-form"
+  },
+  "clientLogos": [
+    { "src": "/images/logos/vocable-1.svg", "alt": "Vocable", "width": 163 },
+    { "src": "/images/logos/nitro-2.svg", "alt": "Nitro", "width": 142 },
+    { "src": "/images/logos/digno-2.svg", "alt": "Digno", "width": 120 },
+    { "src": "/images/logos/nokia-2.svg", "alt": "Nokia", "width": 156 },
+    { "src": "/images/logos/sterne-kessler.svg", "alt": "Sterne Kessler", "width": 221 },
+    { "src": "/images/logos/artvisor-1.svg", "alt": "Artvisor", "width": 222 },
+    { "src": "/images/logos/today-1.svg", "alt": "Today", "width": 151 },
+    { "src": "/images/logos/excheqr-1.svg", "alt": "Excheqr", "width": 192 },
+    { "src": "/images/logos/barclays-2.svg", "alt": "Barclays", "width": 178 }
+  ],
+  "challenges": {
+    "tag": "CHALLENGES",
+    "heading": "We know what frustrates you",
+    "cards": [
+      { "actorImage": "/images/challenges/card-1.webp", "actorName": "Shannon Madon", "content": "I want a UX designer for my startup" },
+      { "actorImage": "/images/challenges/logo.webp", "actorName": "John", "content": "Finding and hiring the right talent is challenging" },
+      { "actorImage": "/images/challenges/logo-4.webp", "actorName": "Samantha", "content": "I want a UX consultant to plan a design strategy." },
+      { "actorImage": "/images/challenges/logo-1.webp", "actorName": "Interaktell", "content": "My design team is overloaded and can't keep up." },
+      { "actorImage": "/images/challenges/logo-2.webp", "actorName": "Mark", "content": "I require additional help for my new product." },
+      { "actorImage": "/images/challenges/logo-4.webp", "actorName": "Stacey", "content": "Finding and hiring the right talent is challenging" },
+      { "actorImage": "/images/challenges/logo.webp", "actorName": "Adrian", "content": "I want a UX designer for my startup" },
+      { "actorImage": "/images/challenges/card-1.webp", "actorName": "Carlo Douglas", "content": "I want a UX consultant to plan a design strategy." }
+    ]
+  },
+  "caseStudies": {
+    "tag": "WE HEAR YOU",
+    "heading": "Transform your team's gaps into strength",
+    "description": "with our team extension services, effectively addressing skill gaps, consistently meeting project deadlines, and boosting overall productivity and team morale.",
+    "items": [
+      {
+        "name": "tradezella",
+        "description": "Revamped a trading journal experience helping traders make data-driven decisions.",
+        "desktopImage": "/images/case-studies/tradezella.webp",
+        "mobileImage": "/images/portfolio/tradezella-mobile-1.webp",
+        "href": "/case-study/tradezella/"
+      },
+      {
+        "name": "Super Soccer Star",
+        "description": "Designed an immersive football gaming experience that boosted in-app engagement by 40%.",
+        "desktopImage": "/images/team-extension/super-soccer-star-desktop.png",
+        "mobileImage": "/images/team-extension/super-soccer-star-desktop.png",
+        "href": "#",
+        "comingSoon": true
+      },
+      {
+        "name": "REI",
+        "description": "Revamped a specialised CRM for real estate investors, helping them maximise the profit.",
+        "desktopImage": "/images/team-extension/rei-desktop.png",
+        "mobileImage": "/images/team-extension/rei-desktop.png",
+        "href": "#",
+        "comingSoon": true
+      }
+    ]
+  },
+  "midCta": {
+    "title": "Outpace the competition with expert design support.",
+    "ctaText": "Extend my team",
+    "ctaHref": "#contact-form"
+  },
+  "process": {
+    "tag": "HOW WE DO IT",
+    "heading": "Whether you need to fill skill gaps or expand your team, we provide expert talent to uplift your product and ensure timely delivery with our extension service",
+    "steps": [
+      { "counter": "01", "title": "Project Assessment", "content": "We understand project requirements and assess required skills and expertise." },
+      { "counter": "02", "title": "Talent Selection & Onboarding", "content": "We identify professionals and create a customized onboarding plan." },
+      { "counter": "03", "title": "Collaboration & Monitoring", "content": "We establish regular meetings and allocate tasks for progress tracking." },
+      { "counter": "04", "title": "Quality Assurance & Flexibility", "content": "We conduct quality checks and offer flexibility in resource scaling." },
+      { "counter": "05", "title": "Reporting & Handoff", "content": "We provide transparent reports and ensure a smooth project handoff." }
+    ],
+    "deliverables": [
+      "Increased Scalability",
+      "Reduced Operational Costs",
+      "Enhanced Skill Diversity",
+      "Continuous Innovation",
+      "Streamlined Collaboration",
+      "Continuous Support"
+    ]
+  },
+  "outcomes": {
+    "tag": "OUTCOMES",
+    "heading": "Our extension outcomes that drive excellence.",
+    "items": [
+      "Enhanced User Satisfaction",
+      "Streamlined Product Navigation",
+      "Increased User Engagement",
+      "Improved Brand Perception",
+      "Reduced Bounce Rates",
+      "Higher Conversion Rates"
+    ]
+  },
+  "testimonials": [
+    {
+      "index": "/01",
+      "quote": "We started with reloadux with an AI product and a lot of assumptions. They challenged most of them, in a good way. By the time we launched, we had an AI marketing tool marketers actually wanted.",
+      "name": "Iman Oubou",
+      "role": "CEO",
+      "company": "Swaypay",
+      "avatar": "/images/testimonials/iman.webp",
+      "companyLogo": ""
+    },
+    {
+      "index": "/02",
+      "quote": "We had the AI product knowledge. What we didn't have was a way to present it that didn't overwhelm users, reloadux team took the time to understand the product and created end to end interactive flows that became the foundation of the product.",
+      "name": "Matthew Tarascio",
+      "role": "Tech Entrepreneur",
+      "company": "Vocable",
+      "avatar": "/images/testimonials/matthew.jpeg",
+      "companyLogo": "/images/testimonials/vocable-logo.webp"
+    },
+    {
+      "index": "/03",
+      "quote": "The collaboration was smooth from start to finish. They asked the right questions, pushed back when we were off track, and helped us identify where AI actually made sense, then delivered ahead of schedule.",
+      "name": "Yuriy Shikhanovich",
+      "role": "Manager",
+      "company": "OCC",
+      "avatar": "/images/testimonials/yuriy.webp",
+      "companyLogo": "/images/testimonials/occ-logo.webp"
+    },
+    {
+      "index": "/04",
+      "quote": "Operations managers are skeptical people. reloadux team got that immediately. Everything they designed had a clear explanation behind it. That's why it actually got used.",
+      "name": "Viktor Misyutin",
+      "role": "Manager",
+      "company": "TradeZella",
+      "avatar": "/images/testimonials/viktor.webp",
+      "companyLogo": "/images/testimonials/tradezella-logo.webp"
+    },
+    {
+      "index": "/05",
+      "quote": "reloadux clear updates kept us informed every step of the way. Their straightforward approach made our partnership efficient and productive",
+      "name": "Mahir Iskender",
+      "role": "CEO",
+      "company": "Digno",
+      "avatar": "/images/testimonials/mahir.webp",
+      "companyLogo": "/images/testimonials/digno-logo.webp"
+    }
+  ],
+  "bottomCta": {
+    "title": "Expand your team's capabilities with our design experts.",
+    "ctaText": "Extend my team",
+    "ctaHref": "#contact-form"
+  },
+  "faqs": {
+    "tag": "FAQS",
+    "heading": "Ready to extend your team? Get your design questions answered",
+    "items": [
+      {
+        "question": "How does extending my team with your UI/UX experts benefit my existing workflow?",
+        "answer": "Adding our UI/UX professionals to your team complements your existing workflow with specialized skills in user experience design and user interface design. They integrate seamlessly with your team, bringing expertise in design systems, wireframing, and user testing, which enhances your project's overall efficiency and creativity."
+      },
+      {
+        "question": "Can your UI/UX services help control project costs?",
+        "answer": "Our UI/UX experts are adept at employing cost-effective design strategies like iterative design and prototyping, which help in identifying and solving user experience issues early in the design process. This approach prevents costly redesigns and ensures a more efficient use of your budget."
+      },
+      {
+        "question": "How do your UI/UX services speed up my project delivery?",
+        "answer": "Our team utilizes agile UX methodologies, enabling faster design iterations and more collaborative and flexible design processes. This approach reduces time-to-market by allowing for simultaneous progress in different aspects of the project, from research to design implementation."
+      },
+      {
+        "question": "What quality assurance methods are inherent in your UI/UX services?",
+        "answer": "We ensure quality by integrating best practices in UI/UX design, such as heuristic evaluations, user testing, and accessibility checks. Our experts conduct regular reviews and feedback sessions to maintain high standards and align the design closely with user needs and business goals."
+      },
+      {
+        "question": "How do you address operational bottlenecks with your UI/UX team extension?",
+        "answer": "Our UI/UX team is trained to identify and resolve operational bottlenecks through effective communication, streamlined processes, and collaborative tools. We focus on optimizing the design process to enhance productivity and reduce delays in project timelines."
+      },
+      {
+        "question": "Are your UI/UX services scalable according to my project's needs?",
+        "answer": "Yes, our services are highly scalable. We can adjust the size and composition of the UI/UX team based on your project's requirements, ensuring that you have the right amount of resources at every stage of the project."
+      },
+      {
+        "question": "How does your team contribute to innovation in my existing UI/UX setup?",
+        "answer": "Our UI/UX professionals bring fresh perspectives and the latest design trends and technologies to your team. They foster a culture of innovation, encouraging experimentation and pushing the boundaries of traditional design to create more impactful and user-centered designs."
+      }
+    ]
+  },
+  "nextSteps": [
+    { "number": "01", "text": "We'll respond within 24 hours." },
+    { "number": "02", "text": "Our UX Expert will collect project details and create a brief." },
+    { "number": "03", "text": "We'll prepare estimates and share a project proposal." }
+  ],
+  "contactInfo": {
+    "phone": "(202) 978 3410",
+    "email": "info@reloadux.com",
+    "team": [
+      { "name": "Sahar", "role": "Key Account Manager", "linkedin": "https://www.linkedin.com/in/sahar-asif-284a9955/", "image": "/images/team/sahar.webp" },
+      { "name": "Lara Kazan", "role": "Business Development Executive", "linkedin": "https://www.linkedin.com/in/lara-kazan-82a24113b/", "image": "/images/team/lara.webp" }
+    ]
+  }
+}
