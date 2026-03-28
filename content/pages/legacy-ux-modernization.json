@@ -1,0 +1,160 @@
+{
+  "hero": {
+    "tag": "Legacy UX Modernization",
+    "title": "Legacy UX Modernization",
+    "subtitle": "Modernize legacy workflows into efficient, AI-native products built to scale intelligently.",
+    "ctaText": "Get Started",
+    "ctaHref": "#contact-form"
+  },
+  "challenges": {
+    "tag": "CHALLENGES",
+    "heading": "Trying to introduce AI into a legacy product?",
+    "description": "If these challenges feel familiar, your product likely needs structural modernization before AI can work properly.",
+    "cards": [
+      { "tag": "Structural Debt", "description": "AI-generated content has nowhere logical to live in an architecture built for static pages." },
+      { "tag": "System Inconsistency", "description": "Years of patched components means there's no consistent foundation to build AI interaction patterns on." },
+      { "tag": "User Disruption", "description": "Dropping AI into a cluttered interface doesn't fix the clutter, it just gives users one more thing to ignore." },
+      { "tag": "Rebuild Risk", "description": "A full redesign means 12+ months, a frozen roadmap, and a product your users no longer recognise." },
+      { "tag": "No Rollout Plan", "description": "Without a phased framework, every update risks breaking the workflows your users rely on daily." },
+      { "tag": "Legacy Limitations", "description": "Every AI initiative hits the same wall: engineering flags interface debt before anything new can be built." }
+    ]
+  },
+  "caseStudies": {
+    "tag": "OUR WORK",
+    "heading": "We modernize B2B and SaaS products progressively — without burning months on a rebuild.",
+    "stats": [
+      { "value": "12+", "label": "years combined UX research experience across our team" },
+      { "value": "94%", "label": "client satisfaction rate with actionable insights provided" },
+      { "value": "3.2x", "label": "more tasks completed after AI-guided UX improvements" }
+    ],
+    "items": [
+      {
+        "name": "PEOPLE GURU",
+        "description": "Make performance reviews faster and smarter with AI that analyzes feedback, summarizes performance, and sets actionable goals.",
+        "slides": [
+          { "type": "image", "src": "/images/audit/people-guru-slide-1.webp" },
+          { "type": "image", "src": "/images/audit/people-guru-slide-2.webp" }
+        ],
+        "href": "#",
+        "comingSoon": false
+      },
+      {
+        "name": "RUMBLEUP",
+        "description": "From slow, manual survey and segmentation processes to AI-driven workflows that generate logic, suggestions, and personalized insights in seconds.",
+        "slides": [
+          { "type": "image", "src": "/images/audit/wild-tide-slide-1.webp" },
+          { "type": "image", "src": "/images/audit/wild-tide-slide-2.webp" },
+          { "type": "image", "src": "/images/audit/wild-tide-slide-3.webp" }
+        ],
+        "href": "#",
+        "comingSoon": false
+      },
+      {
+        "name": "SALES CO-PILOT",
+        "description": "Turn email conversations into qualified opportunities with an AI sales copilot that surfaces key prospect insights and generates personalized outreach directly from your inbox.",
+        "slides": [
+          { "type": "image", "src": "/images/audit/nfm-slide-1.webp" },
+          { "type": "image", "src": "/images/audit/nfm-slide-2.webp" },
+          { "type": "image", "src": "/images/audit/nfm-slide-3.webp" }
+        ],
+        "href": "#",
+        "comingSoon": false
+      }
+    ]
+  },
+  "videoBanner": {
+    "heading": "Your product was built for yesterday. We'll make it",
+    "headingAccent": "future-ready.",
+    "description": "We modernize B2B and SaaS products progressively, so your team can move forward without burning months on a rebuild.",
+    "ctaText": "Make Your Product Future-Ready",
+    "ctaHref": "#contact-form"
+  },
+  "process": {
+    "tag": "HOW WE DO IT",
+    "heading": "A structured modernization framework, delivered progressively, without breaking what works.",
+    "phases": [
+      {
+        "label": "Phase 1",
+        "title": "Foundation",
+        "description": "Audit your current UX, create or extend the design system with AI-ready components, and align stakeholders on modernization scope."
+      },
+      {
+        "label": "Phase 2",
+        "title": "Critical Paths",
+        "description": "Redesign the 2–3 highest-impact workflows first, prioritizing areas where AI will be introduced, then test and iterate with real users."
+      },
+      {
+        "label": "Phase 3",
+        "title": "Systematic Rollout",
+        "description": "Roll out changes module by module with onboarding support at each stage, monitoring adoption and adjusting based on real usage data."
+      }
+    ],
+    "note": "Timeline depends on product scope. Large enterprise platforms may need 16+ weeks with additional phases."
+  },
+  "keyDeliverables": {
+    "tag": "KEY Deliverables",
+    "heading": "What you'll receive from your modernization engagement.",
+    "items": [
+      { "title": "Restructured information architecture", "description": "A redesigned IA that gives AI features a logical, scalable home and gives users a clear mental model of how the product works." },
+      { "title": "Updated design system", "description": "A modernized or net-new design system built to support AI interaction states, dynamic content, and consistent patterns across every surface." },
+      { "title": "AI-Ready component library", "description": "A component set that includes confidence indicators, explanation patterns, loading and streaming states, override controls, and AI output containers, ready for your engineering team to implement." },
+      { "title": "Redesigned key user flows", "description": "The highest-priority flows are rebuilt for AI integration, where modernization delivers the most immediate value and unblocks the most engineering work." },
+      { "title": "Progressive rollout strategy", "description": "A phased plan for releasing changes to users without disruption, with rollout stages, feedback checkpoints, and communication guidance for each phase." }
+    ]
+  },
+  "whenToDoIt": {
+    "tag": "WHEN TO DO IT",
+    "heading": "The right time to modernize is before interface debt becomes the reason AI doesn't ship.",
+    "items": [
+      { "title": "Before AI integration", "description": "Your team has identified AI opportunities but the current interface can't structurally support them yet." },
+      { "title": "After a UX audit", "description": "You've completed an audit and the findings flagged IA gaps, design system debt, or outdated flows that need to be resolved before AI can be integrated." },
+      { "title": "During roadmap planning", "description": "You're planning the next major product cycle and need to know what needs to be modernized before engineering commits to building AI features." },
+      { "title": "During underperformance", "description": "Users are dropping off, adoption is flat, or support tickets point to interface confusion and AI integration will only amplify those problems if the foundation isn't fixed first." },
+      { "title": "Before a new market or user segment", "description": "You're expanding to a new audience or use case and the current interface wasn't built to accommodate the scale or complexity that comes with it." },
+      { "title": "When engineering keeps saying no", "description": "Every AI initiative is getting blocked by interface debt. Modernization clears the path so product and engineering can move forward together." }
+    ]
+  },
+  "otherServices": {
+    "tag": "OTHER WAYS WE CAN HELP",
+    "items": [
+      { "title": "UX Audit & AI Readiness", "description": "Before modernizing, you need to know exactly what's broken and what's blocking AI. We audit your product and give you a clear action plan.", "href": "/service/ux-audit" },
+      { "title": "AI Feature Experience Design", "description": "Once your foundation is ready, we design the AI features, copilots, agents, generative flows, built for real user adoption.", "href": "#" },
+      { "title": "Adoption & Optimization", "description": "Your AI features are live but users aren't engaging. We identify where adoption breaks down and fix the experience.", "href": "" }
+    ]
+  },
+  "bottomCta": {
+    "title": "Stop letting legacy debt block your AI integration roadmap.",
+    "subtitle": "We modernize progressively, so users adapt without friction and your product is ready for everything AI integration requires.",
+    "ctaText": "Contact Us",
+    "ctaHref": "#contact-form"
+  },
+  "faqs": {
+    "tag": "FAQS",
+    "heading": "Reimagine your digital products with our redesign services.",
+    "items": [
+      { "question": "What is legacy UX modernisation for AI integration?", "answer": "Legacy UX modernization involves updating your existing user interface (UI) to seamlessly integrate AI-powered features. This includes reworking your information architecture, design systems, and component libraries to ensure your product is AI-ready and capable of handling dynamic AI content and interaction patterns." },
+      { "question": "Why is legacy UX modernization important for AI?", "answer": "Without modernizing legacy interfaces, AI features can fail to integrate properly, disrupting the user experience. By restructuring your UI for AI integration, we enable smooth AI-powered interactions, making sure that AI-generated content appears where it is most effective and that users can easily interact with it." },
+      { "question": "How does UX modernization differ from a standard redesign?", "answer": "A standard UX redesign focuses primarily on usability and aesthetics. AI UX modernization, however, prepares your interface specifically for AI integration by rebuilding the information architecture, updating the design system, and creating an AI-ready component library to handle new AI interactions and data." },
+      { "question": "How do you integrate AI features into an existing product?", "answer": "We integrate AI features by modernizing your product's interface and design system, ensuring compatibility with AI-powered components like confidence indicators, loading states, and error messages. We follow a progressive rollout strategy, making gradual changes to prevent disrupting user experience while introducing AI capabilities." },
+      { "question": "Will UX modernization disrupt our existing users?", "answer": "No. We prioritize AI integration with a progressive rollout strategy that introduces changes gradually, ensuring users adapt seamlessly without facing a complete redesign overnight. The goal is to integrate AI without overwhelming users or introducing unnecessary friction." },
+      { "question": "Can we modernize only part of our UX, such as just the design system or component library?", "answer": "Yes. We can tailor the modernization process to fit your needs. If your information architecture is already solid, we can focus on modernizing specific aspects like the design system or creating an AI-ready component library without overhauling the entire UX." },
+      { "question": "How long does the UX modernization process take?", "answer": "The timeline for legacy UX modernization typically spans 8–12 weeks. This includes structuring the information architecture, updating the design system, and creating AI-ready components. We work incrementally to ensure that AI integration is smooth and scalable." },
+      { "question": "How does modernizing the UX prepare us for AI feature design?", "answer": "UX modernization lays the foundation for AI feature design by ensuring your product is compatible with dynamic, AI-powered elements. Once the foundational work is complete, we move into designing specific AI interactions and ensuring they are seamlessly implemented." },
+      { "question": "What happens after we modernize our UX?", "answer": "Post-modernization, the next step is AI feature design, where we create detailed interaction patterns, confidence indicators, and error states for AI interactions. We also assist with AI opportunity mapping to identify areas where AI can bring tangible value to your product and ensure a smooth build-out of AI features." },
+      { "question": "Can your team collaborate with our engineering team during the modernization process?", "answer": "Yes. We work closely with your engineering team to ensure that the AI-ready components are implemented correctly. We provide annotated specifications, component documentation, and recorded walkthroughs to guide the development team, ensuring design quality is maintained throughout the build phase." }
+    ]
+  },
+  "nextSteps": [
+    { "number": "01", "text": "We'll respond within 24 hours." },
+    { "number": "02", "text": "Our UX Expert will collect project details and create a brief." },
+    { "number": "03", "text": "We'll prepare estimates and share a project proposal." }
+  ],
+  "contactInfo": {
+    "phone": "(202) 978 3410",
+    "email": "info@reloadux.com",
+    "team": [
+      { "name": "Sahar", "role": "Key Account Manager", "linkedin": "https://www.linkedin.com/in/sahar-asif-284a9955/", "image": "/images/team/sahar.webp" },
+      { "name": "Lara Kazan", "role": "Business Development Executive", "linkedin": "https://www.linkedin.com/in/lara-kazan-82a24113b/", "image": "/images/team/lara.webp" }
+    ]
+  }
+}

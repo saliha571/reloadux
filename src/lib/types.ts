@@ -439,6 +439,80 @@ export interface MVPPageData {
   };
 }
 
+// ─── Legacy UX Modernization Page ─────────────────────────────────────────────
+
+export interface LegacyModernizationPageData {
+  hero: {
+    tag: string;
+    title: string;
+    subtitle: string;
+    ctaText: string;
+    ctaHref: string;
+  };
+  challenges: {
+    tag: string;
+    heading: string;
+    description: string;
+    cards: { tag: string; description: string }[];
+  };
+  caseStudies: {
+    tag: string;
+    heading: string;
+    stats: { value: string; label: string }[];
+    items: {
+      name: string;
+      description: string;
+      slides: { type: "video" | "image"; src: string }[];
+      href: string;
+      comingSoon?: boolean;
+    }[];
+  };
+  videoBanner: {
+    heading: string;
+    headingAccent: string;
+    description: string;
+    ctaText: string;
+    ctaHref: string;
+  };
+  process: {
+    tag: string;
+    heading: string;
+    phases: { label: string; title: string; description: string }[];
+    note?: string;
+  };
+  keyDeliverables: {
+    tag: string;
+    heading: string;
+    items: { title: string; description: string }[];
+  };
+  whenToDoIt: {
+    tag: string;
+    heading: string;
+    items: { title: string; description: string }[];
+  };
+  otherServices: {
+    tag: string;
+    items: { title: string; description: string; href: string }[];
+  };
+  bottomCta: {
+    title: string;
+    subtitle: string;
+    ctaText: string;
+    ctaHref: string;
+  };
+  faqs: {
+    tag: string;
+    heading: string;
+    items: { question: string; answer: string }[];
+  };
+  nextSteps: { number: string; text: string }[];
+  contactInfo: {
+    phone: string;
+    email: string;
+    team: { name: string; role: string; linkedin: string; image?: string }[];
+  };
+}
+
 // ─── UX Audit & AI Readiness Page ─────────────────────────────────────────────
 
 export interface AuditCaseStudy {

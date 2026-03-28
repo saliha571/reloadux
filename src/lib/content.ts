@@ -6,6 +6,7 @@ import type {
   MVPPageData,
   TeamExtensionPageData,
   UXAuditPageData,
+  LegacyModernizationPageData,
   Service,
   CaseStudy,
   BlogPost,
@@ -26,6 +27,7 @@ import uxRedesignData from "../../content/pages/ux-redesign.json";
 import mvpData from "../../content/pages/design-from-scratch-mvp.json";
 import teamExtensionData from "../../content/pages/team-extension.json";
 import uxAuditData from "../../content/pages/ux-audit-ai-readiness.json";
+import legacyModernizationData from "../../content/pages/legacy-ux-modernization.json";
 
 import {
   getStrapiHomepage,
@@ -446,6 +448,12 @@ export async function getTeamExtensionPage(): Promise<TeamExtensionPageData> {
   } catch {
     return fallback;
   }
+}
+
+// ─── Legacy UX Modernization Page ────────────────────────────────────────────
+
+export async function getLegacyModernizationPage(): Promise<LegacyModernizationPageData> {
+  return legacyModernizationData as LegacyModernizationPageData;
 }
 
 // ─── UX Audit & AI Readiness Page ─────────────────────────────────────────────
