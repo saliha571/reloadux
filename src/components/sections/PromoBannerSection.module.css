@@ -213,21 +213,33 @@
     padding: 60px 0;
   }
 
+  .inner {
+    gap: 32px;
+  }
+
   .title {
     font-size: 22px;
   }
 
   .bannerHeading {
-    font-size: 22px;
+    font-size: 20px;
   }
 
   .banner {
-    min-height: 200px;
-    padding: 28px;
+    min-height: 180px;
+    padding: 24px;
+  }
+
+  .rightCol {
+    max-width: none;
   }
 
   .projectCard {
     padding: 24px;
+  }
+
+  .projectHeading {
+    font-size: 20px;
   }
 
   .subscribeCard {

@@ -76,6 +76,12 @@
 
   .heading {
     font-size: 28px;
+    margin-bottom: var(--space-40);
+  }
+
+  .logoWrap {
+    width: clamp(120px, 45vw, 256px);
+    min-height: 100px;
   }
 
   .logo {

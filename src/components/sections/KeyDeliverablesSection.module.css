@@ -1,5 +1,5 @@
 .section {
-  background: var(--bg-dark);
+  background: var(--bg-dark) url("/images/covers/deliverables-bg.png") top right / contain no-repeat;
   padding: var(--section-padding) 0;
   width: 100%;
 }
@@ -21,7 +21,6 @@
 .heading {
   font-family: var(--font-primary);
   font-size: 48px;
-  font-weight: 400;
   line-height: 1.35;
   color: var(--color-white);
 }

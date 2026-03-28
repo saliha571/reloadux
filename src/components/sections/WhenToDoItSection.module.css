@@ -1,5 +1,5 @@
 .section {
-  background: var(--color-smoke);
+  background: var(--color-smoke) url("/images/covers/when-to-do-it-bg.png") top right / cover no-repeat;
   padding: var(--section-padding) 0;
   width: 100%;
   position: relative;
@@ -22,10 +22,10 @@
 .heading {
   font-family: var(--font-primary);
   font-size: 48px;
-  font-weight: 400;
   line-height: 1.35;
   color: var(--color-black);
   margin-top: var(--space-24);
+  width: 35ch;
 }
 
 /* ── Row list ────────────────────────────────────────────────────────────── */
@@ -49,18 +49,19 @@
 }
 
 .rowTitle {
-  font-family: var(--font-primary);
-  font-size: 24px;
-  font-weight: 500;
+  font-family: var(--font-serif);
+  font-size: 32px;
+  font-weight: 400;
   color: var(--color-black);
-  flex: 0 0 380px;
+  flex-grow: 1;
+  max-width: 415px;
   line-height: 1.4;
 }
 
 .rowDesc {
   font-family: var(--font-serif);
   font-size: 14px;
-  font-style: italic;
+  /* font-style: italic; */
   font-weight: 400;
   line-height: 1.6;
   color: var(--color-black);
@@ -78,11 +79,13 @@
 
   .heading {
     font-size: 36px;
+    width: auto;
   }
 
   .rowTitle {
     flex: 1;
-    font-size: 20px;
+    font-size: 24px;
+    max-width: none;
   }
 
   .rowDesc {
@@ -99,6 +102,7 @@
 
   .heading {
     font-size: 28px;
+    width: auto;
   }
 
   .row {
@@ -109,7 +113,8 @@
 
   .rowTitle {
     flex: none;
-    font-size: 18px;
+    font-size: 22px;
+    max-width: none;
   }
 
   .rowDesc {

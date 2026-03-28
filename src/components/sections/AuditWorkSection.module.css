@@ -2,9 +2,10 @@
   background: var(--bg-dark);
   padding: var(--section-padding) 0;
   width: 100%;
+  overflow: hidden;
 }
 
-.inner {
+.constrained {
   max-width: var(--content-width);
   margin: 0 auto;
   padding-inline: var(--page-padding);
@@ -122,10 +123,15 @@
 }
 
 .caseStudyHeader {
-  margin-bottom: var(--space-32);
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 60px;
+  margin-bottom: var(--space-40);
 }
 
 .caseStudyTag {
+  flex-shrink: 0;
   font-family: var(--font-serif);
   font-size: 18px;
   font-weight: 400;
@@ -133,32 +139,41 @@
   letter-spacing: 0.36px;
   text-transform: uppercase;
   color: var(--color-white);
+  white-space: nowrap;
 }
 
 .caseStudyDesc {
   font-family: var(--font-primary);
-  font-size: 16px;
-  line-height: 1.6;
-  color: var(--color-grey-400);
-  margin-top: var(--space-16);
-  max-width: 640px;
+  font-size: 37px;
+  font-weight: 500;
+  font-style: normal;
+  line-height: normal;
+  color: var(--color-white);
+  width: 840px;
+  max-width: 840px;
+  padding-top: 10px;
 }
 
 /* ── Swiper slider ───────────────────────────────────────────────────────── */
 
 .sliderWrap {
   position: relative;
+  height: 100%;
   width: 100%;
+  padding-inline-start: max(var(--page-padding), calc((100% - var(--content-width)) / 2 + var(--page-padding)));
+  padding-inline-end: 0;
 }
 
 .swiper {
   width: 100%;
-  overflow: hidden;
+  overflow: visible;
 }
 
 .slide {
   display: flex;
   flex-direction: column;
+  overflow: hidden;
+  border-radius: 8px;
 }
 
 .slideMedia {
@@ -166,17 +181,7 @@
   height: auto;
   display: block;
   object-fit: cover;
-  border-radius: 4px;
-}
-
-.slideCaption {
-  font-family: var(--font-primary);
-  font-size: 14px;
-  font-weight: 400;
-  line-height: 1.6;
-  color: var(--color-grey-400);
-  margin-top: var(--space-16);
-  max-width: 640px;
+  border-radius: 8px;
 }
 
 /* ── Navigation row ──────────────────────────────────────────────────────── */
@@ -235,6 +240,21 @@
     flex-direction: column;
     gap: 24px;
   }
+
+  .caseStudyHeader {
+    gap: 32px;
+  }
+
+  .caseStudyDesc {
+    font-size: 22px;
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .statLabel {
+    font-size: 18px;
+    line-height: 24px;
+  }
 }
 
 /* ── Mobile ──────────────────────────────────────────────────────────────── */
@@ -267,6 +287,27 @@
 
   .statValue {
     font-size: 40px;
+  }
+
+  .caseStudyHeader {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .caseStudyDesc {
+    font-size: 18px;
+    line-height: 1.5;
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .statLabel {
+    font-size: 16px;
+    line-height: 22px;
+  }
+
+  .sliderWrap {
+    padding-inline-start: 20px;
   }
 
   .navBtn {

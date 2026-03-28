@@ -3,7 +3,7 @@
 import { useRef, useState } from "react";
 import Image from "next/image";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Navigation } from "swiper/modules";
+import { Navigation, FreeMode, Mousewheel } from "swiper/modules";
 import type { Swiper as SwiperType } from "swiper";
 import "swiper/css";
 import { SectionTag } from "@/components/ui/SectionTag";
@@ -55,17 +55,19 @@ function CaseStudySlider({
   const [isBeginning, setIsBeginning] = useState(true);
   const [isEnd, setIsEnd] = useState(false);
 
-  const defaultCaption =
-    cs.name === "PEOPLE GURU"
-      ? `Our audit for PeopleGuru uncovered visual and functional inconsistencies that hindered users from efficiently completing tasks.`
-      : `Our comprehensive UX audit report identified various problem areas, from information hierarchy to accessibility concerns.`;
-
   return (
     <div className={styles.sliderWrap}>
       <Swiper
-        modules={[Navigation]}
-        slidesPerView={1.35}
-        spaceBetween={24}
+        modules={[Navigation, FreeMode, Mousewheel]}
+        slidesPerView={1.5}
+        spaceBetween={20}
+        freeMode={{ enabled: true, momentum: true }}
+        mousewheel={{ forceToAxis: true }}
+        breakpoints={{
+          0: { slidesPerView: 1.15, spaceBetween: 12 },
+          768: { slidesPerView: 1.3, spaceBetween: 16 },
+          1024: { slidesPerView: 1.5, spaceBetween: 20 },
+        }}
         onSwiper={(s) => {
           swiperRef.current = s;
           setIsBeginning(s.isBeginning);
@@ -92,15 +94,13 @@ function CaseStudySlider({
               ) : (
                 <Image
                   src={slide.src}
-                  alt={slide.caption || defaultCaption}
+                  alt={`${cs.name} slide ${j + 1}`}
                   width={1280}
                   height={620}
                   className={styles.slideMedia}
+                  loading="lazy"
                 />
               )}
-              <h3 className={styles.slideCaption}>
-                {slide.caption || defaultCaption}
-              </h3>
             </div>
           </SwiperSlide>
         ))}
@@ -140,7 +140,7 @@ export function AuditWorkSection({
 }: AuditWorkSectionProps) {
   return (
     <section className={styles.section}>
-      <div className={styles.inner}>
+      <div className={styles.constrained}>
         <SectionTag text={tag} />
         <div className={styles.headingRow}>
           <h2 className={styles.heading}>{renderHeading(heading)}</h2>
@@ -172,18 +172,20 @@ export function AuditWorkSection({
             </div>
           ))}
         </div>
+      </div>
 
-        <div className={styles.caseStudies}>
-          {caseStudies.map((cs, i) => (
-            <div key={i} className={styles.caseStudy}>
+      <div className={styles.caseStudies}>
+        {caseStudies.map((cs, i) => (
+          <div key={i} className={styles.caseStudy}>
+            <div className={styles.constrained}>
               <div className={styles.caseStudyHeader}>
                 <span className={styles.caseStudyTag}>[ {cs.name} ]</span>
                 <p className={styles.caseStudyDesc}>{cs.description}</p>
               </div>
-              <CaseStudySlider cs={cs} />
             </div>
-          ))}
-        </div>
+            <CaseStudySlider cs={cs} />
+          </div>
+        ))}
       </div>
     </section>
   );

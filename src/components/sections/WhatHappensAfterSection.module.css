@@ -1,5 +1,5 @@
 .section {
-  background: var(--bg-dark);
+  background: var(--bg-dark) url("/images/covers/what-happens-after-bg.png") top right / cover no-repeat;
   padding: var(--section-padding) 0;
   width: 100%;
 }
@@ -28,7 +28,7 @@
   font-family: var(--font-serif);
   font-size: 40px;
   font-weight: 400;
-  font-style: italic;
+  /* font-style: italic; */
   line-height: 1.4;
   color: var(--color-white);
   flex: 1;
@@ -123,10 +123,16 @@
   }
 
   .pathItem {
-    padding: 24px 0;
+    padding: 20px 0;
+    gap: 20px;
   }
 
   .pathTitle {
     font-size: 18px;
+  }
+
+  .pathDesc {
+    font-size: 13px;
+    max-width: none;
   }
 }

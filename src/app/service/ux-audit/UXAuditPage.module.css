@@ -8,10 +8,27 @@
 
 .heroSection {
   justify-content: flex-start;
+  background-position: center right !important;
+  background-size: cover !important;
+  background-repeat: no-repeat !important;
 }
 
 .heroSection > div:first-child {
   text-align: start;
   align-items: flex-start;
   justify-content: center;
+}
+
+@media (max-width: 1024px) {
+  .ctaHeading {
+    font-size: 48px;
+    line-height: 56px;
+  }
+}
+
+@media (max-width: 767px) {
+  .ctaHeading {
+    font-size: 28px;
+    line-height: 38px;
+  }
 }

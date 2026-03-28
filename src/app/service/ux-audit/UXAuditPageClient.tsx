@@ -52,7 +52,7 @@ export function UXAuditPageClient({ data }: Props) {
           { src: "/images/logos/cured-logo.svg", alt: "Cured", width: 123 },
           { src: "/images/logos/upskill-logo.svg", alt: "Upskill", width: 198 },
         ]}
-        backgroundImage="/images/hero/team-extension-hero-bg.png"
+        backgroundImage="/images/hero/ux-audit-hero-bg.png"
         className={pageStyles.heroSection}
       />
 
@@ -122,7 +122,7 @@ export function UXAuditPageClient({ data }: Props) {
         ctaHref={data.bottomCta.ctaHref}
         subtitle={data.bottomCta.subtitle}
         hideLogos
-        backgroundImage="/images/cta/mvp-cta-bg.webp"
+        backgroundImage="/images/cta/ux-audit-cta-bg.png"
         headingClassName={pageStyles.ctaHeading}
       />
 
