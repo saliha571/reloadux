@@ -6,8 +6,6 @@ import { ChallengesSection } from "@/components/sections/ChallengesSection";
 import { AuditWorkSection } from "@/components/sections/AuditWorkSection";
 import { CTASection } from "@/components/sections/CTASection";
 import { MVPProcessSection } from "@/components/sections/MVPProcessSection";
-import { OutcomesSection } from "@/components/sections/OutcomesSection";
-import { TestimonialsSection } from "@/components/sections/TestimonialsSection";
 import { KeyDeliverablesSection } from "@/components/sections/KeyDeliverablesSection";
 import { PricingSection } from "@/components/sections/PricingSection";
 import { WhenToDoItSection } from "@/components/sections/WhenToDoItSection";

@@ -13,9 +13,10 @@ interface LogoItem {
   width: number;
 }
 
-interface ServiceHeroProps {
+export interface ServiceHeroProps {
   tag: string;
   title: string;
+  titleNode?: React.ReactNode;
   titleAccent?: string;
   titleAccentItalic?: boolean;
   titleSize?: "default" | "small";
@@ -143,6 +144,7 @@ function horizontalLoop(
 export function ServiceHero({
   tag,
   title,
+  titleNode,
   titleAccent,
   titleAccentItalic = false,
   titleSize = "default",
@@ -198,13 +200,17 @@ export function ServiceHero({
       <div className={styles.content}>
         <SectionTag text={tag} />
         <h1 className={`${styles.title} ${titleSize === "small" ? styles.titleSmall : ""}`}>
-          {title}
-          {titleAccent && (
+          {titleNode || (
             <>
-              <br />
-              <span className={titleAccentItalic ? styles.titleAccent : styles.titleAccentPlain}>
-                {titleAccent}
-              </span>
+              {title}
+              {titleAccent && (
+                <>
+                  <br />
+                  <span className={titleAccentItalic ? styles.titleAccent : styles.titleAccentPlain}>
+                    {titleAccent}
+                  </span>
+                </>
+              )}
             </>
           )}
         </h1>
