@@ -1,0 +1,17 @@
+.ctaHeading {
+  font-family: var(--font-primary);
+  font-size: 72px;
+  font-weight: 600;
+  line-height: 80px;
+  color: var(--color-white);
+}
+
+.heroSection {
+  justify-content: flex-start;
+}
+
+.heroSection > div:first-child {
+  text-align: start;
+  align-items: flex-start;
+  justify-content: center;
+}

@@ -10,6 +10,9 @@ interface CTASectionProps {
   hideLogos?: boolean;
   backgroundImage?: string;
   accentWord?: string;
+  headingClassName?: string;
+  secondaryCtaText?: string;
+  secondaryCtaHref?: string;
 }
 
 const clientLogos = [
@@ -28,6 +31,9 @@ export function CTASection({
   hideLogos,
   backgroundImage,
   accentWord,
+  headingClassName,
+  secondaryCtaText,
+  secondaryCtaHref,
 }: CTASectionProps) {
   const keyword = accentWord || "your product";
   const parts = title.split(keyword);
@@ -39,7 +45,7 @@ export function CTASection({
   return (
     <section className={styles.section} style={sectionStyle}>
       <div className={styles.inner}>
-        <h2 className={styles.heading}>
+        <h2 className={`${styles.heading} ${headingClassName || ""}`}>
           {parts.length > 1 ? (
             <>
               {parts[0]}
@@ -56,6 +62,12 @@ export function CTASection({
         </FlairButton>
 
         {subtitle && <p className={styles.subtitle}>{subtitle}</p>}
+
+        {secondaryCtaText && secondaryCtaHref && (
+          <FlairButton href={secondaryCtaHref} size="md">
+            {secondaryCtaText}
+          </FlairButton>
+        )}
 
         {!hideLogos && (
           <div className={styles.logos}>

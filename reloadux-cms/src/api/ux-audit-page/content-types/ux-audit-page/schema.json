@@ -1,0 +1,182 @@
+{
+  "kind": "singleType",
+  "collectionName": "ux_audit_pages",
+  "info": {
+    "singularName": "ux-audit-page",
+    "pluralName": "ux-audit-pages",
+    "displayName": "UX Audit Page",
+    "description": "UX Audit & AI Readiness service page content"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "heroTag": {
+      "type": "string",
+      "default": "UX AUDIT + AI READINESS"
+    },
+    "heroTitle": {
+      "type": "text",
+      "required": true
+    },
+    "heroCtaText": {
+      "type": "string",
+      "default": "Audit My Product"
+    },
+    "heroCtaHref": {
+      "type": "string",
+      "default": "#contact-form"
+    },
+    "challengesTag": {
+      "type": "string",
+      "default": "CHALLENGES"
+    },
+    "challengesHeading": {
+      "type": "text"
+    },
+    "challengesDescription": {
+      "type": "text"
+    },
+    "challengeCards": {
+      "type": "json"
+    },
+    "auditWorkTag": {
+      "type": "string",
+      "default": "OUR UX AUDIT WORK"
+    },
+    "auditWorkHeading": {
+      "type": "text"
+    },
+    "auditWorkStats": {
+      "type": "json"
+    },
+    "auditWorkCaseStudies": {
+      "type": "json"
+    },
+    "midCtaTitle": {
+      "type": "text"
+    },
+    "midCtaText": {
+      "type": "string",
+      "default": "Audit My Product"
+    },
+    "midCtaHref": {
+      "type": "string",
+      "default": "#contact-form"
+    },
+    "processTag": {
+      "type": "string",
+      "default": "HOW IT WORKS"
+    },
+    "processHeading": {
+      "type": "text"
+    },
+    "processSteps": {
+      "type": "json"
+    },
+    "deliverables": {
+      "type": "json"
+    },
+    "keyDeliverablesTag": {
+      "type": "string",
+      "default": "KEY Deliverables"
+    },
+    "keyDeliverablesHeading": {
+      "type": "string"
+    },
+    "keyDeliverablesItems": {
+      "type": "json"
+    },
+    "pricingTag": {
+      "type": "string",
+      "default": "PRICING"
+    },
+    "pricingDescription": {
+      "type": "text"
+    },
+    "pricingPlanName": {
+      "type": "string"
+    },
+    "pricingPrice": {
+      "type": "string"
+    },
+    "pricingPricePer": {
+      "type": "string"
+    },
+    "pricingFeatures": {
+      "type": "json"
+    },
+    "pricingCtaText": {
+      "type": "string",
+      "default": "Get Started"
+    },
+    "pricingCtaHref": {
+      "type": "string",
+      "default": "#contact-form"
+    },
+    "whenToDoItTag": {
+      "type": "string",
+      "default": "WHEN TO DO IT"
+    },
+    "whenToDoItHeading": {
+      "type": "text"
+    },
+    "whenToDoItItems": {
+      "type": "json"
+    },
+    "whatHappensAfterTag": {
+      "type": "string",
+      "default": "WHAT HAPPENS AFTER"
+    },
+    "whatHappensAfterHeading": {
+      "type": "string"
+    },
+    "whatHappensAfterPaths": {
+      "type": "json"
+    },
+    "bottomCtaTitle": {
+      "type": "text"
+    },
+    "bottomCtaSubtitle": {
+      "type": "text"
+    },
+    "bottomCtaText": {
+      "type": "string"
+    },
+    "bottomCtaHref": {
+      "type": "string",
+      "default": "#contact-form"
+    },
+    "faqsTag": {
+      "type": "string",
+      "default": "FAQS"
+    },
+    "faqsHeading": {
+      "type": "text"
+    },
+    "faqItems": {
+      "type": "json"
+    },
+    "nextSteps": {
+      "type": "json"
+    },
+    "contactPhone": {
+      "type": "string",
+      "default": "(202) 978 3410"
+    },
+    "contactEmail": {
+      "type": "email",
+      "default": "info@reloadux.com"
+    },
+    "contactTeam": {
+      "type": "json"
+    },
+    "seoTitle": {
+      "type": "string"
+    },
+    "seoDescription": {
+      "type": "text"
+    }
+  }
+}

@@ -1,0 +1,85 @@
+.section {
+  background: var(--bg-dark);
+  padding: var(--section-padding) 0;
+  width: 100%;
+}
+
+.inner {
+  max-width: var(--content-width);
+  margin: 0 auto;
+  padding-inline: var(--page-padding);
+}
+
+.heading {
+  font-family: var(--font-primary);
+  font-size: 48px;
+  font-weight: 400;
+  line-height: 1.35;
+  color: var(--color-white);
+  margin-top: var(--space-24);
+  margin-bottom: var(--space-60);
+  max-width: 700px;
+}
+
+/* ── Logo grid ───────────────────────────────────────────────────────────── */
+
+.grid {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.logoWrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 130px;
+  width: clamp(150px, 18vw, 256px);
+  flex-grow: 1;
+  border: 1px solid var(--color-grey-700);
+  margin-top: -1px;
+  margin-left: -1px;
+}
+
+.logo {
+  height: 28px;
+  width: auto;
+  max-width: 140px;
+  object-fit: contain;
+  filter: brightness(0) invert(1);
+  opacity: 0.5;
+  transition: opacity 0.3s ease;
+}
+
+.logoWrap:hover .logo {
+  opacity: 1;
+}
+
+/* ── Tablet ──────────────────────────────────────────────────────────────── */
+
+@media (max-width: 1024px) {
+  .section {
+    padding: 80px 0;
+  }
+
+  .heading {
+    font-size: 36px;
+  }
+
+}
+
+/* ── Mobile ──────────────────────────────────────────────────────────────── */
+
+@media (max-width: 767px) {
+  .section {
+    padding: 60px 0;
+  }
+
+  .heading {
+    font-size: 28px;
+  }
+
+  .logo {
+    height: 22px;
+    max-width: 110px;
+  }
+}

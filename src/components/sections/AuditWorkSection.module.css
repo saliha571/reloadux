@@ -1,0 +1,276 @@
+.section {
+  background: var(--bg-dark);
+  padding: var(--section-padding) 0;
+  width: 100%;
+}
+
+.inner {
+  max-width: var(--content-width);
+  margin: 0 auto;
+  padding-inline: var(--page-padding);
+}
+
+/* ── Heading ────────────────────────────────────────────────────────────── */
+
+.headingRow {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 40px;
+  margin-top: var(--space-24);
+  margin-bottom: var(--space-60);
+}
+
+.heading {
+  font-family: var(--font-primary);
+  font-size: 48px;
+  font-weight: 400;
+  line-height: 1.35;
+  color: var(--color-white);
+  max-width: 750px;
+}
+
+.heading strong {
+  font-weight: 700;
+}
+
+/* ── Badge ──────────────────────────────────────────────────────────────── */
+
+.badge {
+  flex-shrink: 0;
+  align-self: flex-start;
+  position: relative;
+  width: 94px;
+  height: 93px;
+}
+
+.badgeArrow {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 18px;
+  height: 28px;
+}
+
+.badgeImg {
+  width: 94px;
+  height: 93px;
+  animation: rotating 24s linear infinite;
+}
+
+@keyframes rotating {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* ── Stats row ──────────────────────────────────────────────────────────── */
+
+.statsRow {
+  display: flex;
+  gap: 20px;
+  margin-bottom: var(--space-80);
+}
+
+.statCard {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  border: 1px solid var(--color-grey-700);
+  padding: 80px 24px 20px 24px;
+}
+
+.statValue {
+  font-family: var(--font-accent);
+  font-size: 65px;
+  font-weight: 500;
+  line-height: 70px;
+  color: var(--color-smoke);
+}
+
+.statLabel {
+  font-family: var(--font-primary);
+  font-size: 24px;
+  font-weight: 400;
+  line-height: 28px;
+  color: var(--color-smoke);
+}
+
+.statLabel strong {
+  font-weight: 700;
+  color: var(--color-white);
+}
+
+/* ── Case studies ────────────────────────────────────────────────────────── */
+
+.caseStudies {
+  position: relative;
+}
+
+.caseStudy {
+  border-top: 1px solid var(--color-grey-700);
+  padding: var(--space-48) 0;
+}
+
+.caseStudy:last-child {
+  padding-bottom: 0;
+}
+
+.caseStudyHeader {
+  margin-bottom: var(--space-32);
+}
+
+.caseStudyTag {
+  font-family: var(--font-serif);
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 60px;
+  letter-spacing: 0.36px;
+  text-transform: uppercase;
+  color: var(--color-white);
+}
+
+.caseStudyDesc {
+  font-family: var(--font-primary);
+  font-size: 16px;
+  line-height: 1.6;
+  color: var(--color-grey-400);
+  margin-top: var(--space-16);
+  max-width: 640px;
+}
+
+/* ── Swiper slider ───────────────────────────────────────────────────────── */
+
+.sliderWrap {
+  position: relative;
+  width: 100%;
+}
+
+.swiper {
+  width: 100%;
+  overflow: hidden;
+}
+
+.slide {
+  display: flex;
+  flex-direction: column;
+}
+
+.slideMedia {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+  border-radius: 4px;
+}
+
+.slideCaption {
+  font-family: var(--font-primary);
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.6;
+  color: var(--color-grey-400);
+  margin-top: var(--space-16);
+  max-width: 640px;
+}
+
+/* ── Navigation row ──────────────────────────────────────────────────────── */
+
+.navRow {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: var(--space-24);
+}
+
+.navBtn {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  border: 1px solid var(--color-grey-700);
+  background: transparent;
+  color: var(--color-white);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background 0.3s ease, border-color 0.3s ease;
+}
+
+.navBtn:hover:not(:disabled) {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: var(--color-grey-400);
+}
+
+.navDisabled {
+  opacity: 0.3;
+  cursor: default;
+}
+
+/* ── Tablet ──────────────────────────────────────────────────────────────── */
+
+@media (max-width: 1024px) {
+  .section {
+    padding: 80px 0;
+  }
+
+  .heading {
+    font-size: 36px;
+  }
+
+  .statValue {
+    font-size: 48px;
+  }
+
+  .statCard {
+    padding: 24px 28px;
+  }
+
+  .headingRow {
+    flex-direction: column;
+    gap: 24px;
+  }
+}
+
+/* ── Mobile ──────────────────────────────────────────────────────────────── */
+
+@media (max-width: 767px) {
+  .section {
+    padding: 60px 0;
+  }
+
+  .heading {
+    font-size: 28px;
+    margin-bottom: var(--space-40);
+  }
+
+  .statsRow {
+    flex-direction: column;
+    margin-bottom: var(--space-48);
+  }
+
+  .statCard {
+    border-left: none;
+    border-top: 1px solid var(--color-grey-700);
+    padding: 24px 0;
+  }
+
+  .statCard:first-child {
+    border-top: none;
+    padding-top: 0;
+  }
+
+  .statValue {
+    font-size: 40px;
+  }
+
+  .navBtn {
+    width: 36px;
+    height: 36px;
+  }
+}

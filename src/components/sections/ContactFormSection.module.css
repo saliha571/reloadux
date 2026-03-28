@@ -382,4 +382,12 @@
     padding-top: var(--space-32);
     border-top: 1px solid var(--color-grey-300);
   }
+
+  .success {
+    padding: var(--space-40);
+  }
+
+  .successTitle {
+    font-size: 28px;
+  }
 }

@@ -51,6 +51,12 @@
   width: 65%;
 }
 
+.titleSmall {
+  font-size: 56px;
+  font-weight: 500;
+  line-height: 110%;
+}
+
 .titleAccent {
   font-family: var(--font-serif);
   font-style: italic;
@@ -137,6 +143,11 @@
   .title {
     width: 89%;
   }
+
+  .titleSmall {
+    font-size: 42px;
+    line-height: 120%;
+  }
 }
 
 @media (max-width: 767px) {
@@ -146,6 +157,11 @@
 
   .title {
     width: 100%;
+  }
+
+  .titleSmall {
+    font-size: 28px;
+    line-height: 130%;
   }
 
   .logoStrip::before,

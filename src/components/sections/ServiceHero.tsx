@@ -18,11 +18,13 @@ interface ServiceHeroProps {
   title: string;
   titleAccent?: string;
   titleAccentItalic?: boolean;
+  titleSize?: "default" | "small";
   subtitle?: string;
   ctaText: string;
   ctaHref: string;
   clientLogos?: LogoItem[];
   backgroundImage?: string;
+  className?: string;
 }
 
 const defaultLogos: LogoItem[] = [
@@ -143,11 +145,13 @@ export function ServiceHero({
   title,
   titleAccent,
   titleAccentItalic = false,
+  titleSize = "default",
   subtitle,
   ctaText,
   ctaHref,
   clientLogos,
   backgroundImage,
+  className,
 }: ServiceHeroProps) {
   const wrapperRef = useRef<HTMLDivElement>(null);
   const loopRef = useRef<gsap.core.Timeline | null>(null);
@@ -188,12 +192,12 @@ export function ServiceHero({
 
   return (
     <section
-      className={`${styles.section} ${backgroundImage ? styles.withBg : ""}`}
+      className={`${styles.section} ${backgroundImage ? styles.withBg : ""} ${className || ""}`}
       style={sectionStyle}
     >
       <div className={styles.content}>
         <SectionTag text={tag} />
-        <h1 className={styles.title}>
+        <h1 className={`${styles.title} ${titleSize === "small" ? styles.titleSmall : ""}`}>
           {title}
           {titleAccent && (
             <>

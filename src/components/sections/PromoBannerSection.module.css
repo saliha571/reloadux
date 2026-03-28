@@ -1,0 +1,236 @@
+.section {
+  background: var(--color-smoke);
+  padding: var(--section-padding) 0;
+  width: 100%;
+}
+
+.inner {
+  max-width: var(--content-width);
+  margin: 0 auto;
+  padding-inline: var(--page-padding);
+  display: flex;
+  align-items: flex-start;
+  gap: 40px;
+}
+
+/* ── Left column ─────────────────────────────────────────────────────────── */
+
+.leftCol {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.title {
+  font-family: var(--font-primary);
+  font-size: 28px;
+  font-weight: 400;
+  line-height: 1.4;
+  color: var(--color-black);
+}
+
+.banner {
+  width: 100%;
+  min-height: 260px;
+  border-radius: 0;
+  background: var(--bg-dark);
+  background-image: url("/images/cta/mvp-cta-bg.webp");
+  background-position: center right;
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  align-items: flex-end;
+  padding: 40px;
+}
+
+.bannerContent {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.bannerHeading {
+  font-family: var(--font-primary);
+  font-size: 28px;
+  font-weight: 600;
+  line-height: 1.35;
+  color: var(--color-white);
+}
+
+/* ── Right column ────────────────────────────────────────────────────────── */
+
+.rightCol {
+  flex: 0 0 320px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+/* ── Project card ────────────────────────────────────────────────────────── */
+
+.projectCard {
+  background: var(--bg-dark);
+  background-image: url("/images/cta/mvp-cta-bg.webp");
+  background-position: center right;
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding: 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.projectHeading {
+  font-family: var(--font-primary);
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 1.35;
+  color: var(--color-white);
+}
+
+/* ── Subscribe card ──────────────────────────────────────────────────────── */
+
+.subscribeCard {
+  background: var(--color-white);
+  padding: 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.subscribeTitle {
+  font-family: var(--font-primary);
+  font-size: 20px;
+  font-weight: 600;
+  color: var(--color-black);
+}
+
+.subscribeDesc {
+  font-family: var(--font-primary);
+  font-size: 14px;
+  color: var(--color-grey-400);
+  margin-bottom: 8px;
+}
+
+.emailInput {
+  font-family: var(--font-primary);
+  font-size: 14px;
+  color: var(--color-black);
+  border: none;
+  border-bottom: 1px solid var(--color-grey-300);
+  padding: 10px 0;
+  outline: none;
+  background: transparent;
+  margin-bottom: 16px;
+}
+
+.emailInput::placeholder {
+  color: var(--color-grey-400);
+}
+
+.subscribeBtn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  font-family: var(--font-primary);
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--color-white);
+  background: var(--color-black);
+  border: 1px solid var(--color-black);
+  border-radius: 100px;
+  padding: 12px 28px;
+  cursor: pointer;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+.subscribeBtn:hover {
+  background: transparent;
+  color: var(--color-black);
+}
+
+/* ── Share block ─────────────────────────────────────────────────────────── */
+
+.shareBlock {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.shareLabel {
+  font-family: var(--font-primary);
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--color-black);
+}
+
+.socialIcons {
+  display: flex;
+  gap: 8px;
+}
+
+.socialIcon {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  border: 1px solid var(--color-grey-300);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-black);
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+.socialIcon:hover {
+  background: var(--color-black);
+  color: var(--color-white);
+}
+
+/* ── Tablet ──────────────────────────────────────────────────────────────── */
+
+@media (max-width: 1024px) {
+  .section {
+    padding: 80px 0;
+  }
+
+  .inner {
+    flex-direction: column;
+  }
+
+  .rightCol {
+    flex: none;
+    width: 100%;
+    max-width: 400px;
+  }
+}
+
+/* ── Mobile ──────────────────────────────────────────────────────────────── */
+
+@media (max-width: 767px) {
+  .section {
+    padding: 60px 0;
+  }
+
+  .title {
+    font-size: 22px;
+  }
+
+  .bannerHeading {
+    font-size: 22px;
+  }
+
+  .banner {
+    min-height: 200px;
+    padding: 28px;
+  }
+
+  .projectCard {
+    padding: 24px;
+  }
+
+  .subscribeCard {
+    padding: 24px;
+  }
+}

@@ -1,0 +1,132 @@
+.section {
+  background: var(--bg-dark);
+  padding: var(--section-padding) 0;
+  width: 100%;
+}
+
+.inner {
+  max-width: var(--content-width);
+  margin: 0 auto;
+  padding-inline: var(--page-padding);
+}
+
+/* ── Header: tag left, heading right ─────────────────────────────────────── */
+
+.header {
+  display: flex;
+  align-items: flex-start;
+  gap: 60px;
+  margin-bottom: var(--space-60);
+}
+
+.tagCol {
+  flex: 0 0 280px;
+  padding-top: 8px;
+}
+
+.heading {
+  font-family: var(--font-serif);
+  font-size: 40px;
+  font-weight: 400;
+  font-style: italic;
+  line-height: 1.4;
+  color: var(--color-white);
+  flex: 1;
+}
+
+/* ── Path rows ───────────────────────────────────────────────────────────── */
+
+.pathList {
+  display: flex;
+  flex-direction: column;
+  padding-left: 340px;
+}
+
+.pathItem {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 40px;
+  padding: 32px 0;
+  border-top: 1px solid var(--color-grey-700);
+  cursor: pointer;
+}
+
+.pathItem:last-child {
+  border-bottom: 1px solid var(--color-grey-700);
+}
+
+.pathContent {
+  flex: 1;
+}
+
+.pathTitle {
+  font-family: var(--font-primary);
+  font-size: 22px;
+  font-weight: 600;
+  color: var(--color-white);
+  margin-bottom: var(--space-12);
+  line-height: 1.4;
+}
+
+.pathDesc {
+  font-family: var(--font-primary);
+  font-size: 14px;
+  line-height: 1.6;
+  color: var(--color-grey-400);
+  max-width: 540px;
+}
+
+.arrow {
+  flex-shrink: 0;
+  color: var(--color-white);
+  width: 20px;
+  height: 20px;
+  margin-top: 4px;
+}
+
+/* ── Tablet ──────────────────────────────────────────────────────────────── */
+
+@media (max-width: 1024px) {
+  .section {
+    padding: 80px 0;
+  }
+
+  .header {
+    flex-direction: column;
+    gap: 24px;
+  }
+
+  .tagCol {
+    flex: none;
+    padding-top: 0;
+  }
+
+  .heading {
+    font-size: 32px;
+  }
+
+  .pathList {
+    padding-left: 0;
+  }
+}
+
+/* ── Mobile ──────────────────────────────────────────────────────────────── */
+
+@media (max-width: 767px) {
+  .section {
+    padding: 60px 0;
+  }
+
+  .heading {
+    font-size: 26px;
+  }
+
+  .pathItem {
+    padding: 24px 0;
+  }
+
+  .pathTitle {
+    font-size: 18px;
+  }
+}

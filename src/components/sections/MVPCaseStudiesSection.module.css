@@ -166,6 +166,10 @@
     gap: 24px;
   }
 
+  .heading {
+    font-size: 36px;
+  }
+
   .cursor {
     display: none;
   }
@@ -177,6 +181,17 @@
   .imageLink {
     cursor: auto;
   }
+
+  .rowDescription {
+    width: 100%;
+    max-width: 100%;
+    font-size: 24px;
+    line-height: 36px;
+  }
+
+  .rowName {
+    white-space: normal;
+  }
 }
 
 /* ── Mobile ── */
@@ -187,7 +202,17 @@
   }
 
   .heading {
-    font-size: 32px;
+    font-size: 28px;
+  }
+
+  .inlineTag {
+    margin-right: 16px;
+    font-size: 14px;
+  }
+
+  .description {
+    font-size: 15px;
+    max-width: 100%;
   }
 
   .desktopImage {
@@ -206,5 +231,19 @@
     flex-direction: column;
     align-items: flex-start;
     gap: 12px;
+    padding-top: 24px;
+  }
+
+  .rowDescription {
+    width: 100%;
+    max-width: 100%;
+    font-size: 20px;
+    line-height: 32px;
+    gap: 16px;
+  }
+
+  .rowName {
+    font-size: 14px;
+    line-height: 40px;
   }
 }

@@ -5,6 +5,7 @@ import type {
   UXRedesignPageData,
   MVPPageData,
   TeamExtensionPageData,
+  UXAuditPageData,
   Service,
   CaseStudy,
   BlogPost,
@@ -24,11 +25,13 @@ import contactData from "../../content/pages/contact.json";
 import uxRedesignData from "../../content/pages/ux-redesign.json";
 import mvpData from "../../content/pages/design-from-scratch-mvp.json";
 import teamExtensionData from "../../content/pages/team-extension.json";
+import uxAuditData from "../../content/pages/ux-audit-ai-readiness.json";
 
 import {
   getStrapiHomepage,
   getStrapiMVPPage,
   getStrapiTeamExtensionPage,
+  getStrapiUXAuditPage,
   getStrapiCaseStudies,
   getStrapiCaseStudyBySlug,
   getStrapiServices,
@@ -436,6 +439,101 @@ export async function getTeamExtensionPage(): Promise<TeamExtensionPageData> {
               role: t.role,
               linkedin: t.linkedin ?? "",
               image: t.image ? getStrapiMediaUrl(t.image) : undefined,
+            }))
+          : fallback.contactInfo.team,
+      },
+    };
+  } catch {
+    return fallback;
+  }
+}
+
+// ─── UX Audit & AI Readiness Page ─────────────────────────────────────────────
+
+export async function getUXAuditPage(): Promise<UXAuditPageData> {
+  const fallback = uxAuditData as UXAuditPageData;
+
+  try {
+    const res = await getStrapiUXAuditPage();
+    const s = res?.data;
+    if (!s) return fallback;
+
+    return {
+      hero: {
+        tag: s.heroTag ?? fallback.hero.tag,
+        title: s.heroTitle ?? fallback.hero.title,
+        ctaText: s.heroCtaText ?? fallback.hero.ctaText,
+        ctaHref: s.heroCtaHref ?? fallback.hero.ctaHref,
+      },
+      challenges: {
+        tag: s.challengesTag ?? fallback.challenges.tag,
+        heading: s.challengesHeading ?? fallback.challenges.heading,
+        description: s.challengesDescription ?? fallback.challenges.description,
+        cards: s.challengeCards ?? fallback.challenges.cards,
+      },
+      auditWork: {
+        tag: s.auditWorkTag ?? fallback.auditWork.tag,
+        heading: s.auditWorkHeading ?? fallback.auditWork.heading,
+        stats: s.auditWorkStats ?? fallback.auditWork.stats,
+        caseStudies: s.auditWorkCaseStudies ?? fallback.auditWork.caseStudies,
+      },
+      midCta: {
+        title: s.midCtaTitle ?? fallback.midCta.title,
+        ctaText: s.midCtaText ?? fallback.midCta.ctaText,
+        ctaHref: s.midCtaHref ?? fallback.midCta.ctaHref,
+      },
+      process: {
+        tag: s.processTag ?? fallback.process.tag,
+        heading: s.processHeading ?? fallback.process.heading,
+        steps: s.processSteps ?? fallback.process.steps,
+        deliverables: s.deliverables ?? fallback.process.deliverables,
+      },
+      testimonials: fallback.testimonials,
+      keyDeliverables: {
+        tag: s.keyDeliverablesTag ?? fallback.keyDeliverables.tag,
+        heading: s.keyDeliverablesHeading ?? fallback.keyDeliverables.heading,
+        items: s.keyDeliverablesItems ?? fallback.keyDeliverables.items,
+      },
+      pricing: {
+        tag: s.pricingTag ?? fallback.pricing.tag,
+        description: s.pricingDescription ?? fallback.pricing.description,
+        planName: s.pricingPlanName ?? fallback.pricing.planName,
+        price: s.pricingPrice ?? fallback.pricing.price,
+        pricePer: s.pricingPricePer ?? fallback.pricing.pricePer,
+        features: s.pricingFeatures ?? fallback.pricing.features,
+        ctaText: s.pricingCtaText ?? fallback.pricing.ctaText,
+        ctaHref: s.pricingCtaHref ?? fallback.pricing.ctaHref,
+      },
+      whenToDoIt: {
+        tag: s.whenToDoItTag ?? fallback.whenToDoIt.tag,
+        heading: s.whenToDoItHeading ?? fallback.whenToDoIt.heading,
+        items: s.whenToDoItItems ?? fallback.whenToDoIt.items,
+      },
+      whatHappensAfter: {
+        tag: s.whatHappensAfterTag ?? fallback.whatHappensAfter.tag,
+        heading: s.whatHappensAfterHeading ?? fallback.whatHappensAfter.heading,
+        paths: s.whatHappensAfterPaths ?? fallback.whatHappensAfter.paths,
+      },
+      bottomCta: {
+        title: s.bottomCtaTitle ?? fallback.bottomCta.title,
+        subtitle: s.bottomCtaSubtitle ?? fallback.bottomCta.subtitle,
+        ctaText: s.bottomCtaText ?? fallback.bottomCta.ctaText,
+        ctaHref: s.bottomCtaHref ?? fallback.bottomCta.ctaHref,
+      },
+      faqs: {
+        tag: s.faqsTag ?? fallback.faqs.tag,
+        heading: s.faqsHeading ?? fallback.faqs.heading,
+        items: s.faqItems ?? fallback.faqs.items,
+      },
+      nextSteps: s.nextSteps ?? fallback.nextSteps,
+      contactInfo: {
+        phone: s.contactPhone ?? fallback.contactInfo.phone,
+        email: s.contactEmail ?? fallback.contactInfo.email,
+        team: s.contactTeam
+          ? s.contactTeam.map((t) => ({
+              name: t.name,
+              role: t.role,
+              linkedin: t.linkedin ?? "",
             }))
           : fallback.contactInfo.team,
       },

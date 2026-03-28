@@ -497,3 +497,70 @@ export async function getStrapiTeamExtensionPage() {
     "/api/team-extension-page?populate=*"
   );
 }
+
+// ─── UX Audit Page ──────────────────────────────────────────────────────────
+
+export interface StrapiUXAuditPage {
+  id: number;
+  heroTag?: string;
+  heroTitle: string;
+  heroCtaText?: string;
+  heroCtaHref?: string;
+  challengesTag?: string;
+  challengesHeading?: string;
+  challengesDescription?: string;
+  challengeCards?: { tag: string; description: string }[];
+  auditWorkTag?: string;
+  auditWorkHeading?: string;
+  auditWorkStats?: { value: string; label: string }[];
+  auditWorkCaseStudies?: {
+    name: string;
+    description: string;
+    slides: { type: "video" | "image"; src: string }[];
+    href: string;
+    comingSoon?: boolean;
+  }[];
+  midCtaTitle?: string;
+  midCtaText?: string;
+  midCtaHref?: string;
+  processTag?: string;
+  processHeading?: string;
+  processSteps?: { counter: string; title: string; content: string }[];
+  deliverables?: string[];
+  keyDeliverablesTag?: string;
+  keyDeliverablesHeading?: string;
+  keyDeliverablesItems?: { title: string; description: string }[];
+  pricingTag?: string;
+  pricingDescription?: string;
+  pricingPlanName?: string;
+  pricingPrice?: string;
+  pricingPricePer?: string;
+  pricingFeatures?: string[];
+  pricingCtaText?: string;
+  pricingCtaHref?: string;
+  whenToDoItTag?: string;
+  whenToDoItHeading?: string;
+  whenToDoItItems?: { title: string; description: string }[];
+  whatHappensAfterTag?: string;
+  whatHappensAfterHeading?: string;
+  whatHappensAfterPaths?: { title: string; description: string }[];
+  bottomCtaTitle?: string;
+  bottomCtaSubtitle?: string;
+  bottomCtaText?: string;
+  bottomCtaHref?: string;
+  faqsTag?: string;
+  faqsHeading?: string;
+  faqItems?: { question: string; answer: string }[];
+  nextSteps?: { number: string; text: string }[];
+  contactPhone?: string;
+  contactEmail?: string;
+  contactTeam?: { name: string; role: string; linkedin?: string }[];
+  seoTitle?: string;
+  seoDescription?: string;
+}
+
+export async function getStrapiUXAuditPage() {
+  return fetchStrapi<StrapiSingle<StrapiUXAuditPage>>(
+    "/api/ux-audit-page?populate=*"
+  );
+}

@@ -438,3 +438,88 @@ export interface MVPPageData {
     team: { name: string; role: string; linkedin: string; image?: string }[];
   };
 }
+
+// ─── UX Audit & AI Readiness Page ─────────────────────────────────────────────
+
+export interface AuditCaseStudy {
+  name: string;
+  description: string;
+  slides: { type: "video" | "image"; src: string }[];
+  href: string;
+  comingSoon?: boolean;
+}
+
+export interface UXAuditPageData {
+  hero: {
+    tag: string;
+    title: string;
+    ctaText: string;
+    ctaHref: string;
+  };
+  challenges: {
+    tag: string;
+    heading: string;
+    description: string;
+    cards: { tag: string; description: string }[];
+  };
+  auditWork: {
+    tag: string;
+    heading: string;
+    stats: { value: string; label: string }[];
+    caseStudies: AuditCaseStudy[];
+  };
+  midCta: {
+    title: string;
+    ctaText: string;
+    ctaHref: string;
+  };
+  process: {
+    tag: string;
+    heading: string;
+    steps: { counter: string; title: string; content: string }[];
+    deliverables: string[];
+  };
+  testimonials: Testimonial[];
+  keyDeliverables: {
+    tag: string;
+    heading: string;
+    items: { title: string; description: string }[];
+  };
+  pricing: {
+    tag: string;
+    description: string;
+    planName: string;
+    price: string;
+    pricePer: string;
+    features: string[];
+    ctaText: string;
+    ctaHref: string;
+  };
+  whenToDoIt: {
+    tag: string;
+    heading: string;
+    items: { title: string; description: string }[];
+  };
+  whatHappensAfter: {
+    tag: string;
+    heading: string;
+    paths: { title: string; description: string }[];
+  };
+  bottomCta: {
+    title: string;
+    subtitle: string;
+    ctaText: string;
+    ctaHref: string;
+  };
+  faqs: {
+    tag: string;
+    heading: string;
+    items: { question: string; answer: string }[];
+  };
+  nextSteps: { number: string; text: string }[];
+  contactInfo: {
+    phone: string;
+    email: string;
+    team: { name: string; role: string; linkedin: string; image?: string }[];
+  };
+}

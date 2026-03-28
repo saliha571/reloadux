@@ -1054,6 +1054,99 @@ export interface ApiTestimonialTestimonial extends Struct.CollectionTypeSchema {
   };
 }
 
+export interface ApiUxAuditPageUxAuditPage extends Struct.SingleTypeSchema {
+  collectionName: 'ux_audit_pages';
+  info: {
+    description: 'UX Audit & AI Readiness service page content';
+    displayName: 'UX Audit Page';
+    pluralName: 'ux-audit-pages';
+    singularName: 'ux-audit-page';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    auditWorkCaseStudies: Schema.Attribute.JSON;
+    auditWorkHeading: Schema.Attribute.Text;
+    auditWorkStats: Schema.Attribute.JSON;
+    auditWorkTag: Schema.Attribute.String &
+      Schema.Attribute.DefaultTo<'OUR UX AUDIT WORK'>;
+    bottomCtaHref: Schema.Attribute.String &
+      Schema.Attribute.DefaultTo<'#contact-form'>;
+    bottomCtaSubtitle: Schema.Attribute.Text;
+    bottomCtaText: Schema.Attribute.String;
+    bottomCtaTitle: Schema.Attribute.Text;
+    challengeCards: Schema.Attribute.JSON;
+    challengesDescription: Schema.Attribute.Text;
+    challengesHeading: Schema.Attribute.Text;
+    challengesTag: Schema.Attribute.String &
+      Schema.Attribute.DefaultTo<'CHALLENGES'>;
+    contactEmail: Schema.Attribute.Email &
+      Schema.Attribute.DefaultTo<'info@reloadux.com'>;
+    contactPhone: Schema.Attribute.String &
+      Schema.Attribute.DefaultTo<'(202) 978 3410'>;
+    contactTeam: Schema.Attribute.JSON;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    deliverables: Schema.Attribute.JSON;
+    faqItems: Schema.Attribute.JSON;
+    faqsHeading: Schema.Attribute.Text;
+    faqsTag: Schema.Attribute.String & Schema.Attribute.DefaultTo<'FAQS'>;
+    heroCtaHref: Schema.Attribute.String &
+      Schema.Attribute.DefaultTo<'#contact-form'>;
+    heroCtaText: Schema.Attribute.String &
+      Schema.Attribute.DefaultTo<'Audit My Product'>;
+    heroTag: Schema.Attribute.String &
+      Schema.Attribute.DefaultTo<'UX AUDIT + AI READINESS'>;
+    heroTitle: Schema.Attribute.Text & Schema.Attribute.Required;
+    keyDeliverablesHeading: Schema.Attribute.String;
+    keyDeliverablesItems: Schema.Attribute.JSON;
+    keyDeliverablesTag: Schema.Attribute.String &
+      Schema.Attribute.DefaultTo<'KEY Deliverables'>;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::ux-audit-page.ux-audit-page'
+    > &
+      Schema.Attribute.Private;
+    midCtaHref: Schema.Attribute.String &
+      Schema.Attribute.DefaultTo<'#contact-form'>;
+    midCtaText: Schema.Attribute.String &
+      Schema.Attribute.DefaultTo<'Audit My Product'>;
+    midCtaTitle: Schema.Attribute.Text;
+    nextSteps: Schema.Attribute.JSON;
+    pricingCtaHref: Schema.Attribute.String &
+      Schema.Attribute.DefaultTo<'#contact-form'>;
+    pricingCtaText: Schema.Attribute.String &
+      Schema.Attribute.DefaultTo<'Get Started'>;
+    pricingDescription: Schema.Attribute.Text;
+    pricingFeatures: Schema.Attribute.JSON;
+    pricingPlanName: Schema.Attribute.String;
+    pricingPrice: Schema.Attribute.String;
+    pricingPricePer: Schema.Attribute.String;
+    pricingTag: Schema.Attribute.String & Schema.Attribute.DefaultTo<'PRICING'>;
+    processHeading: Schema.Attribute.Text;
+    processSteps: Schema.Attribute.JSON;
+    processTag: Schema.Attribute.String &
+      Schema.Attribute.DefaultTo<'HOW IT WORKS'>;
+    publishedAt: Schema.Attribute.DateTime;
+    seoDescription: Schema.Attribute.Text;
+    seoTitle: Schema.Attribute.String;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    whatHappensAfterHeading: Schema.Attribute.String;
+    whatHappensAfterPaths: Schema.Attribute.JSON;
+    whatHappensAfterTag: Schema.Attribute.String &
+      Schema.Attribute.DefaultTo<'WHAT HAPPENS AFTER'>;
+    whenToDoItHeading: Schema.Attribute.Text;
+    whenToDoItItems: Schema.Attribute.JSON;
+    whenToDoItTag: Schema.Attribute.String &
+      Schema.Attribute.DefaultTo<'WHEN TO DO IT'>;
+  };
+}
+
 export interface ApiUxRedesignPageUxRedesignPage
   extends Struct.SingleTypeSchema {
   collectionName: 'ux_redesign_pages';
@@ -1682,6 +1775,7 @@ declare module '@strapi/strapi' {
       'api::team-extension-page.team-extension-page': ApiTeamExtensionPageTeamExtensionPage;
       'api::team-member.team-member': ApiTeamMemberTeamMember;
       'api::testimonial.testimonial': ApiTestimonialTestimonial;
+      'api::ux-audit-page.ux-audit-page': ApiUxAuditPageUxAuditPage;
       'api::ux-redesign-page.ux-redesign-page': ApiUxRedesignPageUxRedesignPage;
       'plugin::content-releases.release': PluginContentReleasesRelease;
       'plugin::content-releases.release-action': PluginContentReleasesReleaseAction;
