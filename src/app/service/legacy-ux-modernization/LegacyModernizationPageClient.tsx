@@ -27,6 +27,7 @@ export function LegacyModernizationPageClient({ data }: Props) {
         subtitle={data.hero.subtitle}
         ctaText={data.hero.ctaText}
         ctaHref={data.hero.ctaHref}
+        backgroundImage="/images/hero/legacy-hero-bg.png"
         clientLogos={[
           { src: "/images/logos/vocable-logo.svg", alt: "Vocable", width: 154 },
           { src: "/images/logos/pendulum-logo.svg", alt: "Pendulum", width: 191 },
@@ -57,6 +58,8 @@ export function LegacyModernizationPageClient({ data }: Props) {
         heading={data.caseStudies.heading}
         stats={data.caseStudies.stats}
         caseStudies={data.caseStudies.items}
+        hideHeader
+        className={pageStyles.auditWorkSection}
       />
 
       <VideoBannerSection
@@ -78,6 +81,7 @@ export function LegacyModernizationPageClient({ data }: Props) {
         tag={data.keyDeliverables.tag}
         heading={data.keyDeliverables.heading}
         items={data.keyDeliverables.items}
+        className={pageStyles.deliverablesSection}
       />
 
       <WhenToDoItSection
@@ -97,11 +101,13 @@ export function LegacyModernizationPageClient({ data }: Props) {
         ctaText={data.bottomCta.ctaText}
         ctaHref={data.bottomCta.ctaHref}
         hideLogos
+        backgroundImage="/images/covers/legacy-cta-bg.png"
         accentWord="AI integration roadmap."
         headingClassName={pageStyles.ctaHeading}
+        className={pageStyles.ctaSection}
       />
 
-      <ServiceFAQSection {...data.faqs} />
+      <ServiceFAQSection {...data.faqs} className={pageStyles.faqSection} />
 
       <ContactFormSection
         tag="CONNECT WITH US"

@@ -1,0 +1,18 @@
+{
+  "collectionName": "components_shared_audit_case_studies",
+  "info": {
+    "displayName": "Audit Case Study",
+    "icon": "picture"
+  },
+  "attributes": {
+    "name": { "type": "string", "required": true },
+    "description": { "type": "text", "required": true },
+    "slides": {
+      "type": "component",
+      "repeatable": true,
+      "component": "shared.case-study-slide"
+    },
+    "href": { "type": "string" },
+    "comingSoon": { "type": "boolean", "default": false }
+  }
+}

@@ -1,7 +1,6 @@
 "use client";
 
 import Link from "next/link";
-import { motion } from "framer-motion";
 import { SectionTag } from "@/components/ui/SectionTag";
 import styles from "./OtherServicesSection.module.css";
 
@@ -16,44 +15,64 @@ interface OtherServicesSectionProps {
   items: ServiceLink[];
 }
 
+const ArrowIcon = () => (
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width="19"
+    height="19"
+    viewBox="0 0 19 19"
+    fill="none"
+    aria-hidden
+  >
+    <path
+      d="M5 14L14 5M14 5H7M14 5V12"
+      stroke="currentColor"
+      strokeWidth="1.5"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    />
+  </svg>
+);
+
 export function OtherServicesSection({ tag, items }: OtherServicesSectionProps) {
   return (
     <section className={styles.section}>
       <div className={styles.inner}>
-        <SectionTag text={tag} />
+        <header className={styles.header}>
+          <SectionTag text={tag} />
+        </header>
 
         <div className={styles.list}>
           {items.map((item, i) => {
             const content = (
-              <motion.div
-                className={styles.card}
-                initial={{ opacity: 0, y: 16 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, margin: "0px 0px -40px 0px" }}
-                transition={{ duration: 0.5, delay: i * 0.1 }}
-              >
-                <div className={styles.cardContent}>
-                  <h3 className={styles.cardTitle}>{item.title}</h3>
-                  <p className={styles.cardDesc}>{item.description}</p>
+              <>
+                <div className={styles.rowLeft}>
+                  <h3 className={styles.title}>{item.title}</h3>
                 </div>
-                <span className={styles.arrow}>
-                  <svg width="18" height="18" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M5.833 14.167L14.167 5.833" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
-                    <path d="M5.833 5.833H14.167V14.167" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
-                  </svg>
+                <div className={styles.rowRight}>
+                  <p className={styles.description}>{item.description}</p>
+                </div>
+                <span className={styles.arrowIcon}>
+                  <ArrowIcon />
                 </span>
-              </motion.div>
+              </>
             );
+
+            const rowClass = `${styles.row} ${styles.serviceRow}`;
 
             if (item.href) {
               return (
-                <Link key={i} href={item.href} className={styles.cardLink}>
+                <Link key={i} href={item.href} className={`${rowClass} ${styles.linkRow}`}>
                   {content}
                 </Link>
               );
             }
 
-            return <div key={i} className={styles.cardLink}>{content}</div>;
+            return (
+              <div key={i} className={rowClass}>
+                {content}
+              </div>
+            );
           })}
         </div>
       </div>

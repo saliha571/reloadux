@@ -1,0 +1,11 @@
+{
+  "collectionName": "components_shared_simple_stats",
+  "info": {
+    "displayName": "Simple Stat",
+    "icon": "chartCircle"
+  },
+  "attributes": {
+    "value": { "type": "string", "required": true },
+    "label": { "type": "string", "required": true }
+  }
+}

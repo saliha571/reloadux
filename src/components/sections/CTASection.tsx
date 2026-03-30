@@ -13,6 +13,7 @@ interface CTASectionProps {
   headingClassName?: string;
   secondaryCtaText?: string;
   secondaryCtaHref?: string;
+  className?: string;
 }
 
 const clientLogos = [
@@ -34,6 +35,7 @@ export function CTASection({
   headingClassName,
   secondaryCtaText,
   secondaryCtaHref,
+  className,
 }: CTASectionProps) {
   const keyword = accentWord || "your product";
   const parts = title.split(keyword);
@@ -43,7 +45,7 @@ export function CTASection({
     : undefined;
 
   return (
-    <section className={styles.section} style={sectionStyle}>
+    <section className={`${styles.section} ${className || ""}`} style={sectionStyle}>
       <div className={styles.inner}>
         <h2 className={`${styles.heading} ${headingClassName || ""}`}>
           {parts.length > 1 ? (

@@ -1,0 +1,12 @@
+{
+  "collectionName": "components_shared_other_services",
+  "info": {
+    "displayName": "Other Service",
+    "icon": "apps"
+  },
+  "attributes": {
+    "title": { "type": "string", "required": true },
+    "description": { "type": "text", "required": true },
+    "href": { "type": "string" }
+  }
+}

@@ -20,6 +20,8 @@ interface AuditWorkSectionProps {
     href: string;
     comingSoon?: boolean;
   }[];
+  hideHeader?: boolean;
+  className?: string;
 }
 
 function renderLabel(label: string) {
@@ -137,42 +139,46 @@ export function AuditWorkSection({
   heading,
   stats,
   caseStudies,
+  hideHeader,
+  className,
 }: AuditWorkSectionProps) {
   return (
-    <section className={styles.section}>
-      <div className={styles.constrained}>
-        <SectionTag text={tag} />
-        <div className={styles.headingRow}>
-          <h2 className={styles.heading}>{renderHeading(heading)}</h2>
-          <div className={styles.badge}>
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img
-              src="/images/dd-badge.svg"
-              alt=""
-              width={94}
-              height={93}
-              className={styles.badgeImg}
-            />
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img
-              src="/images/icons/down-arrow.svg"
-              alt=""
-              width={18}
-              height={28}
-              className={styles.badgeArrow}
-            />
+    <section className={`${styles.section} ${className || ""}`}>
+      {!hideHeader && (
+        <div className={styles.constrained}>
+          <SectionTag text={tag} />
+          <div className={styles.headingRow}>
+            <h2 className={styles.heading}>{renderHeading(heading)}</h2>
+            <div className={styles.badge}>
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src="/images/dd-badge.svg"
+                alt=""
+                width={94}
+                height={93}
+                className={styles.badgeImg}
+              />
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src="/images/icons/down-arrow.svg"
+                alt=""
+                width={18}
+                height={28}
+                className={styles.badgeArrow}
+              />
+            </div>
+          </div>
+
+          <div className={styles.statsRow}>
+            {stats.map((stat, i) => (
+              <div key={i} className={styles.statCard}>
+                <span className={styles.statValue}>{stat.value}</span>
+                <span className={styles.statLabel}>{renderLabel(stat.label)}</span>
+              </div>
+            ))}
           </div>
         </div>
-
-        <div className={styles.statsRow}>
-          {stats.map((stat, i) => (
-            <div key={i} className={styles.statCard}>
-              <span className={styles.statValue}>{stat.value}</span>
-              <span className={styles.statLabel}>{renderLabel(stat.label)}</span>
-            </div>
-          ))}
-        </div>
-      </div>
+      )}
 
       <div className={styles.caseStudies}>
         {caseStudies.map((cs, i) => (

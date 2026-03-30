@@ -1,0 +1,164 @@
+{
+  "kind": "singleType",
+  "collectionName": "legacy_modernization_pages",
+  "info": {
+    "singularName": "legacy-modernization-page",
+    "pluralName": "legacy-modernization-pages",
+    "displayName": "Legacy Modernization Page"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "heroTag": {
+      "type": "string"
+    },
+    "heroTitle": {
+      "type": "string",
+      "required": true
+    },
+    "heroSubtitle": {
+      "type": "text"
+    },
+    "heroCtaText": {
+      "type": "string"
+    },
+    "heroCtaHref": {
+      "type": "string"
+    },
+    "challengesTag": {
+      "type": "string"
+    },
+    "challengesHeading": {
+      "type": "string"
+    },
+    "challengesDescription": {
+      "type": "text"
+    },
+    "challengeCards": {
+      "type": "component",
+      "repeatable": true,
+      "component": "shared.challenge-card"
+    },
+    "caseStudiesTag": {
+      "type": "string"
+    },
+    "caseStudiesHeading": {
+      "type": "text"
+    },
+    "caseStudiesStats": {
+      "type": "component",
+      "repeatable": true,
+      "component": "shared.simple-stat"
+    },
+    "caseStudyItems": {
+      "type": "component",
+      "repeatable": true,
+      "component": "shared.audit-case-study"
+    },
+    "videoBannerHeading": {
+      "type": "string"
+    },
+    "videoBannerHeadingAccent": {
+      "type": "string"
+    },
+    "videoBannerDescription": {
+      "type": "text"
+    },
+    "videoBannerCtaText": {
+      "type": "string"
+    },
+    "videoBannerCtaHref": {
+      "type": "string"
+    },
+    "processTag": {
+      "type": "string"
+    },
+    "processHeading": {
+      "type": "text"
+    },
+    "processPhases": {
+      "type": "component",
+      "repeatable": true,
+      "component": "shared.timeline-phase"
+    },
+    "processNote": {
+      "type": "text"
+    },
+    "keyDeliverablesTag": {
+      "type": "string"
+    },
+    "keyDeliverablesHeading": {
+      "type": "string"
+    },
+    "keyDeliverablesItems": {
+      "type": "component",
+      "repeatable": true,
+      "component": "shared.value-prop"
+    },
+    "whenToDoItTag": {
+      "type": "string"
+    },
+    "whenToDoItHeading": {
+      "type": "text"
+    },
+    "whenToDoItItems": {
+      "type": "component",
+      "repeatable": true,
+      "component": "shared.ideal-client-card"
+    },
+    "otherServicesTag": {
+      "type": "string"
+    },
+    "otherServicesItems": {
+      "type": "component",
+      "repeatable": true,
+      "component": "shared.other-service"
+    },
+    "bottomCtaTitle": {
+      "type": "text"
+    },
+    "bottomCtaSubtitle": {
+      "type": "text"
+    },
+    "bottomCtaText": {
+      "type": "string"
+    },
+    "bottomCtaHref": {
+      "type": "string"
+    },
+    "faqsTag": {
+      "type": "string"
+    },
+    "faqsHeading": {
+      "type": "string"
+    },
+    "faqItems": {
+      "type": "component",
+      "repeatable": true,
+      "component": "shared.faq"
+    },
+    "nextSteps": {
+      "type": "component",
+      "repeatable": true,
+      "component": "shared.next-step"
+    },
+    "contactPhone": {
+      "type": "string"
+    },
+    "contactEmail": {
+      "type": "string"
+    },
+    "contactTeam": {
+      "type": "component",
+      "repeatable": true,
+      "component": "shared.team-contact"
+    },
+    "seoTitle": {
+      "type": "string"
+    },
+    "seoDescription": {
+      "type": "text"
+    }
+  }
+}

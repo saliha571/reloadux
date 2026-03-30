@@ -564,3 +564,64 @@ export async function getStrapiUXAuditPage() {
     "/api/ux-audit-page?populate=*"
   );
 }
+
+// ─── Legacy Modernization Page ──────────────────────────────────────────────
+
+export interface StrapiLegacyModernizationPage {
+  id: number;
+  heroTag?: string;
+  heroTitle: string;
+  heroSubtitle?: string;
+  heroCtaText?: string;
+  heroCtaHref?: string;
+  challengesTag?: string;
+  challengesHeading?: string;
+  challengesDescription?: string;
+  challengeCards?: { tag: string; description: string }[];
+  caseStudiesTag?: string;
+  caseStudiesHeading?: string;
+  caseStudiesStats?: { value: string; label: string }[];
+  caseStudyItems?: {
+    name: string;
+    description: string;
+    slides?: { type: "video" | "image"; src: string }[];
+    href?: string;
+    comingSoon?: boolean;
+  }[];
+  videoBannerHeading?: string;
+  videoBannerHeadingAccent?: string;
+  videoBannerDescription?: string;
+  videoBannerCtaText?: string;
+  videoBannerCtaHref?: string;
+  processTag?: string;
+  processHeading?: string;
+  processPhases?: { label: string; title: string; description: string }[];
+  processNote?: string;
+  keyDeliverablesTag?: string;
+  keyDeliverablesHeading?: string;
+  keyDeliverablesItems?: { title: string; description: string }[];
+  whenToDoItTag?: string;
+  whenToDoItHeading?: string;
+  whenToDoItItems?: { title: string; description: string }[];
+  otherServicesTag?: string;
+  otherServicesItems?: { title: string; description: string; href?: string }[];
+  bottomCtaTitle?: string;
+  bottomCtaSubtitle?: string;
+  bottomCtaText?: string;
+  bottomCtaHref?: string;
+  faqsTag?: string;
+  faqsHeading?: string;
+  faqItems?: { question: string; answer: string }[];
+  nextSteps?: { number: string; text: string }[];
+  contactPhone?: string;
+  contactEmail?: string;
+  contactTeam?: StrapiTeamContact[];
+  seoTitle?: string;
+  seoDescription?: string;
+}
+
+export async function getStrapiLegacyModernizationPage() {
+  return fetchStrapi<StrapiSingle<StrapiLegacyModernizationPage>>(
+    "/api/legacy-modernization-page?populate[challengeCards]=*&populate[caseStudiesStats]=*&populate[caseStudyItems][populate]=slides&populate[processPhases]=*&populate[keyDeliverablesItems]=*&populate[whenToDoItItems]=*&populate[otherServicesItems]=*&populate[faqItems]=*&populate[nextSteps]=*&populate[contactTeam][populate]=image"
+  );
+}

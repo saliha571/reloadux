@@ -32,8 +32,9 @@
         "name": "PEOPLE GURU",
         "description": "Make performance reviews faster and smarter with AI that analyzes feedback, summarizes performance, and sets actionable goals.",
         "slides": [
-          { "type": "image", "src": "/images/audit/people-guru-slide-1.webp" },
-          { "type": "image", "src": "/images/audit/people-guru-slide-2.webp" }
+          { "type": "image", "src": "/images/audit/people-guru-lg-1.png" },
+          { "type": "image", "src": "/images/audit/people-guru-lg-2.png" },
+          { "type": "image", "src": "/images/audit/people-guru-lg-3.png" }
         ],
         "href": "#",
         "comingSoon": false
@@ -42,9 +43,8 @@
         "name": "RUMBLEUP",
         "description": "From slow, manual survey and segmentation processes to AI-driven workflows that generate logic, suggestions, and personalized insights in seconds.",
         "slides": [
-          { "type": "image", "src": "/images/audit/wild-tide-slide-1.webp" },
-          { "type": "image", "src": "/images/audit/wild-tide-slide-2.webp" },
-          { "type": "image", "src": "/images/audit/wild-tide-slide-3.webp" }
+          { "type": "image", "src": "/images/audit/rumbleup-lg-1.png" },
+          { "type": "image", "src": "/images/audit/rumbleup-lg-2.png" }
         ],
         "href": "#",
         "comingSoon": false

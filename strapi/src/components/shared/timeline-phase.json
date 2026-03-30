@@ -1,0 +1,12 @@
+{
+  "collectionName": "components_shared_timeline_phases",
+  "info": {
+    "displayName": "Timeline Phase",
+    "icon": "clock"
+  },
+  "attributes": {
+    "label": { "type": "string", "required": true },
+    "title": { "type": "string", "required": true },
+    "description": { "type": "text", "required": true }
+  }
+}

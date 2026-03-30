@@ -7,15 +7,17 @@ interface KeyDeliverablesSectionProps {
   tag: string;
   heading: string;
   items: { title: string; description: string }[];
+  className?: string;
 }
 
 export function KeyDeliverablesSection({
   tag,
   heading,
   items,
+  className,
 }: KeyDeliverablesSectionProps) {
   return (
-    <section className={styles.section}>
+    <section className={`${styles.section} ${className || ""}`}>
       <div className={styles.inner}>
         <div className={styles.header}>
           <SectionTag text={tag} />

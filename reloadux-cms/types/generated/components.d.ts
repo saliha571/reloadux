@@ -1,5 +1,20 @@
 import type { Schema, Struct } from '@strapi/strapi';
 
+export interface SharedAuditCaseStudy extends Struct.ComponentSchema {
+  collectionName: 'components_shared_audit_case_studies';
+  info: {
+    displayName: 'Audit Case Study';
+    icon: 'picture';
+  };
+  attributes: {
+    comingSoon: Schema.Attribute.Boolean & Schema.Attribute.DefaultTo<false>;
+    description: Schema.Attribute.Text & Schema.Attribute.Required;
+    href: Schema.Attribute.String;
+    name: Schema.Attribute.String & Schema.Attribute.Required;
+    slides: Schema.Attribute.Component<'shared.case-study-slide', true>;
+  };
+}
+
 export interface SharedCaseStudySlide extends Struct.ComponentSchema {
   collectionName: 'components_shared_case_study_slides';
   info: {
@@ -169,6 +184,19 @@ export interface SharedNextStep extends Struct.ComponentSchema {
   };
 }
 
+export interface SharedOtherService extends Struct.ComponentSchema {
+  collectionName: 'components_shared_other_services';
+  info: {
+    displayName: 'Other Service';
+    icon: 'apps';
+  };
+  attributes: {
+    description: Schema.Attribute.Text & Schema.Attribute.Required;
+    href: Schema.Attribute.String;
+    title: Schema.Attribute.String & Schema.Attribute.Required;
+  };
+}
+
 export interface SharedOutcome extends Struct.ComponentSchema {
   collectionName: 'components_shared_outcomes';
   info: {
@@ -268,6 +296,18 @@ export interface SharedServiceLink extends Struct.ComponentSchema {
   };
 }
 
+export interface SharedSimpleStat extends Struct.ComponentSchema {
+  collectionName: 'components_shared_simple_stats';
+  info: {
+    displayName: 'Simple Stat';
+    icon: 'chartCircle';
+  };
+  attributes: {
+    label: Schema.Attribute.String & Schema.Attribute.Required;
+    value: Schema.Attribute.String & Schema.Attribute.Required;
+  };
+}
+
 export interface SharedSocialLink extends Struct.ComponentSchema {
   collectionName: 'components_shared_social_links';
   info: {
@@ -337,6 +377,19 @@ export interface SharedTeamContact extends Struct.ComponentSchema {
   };
 }
 
+export interface SharedTimelinePhase extends Struct.ComponentSchema {
+  collectionName: 'components_shared_timeline_phases';
+  info: {
+    displayName: 'Timeline Phase';
+    icon: 'clock';
+  };
+  attributes: {
+    description: Schema.Attribute.Text & Schema.Attribute.Required;
+    label: Schema.Attribute.String & Schema.Attribute.Required;
+    title: Schema.Attribute.String & Schema.Attribute.Required;
+  };
+}
+
 export interface SharedValueProp extends Struct.ComponentSchema {
   collectionName: 'components_shared_value_props';
   info: {
@@ -353,6 +406,7 @@ export interface SharedValueProp extends Struct.ComponentSchema {
 declare module '@strapi/strapi' {
   export module Public {
     export interface ComponentSchemas {
+      'shared.audit-case-study': SharedAuditCaseStudy;
       'shared.case-study-slide': SharedCaseStudySlide;
       'shared.case-study-video': SharedCaseStudyVideo;
       'shared.challenge': SharedChallenge;
@@ -365,6 +419,7 @@ declare module '@strapi/strapi' {
       'shared.mvp-challenge-card': SharedMvpChallengeCard;
       'shared.mvp-process-step': SharedMvpProcessStep;
       'shared.next-step': SharedNextStep;
+      'shared.other-service': SharedOtherService;
       'shared.outcome': SharedOutcome;
       'shared.phase': SharedPhase;
       'shared.principle': SharedPrinciple;
@@ -372,10 +427,12 @@ declare module '@strapi/strapi' {
       'shared.process-step': SharedProcessStep;
       'shared.result': SharedResult;
       'shared.service-link': SharedServiceLink;
+      'shared.simple-stat': SharedSimpleStat;
       'shared.social-link': SharedSocialLink;
       'shared.sprint-step': SharedSprintStep;
       'shared.stat': SharedStat;
       'shared.team-contact': SharedTeamContact;
+      'shared.timeline-phase': SharedTimelinePhase;
       'shared.value-prop': SharedValueProp;
     }
   }

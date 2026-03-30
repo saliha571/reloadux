@@ -11,11 +11,12 @@ interface ServiceFAQSectionProps {
   tag: string;
   heading: string;
   items: FAQItemData[];
+  className?: string;
 }
 
-export function ServiceFAQSection({ tag, heading, items }: ServiceFAQSectionProps) {
+export function ServiceFAQSection({ tag, heading, items, className }: ServiceFAQSectionProps) {
   return (
-    <section className={styles.section}>
+    <section className={`${styles.section} ${className || ""}`}>
       <div className={styles.inner}>
         <div className={styles.header}>
           <SectionTag text={tag} />

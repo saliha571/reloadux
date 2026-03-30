@@ -681,6 +681,83 @@ export interface ApiIndustryIndustry extends Struct.CollectionTypeSchema {
   };
 }
 
+export interface ApiLegacyModernizationPageLegacyModernizationPage
+  extends Struct.SingleTypeSchema {
+  collectionName: 'legacy_modernization_pages';
+  info: {
+    displayName: 'Legacy Modernization Page';
+    pluralName: 'legacy-modernization-pages';
+    singularName: 'legacy-modernization-page';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    bottomCtaHref: Schema.Attribute.String;
+    bottomCtaSubtitle: Schema.Attribute.Text;
+    bottomCtaText: Schema.Attribute.String;
+    bottomCtaTitle: Schema.Attribute.Text;
+    caseStudiesHeading: Schema.Attribute.Text;
+    caseStudiesStats: Schema.Attribute.Component<'shared.simple-stat', true>;
+    caseStudiesTag: Schema.Attribute.String;
+    caseStudyItems: Schema.Attribute.Component<'shared.audit-case-study', true>;
+    challengeCards: Schema.Attribute.Component<'shared.challenge-card', true>;
+    challengesDescription: Schema.Attribute.Text;
+    challengesHeading: Schema.Attribute.String;
+    challengesTag: Schema.Attribute.String;
+    contactEmail: Schema.Attribute.String;
+    contactPhone: Schema.Attribute.String;
+    contactTeam: Schema.Attribute.Component<'shared.team-contact', true>;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    faqItems: Schema.Attribute.Component<'shared.faq', true>;
+    faqsHeading: Schema.Attribute.String;
+    faqsTag: Schema.Attribute.String;
+    heroCtaHref: Schema.Attribute.String;
+    heroCtaText: Schema.Attribute.String;
+    heroSubtitle: Schema.Attribute.Text;
+    heroTag: Schema.Attribute.String;
+    heroTitle: Schema.Attribute.String & Schema.Attribute.Required;
+    keyDeliverablesHeading: Schema.Attribute.String;
+    keyDeliverablesItems: Schema.Attribute.Component<'shared.value-prop', true>;
+    keyDeliverablesTag: Schema.Attribute.String;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::legacy-modernization-page.legacy-modernization-page'
+    > &
+      Schema.Attribute.Private;
+    nextSteps: Schema.Attribute.Component<'shared.next-step', true>;
+    otherServicesItems: Schema.Attribute.Component<
+      'shared.other-service',
+      true
+    >;
+    otherServicesTag: Schema.Attribute.String;
+    processHeading: Schema.Attribute.Text;
+    processNote: Schema.Attribute.Text;
+    processPhases: Schema.Attribute.Component<'shared.timeline-phase', true>;
+    processTag: Schema.Attribute.String;
+    publishedAt: Schema.Attribute.DateTime;
+    seoDescription: Schema.Attribute.Text;
+    seoTitle: Schema.Attribute.String;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    videoBannerCtaHref: Schema.Attribute.String;
+    videoBannerCtaText: Schema.Attribute.String;
+    videoBannerDescription: Schema.Attribute.Text;
+    videoBannerHeading: Schema.Attribute.String;
+    videoBannerHeadingAccent: Schema.Attribute.String;
+    whenToDoItHeading: Schema.Attribute.Text;
+    whenToDoItItems: Schema.Attribute.Component<
+      'shared.ideal-client-card',
+      true
+    >;
+    whenToDoItTag: Schema.Attribute.String;
+  };
+}
+
 export interface ApiMvpPageMvpPage extends Struct.SingleTypeSchema {
   collectionName: 'mvp_pages';
   info: {
@@ -1769,6 +1846,7 @@ declare module '@strapi/strapi' {
       'api::client-logo.client-logo': ApiClientLogoClientLogo;
       'api::homepage.homepage': ApiHomepageHomepage;
       'api::industry.industry': ApiIndustryIndustry;
+      'api::legacy-modernization-page.legacy-modernization-page': ApiLegacyModernizationPageLegacyModernizationPage;
       'api::mvp-page.mvp-page': ApiMvpPageMvpPage;
       'api::service.service': ApiServiceService;
       'api::site-setting.site-setting': ApiSiteSettingSiteSetting;
