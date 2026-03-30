@@ -81,7 +81,7 @@ function CaseStudySlider({
         }}
         className={styles.swiper}
       >
-        {cs.slides.map((slide, j) => (
+        {(cs.slides ?? []).map((slide, j) => (
           <SwiperSlide key={j}>
             <div className={styles.slide}>
               {slide.type === "video" ? (

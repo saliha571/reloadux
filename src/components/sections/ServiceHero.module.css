@@ -24,7 +24,6 @@
 
 .withBg .title {
   width: auto;
-  max-width: 880px;
 }
 
 .content {
@@ -54,7 +53,7 @@
 .titleSmall {
   font-size: 56px;
   font-weight: 500;
-  line-height: 110%;
+  line-height: 150%;
 }
 
 .titleAccent {

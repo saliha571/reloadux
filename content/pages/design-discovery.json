@@ -1,0 +1,166 @@
+{
+  "hero": {
+    "tag": "Design Discovery",
+    "title": "Design discovery helps you visualize your product for clarity in scoping & roadmap.",
+    "ctaText": "Discover my product",
+    "ctaHref": "#contact-form"
+  },
+  "challenges": {
+    "tag": "CHALLENGES",
+    "heading": "Neglecting design discovery leads to costly mistakes.",
+    "description": "Without a clear design strategy and specifications, even the best of ideas can fail.",
+    "cards": [
+      { "tag": "UNCLEAR SCOPE", "description": "Projects spiral out of control with scope creep and budget overruns." },
+      { "tag": "HIGH RISK, LOW REWARD", "description": "Features built without user validation lead to low adoption." },
+      { "tag": "ENDLESS REVISIONS", "description": "Constant changes delay progress and drain resources." },
+      { "tag": "MISALIGNED STAKEHOLDERS", "description": "Teams struggle to agree on a clear direction." },
+      { "tag": "COMPETITIVE DISADVANTAGE", "description": "Lack of design strategy makes it hard to stand out." },
+      { "tag": "DEVELOPMENT BOTTLENECKS", "description": "Engineers waste time on unclear requirements." },
+      { "tag": "COSTLY REBUILDS", "description": "Late-stage changes force expensive rework." }
+    ]
+  },
+  "auditWork": {
+    "tag": "REAL-WORLD WINS",
+    "heading": "Our design experts and business analysts help you get it right the first time.",
+    "stats": [
+      { "value": "$20K", "label": "saved per project by reducing late-stage revisions" },
+      { "value": "150+", "label": "design discoveries that led to complete product development" },
+      { "value": "90%", "label": "of products we worked on achieved market success" }
+    ],
+    "caseStudies": [
+      {
+        "name": "vocable",
+        "description": "Boosted content efficiency by 300-500%, accelerating content marketing up to 4x through streamlined workflows and AI automation.",
+        "slides": [
+          { "type": "image", "src": "/images/audit/vocable-dd-slide-1.jpg" },
+          { "type": "image", "src": "/images/audit/vocable-dd-slide-2.jpg" },
+          { "type": "image", "src": "/images/audit/vocable-dd-slide-3.jpg" }
+        ],
+        "href": "/case-study/vocable/",
+        "comingSoon": false
+      },
+      {
+        "name": "INSPHERE.AI",
+        "description": "Supercharging corporate potential with unified knowledge bases.",
+        "slides": [
+          { "type": "image", "src": "/images/audit/digno-dd-slide-1.jpg" },
+          { "type": "image", "src": "/images/audit/digno-dd-slide-2.jpg" },
+          { "type": "image", "src": "/images/audit/digno-dd-slide-3.jpg" }
+        ],
+        "href": "#",
+        "comingSoon": true
+      },
+      {
+        "name": "NITRO",
+        "description": "A futuristic play to earn racing experience that secured $5M funding in 3 months.",
+        "slides": [
+          { "type": "image", "src": "/images/audit/nitro-dd-slide-1.jpg" },
+          { "type": "image", "src": "/images/audit/nitro-dd-slide-2.jpg" }
+        ],
+        "href": "#",
+        "comingSoon": true
+      }
+    ]
+  },
+  "midCta": {
+    "title": "Ready to Visualize Your Product?",
+    "ctaText": "Talk to us",
+    "ctaHref": "#contact-form"
+  },
+  "process": {
+    "tag": "OUR end-to-end process",
+    "heading": "Inside our design discovery process.",
+    "steps": [
+      {
+        "counter": "01",
+        "title": "Research & Understanding",
+        "content": "We begin by immersing ourselves in your business context: we study your users, analyze competitors through market research, and identify key features that will set your product apart."
+      },
+      {
+        "counter": "02",
+        "title": "UX Mapping & Scope Alignment",
+        "content": "Through collaborative workshops, we discern major use cases for your product and create targeted user personas. These insights are then used to define your user journeys and determine your product\u2019s scope."
+      },
+      {
+        "counter": "03",
+        "title": "Wireframing & Visual Direction",
+        "content": "Next, we translate these user flows into real screens that bring your product\u2019s major use cases to life. In doing so, we set up the look and feel of the product and establish the foundations of your design system."
+      },
+      {
+        "counter": "04",
+        "title": "Interactive Prototyping & User Stories",
+        "content": "We transform your concept screens into interactive prototypes that stakeholders can interact with, positioning you to attract funding and investor interest. We also meticulously document these flows as user stories to provide tangible product direction before development begins."
+      },
+      {
+        "counter": "05",
+        "title": "Roadmap for Development",
+        "content": "To wrap up the process, we create a strategic roadmap that outlines key milestones and collaborate with you on IT solutions, helping you seamlessly initiate product development."
+      }
+    ],
+    "deliverables": [
+      "UI/UX design for MVP",
+      "User journey maps",
+      "Interactive prototypes",
+      "Design system guidelines",
+      "Project roadmap"
+    ]
+  },
+  "keyDeliverables": {
+    "tag": "Deliverables",
+    "heading": "What you'll get in your design discovery.",
+    "items": [
+      { "title": "UI/UX design for MVP", "description": "We translate your idea into a comprehensive, user-friendly experience that drives clicks and engagement." },
+      { "title": "User journey maps", "description": "We gather deep insights into customer interactions to optimize every touchpoint and enhance the UX." },
+      { "title": "Interactive prototypes", "description": "We showcase core user flows in action with dynamic prototypes that demonstrate functionality before development." },
+      { "title": "Design system guidelines", "description": "We ensure the scalability of your product with structured design principles and reusable components." },
+      { "title": "Project roadmap", "description": "We help you align stakeholders and streamline execution by providing a clear understanding of budget and scoping." }
+    ]
+  },
+  "benefits": {
+    "tag": "BENEFITS OF OUR DESIGN DISCOVERY",
+    "heading": "From vision to execution, we set our partners up for success.",
+    "cards": [
+      {
+        "title": "Business Leaders",
+        "description": "We help you make informed design decisions with confidence, maximizing your ROI and aligning with strategic goals."
+      },
+      {
+        "title": "Product Managers",
+        "description": "We give you clarity on UX priorities and establish a design roadmap that guides development efforts efficiently."
+      },
+      {
+        "title": "Development Teams",
+        "description": "We set the stage for you with clear design specifications and visual direction that reduces ambiguity and streamlines implementation."
+      }
+    ]
+  },
+  "bottomCta": {
+    "title": "Ready to visualize your product?",
+    "subtitle": "In just two weeks, our signature Design Discovery workshop will provide you with a design direction and product roadmap that sets you up for success.",
+    "ctaText": "Discover my product",
+    "ctaHref": "#contact-form"
+  },
+  "faqs": {
+    "tag": "faqs",
+    "heading": "Your questions, answered.",
+    "items": [
+      { "question": "How is a Design Discovery different from a full Discovery Workshop?", "answer": "Design Discovery focuses specifically on the user experience and visual design aspects of your product, while a full Discovery Workshop covers broader aspects including technical feasibility, business model validation, and development planning." },
+      { "question": "Can we skip Design Discovery if we already have wireframes?", "answer": "Wireframes are a great start, but Design Discovery goes deeper by validating those concepts with users, exploring visual language options, and creating interactive prototypes that stakeholders can experience and provide feedback on." },
+      { "question": "How long does the Design Discovery process take?", "answer": "Most Design Discovery engagements take 2-4 weeks, depending on the complexity of your product and the number of user journeys that need to be explored." },
+      { "question": "What happens after the Design Discovery phase?", "answer": "The insights and deliverables from Design Discovery feed directly into the development planning phase, providing clear direction for your engineering team and reducing implementation questions." }
+    ]
+  },
+  "nextSteps": [
+    { "number": "01", "text": "We\u2019ll respond within 24 hours." },
+    { "number": "02", "text": "Our UX Expert will collect project details and create a brief." },
+    { "number": "03", "text": "We\u2019ll prepare estimates and share a project proposal." }
+  ],
+  "contactInfo": {
+    "phone": "(202) 978 3410",
+    "email": "info@reloadux.com",
+    "team": [
+      { "name": "Sahar", "role": "Key Account Manager", "linkedin": "https://www.linkedin.com/in/sahar-asif-284a9955/", "image": "/images/team/sahar.webp" },
+      { "name": "Lara Kazan", "role": "Business Development Executive", "linkedin": "https://www.linkedin.com/in/lara-kazan-82a24113b/", "image": "/images/team/lara.webp" }
+    ]
+  }
+}

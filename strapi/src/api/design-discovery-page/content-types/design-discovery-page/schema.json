@@ -1,0 +1,135 @@
+{
+  "kind": "singleType",
+  "collectionName": "design_discovery_pages",
+  "info": {
+    "singularName": "design-discovery-page",
+    "pluralName": "design-discovery-pages",
+    "displayName": "Design Discovery Page",
+    "description": "Design Discovery service page content"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "heroTag": {
+      "type": "string",
+      "default": "Design Discovery"
+    },
+    "heroTitle": {
+      "type": "text",
+      "required": true
+    },
+    "heroCtaText": {
+      "type": "string",
+      "default": "Discover my product"
+    },
+    "heroCtaHref": {
+      "type": "string",
+      "default": "#contact-form"
+    },
+    "challengesTag": {
+      "type": "string",
+      "default": "CHALLENGES"
+    },
+    "challengesHeading": {
+      "type": "text"
+    },
+    "challengesDescription": {
+      "type": "text"
+    },
+    "challengeCards": {
+      "type": "json"
+    },
+    "auditWorkTag": {
+      "type": "string",
+      "default": "REAL-WORLD WINS"
+    },
+    "auditWorkHeading": {
+      "type": "text"
+    },
+    "auditWorkStats": {
+      "type": "json"
+    },
+    "auditWorkCaseStudies": {
+      "type": "json"
+    },
+    "midCtaTitle": {
+      "type": "text"
+    },
+    "midCtaText": {
+      "type": "string",
+      "default": "Talk to us"
+    },
+    "midCtaHref": {
+      "type": "string",
+      "default": "#contact-form"
+    },
+    "processTag": {
+      "type": "string",
+      "default": "OUR end-to-end process"
+    },
+    "processHeading": {
+      "type": "text"
+    },
+    "processSteps": {
+      "type": "json"
+    },
+    "deliverables": {
+      "type": "json"
+    },
+    "keyDeliverablesTag": {
+      "type": "string",
+      "default": "Deliverables"
+    },
+    "keyDeliverablesHeading": {
+      "type": "string"
+    },
+    "keyDeliverablesItems": {
+      "type": "json"
+    },
+    "bottomCtaTitle": {
+      "type": "text"
+    },
+    "bottomCtaSubtitle": {
+      "type": "text"
+    },
+    "bottomCtaText": {
+      "type": "string"
+    },
+    "bottomCtaHref": {
+      "type": "string",
+      "default": "#contact-form"
+    },
+    "faqsTag": {
+      "type": "string",
+      "default": "FAQS"
+    },
+    "faqsHeading": {
+      "type": "text"
+    },
+    "faqItems": {
+      "type": "json"
+    },
+    "nextSteps": {
+      "type": "json"
+    },
+    "contactPhone": {
+      "type": "string",
+      "default": "(202) 978 3410"
+    },
+    "contactEmail": {
+      "type": "email",
+      "default": "info@reloadux.com"
+    },
+    "contactTeam": {
+      "type": "json"
+    },
+    "seoTitle": {
+      "type": "string"
+    },
+    "seoDescription": {
+      "type": "text"
+    }
+  }
+}

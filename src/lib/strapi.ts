@@ -667,6 +667,59 @@ export async function getStrapiConversationalUXPage() {
   );
 }
 
+// ─── Design Discovery Page ──────────────────────────────────────────────────
+
+export interface StrapiDesignDiscoveryPage {
+  id: number;
+  heroTag?: string;
+  heroTitle: string;
+  heroCtaText?: string;
+  heroCtaHref?: string;
+  challengesTag?: string;
+  challengesHeading?: string;
+  challengesDescription?: string;
+  challengeCards?: { tag: string; description: string }[];
+  auditWorkTag?: string;
+  auditWorkHeading?: string;
+  auditWorkStats?: { value: string; label: string }[];
+  auditWorkCaseStudies?: {
+    name: string;
+    description: string;
+    slides: { type: "video" | "image"; src: string }[];
+    href: string;
+    comingSoon?: boolean;
+  }[];
+  midCtaTitle?: string;
+  midCtaText?: string;
+  midCtaHref?: string;
+  processTag?: string;
+  processHeading?: string;
+  processSteps?: { counter: string; title: string; content: string }[];
+  deliverables?: string[];
+  keyDeliverablesTag?: string;
+  keyDeliverablesHeading?: string;
+  keyDeliverablesItems?: { title: string; description: string }[];
+  bottomCtaTitle?: string;
+  bottomCtaSubtitle?: string;
+  bottomCtaText?: string;
+  bottomCtaHref?: string;
+  faqsTag?: string;
+  faqsHeading?: string;
+  faqItems?: { question: string; answer: string }[];
+  nextSteps?: { number: string; text: string }[];
+  contactPhone?: string;
+  contactEmail?: string;
+  contactTeam?: { name: string; role: string; linkedin?: string }[];
+  seoTitle?: string;
+  seoDescription?: string;
+}
+
+export async function getStrapiDesignDiscoveryPage() {
+  return fetchStrapi<StrapiSingle<StrapiDesignDiscoveryPage>>(
+    "/api/design-discovery-page?populate=*"
+  );
+}
+
 // ─── Legacy Modernization Page ──────────────────────────────────────────────
 
 export async function getStrapiLegacyModernizationPage() {

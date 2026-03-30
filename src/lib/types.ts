@@ -669,3 +669,19 @@ export interface UXAuditPageData {
     team: { name: string; role: string; linkedin: string; image?: string }[];
   };
 }
+
+// ─── Design Discovery Page ───────────────────────────────────────────────────
+
+export interface DesignDiscoveryPageData {
+  hero: { tag: string; title: string; ctaText: string; ctaHref: string };
+  challenges: { tag: string; heading: string; description: string; cards: { tag: string; description: string }[] };
+  auditWork: { tag: string; heading: string; stats: { value: string; label: string }[]; caseStudies: AuditCaseStudy[] };
+  midCta: { title: string; ctaText: string; ctaHref: string };
+  process: { tag: string; heading: string; steps: { counter: string; title: string; content: string }[]; deliverables: string[] };
+  keyDeliverables: { tag: string; heading: string; items: { title: string; description: string }[] };
+  benefits: { tag: string; heading: string; cards: { title: string; description: string }[] };
+  bottomCta: { title: string; subtitle: string; ctaText: string; ctaHref: string };
+  faqs: { tag: string; heading: string; items: { question: string; answer: string }[] };
+  nextSteps: { number: string; text: string }[];
+  contactInfo: { phone: string; email: string; team: { name: string; role: string; linkedin: string; image?: string }[] };
+}
