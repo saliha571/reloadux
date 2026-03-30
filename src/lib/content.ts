@@ -7,6 +7,7 @@ import type {
   TeamExtensionPageData,
   UXAuditPageData,
   LegacyModernizationPageData,
+  ConversationalUXPageData,
   Service,
   CaseStudy,
   BlogPost,
@@ -28,6 +29,7 @@ import mvpData from "../../content/pages/design-from-scratch-mvp.json";
 import teamExtensionData from "../../content/pages/team-extension.json";
 import uxAuditData from "../../content/pages/ux-audit-ai-readiness.json";
 import legacyModernizationData from "../../content/pages/legacy-ux-modernization.json";
+import conversationalUxData from "../../content/pages/conversational-ux.json";
 
 import {
   getStrapiHomepage,
@@ -35,6 +37,7 @@ import {
   getStrapiTeamExtensionPage,
   getStrapiUXAuditPage,
   getStrapiLegacyModernizationPage,
+  getStrapiConversationalUXPage,
   getStrapiCaseStudies,
   getStrapiCaseStudyBySlug,
   getStrapiServices,
@@ -422,6 +425,83 @@ export async function getTeamExtensionPage(): Promise<TeamExtensionPageData> {
         title: s.bottomCtaTitle ?? fallback.bottomCta.title,
         ctaText: s.bottomCtaText ?? fallback.bottomCta.ctaText,
         ctaHref: s.bottomCtaHref ?? fallback.bottomCta.ctaHref,
+      },
+      faqs: {
+        tag: s.faqsTag ?? fallback.faqs.tag,
+        heading: s.faqsHeading ?? fallback.faqs.heading,
+        items: s.faqItems?.length
+          ? s.faqItems.map((f) => ({ question: f.question, answer: f.answer }))
+          : fallback.faqs.items,
+      },
+      nextSteps: s.nextSteps?.length
+        ? s.nextSteps.map((n) => ({ number: n.number, text: n.text }))
+        : fallback.nextSteps,
+      contactInfo: {
+        phone: s.contactPhone ?? fallback.contactInfo.phone,
+        email: s.contactEmail ?? fallback.contactInfo.email,
+        team: s.contactTeam?.length
+          ? s.contactTeam.map((t) => ({
+              name: t.name,
+              role: t.role,
+              linkedin: t.linkedin ?? "",
+              image: t.image ? getStrapiMediaUrl(t.image) : undefined,
+            }))
+          : fallback.contactInfo.team,
+      },
+    };
+  } catch {
+    return fallback;
+  }
+}
+
+// ─── Conversational UX Page ──────────────────────────────────────────────────
+
+export async function getConversationalUXPage(): Promise<ConversationalUXPageData> {
+  const fallback = conversationalUxData as ConversationalUXPageData;
+
+  try {
+    const res = await getStrapiConversationalUXPage();
+    const s = res?.data;
+    if (!s) return fallback;
+
+    return {
+      hero: {
+        tagLine: fallback.hero.tagLine,
+        titleItalic: s.heroTitleItalic ?? fallback.hero.titleItalic,
+        titleBold: s.heroTitleBold ?? fallback.hero.titleBold,
+        subtitle: s.heroSubtitle ?? fallback.hero.subtitle,
+        ctaText: s.heroCtaText ?? fallback.hero.ctaText,
+        ctaHref: s.heroCtaHref ?? fallback.hero.ctaHref,
+        videoSrc: s.heroVideoSrc ?? fallback.hero.videoSrc,
+        videoPoster: s.heroVideoPoster ?? fallback.hero.videoPoster,
+        stat: {
+          value: s.heroStatValue ?? fallback.hero.stat.value,
+          text: s.heroStatText ?? fallback.hero.stat.text,
+          source: s.heroStatSource ?? fallback.hero.stat.source,
+        },
+      },
+      genaiStatement: {
+        heading: s.genaiHeading ?? fallback.genaiStatement.heading,
+        subheading: s.genaiSubheading ?? fallback.genaiStatement.subheading,
+        ctaText: s.genaiCtaText ?? fallback.genaiStatement.ctaText,
+        ctaHref: s.genaiCtaHref ?? fallback.genaiStatement.ctaHref,
+      },
+      featureGrid: {
+        heading: s.featureGridHeading ?? fallback.featureGrid.heading,
+        features: s.features?.length
+          ? s.features.map((f) => ({ image: f.image, imageAlt: f.imageAlt ?? "", title: f.title, description: f.description }))
+          : fallback.featureGrid.features,
+      },
+      process: fallback.process,
+      freeTrial: {
+        heading: s.freeTrialHeading ?? fallback.freeTrial.heading,
+        headingAccent: s.freeTrialAccent ?? fallback.freeTrial.headingAccent,
+        headingEnd: s.freeTrialEnd ?? fallback.freeTrial.headingEnd,
+        benefits: s.freeTrialBenefits
+          ? s.freeTrialBenefits.split("\n").filter(Boolean)
+          : fallback.freeTrial.benefits,
+        ctaText: s.freeTrialCtaText ?? fallback.freeTrial.ctaText,
+        ctaHref: s.freeTrialCtaHref ?? fallback.freeTrial.ctaHref,
       },
       faqs: {
         tag: s.faqsTag ?? fallback.faqs.tag,

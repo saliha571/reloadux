@@ -620,6 +620,55 @@ export interface StrapiLegacyModernizationPage {
   seoDescription?: string;
 }
 
+// ─── Conversational UX Page ──────────────────────────────────────────────────
+
+export interface StrapiConversationalUXPage {
+  id: number;
+  heroTitleItalic?: string;
+  heroTitleBold: string;
+  heroSubtitle?: string;
+  heroCtaText?: string;
+  heroCtaHref?: string;
+  heroVideoSrc?: string;
+  heroVideoPoster?: string;
+  heroStatValue?: string;
+  heroStatText?: string;
+  heroStatSource?: string;
+  genaiHeading?: string;
+  genaiSubheading?: string;
+  genaiCtaText?: string;
+  genaiCtaHref?: string;
+  featureGridHeading?: string;
+  features?: { image: string; imageAlt?: string; title: string; description: string }[];
+  processTag?: string;
+  processHeading?: string;
+  deliverablesTag?: string;
+  deliverables?: string;
+  freeTrialHeading?: string;
+  freeTrialAccent?: string;
+  freeTrialEnd?: string;
+  freeTrialBenefits?: string;
+  freeTrialCtaText?: string;
+  freeTrialCtaHref?: string;
+  faqsTag?: string;
+  faqsHeading?: string;
+  faqItems?: { question: string; answer: string }[];
+  nextSteps?: { number: string; text: string }[];
+  contactPhone?: string;
+  contactEmail?: string;
+  contactTeam?: StrapiTeamContact[];
+  seoTitle?: string;
+  seoDescription?: string;
+}
+
+export async function getStrapiConversationalUXPage() {
+  return fetchStrapi<StrapiSingle<StrapiConversationalUXPage>>(
+    "/api/conversational-ux-page?populate[features]=*&populate[faqItems]=*&populate[nextSteps]=*&populate[contactTeam][populate]=image"
+  );
+}
+
+// ─── Legacy Modernization Page ──────────────────────────────────────────────
+
 export async function getStrapiLegacyModernizationPage() {
   return fetchStrapi<StrapiSingle<StrapiLegacyModernizationPage>>(
     "/api/legacy-modernization-page?populate[challengeCards]=*&populate[caseStudiesStats]=*&populate[caseStudyItems][populate]=slides&populate[processPhases]=*&populate[keyDeliverablesItems]=*&populate[whenToDoItItems]=*&populate[otherServicesItems]=*&populate[faqItems]=*&populate[nextSteps]=*&populate[contactTeam][populate]=image"

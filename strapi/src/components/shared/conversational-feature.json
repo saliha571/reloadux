@@ -1,0 +1,13 @@
+{
+  "collectionName": "components_shared_conversational_features",
+  "info": {
+    "displayName": "Conversational Feature",
+    "icon": "picture"
+  },
+  "attributes": {
+    "image": { "type": "string", "required": true },
+    "imageAlt": { "type": "string" },
+    "title": { "type": "string", "required": true },
+    "description": { "type": "text", "required": true }
+  }
+}

@@ -1,0 +1,143 @@
+{
+  "hero": {
+    "tagLine": "services",
+    "titleItalic": "Conversational UX Design",
+    "titleBold": "Build Human-Like Chat & Voice Experiences",
+    "subtitle": "Shift from static interfaces to GenAI-driven experiences.",
+    "ctaText": "Let's Get Started",
+    "ctaHref": "#contact-form",
+    "videoSrc": "/videos/V5-Dashboard-Agent.mp4",
+    "videoPoster": "/images/conversational/conversational-ui-thumbnail.png",
+    "stat": {
+      "value": "71%",
+      "text": "of Consumers expect Personalized Interactions",
+      "source": "— McKinsey & Company"
+    }
+  },
+  "genaiStatement": {
+    "heading": "Generative AI is transforming how users interact with digital products, moving beyond clicks to conversations.",
+    "subheading": "This is not just adding AI, it's about redesigning the experience",
+    "ctaText": "Let's start with a Free Trial",
+    "ctaHref": "#contact-form"
+  },
+  "featureGrid": {
+    "heading": "See how conversational UX can elevate your product",
+    "features": [
+      {
+        "image": "/images/conversational/chat-voice.webp",
+        "imageAlt": "Calling UX",
+        "title": "Chat & Voice Interfaces",
+        "description": "We empower your users to interact naturally — like by chat or voice to find what they're looking for without having to dig through menus or help articles."
+      },
+      {
+        "image": "/images/conversational/agentic-workflow.webp",
+        "imageAlt": "car repair app",
+        "title": "Agentic Workflow Automation",
+        "description": "We design AI agents that don't just answer questions — they take real actions, automate tasks, and help users get things done faster inside your product."
+      },
+      {
+        "image": "/images/conversational/intelligent-ux.webp",
+        "imageAlt": "AI Button",
+        "title": "Intelligent UX Layer for Existing Products",
+        "description": "No need to rebuild it all: we help you layer GenAI features like chat assistants or personalized recommendations on top of your current system."
+      }
+    ]
+  },
+  "process": {
+    "tag": "HOW We DO IT",
+    "heading": "Our process for creating intelligent experiences.",
+    "steps": [
+      {
+        "counter": "01",
+        "title": "Discover (AI opportunity mapping)",
+        "intro": "We start by identifying high-value use cases where AI can create real business impact without overhauling your product.",
+        "listHeading": "What we do:",
+        "items": [
+          { "bold": "AI-focused workshops", "text": "Map out your user journeys and explore how AI can enhance or automate key moments." },
+          { "bold": "Opportunity prioritization", "text": "Evaluate where AI can deliver the biggest lift in user experience and ROI." },
+          { "bold": "AI strategy assistance", "text": "Collaborate with your dev team to assess feasibility, data requirements, and platform readiness." },
+          { "bold": "Concept exploration", "text": "Dive deeper into AI ideas and clarify how to communicate them clearly to users." }
+        ]
+      },
+      {
+        "counter": "02",
+        "title": "Designing conversational UX",
+        "intro": "Once we identify the right opportunities, we prototype intelligent experiences that feel natural, helpful, and human.",
+        "listHeading": "What we do:",
+        "items": [
+          { "bold": "UX & UI design", "text": "Translate AI features into usable flows that minimize risk from errors or hallucinations." },
+          { "bold": "Conversational & copilot flows", "text": "Design AI-driven interactions like chat interfaces, auto-fill forms, and guided task flows." },
+          { "bold": "User testing & validation", "text": "Run tests with real users on prototypes or PoCs to catch bottlenecks and improve usability." }
+        ]
+      },
+      {
+        "counter": "03",
+        "title": "Build",
+        "intro": "We bring your intelligent experience to life — integrating LLMs, APIs, and automation in close collaboration with your development team.",
+        "listHeading": "What we do:",
+        "items": [
+          { "bold": "LLM + API integration", "text": "Connect your product to GenAI models or internal AI engines through stable, secure APIs." },
+          { "bold": "Front-end engineering support", "text": "Align design handoff with build realities to ensure what's designed is what's delivered." },
+          { "bold": "Error handling & safeguards", "text": "Plan for fallback states, user control, and system transparency for trustworthy AI." }
+        ]
+      },
+      {
+        "counter": "04",
+        "title": "Scale (ongoing optimization)",
+        "intro": "AI experiences need to evolve. We don't just launch — we help you optimize and scale based on real usage data.",
+        "listHeading": "What we do:",
+        "items": [
+          { "bold": "Adoption & satisfaction tracking", "text": "Monitor how users interact with AI features and measure impact on experience and goals." },
+          { "bold": "Iteration & expansion", "text": "Use data insights to refine patterns, fix gaps, and expand intelligent features across platforms." },
+          { "bold": "Design governance", "text": "Ensure consistency, usability, and brand alignment as AI features scale across your product." }
+        ]
+      }
+    ],
+    "deliverablesTag": "DELIVERABLES EXPECTED",
+    "deliverables": [
+      "AI opportunity map",
+      "UX flows",
+      "Technical architecture",
+      "Interactive conversational prototypes",
+      "Live implementation"
+    ]
+  },
+  "freeTrial": {
+    "heading": "Let's start with a",
+    "headingAccent": "free",
+    "headingEnd": "trial",
+    "benefits": [
+      "2-day free trial",
+      "One use case, fully prototyped",
+      "No risks. No commitments. Just results."
+    ],
+    "ctaText": "Let's start with a Free Trial",
+    "ctaHref": "#contact-form"
+  },
+  "faqs": {
+    "tag": "faqs",
+    "heading": "Got questions? We've got answers.",
+    "items": [
+      { "question": "What is Conversational UI design?", "answer": "Conversational UI design is the practice of crafting user interfaces that mimic human conversation. Whether through text, voice, or hybrid inputs, it focuses on creating seamless, natural, and context-aware interactions that guide users through digital experiences just like a real dialogue would." },
+      { "question": "How does Conversational UI enhance the user experience?", "answer": "Conversational UI transforms static interfaces into dynamic experiences by allowing users to interact in a more natural and personalized way. It reduces cognitive load, clarifies next steps, and adapts to user behavior—making interactions feel fluid, responsive, and user-first." },
+      { "question": "Why should businesses invest in Conversational UI?", "answer": "Conversational UI enables businesses to create more intuitive, human-centered interfaces that simplify user interactions. By integrating natural dialogue elements into apps, websites, or digital products, companies can drive engagement, reduce friction, and enhance customer satisfaction, ultimately improving conversion and retention rates." },
+      { "question": "How is Conversational UI different from traditional UI?", "answer": "Unlike traditional interfaces with buttons and menus, Conversational UI uses natural language and dialogue patterns to interact with users. It simplifies navigation, provides contextual guidance, and reduces the need for users to learn complex workflows." },
+      { "question": "Which industries benefit the most from Conversational UI?", "answer": "Industries like retail, fintech, healthcare, education, and customer service benefit significantly from Conversational UI. These sectors rely heavily on user engagement and personalized communication, where conversational interfaces can streamline tasks, improve accessibility, and elevate overall satisfaction." },
+      { "question": "Can Conversational UI be integrated into mobile and web apps?", "answer": "Absolutely. Conversational UI elements, like chat widgets, guided flows, and voice assistants, can be integrated into mobile and web platforms with minimal disruption. Whether you're enhancing onboarding, product discovery, or support, it fits seamlessly into existing experiences." },
+      { "question": "Does Conversational UI support multilingual or localized experiences?", "answer": "Yes. Conversational UI can be designed to support multiple languages, making it an excellent solution for global audiences. This helps brands offer personalized and accessible interactions across regions and demographics." }
+    ]
+  },
+  "nextSteps": [
+    { "number": "01", "text": "We'll respond within 24 hours." },
+    { "number": "02", "text": "Our UX Expert will collect project details and create a brief." },
+    { "number": "03", "text": "We'll prepare estimates and share a project proposal." }
+  ],
+  "contactInfo": {
+    "phone": "(202) 978 3410",
+    "email": "info@reloadux.com",
+    "team": [
+      { "name": "Sahar", "role": "Key Account Manager", "linkedin": "https://www.linkedin.com/in/sahar-asif-284a9955/", "image": "/images/team/sahar.webp" },
+      { "name": "Lara Kazan", "role": "Business Development Executive", "linkedin": "https://www.linkedin.com/in/lara-kazan-82a24113b/", "image": "/images/team/lara.webp" }
+    ]
+  }
+}

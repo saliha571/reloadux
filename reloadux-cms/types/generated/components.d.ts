@@ -87,6 +87,20 @@ export interface SharedClientLogoItem extends Struct.ComponentSchema {
   };
 }
 
+export interface SharedConversationalFeature extends Struct.ComponentSchema {
+  collectionName: 'components_shared_conversational_features';
+  info: {
+    displayName: 'Conversational Feature';
+    icon: 'picture';
+  };
+  attributes: {
+    description: Schema.Attribute.Text & Schema.Attribute.Required;
+    image: Schema.Attribute.String & Schema.Attribute.Required;
+    imageAlt: Schema.Attribute.String;
+    title: Schema.Attribute.String & Schema.Attribute.Required;
+  };
+}
+
 export interface SharedDeliverable extends Struct.ComponentSchema {
   collectionName: 'components_shared_deliverables';
   info: {
@@ -234,6 +248,18 @@ export interface SharedPrinciple extends Struct.ComponentSchema {
     gif: Schema.Attribute.String;
     number: Schema.Attribute.String & Schema.Attribute.Required;
     title: Schema.Attribute.String & Schema.Attribute.Required;
+  };
+}
+
+export interface SharedProcessListItem extends Struct.ComponentSchema {
+  collectionName: 'components_shared_process_list_items';
+  info: {
+    displayName: 'Process List Item';
+    icon: 'bulletList';
+  };
+  attributes: {
+    bold: Schema.Attribute.String & Schema.Attribute.Required;
+    text: Schema.Attribute.Text & Schema.Attribute.Required;
   };
 }
 
@@ -412,6 +438,7 @@ declare module '@strapi/strapi' {
       'shared.challenge': SharedChallenge;
       'shared.challenge-card': SharedChallengeCard;
       'shared.client-logo-item': SharedClientLogoItem;
+      'shared.conversational-feature': SharedConversationalFeature;
       'shared.deliverable': SharedDeliverable;
       'shared.faq': SharedFaq;
       'shared.ideal-client-card': SharedIdealClientCard;
@@ -423,6 +450,7 @@ declare module '@strapi/strapi' {
       'shared.outcome': SharedOutcome;
       'shared.phase': SharedPhase;
       'shared.principle': SharedPrinciple;
+      'shared.process-list-item': SharedProcessListItem;
       'shared.process-stage': SharedProcessStage;
       'shared.process-step': SharedProcessStep;
       'shared.result': SharedResult;

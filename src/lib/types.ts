@@ -513,6 +513,78 @@ export interface LegacyModernizationPageData {
   };
 }
 
+// ─── Conversational UX Page ───────────────────────────────────────────────────
+
+export interface ConversationalProcessItem {
+  bold: string;
+  text: string;
+}
+
+export interface ConversationalProcessStep {
+  counter: string;
+  title: string;
+  intro: string;
+  listHeading: string;
+  items: ConversationalProcessItem[];
+}
+
+export interface ConversationalFeature {
+  image: string;
+  imageAlt: string;
+  title: string;
+  description: string;
+}
+
+export interface ConversationalUXPageData {
+  hero: {
+    tagLine: string;
+    titleItalic: string;
+    titleBold: string;
+    subtitle: string;
+    ctaText: string;
+    ctaHref: string;
+    videoSrc: string;
+    videoPoster: string;
+    stat: { value: string; text: string; source: string };
+  };
+  genaiStatement: {
+    heading: string;
+    subheading: string;
+    ctaText: string;
+    ctaHref: string;
+  };
+  featureGrid: {
+    heading: string;
+    features: ConversationalFeature[];
+  };
+  process: {
+    tag: string;
+    heading: string;
+    steps: ConversationalProcessStep[];
+    deliverablesTag: string;
+    deliverables: string[];
+  };
+  freeTrial: {
+    heading: string;
+    headingAccent: string;
+    headingEnd: string;
+    benefits: string[];
+    ctaText: string;
+    ctaHref: string;
+  };
+  faqs: {
+    tag: string;
+    heading: string;
+    items: { question: string; answer: string }[];
+  };
+  nextSteps: { number: string; text: string }[];
+  contactInfo: {
+    phone: string;
+    email: string;
+    team: { name: string; role: string; linkedin: string; image?: string }[];
+  };
+}
+
 // ─── UX Audit & AI Readiness Page ─────────────────────────────────────────────
 
 export interface AuditCaseStudy {

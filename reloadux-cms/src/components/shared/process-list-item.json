@@ -1,0 +1,18 @@
+{
+  "collectionName": "components_shared_process_list_items",
+  "info": {
+    "displayName": "Process List Item",
+    "icon": "bulletList"
+  },
+  "options": {},
+  "attributes": {
+    "bold": {
+      "type": "string",
+      "required": true
+    },
+    "text": {
+      "type": "text",
+      "required": true
+    }
+  }
+}

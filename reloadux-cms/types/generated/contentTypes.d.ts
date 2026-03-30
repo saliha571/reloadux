@@ -569,6 +569,69 @@ export interface ApiClientLogoClientLogo extends Struct.CollectionTypeSchema {
   };
 }
 
+export interface ApiConversationalUxPageConversationalUxPage
+  extends Struct.SingleTypeSchema {
+  collectionName: 'conversational_ux_pages';
+  info: {
+    displayName: 'Conversational UX Page';
+    pluralName: 'conversational-ux-pages';
+    singularName: 'conversational-ux-page';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    contactEmail: Schema.Attribute.String;
+    contactPhone: Schema.Attribute.String;
+    contactTeam: Schema.Attribute.Component<'shared.team-contact', true>;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    deliverables: Schema.Attribute.Text;
+    deliverablesTag: Schema.Attribute.String;
+    faqItems: Schema.Attribute.Component<'shared.faq', true>;
+    faqsHeading: Schema.Attribute.String;
+    faqsTag: Schema.Attribute.String;
+    featureGridHeading: Schema.Attribute.String;
+    features: Schema.Attribute.Component<'shared.conversational-feature', true>;
+    freeTrialAccent: Schema.Attribute.String;
+    freeTrialBenefits: Schema.Attribute.Text;
+    freeTrialCtaHref: Schema.Attribute.String;
+    freeTrialCtaText: Schema.Attribute.String;
+    freeTrialEnd: Schema.Attribute.String;
+    freeTrialHeading: Schema.Attribute.String;
+    genaiCtaHref: Schema.Attribute.String;
+    genaiCtaText: Schema.Attribute.String;
+    genaiHeading: Schema.Attribute.Text;
+    genaiSubheading: Schema.Attribute.Text;
+    heroCtaHref: Schema.Attribute.String;
+    heroCtaText: Schema.Attribute.String;
+    heroStatSource: Schema.Attribute.String;
+    heroStatText: Schema.Attribute.String;
+    heroStatValue: Schema.Attribute.String;
+    heroSubtitle: Schema.Attribute.Text;
+    heroTitleBold: Schema.Attribute.String & Schema.Attribute.Required;
+    heroTitleItalic: Schema.Attribute.String;
+    heroVideoPoster: Schema.Attribute.String;
+    heroVideoSrc: Schema.Attribute.String;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::conversational-ux-page.conversational-ux-page'
+    > &
+      Schema.Attribute.Private;
+    nextSteps: Schema.Attribute.Component<'shared.next-step', true>;
+    processHeading: Schema.Attribute.String;
+    processTag: Schema.Attribute.String;
+    publishedAt: Schema.Attribute.DateTime;
+    seoDescription: Schema.Attribute.Text;
+    seoTitle: Schema.Attribute.String;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiHomepageHomepage extends Struct.SingleTypeSchema {
   collectionName: 'homepages';
   info: {
@@ -1844,6 +1907,7 @@ declare module '@strapi/strapi' {
       'api::blog-post.blog-post': ApiBlogPostBlogPost;
       'api::case-study.case-study': ApiCaseStudyCaseStudy;
       'api::client-logo.client-logo': ApiClientLogoClientLogo;
+      'api::conversational-ux-page.conversational-ux-page': ApiConversationalUxPageConversationalUxPage;
       'api::homepage.homepage': ApiHomepageHomepage;
       'api::industry.industry': ApiIndustryIndustry;
       'api::legacy-modernization-page.legacy-modernization-page': ApiLegacyModernizationPageLegacyModernizationPage;

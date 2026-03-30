@@ -1,0 +1,128 @@
+{
+  "kind": "singleType",
+  "collectionName": "conversational_ux_pages",
+  "info": {
+    "singularName": "conversational-ux-page",
+    "pluralName": "conversational-ux-pages",
+    "displayName": "Conversational UX Page"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "heroTitleItalic": {
+      "type": "string"
+    },
+    "heroTitleBold": {
+      "type": "string",
+      "required": true
+    },
+    "heroSubtitle": {
+      "type": "text"
+    },
+    "heroCtaText": {
+      "type": "string"
+    },
+    "heroCtaHref": {
+      "type": "string"
+    },
+    "heroVideoSrc": {
+      "type": "string"
+    },
+    "heroVideoPoster": {
+      "type": "string"
+    },
+    "heroStatValue": {
+      "type": "string"
+    },
+    "heroStatText": {
+      "type": "string"
+    },
+    "heroStatSource": {
+      "type": "string"
+    },
+    "genaiHeading": {
+      "type": "text"
+    },
+    "genaiSubheading": {
+      "type": "text"
+    },
+    "genaiCtaText": {
+      "type": "string"
+    },
+    "genaiCtaHref": {
+      "type": "string"
+    },
+    "featureGridHeading": {
+      "type": "string"
+    },
+    "features": {
+      "type": "component",
+      "repeatable": true,
+      "component": "shared.conversational-feature"
+    },
+    "processTag": {
+      "type": "string"
+    },
+    "processHeading": {
+      "type": "string"
+    },
+    "deliverablesTag": {
+      "type": "string"
+    },
+    "deliverables": {
+      "type": "text"
+    },
+    "freeTrialHeading": {
+      "type": "string"
+    },
+    "freeTrialAccent": {
+      "type": "string"
+    },
+    "freeTrialEnd": {
+      "type": "string"
+    },
+    "freeTrialBenefits": {
+      "type": "text"
+    },
+    "freeTrialCtaText": {
+      "type": "string"
+    },
+    "freeTrialCtaHref": {
+      "type": "string"
+    },
+    "faqsTag": {
+      "type": "string"
+    },
+    "faqsHeading": {
+      "type": "string"
+    },
+    "faqItems": {
+      "type": "component",
+      "repeatable": true,
+      "component": "shared.faq"
+    },
+    "nextSteps": {
+      "type": "component",
+      "repeatable": true,
+      "component": "shared.next-step"
+    },
+    "contactPhone": {
+      "type": "string"
+    },
+    "contactEmail": {
+      "type": "string"
+    },
+    "contactTeam": {
+      "type": "component",
+      "repeatable": true,
+      "component": "shared.team-contact"
+    },
+    "seoTitle": {
+      "type": "string"
+    },
+    "seoDescription": {
+      "type": "text"
+    }
+  }
+}

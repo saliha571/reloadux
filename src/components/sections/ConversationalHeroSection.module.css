@@ -1,0 +1,149 @@
+.section {
+  position: relative;
+  min-height: 100vh;
+  overflow: hidden;
+  background: var(--bg-dark);
+}
+
+.ellipse {
+  position: absolute;
+  bottom: -100px;
+  left: -100px;
+  z-index: 0;
+  width: 500px;
+  height: 400px;
+  pointer-events: none;
+  background: radial-gradient(
+    ellipse,
+    color-mix(in srgb, var(--color-purple-500) 15%, transparent) 0%,
+    transparent 70%
+  );
+}
+
+.inner {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  gap: var(--space-60);
+  min-height: 100vh;
+  max-width: var(--content-width);
+  margin: 0 auto;
+  padding-inline: var(--page-padding);
+}
+
+.left {
+  flex: 0 0 55%;
+}
+
+.heading {
+  margin: 0;
+}
+
+.titleLineReveal {
+  display: block;
+}
+
+.titleItalic {
+  display: block;
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-weight: 400;
+  font-size: 24px;
+  color: var(--color-white);
+}
+
+.titleBold {
+  display: block;
+  font-family: var(--font-primary);
+  font-weight: 700;
+  font-size: 56px;
+  line-height: 1.2;
+  color: var(--color-white);
+}
+
+.subtitle {
+  max-width: 500px;
+  margin: var(--space-24) 0 var(--space-32);
+  font-size: 18px;
+  color: var(--color-grey-400);
+}
+
+.videoWrap {
+  flex: 1;
+  overflow: hidden;
+  border-radius: 16px;
+}
+
+.video {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.stat {
+  margin-top: var(--space-48);
+  padding-left: var(--space-24);
+  border-left: 2px solid var(--color-grey-700);
+}
+
+.statDesktop {
+  display: block;
+}
+
+.statMobile {
+  display: none;
+}
+
+.statValue {
+  font-family: var(--font-primary);
+  font-size: 80px;
+  font-weight: 700;
+  line-height: 1;
+  color: var(--color-white);
+}
+
+.statText {
+  margin-top: var(--space-8);
+  font-size: 16px;
+  color: var(--color-white);
+}
+
+.statSource {
+  margin-top: var(--space-4);
+  font-size: 14px;
+  color: var(--color-grey-400);
+}
+
+@media (max-width: 1024px) {
+  .inner {
+    flex-direction: column;
+  }
+
+  .left {
+    flex: none;
+    width: 100%;
+  }
+
+  .titleBold {
+    font-size: 40px;
+  }
+
+  .statDesktop {
+    display: none;
+  }
+
+  .statMobile {
+    display: block;
+  }
+}
+
+@media (max-width: 767px) {
+  .titleBold {
+    font-size: 32px;
+  }
+
+  .statValue {
+    font-size: 56px;
+  }
+}
