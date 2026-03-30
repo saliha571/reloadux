@@ -29,6 +29,18 @@ export function getStrapiMediaUrl(media: StrapiMedia | null | undefined): string
   return `${STRAPI_URL}${media.url}`;
 }
 
+/** Strapi stores `/uploads/...`; Next serves `/videos`, `/images` from `public/`. */
+export function resolveStrapiUploadOrPublicUrl(path: string): string {
+  const t = path.trim();
+  if (!t) return "";
+  if (t.startsWith("http://") || t.startsWith("https://")) return t;
+  if (t.startsWith("/uploads/")) {
+    return `${STRAPI_URL.replace(/\/$/, "")}${t}`;
+  }
+  if (t.startsWith("/")) return t;
+  return `/${t.replace(/^\/+/, "")}`;
+}
+
 export function getStrapiMediaFormat(
   media: StrapiMedia | null | undefined,
   format: "thumbnail" | "small" | "medium" | "large"

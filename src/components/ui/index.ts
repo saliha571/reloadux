@@ -2,6 +2,7 @@ export { FlairButton } from "./FlairButton";
 export { SectionTag } from "./SectionTag";
 export { Button } from "./Button";
 export { ScrollReveal } from "./ScrollReveal";
+export { ScrollRevealProvider } from "./ScrollRevealContext";
 export { StatCounter } from "./StatCounter";
 export { FAQItem } from "./FAQItem";
 export { BlogCard } from "./BlogCard";

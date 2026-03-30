@@ -3,6 +3,7 @@
 import { useRef } from "react";
 import { motion, useInView } from "framer-motion";
 import styles from "./ScrollReveal.module.css";
+import { useScrollRevealDisabled } from "./ScrollRevealContext";
 
 interface ScrollRevealProps {
   children: React.ReactNode;
@@ -29,9 +30,16 @@ export function ScrollReveal({
   duration = 0.6,
   once = true,
 }: ScrollRevealProps) {
+  const scrollRevealDisabled = useScrollRevealDisabled();
   const ref = useRef<HTMLDivElement>(null);
   const isInView = useInView(ref, { once, margin: "-80px" });
   const offset = directionOffsets[direction];
+
+  if (scrollRevealDisabled) {
+    return (
+      <div className={className?.trim() ? className : undefined}>{children}</div>
+    );
+  }
 
   return (
     <motion.div

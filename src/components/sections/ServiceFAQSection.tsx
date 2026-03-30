@@ -19,7 +19,7 @@ export function ServiceFAQSection({ tag, heading, items, className }: ServiceFAQ
     <section className={`${styles.section} ${className || ""}`}>
       <div className={styles.inner}>
         <div className={styles.header}>
-          <SectionTag text={tag} />
+          <SectionTag text={tag.trim().toUpperCase()} />
           <h2 className={styles.heading}>{heading}</h2>
         </div>
         <div className={styles.list}>

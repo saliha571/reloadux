@@ -1,0 +1,28 @@
+{
+  "collectionName": "components_shared_team_contacts",
+  "info": {
+    "displayName": "Team Contact",
+    "icon": "user",
+    "description": "Team member contact info"
+  },
+  "options": {},
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "role": {
+      "type": "string",
+      "required": true
+    },
+    "linkedin": {
+      "type": "string"
+    },
+    "image": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": ["images"]
+    }
+  }
+}

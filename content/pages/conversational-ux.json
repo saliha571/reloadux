@@ -6,8 +6,8 @@
     "subtitle": "Shift from static interfaces to GenAI-driven experiences.",
     "ctaText": "Let's Get Started",
     "ctaHref": "#contact-form",
-    "videoSrc": "/videos/V5-Dashboard-Agent.mp4",
-    "videoPoster": "/images/conversational/conversational-ui-thumbnail.png",
+    "videoSrc": "/videos/conversational-hero-video.mp4",
+    "videoPoster": "/images/conversational/chat-voice-mock.png",
     "stat": {
       "value": "71%",
       "text": "of Consumers expect Personalized Interactions",

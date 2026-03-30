@@ -61,6 +61,8 @@
   --color-purple-500: #9662FF;
   --color-purple-700: #7F56D9;
   --color-purple-900: #A401B7;
+  --color-purple-cta-start: #6c1792;
+  --color-purple-cta-end: #391974;
 
   /* ── Primitive Colors: Blue ─────────────────────────────────────────────── */
   --color-blue-primary:  #02C2EA;
@@ -112,6 +114,11 @@
 
   /* ── Gradient ──────────────────────────────────────────────────────────── */
   --gradient-purple-glow: linear-gradient(180deg, var(--color-purple-500) 0%, var(--color-purple-900) 88%);
+  --gradient-conversational-cta: linear-gradient(
+    132deg,
+    var(--color-purple-cta-start) 20%,
+    var(--color-purple-cta-end) 65%
+  );
 
   /* ── Semantic Colors: Text ─────────────────────────────────────────────── */
   --text-primary:    var(--color-white);
@@ -157,6 +164,7 @@
   --interactive-primary-fg: var(--color-black);
   --interactive-hover:      var(--color-smoke);
   --interactive-accent:     var(--color-purple-500);
+  --e-global-color-accent:  var(--interactive-accent);
 
   /* ── Typography: Font Families ─────────────────────────────────────────── */
   --font-primary: 'Manrope', sans-serif;

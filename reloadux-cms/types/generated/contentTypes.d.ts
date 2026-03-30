@@ -612,8 +612,10 @@ export interface ApiConversationalUxPageConversationalUxPage
     heroSubtitle: Schema.Attribute.Text;
     heroTitleBold: Schema.Attribute.String & Schema.Attribute.Required;
     heroTitleItalic: Schema.Attribute.String;
-    heroVideoPoster: Schema.Attribute.String;
-    heroVideoSrc: Schema.Attribute.String;
+    heroVideoPoster: Schema.Attribute.String &
+      Schema.Attribute.DefaultTo<'/images/conversational/chat-voice-mock.png'>;
+    heroVideoSrc: Schema.Attribute.String &
+      Schema.Attribute.DefaultTo<'/videos/conversational-hero-video.mp4'>;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
       'oneToMany',

@@ -1,8 +1,7 @@
 "use client";
 
 import type { ReactNode } from "react";
-import { FlairButton } from "@/components/ui/FlairButton";
-import { ScrollReveal } from "@/components/ui/ScrollReveal";
+import { FlairButton } from "@/components/ui";
 import styles from "./GenAIStatementSection.module.css";
 
 interface GenAIStatementSectionProps {
@@ -48,15 +47,13 @@ export function GenAIStatementSection({
 }: GenAIStatementSectionProps) {
   return (
     <section className={styles.section}>
-      <ScrollReveal>
-        <div className={styles.inner}>
-          <h2 className={styles.heading}>{renderHeadingWithAccents(heading)}</h2>
-          <p className={styles.subheading}>{subheading}</p>
-          <FlairButton href={ctaHref} variant="light" size="lg">
-            {ctaText}
-          </FlairButton>
-        </div>
-      </ScrollReveal>
+      <div className={styles.inner}>
+        <h2 className={styles.heading}>{renderHeadingWithAccents(heading)}</h2>
+        <p className={styles.subheading}>{subheading}</p>
+        <FlairButton href={ctaHref} className={styles.cta}>
+          {ctaText}
+        </FlairButton>
+      </div>
     </section>
   );
 }

@@ -141,3 +141,15 @@
     padding: 16px 28px;
   }
 }
+
+@media (max-width: 767px) {
+  .btn {
+    font-size: 14px;
+  }
+
+  .lg {
+    padding: 14px 24px;
+    font-size: 14px;
+    line-height: 1.4;
+  }
+}

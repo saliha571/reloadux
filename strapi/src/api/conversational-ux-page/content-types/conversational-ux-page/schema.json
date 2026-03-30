@@ -16,8 +16,14 @@
     "heroSubtitle": { "type": "text" },
     "heroCtaText": { "type": "string" },
     "heroCtaHref": { "type": "string" },
-    "heroVideoSrc": { "type": "string" },
-    "heroVideoPoster": { "type": "string" },
+    "heroVideoSrc": {
+      "type": "string",
+      "default": "/videos/conversational-hero-video.mp4"
+    },
+    "heroVideoPoster": {
+      "type": "string",
+      "default": "/images/conversational/chat-voice-mock.png"
+    },
     "heroStatValue": { "type": "string" },
     "heroStatText": { "type": "string" },
     "heroStatSource": { "type": "string" },

@@ -27,10 +27,12 @@
       "type": "string"
     },
     "heroVideoSrc": {
-      "type": "string"
+      "type": "string",
+      "default": "/videos/conversational-hero-video.mp4"
     },
     "heroVideoPoster": {
-      "type": "string"
+      "type": "string",
+      "default": "/images/conversational/chat-voice-mock.png"
     },
     "heroStatValue": {
       "type": "string"

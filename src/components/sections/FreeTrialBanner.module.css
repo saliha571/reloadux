@@ -1,25 +1,47 @@
 .section {
-  background: linear-gradient(
-    135deg,
-    var(--color-purple-500) 0%,
-    var(--color-purple-900) 100%
-  );
   padding: var(--space-80) 0;
+  background: transparent;
 }
 
 .inner {
+  position: relative;
+  z-index: 0;
   max-width: var(--content-width);
   margin: 0 auto;
-  padding-inline: var(--page-padding);
+  padding: var(--space-60) var(--page-padding);
   text-align: center;
+  border-radius: var(--radius-16);
+  overflow: hidden;
+  background: linear-gradient(174deg, #BE06BE 0%, #220E55 100%);
+}
+
+.inner::before {
+  content: "";
+  position: absolute;
+  left: -220px;
+  top: -120px;
+  width: 620px;
+  height: 620px;
+  background-image: url("/images/backgrounds/diamond-material-ring-1.svg");
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+  z-index: 0;
+  pointer-events: none;
+  opacity: 0.9;
+}
+
+.inner > * {
+  position: relative;
+  z-index: 1;
 }
 
 .heading {
   font-family: var(--font-primary);
-  font-size: 48px;
+  font-size: 42px;
   font-weight: 400;
   color: var(--color-white);
-  margin-bottom: var(--space-32);
+  margin-bottom: var(--space-24);
 }
 
 .accent {
@@ -31,8 +53,8 @@
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
-  gap: var(--space-32);
-  margin: 0 0 var(--space-40);
+  gap: var(--space-24);
+  margin: 0 0 var(--space-32);
   padding: 0;
   list-style: none;
 }
@@ -42,7 +64,7 @@
   align-items: center;
   gap: var(--space-8);
   color: var(--color-white);
-  font-size: 16px;
+  font-size: 14px;
   font-family: var(--font-primary);
 }
 
@@ -54,6 +76,7 @@
 .ctaWrap {
   display: flex;
   justify-content: center;
+  margin-top: var(--space-8);
 }
 
 @media (max-width: 1024px) {
@@ -62,13 +85,36 @@
   }
 }
 
+@media (max-width: 1024px) {
+  .section {
+    padding: var(--space-60) 0;
+  }
+}
+
 @media (max-width: 767px) {
+  .section {
+    padding: var(--space-40) 0;
+  }
+
+  .inner {
+    padding: var(--space-40) var(--space-24);
+    border-radius: var(--radius-12);
+  }
+
   .heading {
-    font-size: 28px;
+    font-size: 24px;
   }
 
   .benefits {
     flex-direction: column;
     align-items: center;
+    gap: var(--space-16);
+  }
+
+  .inner::before {
+    left: -260px;
+    top: -180px;
+    width: 520px;
+    height: 520px;
   }
 }

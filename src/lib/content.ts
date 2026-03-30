@@ -19,7 +19,7 @@ import type {
   ExpertiseDomain,
 } from "./types";
 
-import { getStrapiMediaUrl } from "./media";
+import { getStrapiMediaUrl, resolveStrapiUploadOrPublicUrl } from "./media";
 
 import homeData from "../../content/pages/home.json";
 import aboutData from "../../content/pages/about.json";
@@ -464,6 +464,15 @@ export async function getConversationalUXPage(): Promise<ConversationalUXPageDat
     const s = res?.data;
     if (!s) return fallback;
 
+    const heroVideoSrc =
+      typeof s.heroVideoSrc === "string" && s.heroVideoSrc.trim() !== ""
+        ? s.heroVideoSrc.trim()
+        : fallback.hero.videoSrc;
+    const heroVideoPoster =
+      typeof s.heroVideoPoster === "string" && s.heroVideoPoster.trim() !== ""
+        ? s.heroVideoPoster.trim()
+        : fallback.hero.videoPoster;
+
     return {
       hero: {
         tagLine: fallback.hero.tagLine,
@@ -472,8 +481,11 @@ export async function getConversationalUXPage(): Promise<ConversationalUXPageDat
         subtitle: s.heroSubtitle ?? fallback.hero.subtitle,
         ctaText: s.heroCtaText ?? fallback.hero.ctaText,
         ctaHref: s.heroCtaHref ?? fallback.hero.ctaHref,
-        videoSrc: s.heroVideoSrc ?? fallback.hero.videoSrc,
-        videoPoster: s.heroVideoPoster ?? fallback.hero.videoPoster,
+        videoSrc:
+          resolveStrapiUploadOrPublicUrl(heroVideoSrc) || fallback.hero.videoSrc,
+        videoPoster:
+          resolveStrapiUploadOrPublicUrl(heroVideoPoster) ||
+          fallback.hero.videoPoster,
         stat: {
           value: s.heroStatValue ?? fallback.hero.stat.value,
           text: s.heroStatText ?? fallback.hero.stat.text,

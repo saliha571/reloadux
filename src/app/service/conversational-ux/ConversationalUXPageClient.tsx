@@ -1,6 +1,7 @@
 "use client";
 
 import type { ConversationalUXPageData } from "@/lib/types";
+import { ScrollRevealProvider } from "@/components/ui";
 import { ConversationalHeroSection } from "@/components/sections/ConversationalHeroSection";
 import { GenAIStatementSection } from "@/components/sections/GenAIStatementSection";
 import { FeatureGridSection } from "@/components/sections/FeatureGridSection";
@@ -15,7 +16,7 @@ interface Props {
 
 export function ConversationalUXPageClient({ data }: Props) {
   return (
-    <>
+    <ScrollRevealProvider disabled>
       <ConversationalHeroSection
         titleItalic={data.hero.titleItalic}
         titleBold={data.hero.titleBold}
@@ -64,6 +65,6 @@ export function ConversationalUXPageClient({ data }: Props) {
         nextSteps={data.nextSteps}
         contactInfo={data.contactInfo}
       />
-    </>
+    </ScrollRevealProvider>
   );
 }
