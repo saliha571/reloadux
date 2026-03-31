@@ -710,6 +710,82 @@ export interface ApiDesignDiscoveryPageDesignDiscoveryPage
   };
 }
 
+export interface ApiDesignSystemsPageDesignSystemsPage
+  extends Struct.SingleTypeSchema {
+  collectionName: 'design_systems_pages';
+  info: {
+    description: 'Design Systems service page content';
+    displayName: 'Design Systems Page';
+    pluralName: 'design-systems-pages';
+    singularName: 'design-systems-page';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    auditWorkCaseStudies: Schema.Attribute.JSON;
+    auditWorkHeading: Schema.Attribute.Text;
+    auditWorkStats: Schema.Attribute.JSON;
+    auditWorkTag: Schema.Attribute.String &
+      Schema.Attribute.DefaultTo<'REAL-WORLD WINS'>;
+    bottomCtaHref: Schema.Attribute.String &
+      Schema.Attribute.DefaultTo<'#contact-form'>;
+    bottomCtaSubtitle: Schema.Attribute.Text;
+    bottomCtaText: Schema.Attribute.String;
+    bottomCtaTitle: Schema.Attribute.Text;
+    challengeCards: Schema.Attribute.JSON;
+    challengesDescription: Schema.Attribute.Text;
+    challengesHeading: Schema.Attribute.Text;
+    challengesTag: Schema.Attribute.String &
+      Schema.Attribute.DefaultTo<'CHALLENGES'>;
+    contactEmail: Schema.Attribute.Email &
+      Schema.Attribute.DefaultTo<'info@reloadux.com'>;
+    contactPhone: Schema.Attribute.String &
+      Schema.Attribute.DefaultTo<'(202) 978 3410'>;
+    contactTeam: Schema.Attribute.JSON;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    deliverables: Schema.Attribute.JSON;
+    faqItems: Schema.Attribute.JSON;
+    faqsHeading: Schema.Attribute.Text;
+    faqsTag: Schema.Attribute.String & Schema.Attribute.DefaultTo<'FAQS'>;
+    heroCtaHref: Schema.Attribute.String &
+      Schema.Attribute.DefaultTo<'#contact-form'>;
+    heroCtaText: Schema.Attribute.String &
+      Schema.Attribute.DefaultTo<'Build my design system'>;
+    heroTag: Schema.Attribute.String &
+      Schema.Attribute.DefaultTo<'Design Systems'>;
+    heroTitle: Schema.Attribute.Text & Schema.Attribute.Required;
+    keyDeliverablesHeading: Schema.Attribute.String;
+    keyDeliverablesItems: Schema.Attribute.JSON;
+    keyDeliverablesTag: Schema.Attribute.String &
+      Schema.Attribute.DefaultTo<'Deliverables'>;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::design-systems-page.design-systems-page'
+    > &
+      Schema.Attribute.Private;
+    midCtaHref: Schema.Attribute.String &
+      Schema.Attribute.DefaultTo<'#contact-form'>;
+    midCtaText: Schema.Attribute.String &
+      Schema.Attribute.DefaultTo<'Build my design system'>;
+    midCtaTitle: Schema.Attribute.Text;
+    nextSteps: Schema.Attribute.JSON;
+    processHeading: Schema.Attribute.Text;
+    processSteps: Schema.Attribute.JSON;
+    processTag: Schema.Attribute.String &
+      Schema.Attribute.DefaultTo<'OUR end-to-end process'>;
+    publishedAt: Schema.Attribute.DateTime;
+    seoDescription: Schema.Attribute.Text;
+    seoTitle: Schema.Attribute.String;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiHomepageHomepage extends Struct.SingleTypeSchema {
   collectionName: 'homepages';
   info: {
@@ -1987,6 +2063,7 @@ declare module '@strapi/strapi' {
       'api::client-logo.client-logo': ApiClientLogoClientLogo;
       'api::conversational-ux-page.conversational-ux-page': ApiConversationalUxPageConversationalUxPage;
       'api::design-discovery-page.design-discovery-page': ApiDesignDiscoveryPageDesignDiscoveryPage;
+      'api::design-systems-page.design-systems-page': ApiDesignSystemsPageDesignSystemsPage;
       'api::homepage.homepage': ApiHomepageHomepage;
       'api::industry.industry': ApiIndustryIndustry;
       'api::legacy-modernization-page.legacy-modernization-page': ApiLegacyModernizationPageLegacyModernizationPage;

@@ -163,7 +163,7 @@ export function Header({ logoUrl }: HeaderProps) {
               {/* Left Part: services + expertise */}
               <div className={styles.leftPart}>
                 <div className={styles.serviceMenu}>
-                  <h3 className={styles.partHeading}><SectionTag text="SERVICES" variant="dark" /></h3>
+                  <h3 className={styles.partHeading}><SectionTag text="SERVICES" /></h3>
                   <div className={styles.servicesList}>
                     {megaServices.map((s) => (
                       <Link
@@ -189,7 +189,7 @@ export function Header({ logoUrl }: HeaderProps) {
                 </div>
 
                 <div className={styles.capabilitiesMenu}>
-                  <h3 className={styles.partHeading}><SectionTag text="EXPERTISE" variant="dark" /></h3>
+                  <h3 className={styles.partHeading}><SectionTag text="EXPERTISE" /></h3>
                   <div className={styles.subMenus}>
                     <div className={styles.singleCol}>
                       <div className={styles.subMenuItems}>

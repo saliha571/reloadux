@@ -10,6 +10,8 @@ interface MVPCaseStudiesSectionProps {
   tag: string;
   heading: string;
   description: string;
+  hideHeader?: boolean;
+  className?: string;
   items: {
     name: string;
     description: string;
@@ -24,6 +26,8 @@ export function MVPCaseStudiesSection({
   tag,
   heading,
   description,
+  hideHeader = false,
+  className,
   items,
 }: MVPCaseStudiesSectionProps) {
   const [cursorPos, setCursorPos] = useState({ x: 0, y: 0 });
@@ -41,15 +45,17 @@ export function MVPCaseStudiesSection({
       : "View\nCase Study";
 
   return (
-    <section className={styles.section}>
+    <section className={`${styles.section} ${className || ""}`}>
       <div className={styles.inner}>
-        <div className={styles.header}>
-          <h2 className={styles.heading}>
-            <span className={styles.inlineTag}>[ {tag} ]</span>
-            {heading}
-          </h2>
-          <p className={styles.description}>{description}</p>
-        </div>
+        {!hideHeader && (
+          <div className={styles.header}>
+            <h2 className={styles.heading}>
+              <span className={styles.inlineTag}>[ {tag} ]</span>
+              {heading}
+            </h2>
+            <p className={styles.description}>{description}</p>
+          </div>
+        )}
 
         <div className={styles.rows}>
           {items.map((item, i) => (
