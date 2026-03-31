@@ -22,6 +22,7 @@ interface AuditWorkSectionProps {
   }[];
   hideHeader?: boolean;
   removeCaseStudyTopBorder?: boolean;
+  sliderVariant?: "default" | "singlePeek";
   className?: string;
 }
 
@@ -51,8 +52,10 @@ function renderHeading(heading: string) {
 
 function CaseStudySlider({
   cs,
+  sliderVariant = "default",
 }: {
   cs: AuditWorkSectionProps["caseStudies"][number];
+  sliderVariant?: AuditWorkSectionProps["sliderVariant"];
 }) {
   const swiperRef = useRef<SwiperType | null>(null);
   const [isBeginning, setIsBeginning] = useState(true);
@@ -62,14 +65,14 @@ function CaseStudySlider({
     <div className={styles.sliderWrap}>
       <Swiper
         modules={[Navigation, FreeMode, Mousewheel]}
-        slidesPerView={1.5}
-        spaceBetween={20}
-        freeMode={{ enabled: true, momentum: true }}
+        slidesPerView={sliderVariant === "singlePeek" ? 1.08 : 1.5}
+        spaceBetween={sliderVariant === "singlePeek" ? 16 : 20}
+        freeMode={{ enabled: sliderVariant !== "singlePeek", momentum: true }}
         mousewheel={{ forceToAxis: true }}
         breakpoints={{
-          0: { slidesPerView: 1.15, spaceBetween: 12 },
-          768: { slidesPerView: 1.3, spaceBetween: 16 },
-          1024: { slidesPerView: 1.5, spaceBetween: 20 },
+          0: { slidesPerView: sliderVariant === "singlePeek" ? 1.05 : 1.15, spaceBetween: 12 },
+          768: { slidesPerView: sliderVariant === "singlePeek" ? 1.08 : 1.3, spaceBetween: 16 },
+          1024: { slidesPerView: sliderVariant === "singlePeek" ? 1.08 : 1.5, spaceBetween: 20 },
         }}
         onSwiper={(s) => {
           swiperRef.current = s;
@@ -142,6 +145,7 @@ export function AuditWorkSection({
   caseStudies,
   hideHeader,
   removeCaseStudyTopBorder,
+  sliderVariant = "default",
   className,
 }: AuditWorkSectionProps) {
   return (
@@ -194,7 +198,7 @@ export function AuditWorkSection({
                 <p className={styles.caseStudyDesc}>{cs.description}</p>
               </div>
             </div>
-            <CaseStudySlider cs={cs} />
+            <CaseStudySlider cs={cs} sliderVariant={sliderVariant} />
           </div>
         ))}
       </div>

@@ -56,6 +56,7 @@ export function UsabilityTestingPageClient({ data }: Props) {
         stats={data.caseStudies.stats}
         caseStudies={data.caseStudies.items}
         removeCaseStudyTopBorder
+        sliderVariant="singlePeek"
         className={pageStyles.auditWorkSection}
       />
 
