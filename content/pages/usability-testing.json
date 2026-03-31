@@ -1,0 +1,187 @@
+{
+  "hero": {
+    "tag": "Usability Testing",
+    "title": "Turn usability issues into growth opportunities with real user feedback",
+    "subtitle": "",
+    "ctaText": "Let's Test",
+    "ctaHref": "#contact-form"
+  },
+  "challenges": {
+    "tag": "CHALLENGES",
+    "heading": "Usability issues are slowing your growth",
+    "description": "If tasks feel hard, users drop off and revenue suffers.",
+    "cards": [
+      { "tag": "SLOW TASKS", "description": "Do simple actions take users minutes instead of seconds?" },
+      { "tag": "SUPPORT OVERLOAD", "description": "Is your team flooded with \"How do I...?\" questions?" },
+      { "tag": "COMPETITION", "description": "Are rivals winning with smoother, faster journeys?" },
+      { "tag": "LOW ADOPTION", "description": "Do features sit unused because they're hard to find?" },
+      { "tag": "CONVERSION LEAKS", "description": "Are users abandoning checkout or signup midway?" },
+      { "tag": "PRODUCT FRICTION", "description": "Are hidden UX gaps reducing confidence and slowing decisions?" }
+    ]
+  },
+  "caseStudies": {
+    "tag": "OUR USABILITY TESTING WORK",
+    "heading": "We've helped teams evaluate products with real users, uncover usability gaps, and boost conversions.",
+    "stats": [
+      { "value": "12+", "label": "years delivering usability-driven solutions across industries" },
+      { "value": "94%", "label": "client satisfaction rate with insights within weeks" },
+      { "value": "3.2x", "label": "increase in task success rates after usability-driven fixes" }
+    ],
+    "items": [
+      {
+        "name": "NITRO",
+        "description": "Improving NFT onboarding and conversions to help Nitro League raise $5M.",
+        "slides": [
+          { "type": "image", "src": "/images/usability-testing/nitro-slide-1.png" },
+          { "type": "image", "src": "/images/usability-testing/nitro-slide-2.png" },
+          { "type": "image", "src": "/images/usability-testing/nitro-slide-3.png" }
+        ],
+        "href": "#",
+        "comingSoon": true
+      },
+      {
+        "name": "SPINDLE",
+        "description": "Transforming complex laundry operations into smarter, data-driven workflows with usability testing.",
+        "slides": [
+          { "type": "image", "src": "/images/usability-testing/spindle-slide-1.png" },
+          { "type": "image", "src": "/images/usability-testing/spindle-slide-2.png" },
+          { "type": "image", "src": "/images/usability-testing/spindle-slide-3.png" }
+        ],
+        "href": "#",
+        "comingSoon": true
+      },
+      {
+        "name": "REI",
+        "description": "Simplifying real estate operations through data-driven usability testing and client feedback.",
+        "slides": [
+          { "type": "image", "src": "/images/usability-testing/rei-slide-1.png" },
+          { "type": "image", "src": "/images/usability-testing/rei-slide-2.png" },
+          { "type": "image", "src": "/images/usability-testing/rei-slide-3.png" }
+        ],
+        "href": "#",
+        "comingSoon": true
+      }
+    ]
+  },
+  "videoBanner": {
+    "heading": "Curious how usability testing can improve your product?",
+    "headingAccent": "",
+    "description": "Stop building on assumptions. Get clarity from usability testing and see measurable results.",
+    "ctaText": "Let's Test",
+    "ctaHref": "#contact-form"
+  },
+  "process": {
+    "tag": "HOW WE DO IT",
+    "heading": "Our usability testing is flexible, fast, and designed to capture exactly how users interact with your product.",
+    "phases": [
+      {
+        "label": "01",
+        "title": "Set goals for the testing",
+        "description": "Understand your business domain and priorities, define key user scenarios to test, and align on measurable success criteria."
+      },
+      {
+        "label": "02",
+        "title": "Recruit participants",
+        "description": "Match participants to your customer profiles, ensure realistic diversity, and manage invitations, scheduling, and coordination."
+      },
+      {
+        "label": "03",
+        "title": "Run sessions",
+        "description": "Conduct moderated or unmoderated sessions remotely or onsite based on your product stage, resources, and research depth."
+      },
+      {
+        "label": "04",
+        "title": "Analyze findings",
+        "description": "Map recurring pain points, quantify task success and errors, and prioritize issues by severity and business impact."
+      },
+      {
+        "label": "05",
+        "title": "Testing report and next steps",
+        "description": "Receive a focused report, key highlights, and a practical roadmap your team can execute immediately."
+      }
+    ],
+    "note": ""
+  },
+  "keyDeliverables": {
+    "tag": "DELIVERABLES EXPECTED",
+    "heading": "See what your users really struggle with.",
+    "items": [
+      { "title": "Usability findings report", "description": "A concise report covering key friction points, critical blockers, and practical recommendations tied to business outcomes." },
+      { "title": "Task success metrics", "description": "Quantitative insights on completion rates, failure points, and time-on-task across your most important user flows." },
+      { "title": "Prioritized issue backlog", "description": "A severity-ranked action list to help product, design, and engineering teams fix high-impact issues first." },
+      { "title": "Session evidence and highlights", "description": "Video clips and annotated observations that clearly show where users struggle and why those moments matter." },
+      { "title": "Optimization roadmap", "description": "A phased improvement plan that aligns fixes with release cycles so your team can move quickly with confidence." }
+    ]
+  },
+  "whenToDoIt": {
+    "tag": "WHEN TO DO IT",
+    "heading": "The right test at the right time accelerates growth.",
+    "items": [
+      { "title": "Pre-Launch", "description": "Validate prototypes or MVPs with real users to avoid costly missteps." },
+      { "title": "Post-Launch", "description": "Uncover usability issues early while fixes are still fast and inexpensive." },
+      { "title": "Before Redesign", "description": "Identify what works, what does not, and where to focus investment." },
+      { "title": "During Growth", "description": "Optimize acquisition and conversion funnels to increase ROI." },
+      { "title": "After Updates", "description": "Validate new features with users to ensure adoption and satisfaction." },
+      { "title": "Before Scaling Teams", "description": "Create shared clarity around UX risks before cross-functional execution ramps up." }
+    ]
+  },
+  "otherServices": {
+    "tag": "OTHER WAYS WE CAN HELP",
+    "items": [
+      { "title": "UX Audit & AI Readiness", "description": "Use audit insights to identify where usability debt and AI-readiness gaps overlap.", "href": "/service/ux-audit/" },
+      { "title": "Design Discovery", "description": "Turn validated user needs into clear product direction before heavy implementation.", "href": "/service/design-discovery/" },
+      { "title": "UI/UX Design", "description": "Convert findings into polished, high-performing interfaces your users can adopt quickly.", "href": "/service/ui-ux-design/" }
+    ]
+  },
+  "bottomCta": {
+    "title": "Stop guessing what users need. Start validating decisions with usability testing.",
+    "subtitle": "Run focused tests, uncover the real blockers, and improve conversion and retention with confidence.",
+    "ctaText": "Let's Test",
+    "ctaHref": "#contact-form"
+  },
+  "faqs": {
+    "tag": "FAQS",
+    "heading": "Wondering if usability testing is right for you? Let's clear things up.",
+    "items": [
+      {
+        "question": "What is usability testing, and why does it matter for my product?",
+        "answer": "Usability testing observes real users completing key tasks in your product. It reveals hidden friction, confusing flows, and conversion blockers so your team can prioritize high-impact fixes."
+      },
+      {
+        "question": "How many participants do you recommend for usability testing?",
+        "answer": "For focused validation, five participants often uncover most high-priority issues. We scale sample size based on product complexity and audience segments."
+      },
+      {
+        "question": "How long does usability testing take?",
+        "answer": "Most studies are completed in one to three weeks, including setup, sessions, analysis, and reporting."
+      },
+      {
+        "question": "Who should be involved from our team?",
+        "answer": "We recommend a product manager, designer, and key stakeholder join kickoff and findings review so decisions and prioritization happen quickly."
+      }
+    ]
+  },
+  "nextSteps": [
+    { "number": "01", "text": "We'll respond within 24 hours." },
+    { "number": "02", "text": "Our UX Expert will collect project details and create a brief." },
+    { "number": "03", "text": "We'll prepare estimates and share a project proposal." }
+  ],
+  "contactInfo": {
+    "phone": "(202) 978 3410",
+    "email": "info@reloadux.com",
+    "team": [
+      {
+        "name": "Sahar",
+        "role": "Key Account Manager",
+        "linkedin": "https://www.linkedin.com/in/sahar-asif-284a9955/",
+        "image": "/images/team/sahar.webp"
+      },
+      {
+        "name": "Lara Kazan",
+        "role": "Business Development Executive",
+        "linkedin": "https://www.linkedin.com/in/lara-kazan-82a24113b/",
+        "image": "/images/team/lara.webp"
+      }
+    ]
+  }
+}

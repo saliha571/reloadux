@@ -700,3 +700,7 @@ export interface DesignSystemsPageData {
   nextSteps: { number: string; text: string }[];
   contactInfo: { phone: string; email: string; team: { name: string; role: string; linkedin: string; image?: string }[] };
 }
+
+// ─── Usability Testing Page ──────────────────────────────────────────────────
+
+export type UsabilityTestingPageData = LegacyModernizationPageData;

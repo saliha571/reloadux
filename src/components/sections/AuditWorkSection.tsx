@@ -21,6 +21,7 @@ interface AuditWorkSectionProps {
     comingSoon?: boolean;
   }[];
   hideHeader?: boolean;
+  removeCaseStudyTopBorder?: boolean;
   className?: string;
 }
 
@@ -140,6 +141,7 @@ export function AuditWorkSection({
   stats,
   caseStudies,
   hideHeader,
+  removeCaseStudyTopBorder,
   className,
 }: AuditWorkSectionProps) {
   return (
@@ -182,7 +184,10 @@ export function AuditWorkSection({
 
       <div className={styles.caseStudies}>
         {caseStudies.map((cs, i) => (
-          <div key={i} className={styles.caseStudy}>
+          <div
+            key={i}
+            className={`${styles.caseStudy} ${removeCaseStudyTopBorder ? styles.caseStudyNoTopBorder : ""}`}
+          >
             <div className={styles.constrained}>
               <div className={styles.caseStudyHeader}>
                 <span className={styles.caseStudyTag}>[ {cs.name} ]</span>

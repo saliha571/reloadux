@@ -1348,6 +1348,91 @@ export interface ApiTestimonialTestimonial extends Struct.CollectionTypeSchema {
   };
 }
 
+export interface ApiUsabilityTestingPageUsabilityTestingPage
+  extends Struct.SingleTypeSchema {
+  collectionName: 'usability_testing_pages';
+  info: {
+    description: 'Usability Testing service page content';
+    displayName: 'Usability Testing Page';
+    pluralName: 'usability-testing-pages';
+    singularName: 'usability-testing-page';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    bottomCtaHref: Schema.Attribute.String &
+      Schema.Attribute.DefaultTo<'#contact-form'>;
+    bottomCtaSubtitle: Schema.Attribute.Text;
+    bottomCtaText: Schema.Attribute.String;
+    bottomCtaTitle: Schema.Attribute.Text;
+    caseStudiesHeading: Schema.Attribute.Text;
+    caseStudiesStats: Schema.Attribute.JSON;
+    caseStudiesTag: Schema.Attribute.String &
+      Schema.Attribute.DefaultTo<'OUR USABILITY TESTING WORK'>;
+    caseStudyItems: Schema.Attribute.JSON;
+    challengeCards: Schema.Attribute.JSON;
+    challengesDescription: Schema.Attribute.Text;
+    challengesHeading: Schema.Attribute.Text;
+    challengesTag: Schema.Attribute.String &
+      Schema.Attribute.DefaultTo<'CHALLENGES'>;
+    contactEmail: Schema.Attribute.Email &
+      Schema.Attribute.DefaultTo<'info@reloadux.com'>;
+    contactPhone: Schema.Attribute.String &
+      Schema.Attribute.DefaultTo<'(202) 978 3410'>;
+    contactTeam: Schema.Attribute.JSON;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    faqItems: Schema.Attribute.JSON;
+    faqsHeading: Schema.Attribute.Text;
+    faqsTag: Schema.Attribute.String & Schema.Attribute.DefaultTo<'FAQS'>;
+    heroCtaHref: Schema.Attribute.String &
+      Schema.Attribute.DefaultTo<'#contact-form'>;
+    heroCtaText: Schema.Attribute.String &
+      Schema.Attribute.DefaultTo<"Let's Test">;
+    heroSubtitle: Schema.Attribute.Text;
+    heroTag: Schema.Attribute.String &
+      Schema.Attribute.DefaultTo<'USABILITY TESTING'>;
+    heroTitle: Schema.Attribute.Text & Schema.Attribute.Required;
+    keyDeliverablesHeading: Schema.Attribute.String;
+    keyDeliverablesItems: Schema.Attribute.JSON;
+    keyDeliverablesTag: Schema.Attribute.String &
+      Schema.Attribute.DefaultTo<'KEY DELIVERABLES'>;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::usability-testing-page.usability-testing-page'
+    > &
+      Schema.Attribute.Private;
+    nextSteps: Schema.Attribute.JSON;
+    otherServicesItems: Schema.Attribute.JSON;
+    otherServicesTag: Schema.Attribute.String &
+      Schema.Attribute.DefaultTo<'OTHER WAYS WE CAN HELP'>;
+    processHeading: Schema.Attribute.Text;
+    processNote: Schema.Attribute.Text;
+    processPhases: Schema.Attribute.JSON;
+    processTag: Schema.Attribute.String &
+      Schema.Attribute.DefaultTo<'HOW IT WORKS'>;
+    publishedAt: Schema.Attribute.DateTime;
+    seoDescription: Schema.Attribute.Text;
+    seoTitle: Schema.Attribute.String;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    videoBannerCtaHref: Schema.Attribute.String &
+      Schema.Attribute.DefaultTo<'#contact-form'>;
+    videoBannerCtaText: Schema.Attribute.String;
+    videoBannerDescription: Schema.Attribute.Text;
+    videoBannerHeading: Schema.Attribute.Text;
+    videoBannerHeadingAccent: Schema.Attribute.String;
+    whenToDoItHeading: Schema.Attribute.Text;
+    whenToDoItItems: Schema.Attribute.JSON;
+    whenToDoItTag: Schema.Attribute.String &
+      Schema.Attribute.DefaultTo<'WHEN TO DO IT'>;
+  };
+}
+
 export interface ApiUxAuditPageUxAuditPage extends Struct.SingleTypeSchema {
   collectionName: 'ux_audit_pages';
   info: {
@@ -2073,6 +2158,7 @@ declare module '@strapi/strapi' {
       'api::team-extension-page.team-extension-page': ApiTeamExtensionPageTeamExtensionPage;
       'api::team-member.team-member': ApiTeamMemberTeamMember;
       'api::testimonial.testimonial': ApiTestimonialTestimonial;
+      'api::usability-testing-page.usability-testing-page': ApiUsabilityTestingPageUsabilityTestingPage;
       'api::ux-audit-page.ux-audit-page': ApiUxAuditPageUxAuditPage;
       'api::ux-redesign-page.ux-redesign-page': ApiUxRedesignPageUxRedesignPage;
       'plugin::content-releases.release': PluginContentReleasesRelease;

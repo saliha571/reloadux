@@ -1,0 +1,160 @@
+{
+  "kind": "singleType",
+  "collectionName": "usability_testing_pages",
+  "info": {
+    "singularName": "usability-testing-page",
+    "pluralName": "usability-testing-pages",
+    "displayName": "Usability Testing Page",
+    "description": "Usability Testing service page content"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "heroTag": {
+      "type": "string",
+      "default": "USABILITY TESTING"
+    },
+    "heroTitle": {
+      "type": "text",
+      "required": true
+    },
+    "heroSubtitle": {
+      "type": "text"
+    },
+    "heroCtaText": {
+      "type": "string",
+      "default": "Let's Test"
+    },
+    "heroCtaHref": {
+      "type": "string",
+      "default": "#contact-form"
+    },
+    "challengesTag": {
+      "type": "string",
+      "default": "CHALLENGES"
+    },
+    "challengesHeading": {
+      "type": "text"
+    },
+    "challengesDescription": {
+      "type": "text"
+    },
+    "challengeCards": {
+      "type": "json"
+    },
+    "caseStudiesTag": {
+      "type": "string",
+      "default": "OUR USABILITY TESTING WORK"
+    },
+    "caseStudiesHeading": {
+      "type": "text"
+    },
+    "caseStudiesStats": {
+      "type": "json"
+    },
+    "caseStudyItems": {
+      "type": "json"
+    },
+    "videoBannerHeading": {
+      "type": "text"
+    },
+    "videoBannerHeadingAccent": {
+      "type": "string"
+    },
+    "videoBannerDescription": {
+      "type": "text"
+    },
+    "videoBannerCtaText": {
+      "type": "string"
+    },
+    "videoBannerCtaHref": {
+      "type": "string",
+      "default": "#contact-form"
+    },
+    "processTag": {
+      "type": "string",
+      "default": "HOW IT WORKS"
+    },
+    "processHeading": {
+      "type": "text"
+    },
+    "processPhases": {
+      "type": "json"
+    },
+    "processNote": {
+      "type": "text"
+    },
+    "keyDeliverablesTag": {
+      "type": "string",
+      "default": "KEY DELIVERABLES"
+    },
+    "keyDeliverablesHeading": {
+      "type": "string"
+    },
+    "keyDeliverablesItems": {
+      "type": "json"
+    },
+    "whenToDoItTag": {
+      "type": "string",
+      "default": "WHEN TO DO IT"
+    },
+    "whenToDoItHeading": {
+      "type": "text"
+    },
+    "whenToDoItItems": {
+      "type": "json"
+    },
+    "otherServicesTag": {
+      "type": "string",
+      "default": "OTHER WAYS WE CAN HELP"
+    },
+    "otherServicesItems": {
+      "type": "json"
+    },
+    "bottomCtaTitle": {
+      "type": "text"
+    },
+    "bottomCtaSubtitle": {
+      "type": "text"
+    },
+    "bottomCtaText": {
+      "type": "string"
+    },
+    "bottomCtaHref": {
+      "type": "string",
+      "default": "#contact-form"
+    },
+    "faqsTag": {
+      "type": "string",
+      "default": "FAQS"
+    },
+    "faqsHeading": {
+      "type": "text"
+    },
+    "faqItems": {
+      "type": "json"
+    },
+    "nextSteps": {
+      "type": "json"
+    },
+    "contactPhone": {
+      "type": "string",
+      "default": "(202) 978 3410"
+    },
+    "contactEmail": {
+      "type": "email",
+      "default": "info@reloadux.com"
+    },
+    "contactTeam": {
+      "type": "json"
+    },
+    "seoTitle": {
+      "type": "string"
+    },
+    "seoDescription": {
+      "type": "text"
+    }
+  }
+}

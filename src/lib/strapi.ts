@@ -565,6 +565,16 @@ export async function getStrapiUXAuditPage() {
   );
 }
 
+// ─── Usability Testing Page ──────────────────────────────────────────────────
+
+export type StrapiUsabilityTestingPage = StrapiLegacyModernizationPage;
+
+export async function getStrapiUsabilityTestingPage() {
+  return fetchStrapi<StrapiSingle<StrapiUsabilityTestingPage>>(
+    "/api/usability-testing-page?populate=*"
+  );
+}
+
 // ─── Legacy Modernization Page ──────────────────────────────────────────────
 
 export interface StrapiLegacyModernizationPage {

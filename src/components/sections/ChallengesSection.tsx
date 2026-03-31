@@ -79,7 +79,7 @@ export function ChallengesSection({
     <section className={styles.section}>
       <div className={styles.inner}>
         <div className={styles.left}>
-          <SectionTag text={tag} />
+          <SectionTag text={tag} variant="dark" />
           <h2 className={styles.heading}>{heading}</h2>
           <p className={styles.description}>{description}</p>
         </div>

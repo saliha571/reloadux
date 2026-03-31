@@ -118,6 +118,10 @@
   padding: var(--space-48) 0;
 }
 
+.caseStudyNoTopBorder {
+  border-top: none;
+}
+
 .caseStudy:last-child {
   padding-bottom: 0;
 }

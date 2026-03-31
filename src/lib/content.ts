@@ -7,6 +7,7 @@ import type {
   TeamExtensionPageData,
   UXAuditPageData,
   LegacyModernizationPageData,
+  UsabilityTestingPageData,
   ConversationalUXPageData,
   DesignDiscoveryPageData,
   DesignSystemsPageData,
@@ -31,6 +32,7 @@ import mvpData from "../../content/pages/design-from-scratch-mvp.json";
 import teamExtensionData from "../../content/pages/team-extension.json";
 import uxAuditData from "../../content/pages/ux-audit-ai-readiness.json";
 import legacyModernizationData from "../../content/pages/legacy-ux-modernization.json";
+import usabilityTestingData from "../../content/pages/usability-testing.json";
 import conversationalUxData from "../../content/pages/conversational-ux.json";
 import designDiscoveryData from "../../content/pages/design-discovery.json";
 import designSystemsData from "../../content/pages/design-systems.json";
@@ -56,6 +58,7 @@ import {
   getStrapiUXRedesignPage,
   getStrapiDesignDiscoveryPage,
   getStrapiDesignSystemsPage,
+  getStrapiUsabilityTestingPage,
 } from "./strapi";
 
 // ─── Homepage ─────────────────────────────────────────────────────────────────
@@ -556,6 +559,117 @@ export async function getLegacyModernizationPage(): Promise<LegacyModernizationP
 
   try {
     const res = await getStrapiLegacyModernizationPage();
+    const s = res?.data;
+    if (!s) return fallback;
+
+    return {
+      hero: {
+        tag: s.heroTag ?? fallback.hero.tag,
+        title: s.heroTitle ?? fallback.hero.title,
+        subtitle: s.heroSubtitle ?? fallback.hero.subtitle,
+        ctaText: s.heroCtaText ?? fallback.hero.ctaText,
+        ctaHref: s.heroCtaHref ?? fallback.hero.ctaHref,
+      },
+      challenges: {
+        tag: s.challengesTag ?? fallback.challenges.tag,
+        heading: s.challengesHeading ?? fallback.challenges.heading,
+        description: s.challengesDescription ?? fallback.challenges.description,
+        cards: s.challengeCards?.length
+          ? s.challengeCards.map((c) => ({ tag: c.tag, description: c.description }))
+          : fallback.challenges.cards,
+      },
+      caseStudies: {
+        tag: s.caseStudiesTag ?? fallback.caseStudies.tag,
+        heading: s.caseStudiesHeading ?? fallback.caseStudies.heading,
+        stats: s.caseStudiesStats?.length
+          ? s.caseStudiesStats.map((st) => ({ value: st.value, label: st.label }))
+          : fallback.caseStudies.stats,
+        items: s.caseStudyItems?.length
+          ? s.caseStudyItems.map((cs) => ({
+              name: cs.name,
+              description: cs.description,
+              slides: cs.slides?.map((sl) => ({ type: sl.type, src: sl.src })) ?? [],
+              href: cs.href ?? "#",
+              comingSoon: cs.comingSoon ?? false,
+            }))
+          : fallback.caseStudies.items,
+      },
+      videoBanner: {
+        heading: s.videoBannerHeading ?? fallback.videoBanner.heading,
+        headingAccent: s.videoBannerHeadingAccent ?? fallback.videoBanner.headingAccent,
+        description: s.videoBannerDescription ?? fallback.videoBanner.description,
+        ctaText: s.videoBannerCtaText ?? fallback.videoBanner.ctaText,
+        ctaHref: s.videoBannerCtaHref ?? fallback.videoBanner.ctaHref,
+      },
+      process: {
+        tag: s.processTag ?? fallback.process.tag,
+        heading: s.processHeading ?? fallback.process.heading,
+        phases: s.processPhases?.length
+          ? s.processPhases.map((p) => ({ label: p.label, title: p.title, description: p.description }))
+          : fallback.process.phases,
+        note: s.processNote ?? fallback.process.note,
+      },
+      keyDeliverables: {
+        tag: s.keyDeliverablesTag ?? fallback.keyDeliverables.tag,
+        heading: s.keyDeliverablesHeading ?? fallback.keyDeliverables.heading,
+        items: s.keyDeliverablesItems?.length
+          ? s.keyDeliverablesItems.map((i) => ({ title: i.title, description: i.description }))
+          : fallback.keyDeliverables.items,
+      },
+      whenToDoIt: {
+        tag: s.whenToDoItTag ?? fallback.whenToDoIt.tag,
+        heading: s.whenToDoItHeading ?? fallback.whenToDoIt.heading,
+        items: s.whenToDoItItems?.length
+          ? s.whenToDoItItems.map((i) => ({ title: i.title, description: i.description }))
+          : fallback.whenToDoIt.items,
+      },
+      otherServices: {
+        tag: s.otherServicesTag ?? fallback.otherServices.tag,
+        items: s.otherServicesItems?.length
+          ? s.otherServicesItems.map((i) => ({ title: i.title, description: i.description, href: i.href ?? "" }))
+          : fallback.otherServices.items,
+      },
+      bottomCta: {
+        title: s.bottomCtaTitle ?? fallback.bottomCta.title,
+        subtitle: s.bottomCtaSubtitle ?? fallback.bottomCta.subtitle,
+        ctaText: s.bottomCtaText ?? fallback.bottomCta.ctaText,
+        ctaHref: s.bottomCtaHref ?? fallback.bottomCta.ctaHref,
+      },
+      faqs: {
+        tag: s.faqsTag ?? fallback.faqs.tag,
+        heading: s.faqsHeading ?? fallback.faqs.heading,
+        items: s.faqItems?.length
+          ? s.faqItems.map((f) => ({ question: f.question, answer: f.answer }))
+          : fallback.faqs.items,
+      },
+      nextSteps: s.nextSteps?.length
+        ? s.nextSteps.map((n) => ({ number: n.number, text: n.text }))
+        : fallback.nextSteps,
+      contactInfo: {
+        phone: s.contactPhone ?? fallback.contactInfo.phone,
+        email: s.contactEmail ?? fallback.contactInfo.email,
+        team: s.contactTeam?.length
+          ? s.contactTeam.map((t) => ({
+              name: t.name,
+              role: t.role,
+              linkedin: t.linkedin ?? "",
+              image: t.image ? getStrapiMediaUrl(t.image) : undefined,
+            }))
+          : fallback.contactInfo.team,
+      },
+    };
+  } catch {
+    return fallback;
+  }
+}
+
+// ─── Usability Testing Page ──────────────────────────────────────────────────
+
+export async function getUsabilityTestingPage(): Promise<UsabilityTestingPageData> {
+  const fallback = usabilityTestingData as UsabilityTestingPageData;
+
+  try {
+    const res = await getStrapiUsabilityTestingPage();
     const s = res?.data;
     if (!s) return fallback;
 
