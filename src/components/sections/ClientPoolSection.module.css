@@ -13,12 +13,12 @@
 .heading {
   font-family: var(--font-primary);
   font-size: 48px;
-  font-weight: 400;
+  font-weight: 500;
   line-height: 1.35;
   color: var(--color-white);
   margin-top: var(--space-24);
   margin-bottom: var(--space-60);
-  max-width: 700px;
+  /* max-width: 700px; */
 }
 
 /* ── Logo grid ───────────────────────────────────────────────────────────── */
@@ -41,7 +41,7 @@
 }
 
 .logo {
-  height: 28px;
+  height: 40px;
   width: auto;
   max-width: 140px;
   object-fit: contain;

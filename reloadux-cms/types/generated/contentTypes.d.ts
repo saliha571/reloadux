@@ -1632,6 +1632,92 @@ export interface ApiUxRedesignPageUxRedesignPage
   };
 }
 
+export interface ApiWebDesignPageWebDesignPage extends Struct.SingleTypeSchema {
+  collectionName: 'web_design_pages';
+  info: {
+    description: 'Web Design service page content';
+    displayName: 'Web Design Page';
+    pluralName: 'web-design-pages';
+    singularName: 'web-design-page';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    auditWorkCaseStudies: Schema.Attribute.JSON;
+    auditWorkHeading: Schema.Attribute.Text;
+    auditWorkStats: Schema.Attribute.JSON;
+    auditWorkTag: Schema.Attribute.String &
+      Schema.Attribute.DefaultTo<'OUR WEB DESIGN WORK'>;
+    bottomCtaHref: Schema.Attribute.String &
+      Schema.Attribute.DefaultTo<'#contact-form'>;
+    bottomCtaSubtitle: Schema.Attribute.Text;
+    bottomCtaText: Schema.Attribute.String;
+    bottomCtaTitle: Schema.Attribute.Text;
+    challengeCards: Schema.Attribute.JSON;
+    challengesDescription: Schema.Attribute.Text;
+    challengesHeading: Schema.Attribute.Text;
+    challengesTag: Schema.Attribute.String &
+      Schema.Attribute.DefaultTo<'CHALLENGES'>;
+    cmsCards: Schema.Attribute.JSON;
+    cmsHeading: Schema.Attribute.Text;
+    cmsTag: Schema.Attribute.String & Schema.Attribute.DefaultTo<'CMS'>;
+    contactEmail: Schema.Attribute.Email &
+      Schema.Attribute.DefaultTo<'info@reloadux.com'>;
+    contactPhone: Schema.Attribute.String &
+      Schema.Attribute.DefaultTo<'(202) 978 3410'>;
+    contactTeam: Schema.Attribute.JSON;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    deliverables: Schema.Attribute.JSON;
+    faqItems: Schema.Attribute.JSON;
+    faqsHeading: Schema.Attribute.Text;
+    faqsTag: Schema.Attribute.String & Schema.Attribute.DefaultTo<'FAQS'>;
+    goLivePromoBackgroundImage: Schema.Attribute.String;
+    goLivePromoCtaHref: Schema.Attribute.String &
+      Schema.Attribute.DefaultTo<'#contact-form'>;
+    goLivePromoCtaText: Schema.Attribute.String &
+      Schema.Attribute.DefaultTo<"Let's get started">;
+    goLivePromoHeadingAccent: Schema.Attribute.String;
+    goLivePromoHeadingAfter: Schema.Attribute.String;
+    goLivePromoHeadingBefore: Schema.Attribute.String;
+    goLivePromoSubtitle: Schema.Attribute.Text;
+    heroCtaHref: Schema.Attribute.String &
+      Schema.Attribute.DefaultTo<'#contact-form'>;
+    heroCtaText: Schema.Attribute.String &
+      Schema.Attribute.DefaultTo<"Let's get started">;
+    heroTag: Schema.Attribute.String & Schema.Attribute.DefaultTo<'Web Design'>;
+    heroTitle: Schema.Attribute.Text & Schema.Attribute.Required;
+    keyDeliverablesHeading: Schema.Attribute.String;
+    keyDeliverablesItems: Schema.Attribute.JSON;
+    keyDeliverablesTag: Schema.Attribute.String &
+      Schema.Attribute.DefaultTo<'OUR WEB DESIGN EXPERTISE'>;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::web-design-page.web-design-page'
+    > &
+      Schema.Attribute.Private;
+    midCtaHref: Schema.Attribute.String &
+      Schema.Attribute.DefaultTo<'#contact-form'>;
+    midCtaText: Schema.Attribute.String &
+      Schema.Attribute.DefaultTo<"Let's get started">;
+    midCtaTitle: Schema.Attribute.Text;
+    nextSteps: Schema.Attribute.JSON;
+    processHeading: Schema.Attribute.Text;
+    processSteps: Schema.Attribute.JSON;
+    processTag: Schema.Attribute.String &
+      Schema.Attribute.DefaultTo<'OUR end-to-end process'>;
+    publishedAt: Schema.Attribute.DateTime;
+    seoDescription: Schema.Attribute.Text;
+    seoTitle: Schema.Attribute.String;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface PluginContentReleasesRelease
   extends Struct.CollectionTypeSchema {
   collectionName: 'strapi_releases';
@@ -2161,6 +2247,7 @@ declare module '@strapi/strapi' {
       'api::usability-testing-page.usability-testing-page': ApiUsabilityTestingPageUsabilityTestingPage;
       'api::ux-audit-page.ux-audit-page': ApiUxAuditPageUxAuditPage;
       'api::ux-redesign-page.ux-redesign-page': ApiUxRedesignPageUxRedesignPage;
+      'api::web-design-page.web-design-page': ApiWebDesignPageWebDesignPage;
       'plugin::content-releases.release': PluginContentReleasesRelease;
       'plugin::content-releases.release-action': PluginContentReleasesReleaseAction;
       'plugin::i18n.locale': PluginI18NLocale;

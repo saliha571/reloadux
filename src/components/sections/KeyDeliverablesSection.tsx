@@ -7,6 +7,7 @@ interface KeyDeliverablesSectionProps {
   tag: string;
   heading: string;
   items: { title: string; description: string }[];
+  variant?: "default" | "webDesignGrid";
   className?: string;
 }
 
@@ -14,10 +15,13 @@ export function KeyDeliverablesSection({
   tag,
   heading,
   items,
+  variant = "default",
   className,
 }: KeyDeliverablesSectionProps) {
   return (
-    <section className={`${styles.section} ${className || ""}`}>
+    <section
+      className={`${styles.section} ${variant === "webDesignGrid" ? styles.webDesignGrid : ""} ${className || ""}`}
+    >
       <div className={styles.inner}>
         <div className={styles.header}>
           <SectionTag text={tag} />

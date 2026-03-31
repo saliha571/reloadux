@@ -1,0 +1,32 @@
+.ctaHeading {
+  font-family: var(--font-primary);
+  font-size: 72px;
+  font-weight: 600;
+  color: var(--color-white);
+  line-height: 1.1;
+}
+
+.heroSection {
+  justify-content: flex-start;
+  background-position: center right !important;
+  background-size: cover !important;
+  background-repeat: no-repeat !important;
+}
+
+.heroSection > div:first-child {
+  text-align: start;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+@media (max-width: 1024px) {
+  .ctaHeading {
+    font-size: 48px;
+  }
+}
+
+@media (max-width: 767px) {
+  .ctaHeading {
+    font-size: 28px;
+  }
+}

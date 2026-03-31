@@ -781,6 +781,25 @@ export async function getStrapiDesignSystemsPage() {
   );
 }
 
+export interface StrapiWebDesignPage extends StrapiDesignSystemsPage {
+  goLivePromoHeadingBefore?: string;
+  goLivePromoHeadingAccent?: string;
+  goLivePromoHeadingAfter?: string;
+  goLivePromoSubtitle?: string;
+  goLivePromoCtaText?: string;
+  goLivePromoCtaHref?: string;
+  goLivePromoBackgroundImage?: string;
+  cmsTag?: string;
+  cmsHeading?: string;
+  cmsCards?: { name: string; icon: string }[];
+}
+
+export async function getStrapiWebDesignPage() {
+  return fetchStrapi<StrapiSingle<StrapiWebDesignPage>>(
+    "/api/web-design-page?populate=*"
+  );
+}
+
 // ─── Legacy Modernization Page ──────────────────────────────────────────────
 
 export async function getStrapiLegacyModernizationPage() {

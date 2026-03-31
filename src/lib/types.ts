@@ -686,6 +686,32 @@ export interface DesignDiscoveryPageData {
   contactInfo: { phone: string; email: string; team: { name: string; role: string; linkedin: string; image?: string }[] };
 }
 
+// ─── Web Design Page ─────────────────────────────────────────────────────────
+
+export interface WebDesignGoLivePromo {
+  headingBefore: string;
+  headingAccent: string;
+  headingAfter: string;
+  subtitle: string;
+  ctaText: string;
+  ctaHref: string;
+  backgroundImage?: string;
+}
+
+export interface WebDesignCMSSectionData {
+  tag: string;
+  heading: string;
+  cards: {
+    name: string;
+    icon: string;
+  }[];
+}
+
+export type WebDesignPageData = DesignDiscoveryPageData & {
+  goLivePromo: WebDesignGoLivePromo;
+  cms: WebDesignCMSSectionData;
+};
+
 // ─── Design Systems Page ─────────────────────────────────────────────────────
 
 export interface DesignSystemsPageData {

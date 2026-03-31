@@ -1,0 +1,181 @@
+{
+  "hero": {
+    "tag": "Web Design",
+    "title": "Website designs that supercharge your conversion funnel",
+    "ctaText": "Let's get started",
+    "ctaHref": "#contact-form"
+  },
+  "challenges": {
+    "tag": "CHALLENGES",
+    "heading": "Common UI/UX Design challenges you\u2019re facing",
+    "description": "We believe that good UX boosts sales, reduces churn, and strengthens user loyalty.",
+    "cards": [
+      { "tag": "UNCLEAR VISION", "description": "Having a hard time turning your brand's story into a visually stunning website?" },
+      { "tag": "SEO COMPATIBILITY", "description": "Unsure if your website design will rank well on search engines?" },
+      { "tag": "SLOW TURNAROUND", "description": "Tired of waiting weeks to see progress on your website design?" },
+      { "tag": "MOBILE FIRST", "description": "Struggling to achieve a seamless experience across all devices?" },
+      { "tag": "LACK OF CREATIVITY", "description": "Frustrated with designers who keep delivering boring, cookie-cutter layouts?" },
+      { "tag": "INCONSISTENT QUALITY", "description": "Noticing your website looks great on one page but falls flat on others?" }
+    ]
+  },
+  "auditWork": {
+    "tag": "OUR WEB DESIGN WORK",
+    "heading": "Our track record of website design that delivers serious business results.",
+    "stats": [
+      { "value": "1.8x", "label": "more leads captured with our optimized designs" },
+      { "value": "45%", "label": "average increase in user session durations" },
+      { "value": "300+", "label": "high-performing websites launched - and counting" }
+    ],
+    "caseStudies": [
+      {
+        "name": "vocable",
+        "description": "Boosted content efficiency by 300-500%, accelerating content marketing up to 4x through streamlined workflows and AI automation.",
+        "slides": [
+          { "type": "image", "src": "/images/audit/vocable-dd-slide-1.jpg" },
+          { "type": "image", "src": "/images/audit/vocable-dd-slide-2.jpg" },
+          { "type": "image", "src": "/images/audit/vocable-dd-slide-3.jpg" }
+        ],
+        "href": "/case-study/vocable/",
+        "comingSoon": false
+      },
+      {
+        "name": "EDS",
+        "description": "A clean, UX-driven CMMS website built to highlight features and boost conversions.",
+        "slides": [
+          { "type": "image", "src": "/images/audit/digno-dd-slide-1.jpg" },
+          { "type": "image", "src": "/images/audit/digno-dd-slide-2.jpg" },
+          { "type": "image", "src": "/images/audit/digno-dd-slide-3.jpg" }
+        ],
+        "href": "#",
+        "comingSoon": true
+      },
+      {
+        "name": "NITRO",
+        "description": "A futuristic play to earn racing experience that secured $5M funding in 3 months.",
+        "slides": [
+          { "type": "image", "src": "/images/audit/nitro-dd-slide-1.jpg" },
+          { "type": "image", "src": "/images/audit/nitro-dd-slide-2.jpg" }
+        ],
+        "href": "#",
+        "comingSoon": true
+      }
+    ]
+  },
+  "midCta": {
+    "title": "Go live 2x faster with no-code tools and AI-powered web design.",
+    "ctaText": "Let's get started",
+    "ctaHref": "#contact-form"
+  },
+  "process": {
+    "tag": "OUR end-to-end process",
+    "heading": "Our quick and flexible web design process.",
+    "steps": [
+      {
+        "counter": "01",
+        "title": "Discover",
+        "content": "Understand your business and audience, gather insights, and study market trends to shape a strong design foundation."
+      },
+      {
+        "counter": "02",
+        "title": "Define",
+        "content": "Clarify pain points, user expectations, and KPIs, then map user journeys and identify the strongest solution direction."
+      },
+      {
+        "counter": "03",
+        "title": "Design",
+        "content": "Create wireframes and high-fidelity designs, establish style guides and design systems, and refine quickly through feedback."
+      },
+      {
+        "counter": "04",
+        "title": "Next phases",
+        "content": "Move into development and growth with analytics-backed optimization to improve performance and conversions post-launch."
+      }
+    ],
+    "deliverables": [
+      "Content writing & SEO",
+      "Website design",
+      "Website development",
+      "CMS setup",
+      "Landing page design",
+      "CRO"
+    ]
+  },
+  "keyDeliverables": {
+    "tag": "OUR WEB DESIGN EXPERTISE",
+    "heading": "Everything you need, all in one place.",
+    "items": [
+      { "title": "Content writing & SEO", "description": "We write clear, creative content that drives traffic, conversions, and brand loyalty while supporting search growth." },
+      { "title": "Website design", "description": "Our creative team makes sure your site's design captures and elevates the image of your startup or business." },
+      { "title": "Website development", "description": "We turn great designs into functional websites, blending custom solutions and CMS with a design-first mindset." },
+      { "title": "CMS setup", "description": "We pick and customize the right CMS for your needs so website management stays smooth and scalable." },
+      { "title": "Landing page design", "description": "We create pixel-perfect landing pages for SaaS, corporate, and lead generation websites." },
+      { "title": "CRO", "description": "We audit and refine UX with proven conversion strategies to help you turn traffic into results." }
+    ]
+  },
+  "goLivePromo": {
+    "headingBefore": "Go live 2x faster with no-code tools and ",
+    "headingAccent": "AI-powered",
+    "headingAfter": " web design.",
+    "subtitle": "Accelerate your time to launch, and enhance your website with us over time.",
+    "ctaText": "Let's get started",
+    "ctaHref": "#contact-form"
+  },
+  "cms": {
+    "tag": "CMS",
+    "heading": "We leverage a variety of CMS to help you build dynamic and successful digital experiences.",
+    "cards": [
+      { "name": "Webflow", "icon": "/images/icons/cms-webflow.webp" },
+      { "name": "Sanity", "icon": "/images/icons/cms-sanity.webp" },
+      { "name": "WordPress", "icon": "/images/icons/cms-wordpress.webp" },
+      { "name": "Shopify", "icon": "/images/icons/cms-shopify.webp" }
+    ]
+  },
+  "benefits": {
+    "tag": "BENEFITS OF OUR WEB DESIGN",
+    "heading": "From strategy to launch, we set your website up for measurable growth.",
+    "cards": [
+      {
+        "title": "Business Teams",
+        "description": "Get conversion-focused pages that align with your goals and drive qualified lead generation."
+      },
+      {
+        "title": "Marketing Teams",
+        "description": "Launch pages faster with consistent design systems and content structures that improve campaign performance."
+      },
+      {
+        "title": "Product Teams",
+        "description": "Ship responsive, scalable web experiences that balance performance, usability, and brand clarity."
+      }
+    ]
+  },
+  "bottomCta": {
+    "title": "Transform your website into a lead generation powerhouse.",
+    "subtitle": "Whether you're starting from scratch or revamping an existing experience, we design high-performing websites that attract, engage, and guide visitors toward key actions.",
+    "ctaText": "Build my website",
+    "ctaHref": "#contact-form"
+  },
+  "faqs": {
+    "tag": "faqs",
+    "heading": "Demystifying web design, one answer at a time.",
+    "items": [
+      { "question": "How can great website design help my business stand out in today's digital landscape?", "answer": "A thoughtful, user-centric website captures attention, builds trust, and guides visitors toward action. The right UI/UX strategy helps you turn traffic into meaningful business outcomes." },
+      { "question": "How much does a website design project cost?", "answer": "Cost depends on scope, complexity, and custom functionality. We align on goals first and provide a clear estimate before execution." },
+      { "question": "What's included in your website design process?", "answer": "Our process includes research, competitor analysis, wireframes, UI design, interactive prototypes, responsive systems, and development-ready handoff." },
+      { "question": "Can you redesign my current website to improve conversions?", "answer": "Yes. We start with a UX audit, identify drop-off points, and redesign critical journeys to improve engagement and conversion." },
+      { "question": "What's your approach to designing websites in the age of AI?", "answer": "We use AI strategically to enhance personalization and performance while keeping human-centered design and brand quality at the core." }
+    ]
+  },
+  "nextSteps": [
+    { "number": "01", "text": "We'll respond within 24 hours." },
+    { "number": "02", "text": "Our UX Expert will collect project details and create a brief." },
+    { "number": "03", "text": "We'll prepare estimates and share a project proposal." }
+  ],
+  "contactInfo": {
+    "phone": "(202) 978 3410",
+    "email": "info@reloadux.com",
+    "team": [
+      { "name": "Sahar", "role": "Key Account Manager", "linkedin": "https://www.linkedin.com/in/sahar-asif-284a9955/", "image": "/images/team/sahar.webp" },
+      { "name": "Lara Kazan", "role": "Business Development Executive", "linkedin": "https://www.linkedin.com/in/lara-kazan-82a24113b/", "image": "/images/team/lara.webp" }
+    ]
+  }
+}

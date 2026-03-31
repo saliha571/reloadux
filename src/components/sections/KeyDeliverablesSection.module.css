@@ -111,3 +111,141 @@
     max-width: none;
   }
 }
+
+/* Web Design page-only grid variant */
+.webDesignGrid {
+  background: var(--color-smoke);
+}
+
+.webDesignGrid .header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-bottom: var(--space-40);
+}
+
+.webDesignGrid .header span {
+  color: var(--color-black) !important;
+}
+
+.webDesignGrid .heading {
+  color: var(--color-black);
+  margin: 0;
+  max-width: 760px;
+}
+
+.webDesignGrid .list {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0;
+  border: 1px solid var(--color-grey-300);
+}
+
+.webDesignGrid .row {
+  min-height: 290px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 0;
+  border: 0;
+  border-right: 1px solid var(--color-grey-300);
+  border-bottom: 1px solid var(--color-grey-300);
+}
+
+.webDesignGrid .row:nth-child(3n) {
+  border-right: 0;
+}
+
+.webDesignGrid .row:nth-last-child(-n + 3) {
+  border-bottom: 0;
+}
+
+.webDesignGrid .rowTitle {
+  flex: 0 0 auto;
+  color: var(--color-black);
+  font-family: var(--font-serif);
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 1.2;
+  max-width: none;
+  width: 100%;
+  padding: var(--space-24);
+  margin: 0;
+  background-image: url("/images/backgrounds/business-leaders-grid-pattern.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: left top;
+}
+
+.webDesignGrid .row:nth-child(2) .rowTitle,
+.webDesignGrid .row:nth-child(5) .rowTitle {
+  background-image: none;
+}
+
+.webDesignGrid .rowDesc {
+  flex: 1;
+  max-width: none;
+  color: var(--color-grey-700);
+  font-size: 16px;
+  line-height: 1.7;
+  padding: 0 var(--space-24) var(--space-24);
+  margin: 0;
+}
+
+@media (max-width: 1024px) {
+  .webDesignGrid .header {
+    flex-direction: column;
+    gap: var(--space-20);
+  }
+
+  .webDesignGrid .list {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .webDesignGrid .row {
+    border-right: 1px solid var(--color-grey-300);
+  }
+
+  .webDesignGrid .row:nth-child(2n) {
+    border-right: 0;
+  }
+
+  .webDesignGrid .row:nth-last-child(-n + 2) {
+    border-bottom: 0;
+  }
+
+  .webDesignGrid .rowTitle {
+    font-size: 18px;
+  }
+
+  .webDesignGrid .rowDesc {
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 767px) {
+  .webDesignGrid .list {
+    grid-template-columns: 1fr;
+  }
+
+  .webDesignGrid .row,
+  .webDesignGrid .row:nth-child(2n) {
+    border-right: 0;
+  }
+
+  .webDesignGrid .row:not(:last-child) {
+    border-bottom: 1px solid var(--color-grey-300);
+  }
+
+  .webDesignGrid .row:last-child {
+    border-bottom: 0;
+  }
+
+  .webDesignGrid .rowTitle {
+    font-size: 18px;
+  }
+
+  .webDesignGrid .rowDesc {
+    font-size: 16px;
+  }
+}
