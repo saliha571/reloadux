@@ -793,6 +793,67 @@ export async function getStrapiUIUXDesignPage() {
   );
 }
 
+export interface StrapiAIOpportunityMappingPage {
+  id: number;
+  heroTag?: string;
+  heroTitle: string;
+  heroCtaText?: string;
+  heroCtaHref?: string;
+  challengesTag?: string;
+  challengesHeading?: string;
+  challengesDescription?: string;
+  challengeCards?: { tag: string; description: string }[];
+  includesTag?: string;
+  includesHeading?: string;
+  includesItems?: { title: string; description: string }[];
+  includesOutcomeTitle?: string;
+  whoThisIsForTag?: string;
+  whoThisIsForHeading?: string;
+  whoThisIsForCards?: { title: string; description: string }[];
+  keyDeliverablesTag?: string;
+  keyDeliverablesHeading?: string;
+  keyDeliverablesItems?: { title: string; description: string }[];
+  processTag?: string;
+  processHeading?: string;
+  processSteps?: { counter: string; title: string; content: string }[];
+  deliverables?: string[];
+  pricingTag?: string;
+  pricingDescription?: string;
+  pricingPlanName?: string;
+  pricingPrice?: string;
+  pricingPricePer?: string;
+  pricingFeatures?: string[];
+  pricingCtaText?: string;
+  pricingCtaHref?: string;
+  whatHappensAfterTag?: string;
+  whatHappensAfterHeading?: string;
+  whatHappensAfterPaths?: { title: string; description: string }[];
+  otherServicesTag?: string;
+  otherServicesItems?: { title: string; description: string; href: string }[];
+  whyUsTag?: string;
+  whyUsHeading?: string;
+  whyUsCards?: { title: string; description: string }[];
+  bottomCtaTitle?: string;
+  bottomCtaSubtitle?: string;
+  bottomCtaText?: string;
+  bottomCtaHref?: string;
+  faqsTag?: string;
+  faqsHeading?: string;
+  faqItems?: { question: string; answer: string }[];
+  nextSteps?: { number: string; text: string }[];
+  contactPhone?: string;
+  contactEmail?: string;
+  contactTeam?: { name: string; role: string; linkedin?: string }[];
+  seoTitle?: string;
+  seoDescription?: string;
+}
+
+export async function getStrapiAIOpportunityMappingPage() {
+  return fetchStrapi<StrapiSingle<StrapiAIOpportunityMappingPage>>(
+    "/api/ai-opportunity-mapping-page?populate=*"
+  );
+}
+
 export interface StrapiWebDesignPage extends StrapiDesignSystemsPage {
   goLivePromoHeadingBefore?: string;
   goLivePromoHeadingAccent?: string;

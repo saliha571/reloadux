@@ -430,6 +430,99 @@ export interface AdminUser extends Struct.CollectionTypeSchema {
   };
 }
 
+export interface ApiAiOpportunityMappingPageAiOpportunityMappingPage
+  extends Struct.SingleTypeSchema {
+  collectionName: 'ai_opportunity_mapping_pages';
+  info: {
+    description: 'AI Opportunity Mapping service page content';
+    displayName: 'AI Opportunity Mapping Page';
+    pluralName: 'ai-opportunity-mapping-pages';
+    singularName: 'ai-opportunity-mapping-page';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    bottomCtaHref: Schema.Attribute.String &
+      Schema.Attribute.DefaultTo<'#contact-form'>;
+    bottomCtaSubtitle: Schema.Attribute.Text;
+    bottomCtaText: Schema.Attribute.String;
+    bottomCtaTitle: Schema.Attribute.Text;
+    challengeCards: Schema.Attribute.JSON;
+    challengesDescription: Schema.Attribute.Text;
+    challengesHeading: Schema.Attribute.Text;
+    challengesTag: Schema.Attribute.String &
+      Schema.Attribute.DefaultTo<'CHALLENGES'>;
+    contactEmail: Schema.Attribute.Email &
+      Schema.Attribute.DefaultTo<'info@reloadux.com'>;
+    contactPhone: Schema.Attribute.String &
+      Schema.Attribute.DefaultTo<'(202) 978 3410'>;
+    contactTeam: Schema.Attribute.JSON;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    deliverables: Schema.Attribute.JSON;
+    faqItems: Schema.Attribute.JSON;
+    faqsHeading: Schema.Attribute.Text;
+    faqsTag: Schema.Attribute.String & Schema.Attribute.DefaultTo<'FAQS'>;
+    heroCtaHref: Schema.Attribute.String &
+      Schema.Attribute.DefaultTo<'#contact-form'>;
+    heroCtaText: Schema.Attribute.String &
+      Schema.Attribute.DefaultTo<'Get Started'>;
+    heroTag: Schema.Attribute.String &
+      Schema.Attribute.DefaultTo<'AI Opportunity Mapping'>;
+    heroTitle: Schema.Attribute.Text & Schema.Attribute.Required;
+    includesHeading: Schema.Attribute.Text;
+    includesItems: Schema.Attribute.JSON;
+    includesOutcomeTitle: Schema.Attribute.Text;
+    includesTag: Schema.Attribute.String &
+      Schema.Attribute.DefaultTo<'WHAT THIS INCLUDES'>;
+    keyDeliverablesHeading: Schema.Attribute.Text;
+    keyDeliverablesItems: Schema.Attribute.JSON;
+    keyDeliverablesTag: Schema.Attribute.String &
+      Schema.Attribute.DefaultTo<'KEY DELIVERABLES'>;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::ai-opportunity-mapping-page.ai-opportunity-mapping-page'
+    > &
+      Schema.Attribute.Private;
+    nextSteps: Schema.Attribute.JSON;
+    otherServicesItems: Schema.Attribute.JSON;
+    otherServicesTag: Schema.Attribute.String;
+    pricingCtaHref: Schema.Attribute.String &
+      Schema.Attribute.DefaultTo<'#contact-form'>;
+    pricingCtaText: Schema.Attribute.String;
+    pricingDescription: Schema.Attribute.Text;
+    pricingFeatures: Schema.Attribute.JSON;
+    pricingPlanName: Schema.Attribute.String;
+    pricingPrice: Schema.Attribute.String;
+    pricingPricePer: Schema.Attribute.String;
+    pricingTag: Schema.Attribute.String & Schema.Attribute.DefaultTo<'PRICING'>;
+    processHeading: Schema.Attribute.Text;
+    processSteps: Schema.Attribute.JSON;
+    processTag: Schema.Attribute.String &
+      Schema.Attribute.DefaultTo<'HOW IT WORKS'>;
+    publishedAt: Schema.Attribute.DateTime;
+    seoDescription: Schema.Attribute.Text;
+    seoTitle: Schema.Attribute.String;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    whatHappensAfterHeading: Schema.Attribute.Text;
+    whatHappensAfterPaths: Schema.Attribute.JSON;
+    whatHappensAfterTag: Schema.Attribute.String;
+    whoThisIsForCards: Schema.Attribute.JSON;
+    whoThisIsForHeading: Schema.Attribute.Text;
+    whoThisIsForTag: Schema.Attribute.String &
+      Schema.Attribute.DefaultTo<'WHO THIS IS FOR'>;
+    whyUsCards: Schema.Attribute.JSON;
+    whyUsHeading: Schema.Attribute.Text;
+    whyUsTag: Schema.Attribute.String &
+      Schema.Attribute.DefaultTo<'WHY RELOADUX'>;
+  };
+}
+
 export interface ApiBlogPostBlogPost extends Struct.CollectionTypeSchema {
   collectionName: 'blog_posts';
   info: {
@@ -2309,6 +2402,7 @@ declare module '@strapi/strapi' {
       'admin::transfer-token': AdminTransferToken;
       'admin::transfer-token-permission': AdminTransferTokenPermission;
       'admin::user': AdminUser;
+      'api::ai-opportunity-mapping-page.ai-opportunity-mapping-page': ApiAiOpportunityMappingPageAiOpportunityMappingPage;
       'api::blog-post.blog-post': ApiBlogPostBlogPost;
       'api::case-study.case-study': ApiCaseStudyCaseStudy;
       'api::client-logo.client-logo': ApiClientLogoClientLogo;

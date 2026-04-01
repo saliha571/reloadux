@@ -741,6 +741,86 @@ export type UIUXDesignPageData = DesignSystemsPageData & {
   };
 };
 
+// ─── AI Opportunity Mapping Page ─────────────────────────────────────────────
+
+export interface AIOpportunityMappingPageData {
+  hero: {
+    tag: string;
+    title: string;
+    ctaText: string;
+    ctaHref: string;
+  };
+  challenges: {
+    tag: string;
+    heading: string;
+    description: string;
+    cards: { tag: string; description: string }[];
+  };
+  includes: {
+    tag: string;
+    heading: string;
+    items: { title: string; description: string }[];
+    outcomeTitle: string;
+  };
+  whoThisIsFor: {
+    tag: string;
+    heading: string;
+    cards: { title: string; description: string }[];
+  };
+  keyDeliverables: {
+    tag: string;
+    heading: string;
+    items: { title: string; description: string }[];
+  };
+  process: {
+    tag: string;
+    heading: string;
+    steps: { counter: string; title: string; content: string }[];
+    deliverables: string[];
+  };
+  pricing: {
+    tag: string;
+    description: string;
+    planName: string;
+    price: string;
+    pricePer: string;
+    features: string[];
+    ctaText: string;
+    ctaHref: string;
+  };
+  whatHappensAfter: {
+    tag: string;
+    heading: string;
+    paths: { title: string; description: string }[];
+  };
+  otherServices: {
+    tag: string;
+    items: { title: string; description: string; href: string }[];
+  };
+  whyUs: {
+    tag: string;
+    heading: string;
+    cards: { title: string; description: string }[];
+  };
+  bottomCta: {
+    title: string;
+    subtitle: string;
+    ctaText: string;
+    ctaHref: string;
+  };
+  faqs: {
+    tag: string;
+    heading: string;
+    items: { question: string; answer: string }[];
+  };
+  nextSteps: { number: string; text: string }[];
+  contactInfo: {
+    phone: string;
+    email: string;
+    team: { name: string; role: string; linkedin: string; image?: string }[];
+  };
+}
+
 // ─── Usability Testing Page ──────────────────────────────────────────────────
 
 export type UsabilityTestingPageData = LegacyModernizationPageData;

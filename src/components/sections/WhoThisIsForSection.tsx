@@ -10,9 +10,10 @@ interface WhoThisIsForSectionProps {
   tag: string;
   heading: string;
   cards: IdealClientCard[];
+  hideHeading?: boolean;
 }
 
-export function WhoThisIsForSection({ tag, heading, cards }: WhoThisIsForSectionProps) {
+export function WhoThisIsForSection({ tag, heading, cards, hideHeading = false }: WhoThisIsForSectionProps) {
   return (
     <section className={styles.section}>
       <div className={styles.inner}>
@@ -20,7 +21,7 @@ export function WhoThisIsForSection({ tag, heading, cards }: WhoThisIsForSection
           <div className={styles.tagWrap}>
             <SectionTag text={tag} variant="light" />
           </div>
-          <h2 className={styles.heading}>{heading}</h2>
+          {!hideHeading && <h2 className={styles.heading}>{heading}</h2>}
         </div>
         <div className={styles.list}>
           {cards.map((card, i) => (

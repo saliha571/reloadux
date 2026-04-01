@@ -1,0 +1,245 @@
+{
+  "hero": {
+    "tag": "AI Opportunity Mapping",
+    "title": "AI Opportunity Mapping",
+    "ctaText": "Get Started",
+    "ctaHref": "#contact-form"
+  },
+  "challenges": {
+    "tag": "CHALLENGES",
+    "heading": "Still figuring out where AI fits in your product?",
+    "description": "If this sounds like your roadmap, you do not need more AI ideas. You need a focused plan.",
+    "cards": [
+      { "tag": "Stakeholder pressure", "description": "Everyone is demanding AI. Nobody agrees on what to build first." },
+      { "tag": "Feature FOMO", "description": "You are shipping AI features just to keep up, not because they solve anything real." },
+      { "tag": "Idea overload", "description": "You have too many AI ideas on the roadmap and no framework to choose between them." },
+      { "tag": "Blind feasibility", "description": "You do not know if what you are imagining is technically possible with your real data." },
+      { "tag": "No user signal", "description": "You are guessing what users need from AI instead of validating it." },
+      { "tag": "Roadmap paralysis", "description": "AI feels urgent, but you cannot justify where to start without a clear ROI case." },
+      { "tag": "Stakeholder conflict", "description": "Sales wants one thing, product wants another, and engineering says it is too complex." }
+    ]
+  },
+  "includes": {
+    "tag": "WHAT THIS INCLUDES",
+    "heading": "We conduct a focused engagement to de-risk your AI roadmap.",
+    "items": [
+      { "title": "Interview your team (product, engineering, support, sales)", "description": "" },
+      { "title": "Audit your product’s workflows, data, and pain points.", "description": "" },
+      { "title": "Analyze where users waste time, make errors, or need decisions made for them.", "description": "" },
+      { "title": "Map AI use cases against real user needs.", "description": "" },
+      { "title": "Prioritize by impact, feasibility, and risk.", "description": "" },
+      { "title": "Deliver a clear recommendation: build this first, ignore that", "description": "" }
+    ],
+    "outcomeTitle": "A clear deliverable: what to build, why it matters, and what it takes."
+  },
+  "whoThisIsFor": {
+    "tag": "WHO THIS IS FOR",
+    "heading": "You are under pressure to add AI, but need a clear starting point.",
+    "cards": [
+      {
+        "title": "You are pressured to add AI quickly",
+        "description": "Board, investors, or competitors are pushing. You need a rational path, not reactive feature requests."
+      },
+      {
+        "title": "You have ideas but no validation framework",
+        "description": "Your team has opinions and requests, but needs objective prioritization to separate signal from noise."
+      },
+      {
+        "title": "You want speed without wasting engineering cycles",
+        "description": "A wrong AI bet can cost months of effort. You want confidence before implementation starts."
+      },
+      {
+        "title": "You own product outcomes",
+        "description": "You are a Founder, CTO, Head of Product, or Product Owner who needs clear decisions, not more opinions."
+      }
+    ]
+  },
+  "keyDeliverables": {
+    "tag": "KEY DELIVERABLES",
+    "heading": "What this engagement delivers.",
+    "items": [
+      {
+        "title": "AI Opportunity Map",
+        "description": "Visual framework showing every potential use case for AI-native experiences in your product, categorized by workflow, user type, and value driver."
+      },
+      {
+        "title": "Priority Matrix",
+        "description": "Each opportunity scored on user impact (time saved, errors reduced, decisions automated), technical feasibility (data availability, integration complexity), business value (retention, expansion, differentiation), and risk (trust requirements, failure modes, regulatory concerns)."
+      },
+      {
+        "title": "Top 1-3 recommendations",
+        "description": "Detailed briefs on the highest-priority opportunities covering what it is, why it matters, what success looks like, what it requires (data, effort, timeline), and key risks and mitigations."
+      },
+      {
+        "title": "Executive summary",
+        "description": "One-pager for your board, leadership team, or investors. Clear, defensible, ready to present."
+      },
+      {
+        "title": "Walkthrough session",
+        "description": "Live walkthrough of findings with Q&A for your team and stakeholders to align before moving forward."
+      }
+    ]
+  },
+  "process": {
+    "tag": "HOW IT WORKS",
+    "heading": "A proven framework to identify, score, and prioritize the right AI opportunities.",
+    "steps": [
+      {
+        "counter": "01",
+        "title": "Day 1 - Kickoff",
+        "content": "We align on your business, goals, constraints, market context, and what success looks like."
+      },
+      {
+        "counter": "02",
+        "title": "Day 2 - Interviews",
+        "content": "We interview key stakeholders from product, engineering, support, and sales."
+      },
+      {
+        "counter": "03",
+        "title": "Day 3 - Readiness Assessment",
+        "content": "We audit UX workflows and assess where AI can create measurable value."
+      },
+      {
+        "counter": "04",
+        "title": "Day 4 - Opportunity Prioritization",
+        "content": "We map and score use cases by impact, feasibility, value, and risk."
+      },
+      {
+        "counter": "05",
+        "title": "Day 5 - Readout and Recommendations",
+        "content": "You receive the final deliverables and a live walkthrough with Q&A."
+      }
+    ],
+    "deliverables": [
+      "Focused AI roadmap",
+      "Reduced implementation risk",
+      "Higher confidence for stakeholders",
+      "Clear next-step recommendations",
+      "Faster product decision making"
+    ]
+  },
+  "pricing": {
+    "tag": "PRICING",
+    "description": "Know exactly where AI creates real value in your product before you spend engineering effort.",
+    "planName": "AI Opportunity Mapping",
+    "price": "$5000",
+    "pricePer": "/ month",
+    "features": [
+      "AI opportunity map across workflows and user types.",
+      "Priority matrix scored on impact, feasibility, and risk.",
+      "Top 3 build recommendations with detailed briefs.",
+      "Do not build list with stakeholder-ready rationale.",
+      "Executive summary for leadership and investors.",
+      "60-minute live readout and Q&A session."
+    ],
+    "ctaText": "Map My AI Opportunities",
+    "ctaHref": "#contact-form"
+  },
+  "whatHappensAfter": {
+    "tag": "",
+    "heading": "Choose the path that fits your team and timeline.",
+    "paths": [
+      {
+        "title": "You build it yourself",
+        "description": "Take the deliverables to your team and start building with clear priorities and scope."
+      },
+      {
+        "title": "We design it",
+        "description": "Move into AI feature design and get production-ready UX patterns, edge cases, and states."
+      }
+    ]
+  },
+  "otherServices": {
+    "tag": "OTHER WAYS WE CAN HELP",
+    "items": [
+      {
+        "title": "UX Audit and AI Readiness",
+        "description": "Before modernizing, identify what is broken and what is blocking AI in your current product.",
+        "href": "/service/ux-audit"
+      },
+      {
+        "title": "AI Feature Experience Design",
+        "description": "Design copilots, agents, and generative workflows optimized for real user adoption.",
+        "href": "/service/ui-ux-design"
+      },
+      {
+        "title": "Legacy UX Modernization",
+        "description": "Modernize outdated interfaces so intelligent features can be introduced without disruption.",
+        "href": "/service/legacy-ux-modernization"
+      }
+    ]
+  },
+  "whyUs": {
+    "tag": "WHY RELOADUX",
+    "heading": "The difference is in how we think, design, and deliver.",
+    "cards": [
+      {
+        "title": "40+ AI opportunity mapping engagements",
+        "description": "Across fintech, HR tech, analytics, healthcare, and vertical SaaS products."
+      },
+      {
+        "title": "Practitioners, not consultants",
+        "description": "Recommendations are grounded in real implementation constraints and UX adoption patterns."
+      },
+      {
+        "title": "Fast and focused",
+        "description": "Two weeks, no bloated process, and no unnecessary workshops."
+      }
+    ]
+  },
+  "bottomCta": {
+    "title": "Ready to find out where AI will create real impact in your product?",
+    "subtitle": "One 30-minute conversation could save you months of building the wrong thing.",
+    "ctaText": "Book a Call",
+    "ctaHref": "#contact-form"
+  },
+  "faqs": {
+    "tag": "FAQS",
+    "heading": "Reimagine your digital products with our redesign services.",
+    "items": [
+      {
+        "question": "What is AI opportunity mapping?",
+        "answer": "It is a structured process to identify and prioritize AI use cases based on user needs, available data, and implementation feasibility."
+      },
+      {
+        "question": "How is this different from AI strategy consulting?",
+        "answer": "Opportunity mapping is short and decision-focused. It helps you decide what to build first, while strategy consulting is broader and longer-term."
+      },
+      {
+        "question": "How do you prioritize use cases?",
+        "answer": "We score opportunities on user impact, technical feasibility, business value, and risk to surface the highest-ROI bets."
+      },
+      {
+        "question": "Do you need access to our codebase or data?",
+        "answer": "No. Product access, stakeholder interviews, and existing docs are enough to run this engagement."
+      },
+      {
+        "question": "Can this be done remotely?",
+        "answer": "Yes, this engagement is fully remote with interviews over video and async collaboration."
+      }
+    ]
+  },
+  "nextSteps": [
+    { "number": "01", "text": "We'll respond within 24 hours." },
+    { "number": "02", "text": "Our UX Expert will collect project details and create a brief." },
+    { "number": "03", "text": "We'll prepare estimates and share a project proposal." }
+  ],
+  "contactInfo": {
+    "phone": "(202) 978 3410",
+    "email": "info@reloadux.com",
+    "team": [
+      {
+        "name": "Sahar",
+        "role": "Key Account Manager",
+        "linkedin": "https://www.linkedin.com/in/sahar-asif-284a9955/",
+        "image": "/images/team/sahar.webp"
+      },
+      {
+        "name": "Lara Kazan",
+        "role": "Business Development Executive",
+        "linkedin": "https://www.linkedin.com/in/lara-kazan-82a24113b/",
+        "image": "/images/team/lara.webp"
+      }
+    ]
+  }
+}

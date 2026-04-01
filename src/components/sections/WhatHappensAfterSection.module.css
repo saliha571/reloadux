@@ -34,12 +34,27 @@
   flex: 1;
 }
 
+.headerNoTag .heading {
+  width: 100%;
+}
+
 /* ── Path rows ───────────────────────────────────────────────────────────── */
 
 .pathList {
   display: flex;
   flex-direction: column;
   padding-left: 340px;
+}
+
+.pathListNoTag {
+  padding-left: 0;
+}
+
+.pathListCards {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  padding-left: 0;
+  border: 1px solid var(--color-grey-700);
 }
 
 .pathItem {
@@ -56,8 +71,44 @@
   border-bottom: 1px solid var(--color-grey-700);
 }
 
+.pathItemCard {
+  min-height: 260px;
+  padding: 28px 22px;
+  border-top: 0;
+  border-right: 1px solid var(--color-grey-700);
+}
+
+.pathItemCard .pathContent {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.pathItemCard .pathTitle {
+  margin-top: auto;
+}
+
+.pathItemCard:last-child {
+  border-right: 0;
+  border-bottom: 0;
+}
+
 .pathContent {
   flex: 1;
+}
+
+.cardNumber {
+  width: 30px;
+  height: 30px;
+  border: 1px solid var(--color-grey-700);
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-primary);
+  font-size: 14px;
+  color: var(--color-grey-300);
+  margin-bottom: 56px;
 }
 
 .pathTitle {
@@ -108,6 +159,20 @@
 
   .pathList {
     padding-left: 0;
+  }
+
+  .pathListCards {
+    grid-template-columns: 1fr;
+  }
+
+  .pathItemCard {
+    border-right: 0;
+    border-bottom: 1px solid var(--color-grey-700);
+    min-height: auto;
+  }
+
+  .pathItemCard:last-child {
+    border-bottom: 0;
   }
 }
 

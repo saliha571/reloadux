@@ -15,6 +15,7 @@ interface LogoItem {
 
 export interface ServiceHeroProps {
   tag: string;
+  hideTag?: boolean;
   title: string;
   titleNode?: React.ReactNode;
   titleAccent?: string;
@@ -143,6 +144,7 @@ function horizontalLoop(
 
 export function ServiceHero({
   tag,
+  hideTag = false,
   title,
   titleNode,
   titleAccent,
@@ -198,7 +200,7 @@ export function ServiceHero({
       style={sectionStyle}
     >
       <div className={styles.content}>
-        <SectionTag text={tag} />
+        {!hideTag && <SectionTag text={tag} />}
         <h1 className={`${styles.title} ${titleSize === "small" ? styles.titleSmall : ""}`}>
           {titleNode || (
             <>

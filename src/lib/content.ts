@@ -13,6 +13,7 @@ import type {
   WebDesignPageData,
   DesignSystemsPageData,
   UIUXDesignPageData,
+  AIOpportunityMappingPageData,
   Service,
   CaseStudy,
   BlogPost,
@@ -40,6 +41,7 @@ import designDiscoveryData from "../../content/pages/design-discovery.json";
 import webDesignData from "../../content/pages/web-design.json";
 import designSystemsData from "../../content/pages/design-systems.json";
 import uiUxDesignData from "../../content/pages/ui-ux-design.json";
+import aiOpportunityMappingData from "../../content/pages/ai-opportunity-mapping.json";
 
 import {
   getStrapiHomepage,
@@ -63,6 +65,7 @@ import {
   getStrapiDesignDiscoveryPage,
   getStrapiDesignSystemsPage,
   getStrapiUIUXDesignPage,
+  getStrapiAIOpportunityMappingPage,
   getStrapiUsabilityTestingPage,
   getStrapiWebDesignPage,
 } from "./strapi";
@@ -1162,6 +1165,104 @@ export async function getUIUXDesignPage(): Promise<UIUXDesignPageData> {
         tag: s.uiuxServicesTag ?? fallback.uiuxServices.tag,
         heading: s.uiuxServicesHeading ?? fallback.uiuxServices.heading,
         cards: s.uiuxServicesCards ?? fallback.uiuxServices.cards,
+      },
+      bottomCta: {
+        title: s.bottomCtaTitle ?? fallback.bottomCta.title,
+        subtitle: s.bottomCtaSubtitle ?? fallback.bottomCta.subtitle,
+        ctaText: s.bottomCtaText ?? fallback.bottomCta.ctaText,
+        ctaHref: s.bottomCtaHref ?? fallback.bottomCta.ctaHref,
+      },
+      faqs: {
+        tag: s.faqsTag ?? fallback.faqs.tag,
+        heading: s.faqsHeading ?? fallback.faqs.heading,
+        items: s.faqItems ?? fallback.faqs.items,
+      },
+      nextSteps: s.nextSteps ?? fallback.nextSteps,
+      contactInfo: {
+        phone: s.contactPhone ?? fallback.contactInfo.phone,
+        email: s.contactEmail ?? fallback.contactInfo.email,
+        team: s.contactTeam
+          ? s.contactTeam.map((t) => ({
+              name: t.name,
+              role: t.role,
+              linkedin: t.linkedin ?? "",
+            }))
+          : fallback.contactInfo.team,
+      },
+    };
+  } catch {
+    return fallback;
+  }
+}
+
+// ─── AI Opportunity Mapping Page ─────────────────────────────────────────────
+
+export async function getAIOpportunityMappingPage(): Promise<AIOpportunityMappingPageData> {
+  const fallback = aiOpportunityMappingData as AIOpportunityMappingPageData;
+
+  try {
+    const res = await getStrapiAIOpportunityMappingPage();
+    const s = res?.data;
+    if (!s) return fallback;
+
+    return {
+      hero: {
+        tag: s.heroTag ?? fallback.hero.tag,
+        title: s.heroTitle ?? fallback.hero.title,
+        ctaText: s.heroCtaText ?? fallback.hero.ctaText,
+        ctaHref: s.heroCtaHref ?? fallback.hero.ctaHref,
+      },
+      challenges: {
+        tag: s.challengesTag ?? fallback.challenges.tag,
+        heading: s.challengesHeading ?? fallback.challenges.heading,
+        description: s.challengesDescription ?? fallback.challenges.description,
+        cards: s.challengeCards ?? fallback.challenges.cards,
+      },
+      includes: {
+        tag: s.includesTag ?? fallback.includes.tag,
+        heading: s.includesHeading ?? fallback.includes.heading,
+        items: s.includesItems ?? fallback.includes.items,
+        outcomeTitle: s.includesOutcomeTitle ?? fallback.includes.outcomeTitle,
+      },
+      whoThisIsFor: {
+        tag: s.whoThisIsForTag ?? fallback.whoThisIsFor.tag,
+        heading: s.whoThisIsForHeading ?? fallback.whoThisIsFor.heading,
+        cards: s.whoThisIsForCards ?? fallback.whoThisIsFor.cards,
+      },
+      keyDeliverables: {
+        tag: s.keyDeliverablesTag ?? fallback.keyDeliverables.tag,
+        heading: s.keyDeliverablesHeading ?? fallback.keyDeliverables.heading,
+        items: s.keyDeliverablesItems ?? fallback.keyDeliverables.items,
+      },
+      process: {
+        tag: s.processTag ?? fallback.process.tag,
+        heading: s.processHeading ?? fallback.process.heading,
+        steps: s.processSteps ?? fallback.process.steps,
+        deliverables: s.deliverables ?? fallback.process.deliverables,
+      },
+      pricing: {
+        tag: s.pricingTag ?? fallback.pricing.tag,
+        description: s.pricingDescription ?? fallback.pricing.description,
+        planName: s.pricingPlanName ?? fallback.pricing.planName,
+        price: s.pricingPrice ?? fallback.pricing.price,
+        pricePer: s.pricingPricePer ?? fallback.pricing.pricePer,
+        features: s.pricingFeatures ?? fallback.pricing.features,
+        ctaText: s.pricingCtaText ?? fallback.pricing.ctaText,
+        ctaHref: s.pricingCtaHref ?? fallback.pricing.ctaHref,
+      },
+      whatHappensAfter: {
+        tag: s.whatHappensAfterTag ?? fallback.whatHappensAfter.tag,
+        heading: s.whatHappensAfterHeading ?? fallback.whatHappensAfter.heading,
+        paths: s.whatHappensAfterPaths ?? fallback.whatHappensAfter.paths,
+      },
+      otherServices: {
+        tag: s.otherServicesTag ?? fallback.otherServices.tag,
+        items: s.otherServicesItems ?? fallback.otherServices.items,
+      },
+      whyUs: {
+        tag: s.whyUsTag ?? fallback.whyUs.tag,
+        heading: s.whyUsHeading ?? fallback.whyUs.heading,
+        cards: s.whyUsCards ?? fallback.whyUs.cards,
       },
       bottomCta: {
         title: s.bottomCtaTitle ?? fallback.bottomCta.title,

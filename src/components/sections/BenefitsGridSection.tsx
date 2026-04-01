@@ -10,20 +10,24 @@ interface BenefitsGridSectionProps {
   tag: string;
   heading: string;
   cards: BenefitCard[];
+  hideTag?: boolean;
 }
 
 export function BenefitsGridSection({
   tag,
   heading,
   cards,
+  hideTag = false,
 }: BenefitsGridSectionProps) {
   return (
     <section className={styles.section}>
       <div className={styles.inner}>
         <div className={styles.header}>
-          <div className={styles.tagWrap}>
-            <SectionTag text={tag} variant="dark" />
-          </div>
+          {!hideTag && (
+            <div className={styles.tagWrap}>
+              <SectionTag text={tag} variant="dark" />
+            </div>
+          )}
           <h2 className={styles.heading}>{heading}</h2>
         </div>
 
