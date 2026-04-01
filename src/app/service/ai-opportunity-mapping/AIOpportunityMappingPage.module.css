@@ -1,6 +1,10 @@
-:global([class*="CTASection-module__section"]) {
+.page :global([class*="CTASection-module__section"]) {
   border-top: 1px solid var(--color-grey-700);
   border-bottom: 1px solid var(--color-grey-700);
+}
+
+.page :global([class*="SectionTag-module__tag"]) {
+  color: var(--color-black) !important;
 }
 
 .heroSection {

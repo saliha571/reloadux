@@ -23,7 +23,7 @@ interface Props {
 
 export function AIOpportunityMappingPageClient({ data }: Props) {
   return (
-    <>
+    <div className={pageStyles.page}>
       <ServiceHero
         tag={data.hero.tag}
         hideTag
@@ -200,6 +200,6 @@ export function AIOpportunityMappingPageClient({ data }: Props) {
         nextSteps={data.nextSteps}
         contactInfo={data.contactInfo}
       />
-    </>
+    </div>
   );
 }
