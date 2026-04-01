@@ -1,0 +1,168 @@
+{
+  "hero": {
+    "tag": "UI UX Design",
+    "title": "UI/UX design that makes your B2B product launch 50% faster.",
+    "ctaText": "Book a call",
+    "ctaHref": "#contact-form"
+  },
+  "challenges": {
+    "tag": "CHALLENGES",
+    "heading": "Common UI/UX Design challenges you’re facing",
+    "description": "We believe that good UX boosts sales, reduces churn, and strengthens user loyalty.",
+    "cards": [
+      { "tag": "QUALITY CONCERNS", "description": "Seeing inconsistent design quality across your product?" },
+      { "tag": "SLOW LAUNCH", "description": "Product launch delayed due to missed design deadlines?" },
+      { "tag": "SCALABILITY ISSUES", "description": "Need to scale your product with a design system?" },
+      { "tag": "BUDGET WORRIES", "description": "Want high-quality design on a startup budget?" },
+      { "tag": "RELEVANT INDUSTRY EXPERIENCE", "description": "Need UX specialists who know your industry?" },
+      { "tag": "UNPREDICTABLE COSTS", "description": "Can't estimate design costs for your product roadmap?" },
+      { "tag": "LACK OF FLEXIBILITY", "description": "Looking for ongoing support, not full-time UX services?" }
+    ]
+  },
+  "auditWork": {
+    "tag": "OUR UI/UX DESIGN WORK",
+    "heading": "We create high-performing interfaces that drive twice the results in half the time.",
+    "stats": [
+      { "value": "3.5x", "label": "faster turnaround time with our AI-powered workflows" },
+      { "value": "1B+", "label": "impressions made across all products we've designed" },
+      { "value": "900+", "label": "pixel-perfect UI/UX projects delivered - and counting" }
+    ],
+    "caseStudies": [
+      {
+        "name": "vocable",
+        "description": "Boosted content efficiency by 300-500%, accelerating content marketing up to 4x through streamlined workflows and AI automation.",
+        "slides": [
+          { "type": "image", "src": "/images/audit/vocable-dd-slide-1.jpg" },
+          { "type": "image", "src": "/images/audit/vocable-dd-slide-2.jpg" },
+          { "type": "image", "src": "/images/audit/vocable-dd-slide-3.jpg" }
+        ],
+        "href": "/case-study/vocable/",
+        "comingSoon": false
+      },
+      {
+        "name": "Digno",
+        "description": "Enhanced profitability with an integrated scoring system, leading to a 15% increase in sales & a 20% reduction in operational costs.",
+        "slides": [
+          { "type": "image", "src": "/images/audit/digno-dd-slide-1.jpg" },
+          { "type": "image", "src": "/images/audit/digno-dd-slide-2.jpg" },
+          { "type": "image", "src": "/images/audit/digno-dd-slide-3.jpg" }
+        ],
+        "href": "/case-study/digno/",
+        "comingSoon": false
+      },
+      {
+        "name": "NITRO",
+        "description": "A futuristic play to earn racing experience that secured $5M funding in 3 months",
+        "slides": [
+          { "type": "image", "src": "/images/audit/nitro-dd-slide-1.jpg" },
+          { "type": "image", "src": "/images/audit/nitro-dd-slide-2.jpg" }
+        ],
+        "href": "/case-study/nitro/",
+        "comingSoon": false
+      }
+    ]
+  },
+  "midCta": {
+    "title": "Starting from scratch or revamping an existing product? Let’s make it happen.",
+    "ctaText": "Book a call",
+    "ctaHref": "#contact-form"
+  },
+  "process": {
+    "tag": "OUR end-to-end process",
+    "heading": "Our formula for building the right product, that generates ROI and win hearts.",
+    "steps": [
+      {
+        "counter": "01",
+        "title": "Discover",
+        "content": "Understand your business, user needs, and market context to align design decisions with product goals."
+      },
+      {
+        "counter": "02",
+        "title": "Define",
+        "content": "Map user journeys, define key use cases, and prioritize features that move the right business metrics."
+      },
+      {
+        "counter": "03",
+        "title": "Design",
+        "content": "Craft wireframes and high-fidelity UI, then iterate quickly with stakeholder and user feedback."
+      },
+      {
+        "counter": "04",
+        "title": "Deliver",
+        "content": "Handoff production-ready designs with clear documentation and support smooth implementation."
+      }
+    ],
+    "deliverables": [
+      "User flows and journey mapping",
+      "Wireframes and clickable prototypes",
+      "High-fidelity UI screens",
+      "Design system foundations",
+      "Developer-ready handoff"
+    ]
+  },
+  "uiuxServices": {
+    "tag": "OUR UI/UX DESIGN SERVICES",
+    "heading": "Flexible design solutions for every challenge",
+    "cards": [
+      { "tag": "FOR STARTUPS", "title": "Design from Scratch - MVP", "href": "/service/design-from-scratch-mvp/" },
+      { "tag": "FOR STARTUPS & EXISTING COMPANIES", "title": "UX Redesign", "href": "/service/ux-redesign/" },
+      { "tag": "FOR PRODUCT OWNERS", "title": "Investor Pitch Design", "href": "/service/investor-pitch/" },
+      { "tag": "FOR EXISTING COMPANIES", "title": "Team Extension", "href": "/service/team-extension/" }
+    ]
+  },
+  "keyDeliverables": {
+    "tag": "Deliverables",
+    "heading": "What you’ll get in your design engagement.",
+    "items": [
+      { "title": "Heuristic evaluation", "description": "We assess your product against UX best practices to identify friction points and usability risks." },
+      { "title": "Visual design analysis", "description": "We review interface consistency, hierarchy, and clarity to strengthen product perception." },
+      { "title": "Accessibility review", "description": "We evaluate accessibility with WCAG-aligned checks to support more inclusive user experiences." },
+      { "title": "Action plan", "description": "You get a prioritized roadmap with practical recommendations to improve usability and conversions." }
+    ]
+  },
+  "bottomCta": {
+    "title": "Want to test design concepts before committing to a large budget?",
+    "subtitle": "Start with a focused design sprint and validate direction before full-scale execution.",
+    "ctaText": "Book a call",
+    "ctaHref": "#contact-form"
+  },
+  "faqs": {
+    "tag": "FAQS",
+    "heading": "Your questions, answered.",
+    "items": [
+      {
+        "question": "How is UI/UX design important for my business?",
+        "answer": "Strong UI/UX improves usability, customer satisfaction, and conversion rates by making your product intuitive and effective."
+      },
+      {
+        "question": "How much does a UI/UX design project cost?",
+        "answer": "Cost depends on scope, complexity, and timeline. We provide a clear estimate after aligning on goals and deliverables."
+      },
+      {
+        "question": "What deliverables can I expect from a UI/UX design project?",
+        "answer": "Typical deliverables include user flows, wireframes, high-fidelity UI, interactive prototypes, and handoff documentation."
+      },
+      {
+        "question": "What industries do you specialize in for UI/UX design?",
+        "answer": "We support SaaS, fintech, healthcare, e-commerce, CRM, edtech, and other B2B product ecosystems."
+      },
+      {
+        "question": "Can you improve my existing product’s UI/UX design for me?",
+        "answer": "Yes. We can audit your current UX, identify bottlenecks, and redesign core flows to improve engagement and conversion."
+      }
+    ]
+  },
+  "nextSteps": [
+    { "number": "01", "text": "We'll respond within 24 hours." },
+    { "number": "02", "text": "Our UX expert will collect project details and create a brief." },
+    { "number": "03", "text": "We'll prepare estimates and share a project proposal." }
+  ],
+  "contactInfo": {
+    "phone": "(202) 978 3410",
+    "email": "info@reloadux.com",
+    "team": [
+      { "name": "Sahar", "role": "Key Account Manager", "linkedin": "https://www.linkedin.com/in/sahar-asif-284a9955/", "image": "/images/team/sahar.webp" },
+      { "name": "Lara Kazan", "role": "Business Development Executive", "linkedin": "https://www.linkedin.com/in/lara-kazan-82a24113b/", "image": "/images/team/lara.webp" }
+    ]
+  }
+}

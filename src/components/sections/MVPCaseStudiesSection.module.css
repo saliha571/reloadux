@@ -92,7 +92,7 @@
 
 .imageWrapper {
   width: 100%;
-  border-radius: 12px;
+  border-radius: 0;
   overflow: hidden;
   position: relative;
   cursor: none;

@@ -781,6 +781,18 @@ export async function getStrapiDesignSystemsPage() {
   );
 }
 
+export interface StrapiUIUXDesignPage extends StrapiDesignSystemsPage {
+  uiuxServicesTag?: string;
+  uiuxServicesHeading?: string;
+  uiuxServicesCards?: { tag: string; title: string; href: string }[];
+}
+
+export async function getStrapiUIUXDesignPage() {
+  return fetchStrapi<StrapiSingle<StrapiUIUXDesignPage>>(
+    "/api/ui-ux-design-page?populate=*"
+  );
+}
+
 export interface StrapiWebDesignPage extends StrapiDesignSystemsPage {
   goLivePromoHeadingBefore?: string;
   goLivePromoHeadingAccent?: string;

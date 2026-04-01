@@ -1348,6 +1348,86 @@ export interface ApiTestimonialTestimonial extends Struct.CollectionTypeSchema {
   };
 }
 
+export interface ApiUiUxDesignPageUiUxDesignPage
+  extends Struct.SingleTypeSchema {
+  collectionName: 'ui_ux_design_pages';
+  info: {
+    description: 'UI/UX Design service page content';
+    displayName: 'UI UX Design Page';
+    pluralName: 'ui-ux-design-pages';
+    singularName: 'ui-ux-design-page';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    auditWorkCaseStudies: Schema.Attribute.JSON;
+    auditWorkHeading: Schema.Attribute.Text;
+    auditWorkStats: Schema.Attribute.JSON;
+    auditWorkTag: Schema.Attribute.String &
+      Schema.Attribute.DefaultTo<'OUR UI/UX DESIGN WORK'>;
+    bottomCtaHref: Schema.Attribute.String &
+      Schema.Attribute.DefaultTo<'#contact-form'>;
+    bottomCtaSubtitle: Schema.Attribute.Text;
+    bottomCtaText: Schema.Attribute.String;
+    bottomCtaTitle: Schema.Attribute.Text;
+    challengeCards: Schema.Attribute.JSON;
+    challengesDescription: Schema.Attribute.Text;
+    challengesHeading: Schema.Attribute.Text;
+    challengesTag: Schema.Attribute.String &
+      Schema.Attribute.DefaultTo<'CHALLENGES'>;
+    contactEmail: Schema.Attribute.Email &
+      Schema.Attribute.DefaultTo<'info@reloadux.com'>;
+    contactPhone: Schema.Attribute.String &
+      Schema.Attribute.DefaultTo<'(202) 978 3410'>;
+    contactTeam: Schema.Attribute.JSON;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    deliverables: Schema.Attribute.JSON;
+    faqItems: Schema.Attribute.JSON;
+    faqsHeading: Schema.Attribute.Text;
+    faqsTag: Schema.Attribute.String & Schema.Attribute.DefaultTo<'FAQS'>;
+    heroCtaHref: Schema.Attribute.String &
+      Schema.Attribute.DefaultTo<'#contact-form'>;
+    heroCtaText: Schema.Attribute.String &
+      Schema.Attribute.DefaultTo<'Book a call'>;
+    heroTag: Schema.Attribute.String &
+      Schema.Attribute.DefaultTo<'UI UX Design'>;
+    heroTitle: Schema.Attribute.Text & Schema.Attribute.Required;
+    keyDeliverablesHeading: Schema.Attribute.String;
+    keyDeliverablesItems: Schema.Attribute.JSON;
+    keyDeliverablesTag: Schema.Attribute.String &
+      Schema.Attribute.DefaultTo<'Deliverables'>;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::ui-ux-design-page.ui-ux-design-page'
+    > &
+      Schema.Attribute.Private;
+    midCtaHref: Schema.Attribute.String &
+      Schema.Attribute.DefaultTo<'#contact-form'>;
+    midCtaText: Schema.Attribute.String &
+      Schema.Attribute.DefaultTo<'Book a call'>;
+    midCtaTitle: Schema.Attribute.Text;
+    nextSteps: Schema.Attribute.JSON;
+    processHeading: Schema.Attribute.Text;
+    processSteps: Schema.Attribute.JSON;
+    processTag: Schema.Attribute.String &
+      Schema.Attribute.DefaultTo<'OUR end-to-end process'>;
+    publishedAt: Schema.Attribute.DateTime;
+    seoDescription: Schema.Attribute.Text;
+    seoTitle: Schema.Attribute.String;
+    uiuxServicesCards: Schema.Attribute.JSON;
+    uiuxServicesHeading: Schema.Attribute.Text;
+    uiuxServicesTag: Schema.Attribute.String &
+      Schema.Attribute.DefaultTo<'OUR UI/UX DESIGN SERVICES'>;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiUsabilityTestingPageUsabilityTestingPage
   extends Struct.SingleTypeSchema {
   collectionName: 'usability_testing_pages';
@@ -2244,6 +2324,7 @@ declare module '@strapi/strapi' {
       'api::team-extension-page.team-extension-page': ApiTeamExtensionPageTeamExtensionPage;
       'api::team-member.team-member': ApiTeamMemberTeamMember;
       'api::testimonial.testimonial': ApiTestimonialTestimonial;
+      'api::ui-ux-design-page.ui-ux-design-page': ApiUiUxDesignPageUiUxDesignPage;
       'api::usability-testing-page.usability-testing-page': ApiUsabilityTestingPageUsabilityTestingPage;
       'api::ux-audit-page.ux-audit-page': ApiUxAuditPageUxAuditPage;
       'api::ux-redesign-page.ux-redesign-page': ApiUxRedesignPageUxRedesignPage;

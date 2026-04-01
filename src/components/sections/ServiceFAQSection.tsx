@@ -12,15 +12,22 @@ interface ServiceFAQSectionProps {
   heading: string;
   items: FAQItemData[];
   className?: string;
+  hideHeading?: boolean;
 }
 
-export function ServiceFAQSection({ tag, heading, items, className }: ServiceFAQSectionProps) {
+export function ServiceFAQSection({
+  tag,
+  heading,
+  items,
+  className,
+  hideHeading = false,
+}: ServiceFAQSectionProps) {
   return (
     <section className={`${styles.section} ${className || ""}`}>
       <div className={styles.inner}>
         <div className={styles.header}>
           <SectionTag text={tag.trim().toUpperCase()} />
-          <h2 className={styles.heading}>{heading}</h2>
+          {!hideHeading && <h2 className={styles.heading}>{heading}</h2>}
         </div>
         <div className={styles.list}>
           {items.map((item, i) => (

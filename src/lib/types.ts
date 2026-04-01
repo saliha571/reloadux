@@ -727,6 +727,20 @@ export interface DesignSystemsPageData {
   contactInfo: { phone: string; email: string; team: { name: string; role: string; linkedin: string; image?: string }[] };
 }
 
+// ─── UI/UX Design Page ───────────────────────────────────────────────────────
+
+export type UIUXDesignPageData = DesignSystemsPageData & {
+  uiuxServices: {
+    tag: string;
+    heading: string;
+    cards: {
+      tag: string;
+      title: string;
+      href: string;
+    }[];
+  };
+};
+
 // ─── Usability Testing Page ──────────────────────────────────────────────────
 
 export type UsabilityTestingPageData = LegacyModernizationPageData;

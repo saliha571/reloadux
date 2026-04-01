@@ -1,0 +1,200 @@
+.ctaHeading {
+  font-family: var(--font-primary);
+  font-size: 54px;
+  font-weight: 600;
+  line-height: 1.2;
+  color: var(--color-white);
+  width: 30ch;
+}
+
+.heroSection {
+  justify-content: flex-start;
+  background-position: center right !important;
+  background-size: cover !important;
+  background-repeat: no-repeat !important;
+}
+
+.heroSection > div:first-child {
+  text-align: start;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+.auditWorkNoBottom {
+  padding-bottom: 0 !important;
+}
+
+.mvpNoTop {
+  padding-top: 0 !important;
+}
+
+.processHeadingBold {
+  font-weight: 600;
+}
+
+.midCtaWithBottomBorder {
+  border-bottom: 1px solid var(--color-grey-700);
+}
+
+.servicesSection {
+  background: var(--bg-dark);
+  padding: var(--section-padding) 0;
+  width: 100%;
+}
+
+.servicesInner {
+  max-width: var(--content-width);
+  margin: 0 auto;
+  padding-inline: var(--page-padding);
+}
+
+.servicesHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: var(--space-40);
+  margin-bottom: var(--space-60);
+}
+
+.servicesHeading {
+  margin: 0;
+  max-width: 620px;
+  color: var(--color-white);
+  font-family: var(--font-primary);
+  font-size: 48px;
+  font-weight: 500;
+  line-height: 1.1;
+}
+
+.servicesGrid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0 var(--space-24);
+}
+
+.serviceCard {
+  position: relative;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  min-height: 194px;
+  padding: 40px 0;
+  border-top: 1px solid var(--color-grey-700);
+  border-bottom: 1px solid var(--color-grey-700);
+  text-decoration: none;
+  color: var(--color-white);
+  overflow: hidden;
+}
+
+.serviceCard::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: url("/images/backgrounds/ui-ux-service-card-hover-bg.png");
+  background-position: center right;
+  background-repeat: no-repeat;
+  background-size: contain;
+  opacity: 0;
+  transition: opacity 0.8s ease;
+}
+
+.serviceCard:hover::before {
+  opacity: 1;
+}
+
+.serviceCardText,
+.serviceCardArrow {
+  position: relative;
+  z-index: 1;
+}
+
+.serviceCardTag {
+  margin: 0 0 var(--space-8);
+  color: var(--color-grey-300);
+  font-family: var(--font-serif);
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.3;
+  text-transform: uppercase;
+}
+
+.serviceCardTitle {
+  margin: 0;
+  color: var(--color-white);
+  font-family: var(--font-primary);
+  font-size: 30px;
+  font-weight: 500;
+  line-height: 1.25;
+  transition: transform 0.5s ease;
+  margin-top: 40px;
+}
+
+.serviceCardArrow {
+  width: 40px;
+  height: 40px;
+  border: 1px solid var(--color-grey-700);
+  border-radius: var(--radius-full);
+  background: transparent;
+  color: var(--color-white);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.5s ease, background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
+
+.serviceCard:hover .serviceCardTitle {
+  transform: translateX(4px);
+}
+
+.serviceCard:hover .serviceCardArrow {
+  transform: translateX(-10px);
+  background: var(--color-white);
+  color: var(--color-black);
+  border-color: var(--color-white);
+}
+
+.serviceCard:hover {
+  padding: 40px 30px;
+  outline: 1px solid var(--color-grey-700);
+  outline-offset: -1px;
+}
+
+@media (max-width: 1024px) {
+  .ctaHeading {
+    font-size: 48px;
+    line-height: 56px;
+  }
+
+  .servicesHeader {
+    flex-direction: column;
+    gap: var(--space-16);
+  }
+
+  .servicesHeading {
+    font-size: 36px;
+    max-width: 100%;
+  }
+
+  .serviceCardTitle {
+    font-size: 28px;
+  }
+}
+
+@media (max-width: 767px) {
+  .ctaHeading {
+    font-size: 28px;
+    line-height: 38px;
+  }
+
+  .servicesSection {
+    padding: var(--space-80) 0;
+  }
+
+  .servicesGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .serviceCardTitle {
+    font-size: 30px;
+  }
+}

@@ -8,6 +8,7 @@ interface MVPProcessSectionProps {
   heading: string;
   steps: { counter: string; title: string; content: string }[];
   deliverables: string[];
+  headingClassName?: string;
 }
 
 export function MVPProcessSection({
@@ -15,6 +16,7 @@ export function MVPProcessSection({
   heading,
   steps,
   deliverables,
+  headingClassName,
 }: MVPProcessSectionProps) {
   const [activeIndex, setActiveIndex] = useState(0);
   const [openHeights, setOpenHeights] = useState<Record<number, number>>({});
@@ -43,7 +45,7 @@ export function MVPProcessSection({
       <div className={styles.inner}>
         <div className={styles.headerRow}>
           <p className={styles.tag}>[ {tag} ]</p>
-          <h2 className={styles.heading}>{heading}</h2>
+          <h2 className={`${styles.heading} ${headingClassName || ""}`}>{heading}</h2>
         </div>
 
         <div className={styles.columns}>

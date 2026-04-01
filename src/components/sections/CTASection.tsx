@@ -7,6 +7,7 @@ interface CTASectionProps {
   ctaText: string;
   ctaHref: string;
   subtitle?: string;
+  buttonAfterSubtitle?: boolean;
   hideLogos?: boolean;
   backgroundImage?: string;
   accentWord?: string;
@@ -29,6 +30,7 @@ export function CTASection({
   ctaText,
   ctaHref,
   subtitle,
+  buttonAfterSubtitle = false,
   hideLogos,
   backgroundImage,
   accentWord,
@@ -59,11 +61,19 @@ export function CTASection({
           )}
         </h2>
 
-        <FlairButton href={ctaHref} size="lg">
-          {ctaText}
-        </FlairButton>
+        {!buttonAfterSubtitle && (
+          <FlairButton href={ctaHref} size="lg">
+            {ctaText}
+          </FlairButton>
+        )}
 
         {subtitle && <p className={styles.subtitle}>{subtitle}</p>}
+
+        {buttonAfterSubtitle && (
+          <FlairButton href={ctaHref} size="lg">
+            {ctaText}
+          </FlairButton>
+        )}
 
         {secondaryCtaText && secondaryCtaHref && (
           <FlairButton href={secondaryCtaHref} size="md">

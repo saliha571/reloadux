@@ -12,6 +12,7 @@ import type {
   DesignDiscoveryPageData,
   WebDesignPageData,
   DesignSystemsPageData,
+  UIUXDesignPageData,
   Service,
   CaseStudy,
   BlogPost,
@@ -38,6 +39,7 @@ import conversationalUxData from "../../content/pages/conversational-ux.json";
 import designDiscoveryData from "../../content/pages/design-discovery.json";
 import webDesignData from "../../content/pages/web-design.json";
 import designSystemsData from "../../content/pages/design-systems.json";
+import uiUxDesignData from "../../content/pages/ui-ux-design.json";
 
 import {
   getStrapiHomepage,
@@ -60,6 +62,7 @@ import {
   getStrapiUXRedesignPage,
   getStrapiDesignDiscoveryPage,
   getStrapiDesignSystemsPage,
+  getStrapiUIUXDesignPage,
   getStrapiUsabilityTestingPage,
   getStrapiWebDesignPage,
 } from "./strapi";
@@ -1080,6 +1083,85 @@ export async function getDesignSystemsPage(): Promise<DesignSystemsPageData> {
         tag: s.keyDeliverablesTag ?? fallback.keyDeliverables.tag,
         heading: s.keyDeliverablesHeading ?? fallback.keyDeliverables.heading,
         items: s.keyDeliverablesItems ?? fallback.keyDeliverables.items,
+      },
+      bottomCta: {
+        title: s.bottomCtaTitle ?? fallback.bottomCta.title,
+        subtitle: s.bottomCtaSubtitle ?? fallback.bottomCta.subtitle,
+        ctaText: s.bottomCtaText ?? fallback.bottomCta.ctaText,
+        ctaHref: s.bottomCtaHref ?? fallback.bottomCta.ctaHref,
+      },
+      faqs: {
+        tag: s.faqsTag ?? fallback.faqs.tag,
+        heading: s.faqsHeading ?? fallback.faqs.heading,
+        items: s.faqItems ?? fallback.faqs.items,
+      },
+      nextSteps: s.nextSteps ?? fallback.nextSteps,
+      contactInfo: {
+        phone: s.contactPhone ?? fallback.contactInfo.phone,
+        email: s.contactEmail ?? fallback.contactInfo.email,
+        team: s.contactTeam
+          ? s.contactTeam.map((t) => ({
+              name: t.name,
+              role: t.role,
+              linkedin: t.linkedin ?? "",
+            }))
+          : fallback.contactInfo.team,
+      },
+    };
+  } catch {
+    return fallback;
+  }
+}
+
+// ─── UI/UX Design Page ───────────────────────────────────────────────────────
+
+export async function getUIUXDesignPage(): Promise<UIUXDesignPageData> {
+  const fallback = uiUxDesignData as UIUXDesignPageData;
+
+  try {
+    const res = await getStrapiUIUXDesignPage();
+    const s = res?.data;
+    if (!s) return fallback;
+
+    return {
+      hero: {
+        tag: s.heroTag ?? fallback.hero.tag,
+        title: s.heroTitle ?? fallback.hero.title,
+        ctaText: s.heroCtaText ?? fallback.hero.ctaText,
+        ctaHref: s.heroCtaHref ?? fallback.hero.ctaHref,
+      },
+      challenges: {
+        tag: s.challengesTag ?? fallback.challenges.tag,
+        heading: s.challengesHeading ?? fallback.challenges.heading,
+        description: s.challengesDescription ?? fallback.challenges.description,
+        cards: s.challengeCards ?? fallback.challenges.cards,
+      },
+      auditWork: {
+        tag: s.auditWorkTag ?? fallback.auditWork.tag,
+        heading: s.auditWorkHeading ?? fallback.auditWork.heading,
+        stats: s.auditWorkStats ?? fallback.auditWork.stats,
+        caseStudies: s.auditWorkCaseStudies ?? fallback.auditWork.caseStudies,
+      },
+      midCta: {
+        title: s.midCtaTitle ?? fallback.midCta.title,
+        ctaText: s.midCtaText ?? fallback.midCta.ctaText,
+        ctaHref: s.midCtaHref ?? fallback.midCta.ctaHref,
+      },
+      process: {
+        tag: s.processTag ?? fallback.process.tag,
+        heading: s.processHeading ?? fallback.process.heading,
+        steps: s.processSteps ?? fallback.process.steps,
+        deliverables: s.deliverables ?? fallback.process.deliverables,
+      },
+      keyDeliverables: {
+        tag: s.keyDeliverablesTag ?? fallback.keyDeliverables.tag,
+        heading: s.keyDeliverablesHeading ?? fallback.keyDeliverables.heading,
+        items: s.keyDeliverablesItems ?? fallback.keyDeliverables.items,
+      },
+      uiuxServices: {
+        tag: s.uiuxServicesTag ?? fallback.uiuxServices.tag,
+        heading: s.uiuxServicesHeading ?? fallback.uiuxServices.heading,
+        cards: s.uiuxServicesCards ?? fallback.uiuxServices.cards,
       },
       bottomCta: {
         title: s.bottomCtaTitle ?? fallback.bottomCta.title,

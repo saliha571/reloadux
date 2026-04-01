@@ -88,7 +88,7 @@
   font-family: var(--font-primary);
   font-size: 13px;
   font-weight: 400;
-  color: rgba(0, 0, 0, 0.4);
+  color: var(--color-black);
   margin-right: 12px;
   vertical-align: super;
 }
