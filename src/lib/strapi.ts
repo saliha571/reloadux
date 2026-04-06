@@ -880,3 +880,34 @@ export async function getStrapiLegacyModernizationPage() {
     "/api/legacy-modernization-page?populate[challengeCards]=*&populate[caseStudiesStats]=*&populate[caseStudyItems][populate]=slides&populate[processPhases]=*&populate[keyDeliverablesItems]=*&populate[whenToDoItItems]=*&populate[otherServicesItems]=*&populate[faqItems]=*&populate[nextSteps]=*&populate[contactTeam][populate]=image"
   );
 }
+
+// ─── UX Process Page ────────────────────────────────────────────────────────
+
+export interface StrapiUXProcessPage {
+  heroTag?: string;
+  heroHeadingBold?: string;
+  heroHeadingFaded?: string;
+  processSteps?: unknown;
+  caseStudyImage?: string;
+  caseStudyTag?: string;
+  caseStudyHeading?: string;
+  testimonialsTag?: string;
+  testimonialsHeading?: string;
+  testimonials?: unknown;
+  ctaTitle?: string;
+  ctaSubtitle?: string;
+  ctaText?: string;
+  ctaHref?: string;
+  nextSteps?: { number: string; text: string }[];
+  contactPhone?: string;
+  contactEmail?: string;
+  contactTeam?: { name: string; role: string; linkedin?: string; image?: string }[];
+  seoTitle?: string;
+  seoDescription?: string;
+}
+
+export async function getStrapiUXProcessPage() {
+  return fetchStrapi<StrapiSingle<StrapiUXProcessPage>>(
+    "/api/ux-process-page?populate=*"
+  );
+}

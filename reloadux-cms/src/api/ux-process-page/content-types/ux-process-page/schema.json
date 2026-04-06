@@ -1,0 +1,84 @@
+{
+  "kind": "singleType",
+  "collectionName": "ux_process_pages",
+  "info": {
+    "singularName": "ux-process-page",
+    "pluralName": "ux-process-pages",
+    "displayName": "UX Process Page",
+    "description": "Our end-to-end UX process page content"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "heroTag": {
+      "type": "string",
+      "default": "OUR END-TO-END PROCESS"
+    },
+    "heroHeadingBold": {
+      "type": "text",
+      "required": true
+    },
+    "heroHeadingFaded": {
+      "type": "text"
+    },
+    "processSteps": {
+      "type": "json"
+    },
+    "caseStudyImage": {
+      "type": "string"
+    },
+    "caseStudyTag": {
+      "type": "string",
+      "default": "VOCABLE"
+    },
+    "caseStudyHeading": {
+      "type": "text"
+    },
+    "testimonialsTag": {
+      "type": "string",
+      "default": "WORDS OF OUR CLIENTS"
+    },
+    "testimonialsHeading": {
+      "type": "text"
+    },
+    "testimonials": {
+      "type": "json"
+    },
+    "ctaTitle": {
+      "type": "text"
+    },
+    "ctaSubtitle": {
+      "type": "text"
+    },
+    "ctaText": {
+      "type": "string",
+      "default": "Let's Connect"
+    },
+    "ctaHref": {
+      "type": "string",
+      "default": "#contact-form"
+    },
+    "nextSteps": {
+      "type": "json"
+    },
+    "contactPhone": {
+      "type": "string",
+      "default": "(202) 978 3410"
+    },
+    "contactEmail": {
+      "type": "email",
+      "default": "info@reloadux.com"
+    },
+    "contactTeam": {
+      "type": "json"
+    },
+    "seoTitle": {
+      "type": "string"
+    },
+    "seoDescription": {
+      "type": "text"
+    }
+  }
+}

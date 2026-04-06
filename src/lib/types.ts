@@ -824,3 +824,50 @@ export interface AIOpportunityMappingPageData {
 // ─── Usability Testing Page ──────────────────────────────────────────────────
 
 export type UsabilityTestingPageData = LegacyModernizationPageData;
+
+// ─── UX Process Page ────────────────────────────────────────────────────────
+
+export interface ProcessStepCategory {
+  name: string;
+  items: string[];
+}
+
+export interface ProcessStep {
+  id: string;
+  number: string;
+  title: string;
+  categories: ProcessStepCategory[];
+  expectPrefix?: string;
+  expectBold: string;
+  expectLight: string;
+  expectFaded: string;
+  expectSuffix?: string;
+  deliverables: string[];
+}
+
+export interface UXProcessPageData {
+  hero: {
+    tag: string;
+    headingBold: string;
+    headingFaded: string;
+  };
+  processSteps: ProcessStep[];
+  caseStudy: {
+    image: string;
+    tag: string;
+    heading: string;
+  };
+  testimonials: Testimonial[];
+  cta: {
+    title: string;
+    subtitle: string;
+    ctaText: string;
+    ctaHref: string;
+  };
+  nextSteps: NextStep[];
+  contactInfo: {
+    phone: string;
+    email: string;
+    team: { name: string; role: string; linkedin: string; image?: string }[];
+  };
+}

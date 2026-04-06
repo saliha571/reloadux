@@ -14,6 +14,7 @@ import type {
   DesignSystemsPageData,
   UIUXDesignPageData,
   AIOpportunityMappingPageData,
+  UXProcessPageData,
   Service,
   CaseStudy,
   BlogPost,
@@ -42,6 +43,7 @@ import webDesignData from "../../content/pages/web-design.json";
 import designSystemsData from "../../content/pages/design-systems.json";
 import uiUxDesignData from "../../content/pages/ui-ux-design.json";
 import aiOpportunityMappingData from "../../content/pages/ai-opportunity-mapping.json";
+import uxProcessData from "../../content/pages/ux-process.json";
 
 import {
   getStrapiHomepage,
@@ -68,6 +70,7 @@ import {
   getStrapiAIOpportunityMappingPage,
   getStrapiUsabilityTestingPage,
   getStrapiWebDesignPage,
+  getStrapiUXProcessPage,
 } from "./strapi";
 
 // ─── Homepage ─────────────────────────────────────────────────────────────────
@@ -130,6 +133,54 @@ export async function getAboutPage(): Promise<AboutPageData> {
 
 export async function getContactPage(): Promise<ContactPageData> {
   return contactData as ContactPageData;
+}
+
+// ─── UX Process Page ─────────────────────────────────────────────────────────
+
+export async function getProcessPage(): Promise<UXProcessPageData> {
+  const fallback = uxProcessData as UXProcessPageData;
+
+  try {
+    const res = await getStrapiUXProcessPage();
+    const s = res?.data;
+    if (!s) return fallback;
+
+    return {
+      hero: {
+        tag: s.heroTag ?? fallback.hero.tag,
+        headingBold: s.heroHeadingBold ?? fallback.hero.headingBold,
+        headingFaded: s.heroHeadingFaded ?? fallback.hero.headingFaded,
+      },
+      processSteps: (s.processSteps as UXProcessPageData["processSteps"]) ?? fallback.processSteps,
+      caseStudy: {
+        image: s.caseStudyImage ?? fallback.caseStudy.image,
+        tag: s.caseStudyTag ?? fallback.caseStudy.tag,
+        heading: s.caseStudyHeading ?? fallback.caseStudy.heading,
+      },
+      testimonials: (s.testimonials as UXProcessPageData["testimonials"]) ?? fallback.testimonials,
+      cta: {
+        title: s.ctaTitle ?? fallback.cta.title,
+        subtitle: s.ctaSubtitle ?? fallback.cta.subtitle,
+        ctaText: s.ctaText ?? fallback.cta.ctaText,
+        ctaHref: s.ctaHref ?? fallback.cta.ctaHref,
+      },
+      nextSteps: s.nextSteps ?? fallback.nextSteps,
+      contactInfo: {
+        phone: s.contactPhone ?? fallback.contactInfo.phone,
+        email: s.contactEmail ?? fallback.contactInfo.email,
+        team: s.contactTeam
+          ? s.contactTeam.map((t) => ({
+              name: t.name,
+              role: t.role,
+              linkedin: t.linkedin ?? "",
+              image: t.image,
+            }))
+          : fallback.contactInfo.team,
+      },
+    };
+  } catch {
+    return fallback;
+  }
 }
 
 // ─── UX Redesign Page ────────────────────────────────────────────────────────

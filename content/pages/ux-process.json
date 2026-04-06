@@ -1,0 +1,245 @@
+{
+  "hero": {
+    "tag": "OUR END-TO-END PROCESS",
+    "headingBold": "Our formula for building the right product,",
+    "headingFaded": "that generates ROI and win hearts."
+  },
+  "processSteps": [
+    {
+      "id": "one",
+      "number": "01/",
+      "title": "Discover",
+      "categories": [
+        {
+          "name": "Business",
+          "items": [
+            "Understand company\u2019s background & vision",
+            "Understand client requirements",
+            "Define product goals",
+            "Define business goals"
+          ]
+        },
+        {
+          "name": "User Research",
+          "items": [
+            "Identify target audience",
+            "Gather insights",
+            "Analyse demographics"
+          ]
+        },
+        {
+          "name": "Market Research",
+          "items": [
+            "Study competitors",
+            "Identify trends",
+            "Analyse product feasibility along with competitors"
+          ]
+        }
+      ],
+      "expectPrefix": "",
+      "expectBold": "A team of UX consultants",
+      "expectLight": "leads a 1-2 week discovery workshop",
+      "expectFaded": "with stakeholders and users to gather key insights.",
+      "expectSuffix": "",
+      "deliverables": [
+        "Business vision",
+        "User persona",
+        "SWOT analysis",
+        "Competitive analysis",
+        "UX audit report",
+        "Business model canvas"
+      ]
+    },
+    {
+      "id": "two",
+      "number": "02/",
+      "title": "Define",
+      "categories": [
+        {
+          "name": "Problem Statement",
+          "items": [
+            "Define pain points",
+            "Define user expectations",
+            "Clarify scope",
+            "Identify product KPIs"
+          ]
+        },
+        {
+          "name": "Existing solutions",
+          "items": [
+            "Explore existing solutions",
+            "Evaluate pros & cons",
+            "Identify better solution"
+          ]
+        },
+        {
+          "name": "User Journey",
+          "items": [
+            "Brainstorm ideas",
+            "Conceptualisation",
+            "Define user flows & Journey"
+          ]
+        }
+      ],
+      "expectPrefix": "",
+      "expectBold": "",
+      "expectLight": "defining the problem statements and the scope of work.",
+      "expectFaded": "Once defined, UX Designers will start creating the User Journey.",
+      "expectSuffix": "",
+      "deliverables": [
+        "KPIs",
+        "Goals & challenges",
+        "User flows",
+        "Module feature list",
+        "New suggestions",
+        "Priority matrix"
+      ]
+    },
+    {
+      "id": "three",
+      "number": "03/",
+      "title": "Design",
+      "categories": [
+        {
+          "name": "Wire-framing",
+          "items": [
+            "Create layouts",
+            "Outline functionality",
+            "Build lo-fi structure"
+          ]
+        },
+        {
+          "name": "Visual Design",
+          "items": [
+            "Define style guide",
+            "Build design system",
+            "Prepare mood-board",
+            "Create high-fi designs"
+          ]
+        },
+        {
+          "name": "Feedback Incorporation",
+          "items": ["Gather inputs & feedback", "Implement changes"]
+        }
+      ],
+      "expectPrefix": "",
+      "expectBold": "",
+      "expectLight": "collaborate to design solutions that meet your needs, using industry best practices.",
+      "expectFaded": "This includes review cycles to finalize the UX and visuals.",
+      "expectSuffix": "",
+      "deliverables": [
+        "Wireframes",
+        "Design language",
+        "Design system",
+        "Tokens",
+        "Usability testing",
+        "High fidelity design"
+      ]
+    },
+    {
+      "id": "four",
+      "number": "04/",
+      "title": "Deliver",
+      "categories": [
+        {
+          "name": "Interactive Prototyping",
+          "items": [
+            "Prepare clickable prototype",
+            "Add micro-interactions",
+            "Integrate animations"
+          ]
+        },
+        {
+          "name": "Front-End Development",
+          "items": ["Code interfaces", "Ensure responsiveness"]
+        },
+        {
+          "name": "Usability Testing",
+          "items": [
+            "Conduct testing with users",
+            "Gather feedback & insights",
+            "Refine product"
+          ]
+        }
+      ],
+      "expectPrefix": "We\u2019ll build a",
+      "expectBold": "",
+      "expectLight": "high-quality end product, bringing the design to life with optimization,",
+      "expectFaded": "interactivity, and other design elements,",
+      "expectSuffix": "all thoroughly tested for usability.",
+      "deliverables": []
+    }
+  ],
+  "caseStudy": {
+    "image": "/images/covers/process-case-study.png",
+    "tag": "VOCABLE",
+    "heading": "Boosted content efficiency by 300-500%, enabling more output in less time due to our process driven approach"
+  },
+  "testimonials": [
+    {
+      "index": "/01",
+      "quote": "\u201cWe started with reloadux with an AI product and a lot of assumptions. They challenged most of them, in a good way. By the time we launched, we had an AI marketing tool marketers actually wanted. I loved the fact that they always spent time thinking through what they are building\u201d",
+      "name": "Iman Oubou",
+      "role": "CEO at",
+      "company": "Vocable",
+      "avatar": "/images/testimonials/iman.webp",
+      "companyLogo": "/images/testimonials/vocable-logo.webp",
+      "videoUrl": "https://www.youtube.com/embed/hUyQpSovdA8?si=7tbMS5YqndijNSmp"
+    },
+    {
+      "index": "/02",
+      "quote": "\u201cWe had the AI product knowledge. What we didn\u2019t have was a way to present it that didn\u2019t overwhelm users, reloadux team took the time to understand the product and created end to end interactive flows that became the foundation of the product.\u201d",
+      "name": "Matthew Tarascio",
+      "role": "Tech Entrepreneur at",
+      "company": "MomentAI",
+      "avatar": "/images/testimonials/matthew.jpeg",
+      "companyLogo": "/images/testimonials/momentai-logo.jpeg"
+    },
+    {
+      "index": "/03",
+      "quote": "\u201cThe collaboration was smooth from start to finish. They asked the right questions, pushed back when we were off track, and helped us identify where AI actually made sense, then delivered ahead of schedule.\u201d",
+      "name": "Yuriy Shikhanovich",
+      "role": "Manager at",
+      "company": "Via People",
+      "avatar": "/images/testimonials/yuriy.webp",
+      "companyLogo": "/images/testimonials/via-people-logo.webp"
+    },
+    {
+      "index": "/04",
+      "quote": "\u201cOperations managers are skeptical people. reloadux team got that immediately. Everything they designed had a clear explanation behind it. That\u2019s why it actually got used.\u201d",
+      "name": "Viktor Misyutin",
+      "role": "Manager at",
+      "company": "Encore",
+      "avatar": "/images/testimonials/viktor.webp",
+      "companyLogo": "/images/testimonials/encore-logo.webp"
+    },
+    {
+      "index": "/05",
+      "quote": "\u201creloadux clear updates kept us informed every step of the way. Their straightforward approach made our partnership efficient and productive\u201d",
+      "name": "Mahir Iskender",
+      "role": "CEO at",
+      "company": "Digno",
+      "avatar": "/images/testimonials/mahir.webp",
+      "companyLogo": "/images/testimonials/digno-logo.webp"
+    }
+  ],
+  "cta": {
+    "title": "Got a project in mind?",
+    "subtitle": "Collaborate with us to bring your vision to life. Our creative experts ensure tailored success by following a thorough design process.",
+    "ctaText": "Let's Connect",
+    "ctaHref": "#contact-form"
+  },
+  "nextSteps": [
+    { "number": "01", "text": "We\u2019ll respond within 24 hours." },
+    { "number": "02", "text": "Our UX Expert will collect project details and create a brief." },
+    { "number": "03", "text": "We\u2019ll prepare estimates and share a project proposal." }
+  ],
+  "contactInfo": {
+    "phone": "(202) 978 3410",
+    "email": "info@reloadux.com",
+    "team": [
+      { "name": "Sahar", "role": "Key Account Manager", "linkedin": "https://www.linkedin.com/in/sahar-asif-284a9955/", "image": "/images/team/sahar.webp" },
+      { "name": "Lara Kazan", "role": "Business Development Executive", "linkedin": "https://www.linkedin.com/in/lara-kazan-82a24113b/", "image": "/images/team/lara.webp" }
+    ]
+  }
+}

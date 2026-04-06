@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { getContactPage } from "@/lib/content";
+import { getProcessPage } from "@/lib/content";
 import { ProcessPageClient } from "./ProcessPageClient";
 
 export const metadata: Metadata = {
@@ -9,12 +9,7 @@ export const metadata: Metadata = {
 };
 
 export default async function ProcessPage() {
-  const contactData = await getContactPage();
+  const data = await getProcessPage();
 
-  return (
-    <ProcessPageClient
-      nextSteps={contactData.nextSteps}
-      contactInfo={contactData.contactInfo}
-    />
-  );
+  return <ProcessPageClient data={data} />;
 }
