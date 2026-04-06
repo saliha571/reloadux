@@ -12,6 +12,7 @@ import styles from "./AuditWorkSection.module.css";
 interface AuditWorkSectionProps {
   tag: string;
   heading: string;
+  headingNode?: React.ReactNode;
   stats: { value: string; label: string }[];
   caseStudies: {
     name: string;
@@ -141,6 +142,7 @@ function CaseStudySlider({
 export function AuditWorkSection({
   tag,
   heading,
+  headingNode,
   stats,
   caseStudies,
   hideHeader,
@@ -154,7 +156,7 @@ export function AuditWorkSection({
         <div className={styles.constrained}>
           <SectionTag text={tag} />
           <div className={styles.headingRow}>
-            <h2 className={styles.heading}>{renderHeading(heading)}</h2>
+            <h2 className={styles.heading}>{headingNode || renderHeading(heading)}</h2>
             <div className={styles.badge}>
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img

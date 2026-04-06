@@ -1,0 +1,524 @@
+/* ── Hero ── */
+
+.hero {
+  background: var(--bg-dark) url("/images/covers/process-hero-bg.webp") no-repeat right center  / contain;
+  padding: var(--section-padding) 0;
+  width: 100%;
+}
+
+.heroInner {
+  max-width: var(--content-width);
+  margin: 0 auto;
+  padding-inline: var(--page-padding);
+}
+
+.heroTag {
+  margin-bottom: var(--space-24);
+}
+
+.heroHeading {
+  font-family: var(--font-serif);
+  font-size: 48px;
+  font-weight: 400;
+  line-height: 1.3;
+  color: var(--color-white);
+  max-width: 30ch;
+  margin-bottom: 0;
+}
+
+.heroHeadingBold {
+  font-weight: 700;
+}
+
+.heroHeadingFaded {
+  font-weight: 400;
+  /* color: rgba(255, 255, 255, 0.5); */
+}
+
+.heroTabs {
+  display: flex;
+  gap: var(--space-16);
+  flex-wrap: wrap;
+}
+
+.heroTab {
+  font-family: var(--font-primary);
+  font-size: 16px;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  padding: 14px 32px;
+  border-radius: 40px;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  background: transparent;
+  color: var(--color-white);
+  cursor: pointer;
+  transition: background 0.3s ease, border-color 0.3s ease;
+}
+
+.heroTab:hover {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: rgba(255, 255, 255, 0.5);
+}
+
+.heroTabActive {
+  background: var(--color-white);
+  color: var(--color-black);
+  border-color: var(--color-white);
+}
+
+/* ── Process Section (dark) ── */
+
+.processSection {
+  background: var(--bg-dark);
+  padding: var(--section-padding) 0;
+  width: 100%;
+}
+
+.processInner {
+  max-width: var(--content-width);
+  margin: 0 auto;
+  padding-inline: var(--page-padding);
+  display: flex;
+  gap: 350px;
+}
+
+/* ── Sidebar ── */
+
+.sidebar {
+  flex: 0 0 180px;
+  position: sticky;
+  top: 120px;
+  align-self: flex-start;
+  height: fit-content;
+}
+
+.sidebarList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  border-right: 1px solid var(--color-grey-700);
+}
+
+.sidebarItem {
+  font-family: var(--font-primary);
+  font-size: 16px;
+  font-weight: 400;
+  color: var(--color-grey-400);
+  cursor: pointer;
+  padding: 0 24px 0 0;
+  transition: color 0.3s ease;
+  position: relative;
+}
+
+.sidebarItem::after {
+  content: "";
+  position: absolute;
+  right: -1px;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background: transparent;
+  transition: background 0.3s ease;
+}
+
+.sidebarItem:hover {
+  color: var(--color-white);
+}
+
+.sidebarItemActive {
+  color: var(--color-white);
+  font-weight: 500;
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+.sidebarItemActive::after {
+  background: var(--color-white);
+}
+
+/* ── Slides ── */
+
+.slides {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: var(--section-padding);
+}
+
+/* ── Single Slide ── */
+
+.slide {
+  display: flex;
+  flex-direction: column;
+  max-width: 750px;
+}
+
+.slideHeading {
+  font-family: var(--font-primary);
+  font-size: 30px;
+  font-weight: 700;
+  line-height: 160%;
+  color: #565656;
+  margin-bottom: var(--space-40);
+}
+
+/* ── Process Steps (staircase cards + dashed dividers) ── */
+
+.processSteps {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0;
+  margin-bottom: var(--space-60);
+  position: relative;
+}
+
+.processSteps::before,
+.processSteps::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 1px;
+  border-left: 1px dashed rgba(255, 255, 255, 0.15);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.processSteps::before {
+  left: 33.333%;
+}
+
+.processSteps::after {
+  left: 66.666%;
+}
+
+.stepCard {
+  padding: 0;
+  position: relative;
+  z-index: 1;
+}
+
+.stepCardInner {
+  padding: 0;
+}
+
+.stepCard:first-child {
+  border-left: none;
+}
+
+.stepCard:nth-child(3) {
+  margin-top: 80px;
+}
+
+.stepHeading {
+  display: block;
+  width: 100%;
+  text-align: center;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 999px;
+  padding: 10px 28px;
+  color: var(--color-white);
+  font-family: var(--font-primary);
+  font-size: 15px;
+  font-weight: 400;
+  background: transparent;
+  margin-bottom: 20px;
+  box-sizing: border-box;
+}
+
+.stepCard ul {
+  list-style: disc;
+  padding: 24px;
+  padding-top: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.stepCard li {
+  font-family: var(--font-primary);
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.7;
+  color: rgba(255, 255, 255, 0.6);
+}
+
+/* ── What to Expect ── */
+
+.descPart {
+  margin-bottom: var(--space-60);
+}
+
+.accentHeading {
+  font-family: var(--font-serif);
+  font-size: 16px;
+  font-weight: 400;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--color-white);
+  margin-bottom: var(--space-32);
+}
+
+.descText {
+  font-family: var(--font-primary);
+  font-size: 28px;
+  font-weight: 700;
+  line-height: 1.5;
+  color: #d1d1d1;
+  max-width: 700px;
+}
+
+.descText span {
+  font-weight: 700;
+  color: var(--color-grey-400);
+}
+
+.expectPrefix {
+  /* font-style: italic; */
+  font-weight: 700 !important;
+  color: var(--color-grey-400);
+}
+
+.inlineAvatars {
+  display: inline-flex;
+  vertical-align: middle;
+  margin: 0 6px;
+}
+
+.inlineAvatar {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  border: 2px solid var(--bg-dark);
+  object-fit: cover;
+  margin-left: -8px;
+}
+
+.inlineAvatar:first-child {
+  margin-left: 0;
+}
+
+/* ── Deliverables (KPIs) ── */
+
+.kpis {
+  margin-bottom: 0;
+}
+
+.kpisWrapper {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+}
+
+.singleKpi {
+  font-family: var(--font-primary);
+  font-size: 14px;
+  font-weight: 400;
+  color: rgba(255, 255, 255, 0.7);
+  padding: 20px 16px;
+  border-top: 1px solid var(--color-grey-700);
+  text-align: center;
+}
+
+/* ── Case Study Stat ── */
+
+.caseStudy {
+  background: var(--bg-dark);
+  padding-bottom: 80px;
+  width: 100%;
+  /* border-top: 1px solid var(--color-grey-700); */
+}
+
+.caseStudyInner {
+  max-width: var(--content-width);
+  margin: 0 auto;
+  padding-inline: var(--page-padding);
+}
+
+.caseStudyImage {
+  margin-bottom: var(--space-40);
+}
+
+.caseStudyImage img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.caseStudyContent {
+  display: flex;
+  align-items: flex-start;
+  gap: 80px;
+  justify-content: space-between;
+}
+
+.caseStudyTag {
+  flex-shrink: 0;
+}
+
+.caseStudyHeading {
+  font-family: var(--font-primary);
+  font-size: 30px;
+  font-weight: 500;
+  line-height: 1.6;
+  color: var(--color-white);
+  max-width: 700px;
+  margin: 0;
+}
+
+/* ── CTA Section override ── */
+
+.ctaSection {
+  border-top: 1px solid var(--color-grey-700);
+  background: var(--bg-dark) url("/images/covers/process-cta-bg.png") no-repeat right center / contain !important;
+  text-align: center;
+}
+
+.ctaSection :global([class*="CTASection-module__inner"]) {
+  align-items: center;
+  text-align: center;
+}
+
+.ctaSection :global([class*="CTASection-module__title"]) {
+  text-align: center;
+}
+
+.ctaSection :global([class*="CTASection-module__heading"]) {
+  width: 100%;
+  text-align: center;
+}
+
+.ctaSection :global([class*="CTASection-module__subtitle"]) {
+  text-align: center;
+}
+
+/* ── Tablet ── */
+
+@media (max-width: 1024px) {
+  .heroHeading {
+    font-size: 40px;
+  }
+
+  .processInner {
+    flex-direction: column;
+    gap: var(--space-40);
+  }
+
+  .sidebar {
+    position: static;
+    flex: none;
+  }
+
+  .sidebarList {
+    flex-direction: row;
+    gap: var(--space-8);
+    border-right: none;
+    border-bottom: 1px solid var(--color-grey-700);
+  }
+
+  .sidebarItem {
+    padding: 8px 16px;
+  }
+
+  .sidebarItemActive {
+    color: var(--color-white);
+  }
+
+  .processSteps {
+    grid-template-columns: repeat(2, 1fr);
+    padding-bottom: 60px;
+  }
+
+  .processSteps::after {
+    display: none;
+  }
+
+  .processSteps::before {
+    left: 50%;
+  }
+
+  .stepCard {
+    padding: 0 16px;
+  }
+
+  .kpisWrapper {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+
+  .slideHeading {
+    font-size: 28px;
+  }
+
+  .descText {
+    font-size: 20px;
+  }
+
+  .caseStudyContent {
+    flex-direction: column;
+    gap: var(--space-24);
+  }
+
+  .caseStudyHeading {
+    font-size: 20px;
+  }
+}
+
+/* ── Mobile ── */
+
+@media (max-width: 767px) {
+  .hero {
+    background-size: cover;
+    background-position: center;
+  }
+
+  .heroHeading {
+    font-size: 28px;
+  }
+
+  .heroTabs {
+    gap: var(--space-8);
+  }
+
+  .heroTab {
+    font-size: 14px;
+    padding: 10px 20px;
+  }
+
+  .processSteps {
+    grid-template-columns: 1fr;
+    padding-bottom: 0;
+  }
+
+  .processSteps::before,
+  .processSteps::after {
+    display: none;
+  }
+
+  .stepCard {
+    padding: 0;
+    margin-top: 0 !important;
+    margin-bottom: 16px;
+  }
+
+  .kpisWrapper {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .slideHeading {
+    font-size: 24px;
+  }
+
+  .descText {
+    font-size: 18px;
+  }
+
+  .sidebarList {
+    flex-wrap: wrap;
+  }
+}

@@ -1,4 +1,11 @@
+.stickyWrapper {
+  position: relative;
+  background-color: #D9D9D9;
+}
+
 .section {
+  position: sticky;
+  top: 0;
   background-color: #D9D9D9;
   background-image: url('/images/testimonials/review-bg-shape.webp');
   background-position: bottom left;
@@ -14,26 +21,50 @@
   margin: 0 auto;
   padding: 0 var(--page-padding);
   display: flex;
-  align-items: flex-start;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 100px;
+}
+
+/* ── Header Row (tag + heading) ── */
+
+.headerRow {
+  display: flex;
+  flex-direction: row;
   justify-content: space-between;
+  align-items: flex-end;
+  align-self: stretch;
+  width: 100%;
 }
 
-.left {
-  flex-shrink: 0;
-  padding-top: 0;
+.headerRow span {
+  color: var(--color-black);
+  line-height: 60px;
 }
 
-.right {
+.heading {
+  font-family: var(--font-primary);
+  font-size: 48px;
+  font-weight: 500;
+  line-height: normal;
+  color: var(--color-black);
+  margin: 0;
+  max-width: 750px;
+}
+
+/* ── Carousel Row ── */
+
+.carouselRow {
   display: flex;
   align-items: flex-start;
   gap: 24px;
-  flex-shrink: 0;
+  width: 750px;
 }
 
 .carousel {
   position: relative;
   overflow: hidden;
-  width: 602px;
+  flex: 1;
   flex-shrink: 0;
 }
 
@@ -50,7 +81,7 @@
   gap: 40px;
   flex-shrink: 0;
   align-items: flex-start;
-  padding: 18px 0 100px;
+  padding: 18px 0 80px;
   border-bottom: 1px solid rgba(0, 0, 0, 0.2);
 }
 
@@ -65,7 +96,7 @@
 .quote {
   font-family: var(--font-primary);
   font-size: 28px;
-  font-weight: 400;
+  font-weight: 500;
   line-height: 48px;
   color: #000000;
 }
@@ -135,6 +166,8 @@
   color: var(--color-night);
 }
 
+/* ── Dots ── */
+
 .dots {
   display: flex;
   flex-direction: column;
@@ -158,6 +191,8 @@
 .dotActive {
   background: var(--color-night);
 }
+
+/* ── Custom Cursor ── */
 
 .reviewCursor {
   position: absolute;
@@ -183,6 +218,8 @@
   border-radius: 50%;
   object-fit: cover;
 }
+
+/* ── Video Overlay ── */
 
 .videoOverlay {
   position: fixed;
@@ -234,28 +271,42 @@
   background: rgba(255, 255, 255, 0.3);
 }
 
+/* ── Tablet ── */
+
 @media (max-width: 1024px) {
-  .inner {
-    flex-direction: column;
-    padding: 0 var(--page-padding);
-    gap: 40px;
+  .section {
+    padding: 56px 0;
+    background-size: 0px auto;
   }
 
-  .left {
-    flex: none;
+  .inner {
+    padding: 0 32px;
+    gap: 56px;
+  }
+
+  .headerRow {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+  }
+
+  .headerRow span {
+    font-size: 14px;
+    line-height: normal;
+  }
+
+  .heading {
+    font-size: 32px;
+  }
+
+  .carouselRow {
+    flex-direction: column;
     width: 100%;
   }
 
   .carousel {
-    height: 420px;
+    width: 100%;
     cursor: auto;
-    flex: none;
-    width: 100%;
-  }
-
-  .right {
-    flex-direction: column;
-    width: 100%;
   }
 
   .slide {
@@ -276,18 +327,31 @@
     align-self: center;
   }
 
-  .section {
-    padding: var(--section-padding) 0;
-  }
-
   .reviewCursor {
     display: none;
   }
 }
 
+/* ── Mobile ── */
+
 @media (max-width: 767px) {
   .section {
     padding: 60px 0;
+  }
+
+  .inner {
+    padding: 0 16px;
+    gap: 16px;
+  }
+
+  .headerRow span {
+    font-size: 11px;
+    line-height: 20px;
+  }
+
+  .heading {
+    font-size: 22px;
+    line-height: 36px;
   }
 
   .carousel {

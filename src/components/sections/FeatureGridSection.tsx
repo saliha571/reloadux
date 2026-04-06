@@ -13,6 +13,7 @@ export interface Feature {
   imageAlt: string;
   title: string;
   description: string;
+  descriptionNode?: React.ReactNode;
 }
 
 interface FeatureGridSectionProps {
@@ -109,11 +110,11 @@ export function FeatureGridSection({ heading, features }: FeatureGridSectionProp
                   </div>
 
                   <div className={styles.content}>
-                    {feature.title === "Chat & Voice Interfaces" && <ChatVoiceIcon />}
-                    {feature.title === "Agentic Workflow Automation" && <AgenticWorkflowIcon />}
+                    {(feature.title === "Chat & Voice Interfaces" || feature.title === "Copilots & Conversational AI") && <ChatVoiceIcon />}
+                    {(feature.title === "Agentic Workflow Automation" || feature.title === "Agentic Experiences") && <AgenticWorkflowIcon />}
                     {feature.title === "Intelligent UX Layer for Existing Products" && <IntelligentUXIcon />}
                     <h3 className={styles.cardTitle}>{feature.title}</h3>
-                    <p className={styles.cardDesc}>{feature.description}</p>
+                    {feature.descriptionNode || <p className={styles.cardDesc}>{feature.description}</p>}
                   </div>
                 </article>
               </ScrollReveal>

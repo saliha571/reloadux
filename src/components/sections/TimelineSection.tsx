@@ -15,6 +15,7 @@ interface TimelineSectionProps {
   heading: string;
   phases: Phase[];
   note?: string;
+  className?: string;
 }
 
 export function TimelineSection({
@@ -22,9 +23,10 @@ export function TimelineSection({
   heading,
   phases,
   note,
+  className,
 }: TimelineSectionProps) {
   return (
-    <section className={styles.section}>
+    <section className={`${styles.section} ${className || ""}`}>
       <div className={styles.inner}>
         <div className={styles.topRow}>
           <div className={styles.tagCol}>

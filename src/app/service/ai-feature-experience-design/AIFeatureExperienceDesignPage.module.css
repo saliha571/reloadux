@@ -1,0 +1,246 @@
+.page {
+}
+
+.heroSection {
+  justify-content: center;
+  background-position: center right !important;
+  background-size: cover !important;
+  background-repeat: no-repeat !important;
+}
+
+.heroSection > div:first-child {
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+}
+
+.heroSection > div:first-child > div:first-child {
+  display: none;
+}
+
+/* ── Case Study Detail Section ── */
+
+.caseDetailSection {
+  background: var(--bg-dark);
+  width: 100%;
+}
+
+.caseDetailInner {
+  max-width: var(--content-width);
+  margin: 0 auto;
+  padding-inline: var(--page-padding);
+}
+
+.caseDetailRow {
+  display: flex;
+  justify-content: space-between;
+  gap: var(--space-40);
+  align-items: start;
+  padding: var(--space-60) 0;
+  border-top: 1px solid var(--color-grey-700);
+}
+
+.caseDetailTag {
+  font-family: var(--font-primary);
+  font-size: 14px;
+  font-weight: 400;
+  letter-spacing: 0.08em;
+  color: var(--color-white);
+  padding-top: 4px;
+}
+
+.caseDetailText {
+  font-family: var(--font-primary);
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 1.65;
+  color: var(--color-grey-400);
+  max-width: 640px;
+}
+
+.caseDetailText strong {
+  color: var(--color-white);
+  font-weight: 600;
+}
+
+.caseDetailList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-20);
+  max-width: 640px;
+}
+
+.caseDetailList li {
+  position: relative;
+  padding-left: var(--space-16);
+  font-family: var(--font-primary);
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.7;
+  color: var(--color-grey-400);
+}
+
+.caseDetailList li::before {
+  content: "›";
+  position: absolute;
+  left: 0;
+  color: var(--color-grey-400);
+}
+
+.caseDetailList li strong {
+  color: var(--color-white);
+  font-weight: 600;
+}
+
+.caseDetailOutcome {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-16);
+}
+
+.outcomeBrand {
+  font-family: var(--font-primary);
+  font-size: 42px;
+  font-weight: 700;
+  line-height: 1;
+  color: var(--color-white);
+  letter-spacing: -0.01em;
+}
+
+.outcomeStat {
+  font-family: var(--font-primary);
+  font-size: 52px;
+  font-weight: 700;
+  line-height: 1;
+  color: var(--color-white);
+  letter-spacing: -0.02em;
+}
+
+.pressLogoIcon {
+  margin-right: 6px;
+  font-size: 20px;
+}
+
+.outcomeText {
+  font-family: var(--font-primary);
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.5;
+  color: var(--color-grey-400);
+}
+
+.pressLogos {
+  display: flex;
+  align-items: center;
+  gap: var(--space-24);
+  margin-top: var(--space-8);
+}
+
+.pressLogo {
+  font-family: var(--font-primary);
+  font-size: 18px;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  color: var(--color-white);
+  text-transform: uppercase;
+}
+
+.pressLogoDot {
+  font-size: 10px;
+  color: var(--color-white);
+}
+
+.fintechCaseStudy {
+  padding-top: 0;
+}
+
+/* ── Timeline section override ── */
+
+.timelineSection {
+  background: var(--color-smoke) !important;
+}
+
+.timelineSection h2 {
+  color: var(--color-black) !important;
+}
+
+.timelineSection span {
+  color: #666 !important;
+}
+
+.timelineSection p {
+  color: #444 !important;
+}
+
+.timelineSection p strong {
+  color: var(--color-black) !important;
+}
+
+/* ── CTA section override ── */
+
+.ctaSection {
+  border-bottom: 1px solid var(--color-grey-700) !important;
+}
+
+.ctaHeading :global([class*="CTASection-module__accent"]),
+.ctaHeading :global(.accent) {
+  font-family: var(--font-serif) !important;
+  font-style: italic !important;
+  font-weight: 400 !important;
+}
+
+/* ── Tablet ── */
+
+@media (max-width: 1024px) {
+  .caseDetailRow {
+    grid-template-columns: 200px 1fr;
+    gap: var(--space-24);
+    padding: var(--space-40) 0;
+  }
+
+  .caseDetailText {
+    font-size: 18px;
+  }
+
+  .outcomeBrand {
+    font-size: 34px;
+  }
+
+  .outcomeStat {
+    font-size: 42px;
+  }
+}
+
+/* ── Mobile ── */
+
+@media (max-width: 767px) {
+  .caseDetailRow {
+    flex-direction: column;
+    gap: var(--space-16);
+    padding: var(--space-32) 0;
+  }
+
+  .caseDetailText {
+    font-size: 16px;
+  }
+
+  .outcomeBrand {
+    font-size: 28px;
+  }
+
+  .outcomeStat {
+    font-size: 32px;
+  }
+
+  .pressLogos {
+    flex-wrap: wrap;
+    gap: var(--space-16);
+  }
+
+  .pressLogo {
+    font-size: 14px;
+  }
+}
